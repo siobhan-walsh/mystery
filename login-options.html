@@ -3,10 +3,9 @@
     
     <head>
         <meta charset="utf-8">
-        <title>mystery</title>
+        <title>login-options</title>
         <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/style.css">
-
     </head>
 
     <body> 
@@ -19,15 +18,13 @@
         
         
         <div class = 'content'>
-            <h4>Choose a theme!</h4>
-            
-            <div class = 'themecase'>
-            
+          
+            <div class='login-buttons'>
+                <a href = 'login.html'><input type='button' class='buttons' id='loginbutton' value="Login"></a>
+                <input type='button' id='signupbutton' class='buttons' value="Sign up">
+                <input type='button' id='fbbutton' class='buttons' value="Login through facebook">
             </div>
             
-            
-            
-        
         </div>
         
         
@@ -36,12 +33,16 @@
         </div>
         
         
-  <script src="js/display-themes.js"></script>        
+<script src="js/buttons.js"></script>        
     <script>
         window.onload = function(){
 
             console.log('hiiii');
-          }
+         
+           
+
+            
+        }
          
   
     </script>  

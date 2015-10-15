@@ -3,10 +3,39 @@
 body {
     margin:0;
     padding:0;
- 
+    
 }
 
-/* -------- HEADER STYLES --------------- */
+a {
+    text-decoration:none;
+    color:#627f73;
+}
+
+a:hover {
+    
+    color:#C4FFe6;
+}
+
+.hspace {
+    margin: 0 4%;   
+}
+.vspace {
+    margin: 4% 0;   
+}
+
+.center {
+    width: 60%;
+    margin:auto;
+
+}
+
+.center-text {
+    text-align:center;   
+}
+.right-text {
+    text-align:right;   
+}
+/* ============= HEADER STYLES ============= */
 .header {
     margin:0px;
     width:100%;
@@ -26,12 +55,13 @@ body {
     
 }
 
-/* -------- MAIN CONTENT STYLES --------------- */
+/* ============= MAIN CONTENT STYLES ============= */
 
 .content h4 {
     text-align:center;   
 }
 
+/* ------------- theme page ----------------*/
 .themecase {
     margin:auto;   
     width:90%;
@@ -45,13 +75,55 @@ body {
     
 }
 
-/* -------- FOOTER STYLES --------------- */
+
+/* ------------- login or sign up page ----------------*/
+.login-buttons {
+    width: 60%;
+    margin:auto;
+    padding-top: 100px;
+}
+.buttons {
+    background-color:#cccccc;
+    border:none;
+    clear:both;
+    float:left;
+    width:100%;
+    font-size:12pt;
+    margin-bottom:20px;
+    padding:10px;
+    border-radius:4px;
+}
+
+
+/* ------------- login page ----------------*/
+
+
+
+.textbox {
+    box-shadow: -1px -1px 1px 1px #cccccc;
+    border:none;
+    clear:both;
+    float:left;
+    width:100%;
+    font-size:12pt;
+    margin-bottom:20px;
+    padding:6px;
+    border-radius:4px;
+}
+
+
+/* ============= FOOTER STYLES ============= */
 
 .footer {
+        
     
+    box-shadow: 0px -2px 4px #666666;
     width:100%;
     height:100px;
     background-color:#647F73;
+    position: fixed;
+    bottom: 0;
+    
     
        
 }
