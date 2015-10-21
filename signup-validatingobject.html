@@ -47,21 +47,79 @@
     <script src="js/buttons.js"></script>    
     <script>
         window.onload = function(){
-                
-                var signupbtn = document.getElementById('signup');
-                var fname = document.getElementById('fname');
-                var lname = document.getElementById('lname');
-                var email = document.getElementById('email');
-                var username = document.getElementById('username');
-                var pw = document.getElementById('pw');
-                var pwRetype = document.getElementById('pwRetype');
             
-              
+            var signupbtn = document.getElementById('signup');
+                var msgdiv = document.createElement('div');
+            validation= {
+                
+                count:0,
+                fname:document.getElementById('fname'),
+                lname:document.getElementById('lname'),
+                email:document.getElementById('email'),
+                username:document.getElementById('username'),
+                pw:document.getElementById('pw'),
+                pwRetype:document.getElementById('pwRetype'),
+                pwMatch:function(){
+                    var myapi = this;
+                     if(myapi.pw.value == myapi.pwRetype.value && myapi.pw.value != ""){
+                        
+                        console.log("THE PASSWORDS MATCH");
+                         myapi.removeMsg();
+                        
+                    } else{
+                      
+                        console.log("THE PASSWORDS DO NOT MATCH");
+                        myapi.showMsg();
+                        msgdiv.innerHTML = "Your passwords do not match, please retype it again";
+                       
+                    }
+                    
+                },
+                showMsg:function(){
+                    var myapi = this;
+                   
+                    
+                        document.body.appendChild(msgdiv);
+                        msgdiv.id = 'msgdiv';
+                        
+                        msgdiv.style.backgroundColor = '#ffccee';
+                        msgdiv.style.position = 'fixed';
+                        msgdiv.style.top = '20%';
+                        msgdiv.style.width = '80vw';
+                        msgdiv.style.left = '10vw';
+                        msgdiv.style.padding = '30px 10px ';
+                        
+                       
+                    
+                },
+                removeMsg:function(){
+                    var myapi = this;
+                   
+                    myapi.showMsg();
+                    
+                    document.body.removeChild(msgdiv);
+                
+                    
+                },
+                formcorrect:function(){
+                    var myapi = this;
+                    
+                    myapi.showMsg();
+                    msgdiv.innerHTML = "Thank you for signing up! Please confirm via email";
+                }
+                
+                
+                
+                
+            }
+                
+               
                 signupbtn.onclick = function() {
                     
-                 pwMatch();
+
                 
-                 
+                    validation.pwMatch();
+                    validation.formcorrect();
                     
                     
                     
