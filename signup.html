@@ -25,10 +25,10 @@
             </div>
             <div class='center'>
               
-                <input type='text' id='fname' class='textbox' placeholder="first name" maxlength="30">
-                <input type='text' id='lname' class='textbox' placeholder="last" maxlength="30">
+                <input type='text' id='fname' class='textbox' placeholder="first name" max="30" min='2' required='true'>
+                <input type='text' id='lname' class='textbox' placeholder="last" max="30" min='2' required='true'>
                 <input type='email' id='email' class='textbox' placeholder="email@example.com" maxlength="70">
-                <input type='text' id='username' class='textbox' placeholder="username" maxlength="20">
+                <input type='text' id='username' class='textbox' placeholder="username" required = 'true' max="20" min="4">
                 <input type='password' id='pw' class='textbox' placeholder="password" maxlength="20">
                
                 <input type='password' id='pwRetype' class='textbox' placeholder="retype password">
@@ -55,51 +55,43 @@
                 var username = document.getElementById('username');
                 var pw = document.getElementById('pw');
                 var pwRetype = document.getElementById('pwRetype');
+                //var input = document.querySelector('input');
             
               
                 signupbtn.onclick = function() {
                     
                  pwMatch();
-                
                  
-                    
-                    
-                    
-                    
-                                        
-
-                    
-                    
-                    
                     //send stuff to database   
                 }
                 
+                fname.onblur = function(){
+                    if(this.validity.rangeUnderflow) {
+                        
+                        this.setCustomValidity("Age has to be over 18!");
+
+                      } else if(this.validity.rangeOverflow) {
+                          this.setCustomValidity("Age has to be under 25!");
+
+                      } else if(this.validity.valueMissing) {
+                           this.setCustomValidity("You must enter a name!");
+
+                      } else {
+                            this.setCustomValidity("good");
+                          
+                      }
+                    console.log("blur fname");
+                }
+                lname.onblur = function(){
+                    checking(this);
+                    console.log("blur lname");
+                }
                 
-                function pwMatch(){
+                function checking(){
                     
-                    if(pw.value == pwRetype.value && pw.value != ""){
-                        
-                        console.log("THE PASSWORDS MATCH");
-                        
-                    } else{
-                        
-                        console.log("THE PASSWORDS DO NOT MATCH");
-                        
-                        var badmatchdiv = document.createElement('div');
-                        document.body.appendChild(badmatchdiv);
-                        
-                        badmatchdiv.style.backgroundColor = '#ffccee';
-                        badmatchdiv.style.position = 'fixed';
-                        badmatchdiv.style.top = '20%';
-                        badmatchdiv.style.width = '80vw';
-                        badmatchdiv.style.left = '10vw';
-                        badmatchdiv.style.padding = '30px 10px ';
-                        
-                        badmatchdiv.innerHTML = "Your passwords do not match, please retype them";
-                        
-                        
-                        
-                    }
+                    
+
+                    
                 }
             
                 function success(){

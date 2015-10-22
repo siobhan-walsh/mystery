@@ -3,9 +3,10 @@
     
     <head>
         <meta charset="utf-8">
-        <title>Sign Up</title>
+        <title>vad object</title>
         <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     </head>
 
     <body> 
@@ -45,14 +46,17 @@
         
         
     <script src="js/buttons.js"></script>    
+    
     <script>
-        window.onload = function(){
+        $(document).ready(function(){
             
             var signupbtn = document.getElementById('signup');
-                var msgdiv = document.createElement('div');
+            var msgdiv = document.createElement('div');
+            var lilmsg = document.createElement('p');
             validation= {
                 
                 count:0,
+                right:false,
                 fname:document.getElementById('fname'),
                 lname:document.getElementById('lname'),
                 email:document.getElementById('email'),
@@ -61,20 +65,71 @@
                 pwRetype:document.getElementById('pwRetype'),
                 pwMatch:function(){
                     var myapi = this;
+                    
+                    
                      if(myapi.pw.value == myapi.pwRetype.value && myapi.pw.value != ""){
                         
-                        console.log("THE PASSWORDS MATCH");
+                         console.log("THE PASSWORDS MATCH");
                          myapi.removeMsg();
+                         myapi.right = true;
                         
                     } else{
                       
                         console.log("THE PASSWORDS DO NOT MATCH");
+                        myapi.right = false;
                         myapi.showMsg();
                         msgdiv.innerHTML = "Your passwords do not match, please retype it again";
                        
                     }
                     
                 },
+                fnameCorrect:function(){
+                    var myapi = this;
+                    
+                       if(myapi.fname.value.length > 20){
+
+                           console.log("THAT NAME IS TOO LONG SON", fname.value);
+                           lilmsg.innerHTML = "Name cannot exceed 20 characters please";
+                            $("#fname").after(lilmsg);
+
+                       } else if(myapi.fname.value.length <= 2){
+                           
+                           console.log("THAT NAME IS TOO SHORT SON", fname.value);
+                           lilmsg.innerHTML = "Name must be more than 2 characters please";
+                           $("#fname").after(lilmsg);
+                           
+                       } else {
+
+                          console.log("first name ok", fname.value);
+                          $(lilmsg).html("");
+                       }
+                        
+                    
+                },
+                lnameCorrect:function(){
+                    var myapi = this;
+                    
+                       if(myapi.lname.value.length > 20){
+
+                           console.log("THAT NAME IS TOO LONG SON", fname.value);
+                           lilmsg.innerHTML = "Name cannot exceed 20 characters please";
+                            $("#fname").after(lilmsg);
+
+                       } else if(myapi.lname.value.length <= 2){
+                           
+                           console.log("THAT NAME IS TOO SHORT SON", fname.value);
+                           lilmsg.innerHTML = "Name must be more than 2 characters please";
+                           $("#fname").after(lilmsg);
+                           
+                       } else {
+
+                          console.log("first name ok", fname.value);
+                          $(lilmsg).html("");
+                       }
+                        
+                    
+                },
+                
                 showMsg:function(){
                     var myapi = this;
                    
@@ -92,6 +147,13 @@
                        
                     
                 },
+                littleMsg:function(){
+                    var myapi = this;
+                   
+                        lilmsg.innerHTML = "idk";
+                        this.appendChild(lilmsg);
+                        
+                },
                 removeMsg:function(){
                     var myapi = this;
                    
@@ -103,9 +165,12 @@
                 },
                 formcorrect:function(){
                     var myapi = this;
+                    if(myapi.right == true){
+                        myapi.showMsg();
+                        msgdiv.innerHTML = "Thank you for signing up! Please confirm via email";
+                        
+                    }
                     
-                    myapi.showMsg();
-                    msgdiv.innerHTML = "Thank you for signing up! Please confirm via email";
                 }
                 
                 
@@ -113,17 +178,19 @@
                 
             }
                 
-               
+               fname.onblur = function(){
+                   
+                   console.log("first name blurrrred");
+                   
+                   validation.fnameCorrect();
+                   
+               }
                 signupbtn.onclick = function() {
                     
-
-                
+                    validation.fnameCorrect();
                     validation.pwMatch();
                     validation.formcorrect();
-                    
-                    
-                    
-                    
+
                                         
 
                     
@@ -177,7 +244,7 @@
                     }
             
           
-        }
+        });
          
   
     </script>  
