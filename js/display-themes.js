@@ -1,5 +1,5 @@
  var themes = ["Murder in Sin City", "Killing for the Crown", "Once Upon A Murder",  "Cruising for murder", "totally rad 80's prom gone bad", "Lights! Camera! Murder!"];
-                var themeImg = ["img/murderinsincity.png", "img/killingforthecrown.png",  "img/onceuponamurder.png", "img/cruisingformurder.png", "img/totallyrad.png", "img/lightscameramurder.png"];
+                var themeImg = ["img/themes/murderinsincity.png", "img/killingforthecrown.png",  "img/onceuponamurder.png", "img/cruisingformurder.png", "img/totallyrad.png", "img/lightscameramurder.png"];
                 
                 var themecase = document.querySelector('.themecase');
                
