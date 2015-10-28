@@ -8,10 +8,10 @@
                 
                 
                 buttons[i].onmousedown = function(){  
-                   this.style.backgroundColor = '#888888';      
+                   this.style.backgroundColor = '#508d9a';      
 
                 }
                 buttons[i].onmouseup = function(){  
-                   this.style.backgroundColor = '#cccccc';    
+                   this.style.backgroundColor = '#599DAC';    
                 }
             }

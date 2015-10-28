@@ -110,7 +110,8 @@ a:hover {
     padding-top: 100px;
 }
 .buttons {
-    background-color:#cccccc;
+    background-color:#599DAC;
+    color:#ffffff;
     border:none;
     clear:both;
     float:left;
