@@ -148,6 +148,39 @@ a:hover {
     margin-left:15%;
 }
 
+/* ------------- profile page ----------------*/
+
+#options{
+	width:100px;
+    height:50px;
+    position: fixed;
+    bottom: 220px;
+    left: 110px;
+	clear:both;
+    float:centre;
+	width: 40%;
+    margin:auto;
+
+}
+
+#options button{
+	background-color:lightblue;
+	border-style:solid;
+    border-color:#ffffff;
+    border-width: 1px;
+	clear:both;
+    float:centre;
+    width:100%;
+    font-size:12pt;
+    margin-bottom:20px;
+    padding:10px;
+    border-radius:4px;
+}
+
+.display{
+
+
+}
 
 /* ============= FOOTER STYLES ============= */
 
