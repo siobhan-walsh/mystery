@@ -148,7 +148,7 @@ a:hover {
     margin-left:15%;
 }
 
-/* ------------- profile page ----------------*/
+/* ------------- profile pages ----------------*/
 
 #options{
 	width:100px;
@@ -164,9 +164,9 @@ a:hover {
 }
 
 #options button{
-	background-color:lightblue;
+	background-color:#76a0b0;
 	border-style:solid;
-    border-color:#ffffff;
+    border-color:grey;
     border-width: 1px;
 	clear:both;
     float:centre;
@@ -180,17 +180,59 @@ a:hover {
 
 #display{
 	border-style:solid;
-    border-color:#ffffff;
+    border-color:lightgrey;
     border-radius:60px;
     border-width: 1px;
-    background-color:white;
-    opacity:0.3;
-    height:70vw;
+    background-color:black;
+    opacity:0.15;
+    height:40vh;
     width:90vw;
     position: fixed;
     top:110px;
     left:18px;
+    z-index:0px;
 
+}
+
+#display img{
+	top:160px;
+}
+
+
+#buttons{
+	width:100px;
+    height:50px;
+    position: fixed;
+    bottom: 430px;
+    left: 60px;
+	clear:both;
+    float:centre;
+	width: 70%;
+    margin:auto;
+
+}
+
+#buttons button{
+	background-color:white;
+	border-style:solid;
+    border-color:white;
+    border-width: 1px;
+	clear:both;
+    float:centre;
+    width:100%;
+    font-size:12pt;
+    margin-bottom:20px;
+    padding:10px;
+    border-radius:80px;
+}
+
+#DP img{
+	opacity:0.95;
+	z-index:2px;
+	width:45vw;
+	height:25vh;
+	position:fixed;
+	left:100px;
 }
 
 /* ============= FOOTER STYLES ============= */
