@@ -238,10 +238,40 @@ a:hover {
 
 /* ------------- profile pages ----------------*/
 
+#display1{
+	border-style:solid;
+    border-color:lightgrey;
+    border-radius:40px;
+    border-width: 1px;
+    background-color:black;
+    opacity:0.15;
+    height:70vh;
+    width:99vw;
+    position: fixed;
+    top:110px;
+    left:0.5px;
+    z-index:0px;
 
+}
 
+#imgNoti{
+	width:30vw;
+	height:50vh;
+	margin-left:10px;
+	position:absolute;
+}
 
+#imgNoti img{
+	width:80%;
+}
 
+#msgNoti{
+	width:65vw;
+	height:50vh;
+	margin-left:35vw;
+	position:absolute;
+	
+}
 
 
 /* ============= FOOTER STYLES ============= */
