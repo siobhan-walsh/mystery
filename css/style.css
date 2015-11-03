@@ -154,7 +154,7 @@ a:hover {
 	width:100px;
     height:50px;
     position: fixed;
-    bottom: 220px;
+    bottom: 200px;
     left: 110px;
 	clear:both;
     float:centre;
@@ -172,13 +172,24 @@ a:hover {
     float:centre;
     width:100%;
     font-size:12pt;
-    margin-bottom:20px;
-    padding:10px;
+    margin-bottom:15px;
+    padding:8px;
     border-radius:4px;
 }
 
-.display{
 
+#display{
+	border-style:solid;
+    border-color:#ffffff;
+    border-radius:60px;
+    border-width: 1px;
+    background-color:white;
+    opacity:0.3;
+    height:70vw;
+    width:90vw;
+    position: fixed;
+    top:110px;
+    left:18px;
 
 }
 
