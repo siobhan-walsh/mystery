@@ -94,20 +94,27 @@ a:hover {
     width:90%;
 }
 .themecase img {
-    width:45%; 
-    margin:2.5%;
+    width:44%; 
+    margin:3%;
 }
 .themecase img:nth-child(3n+0) {
-    width: 100%;
+    width: 92%;
+    margin:5 0 4 0;
     
 }
 
 
 /* ------------- login or sign up page ----------------*/
+
+.biglogo {
+    width: 60%;
+    margin: 6% 20% 0%;
+
+}
 .login-buttons {
     width: 60%;
     margin:auto;
-    padding-top: 100px;
+    padding-top: 40px;
 }
 .buttons {
     background-color:#599DAC;

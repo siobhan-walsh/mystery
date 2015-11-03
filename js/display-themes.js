@@ -1,5 +1,5 @@
- var themes = ["Murder in Sin City", "Killing for the Crown", "Once Upon A Murder",  "Cruising for murder", "totally rad 80's prom gone bad", "Lights! Camera! Murder!"];
-                var themeImg = ["img/themes/murderinsincity.png", "img/killingforthecrown.png",  "img/onceuponamurder.png", "img/cruisingformurder.png", "img/totallyrad.png", "img/lightscameramurder.png"];
+ var themes = ["Cruising", "HoHo", "lightscamera",  "murderinsincity", "onceuponamurder"];
+                var themeImg = ["img/themes/Cruising.png", "img/themes/HoHo.png",  "img/themes/lightscamera.png", "img/themes/murderinsincity.png", "img/themes/onceuponamurder.png"];
                 
                 var themecase = document.querySelector('.themecase');
                
@@ -7,11 +7,13 @@
                     
                     var imge = document.createElement('img');
                     
+                    
                     imge.src = themeImg[i];
                     
-
+                    //themecase.innerHTML = '<a href = "game.html"><img src ="' + themeImg[i] + '">';
                     
                     themecase.appendChild(imge);
+                    
                     
                     
                     
