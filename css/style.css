@@ -212,7 +212,7 @@ a:hover {
 }
 
 #display img{
-	top:160px;
+	top:260px;
 }
 
 
@@ -243,14 +243,17 @@ a:hover {
     border-radius:80px;
 }
 
-#DP img{
+#DP, img{
 	opacity:0.95;
 	z-index:2px;
 	width:45vw;
 	height:25vh;
 	position:fixed;
 	left:100px;
+    padding: 10px;
 }
+
+
 
 
 /* ------------- notification pages ----------------*/
