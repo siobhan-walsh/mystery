@@ -302,20 +302,33 @@ a:hover {
 
 .h1 {
 	
-	font-size: 15pt;
+	font-size: 25pt;
 	font-family: 'Fira Mono',sans-serif;
     text-align:center; 
-	margin-top: 65px; 
+	margin-top: 200px; 
+	font-weight: bold;
 	
 	
+	}
+	
+.h2 {
+	
+	font-size: 25pt;
+	font-family: 'Fira Mono',sans-serif;
+    text-align:left; 
+	font-weight: bold;
+	margin-left: 30px;
 	
 	}
 
 
 .p1 {
-	font-size: 5pt;
+	font-size: 11pt;
 	font-family: 'Fira Mono',sans-serif;
     text-align:left;  
+	letter-spacing: -5px;
+	line-height: 110%;
+	margin-left: 30px;
     }
 	
 .imgA1 { 
@@ -336,14 +349,14 @@ a:hover {
 a.btn {
 	display: inline-block;
 	color: #666;
-	background-color: #eee;
+	background-color: #F5ECEC;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 40px;
-	padding-left: 10px;
+	padding-left: 20px;
 	padding-right: 20px;
 	margin-left:30px;
-	margin-bottom:30px;
+	margin-bottom:200px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -368,10 +381,11 @@ a.btn.btn-blue {
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
 	color: #FFF;
-	padding-right: 0px;
-	padding-left: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
 	margin-right: 0px;
 	margin-left: 200px;
+	margin-bottom:100px;
 }
 
 	a.btn.btn-blue:hover {
@@ -393,10 +407,11 @@ a.btn.btn-blue {
     
     box-shadow: 0px -2px 4px #666666;
     width:100%;
-    height:80px;
+    height:200px;
     background-color:#000000;
     position: fixed;
     bottom: 0;
+	
          
 }
 
