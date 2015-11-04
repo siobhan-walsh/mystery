@@ -25,8 +25,8 @@
             </div>
             <div class='center'>
               
-                <input type='text' id='fname' class='textbox' placeholder="first name" max="30" min='2' required='true'>
-                <input type='text' id='lname' class='textbox' placeholder="last" max="30" min='2' required='true'>
+                <input type='text' id='fname' class='textbox'  placeholder="first name" oninput ="check(this);" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' >
+                <input type='text' id='lname' class='textbox' placeholder="last" oninput ="check(this);" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$'>
                 <input type='email' id='email' class='textbox' placeholder="email@example.com" maxlength="70">
                 <input type='text' id='username' class='textbox' placeholder="username" required = 'true' max="20" min="4">
                 <input type='password' id='pw' class='textbox' placeholder="password" maxlength="20">
@@ -60,38 +60,23 @@
               
                 signupbtn.onclick = function() {
                     
-                 pwMatch();
+                 
                  
                     //send stuff to database   
-                }
+                };
                 
-                fname.onblur = function(){
-                    if(this.validity.rangeUnderflow) {
-                        
-                        this.setCustomValidity("Age has to be over 18!");
-
-                      } else if(this.validity.rangeOverflow) {
-                          this.setCustomValidity("Age has to be under 25!");
-
-                      } else if(this.validity.valueMissing) {
-                           this.setCustomValidity("You must enter a name!");
-
-                      } else {
-                            this.setCustomValidity("good");
-                          
-                      }
-                    console.log("blur fname");
-                }
+                
+            
+            
+            
                 lname.onblur = function(){
-                    checking(this);
+                   // checking(this);
                     console.log("blur lname");
                 }
                 
-                function checking(){
+                fname.onblur = function(){
                     
-                    
-
-                    
+                   // check();
                 }
             
                 function success(){
@@ -112,6 +97,23 @@
             
           
         }
+        
+        function check(input){
+                    if(input.validity.patternMismatch) {
+                        
+                        input.setCustomValidity("Please enter a name between 2-20 characters");
+
+                      } 
+
+                       else if(input.validity.valueMissing) {
+                           input.setCustomValidity("You must enter a name!");
+
+                      } else {
+                           input.setCustomValidity("");
+                          
+                      }
+                 
+                }
          
   
     </script>  
