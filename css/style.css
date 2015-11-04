@@ -243,7 +243,7 @@ a:hover {
     border-radius:80px;
 }
 
-#DP, img{
+#DP img{
 	opacity:0.95;
 	z-index:2px;
 	width:45vw;
@@ -252,7 +252,6 @@ a:hover {
 	left:100px;
     padding: 10px;
 }
-
 
 
 
