@@ -21,7 +21,7 @@ p {
 	font-family: 'Fira Mono',sans-serif;
     text-align:left;  
 	letter-spacing: 5px;
-	line-height: 115%;
+	line-height: 133%;
 	margin-left: 30px;
     }
 
@@ -349,7 +349,60 @@ a:hover {
 
 	}
 	
+.startgame {
+	display: inline-block;
+	color: #666;
+	background-color: #F5ECEC;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 40px;
+	background-color: #699DB6;
+	border-color: rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	padding-top: 15px; 
+	padding-bottom: 15px;
+	padding-left: 20px;
+	margin-left: 200px;
+	padding-right: 20px;
+	color: #FFF;
+	text-align: right;
+	border-radius: 5px;
+	text-align: left;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-bottom-width: 3px;
+	
+	}
 
+	a.startgame:hover {
+		background-color: #e3e3e3;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+	a.startgame:active {
+		background-color: #CCC;
+		border-color: rgba(0,0,0,0.9);
+	}
+
+
+/* ============= Round 1 Game Play ============= */
+
+
+
+
+.p2 {
+	
+	
+	font-size: 10pt;
+	font-family: 'Fira Mono',sans-serif;
+    text-align: left;  
+	letter-spacing: 5px;
+	line-height: 115%;
+	margin-left: 50px;
+    }
+
+	
 a.btn {
 	display: inline-block;
 	color: #666;
@@ -357,12 +410,15 @@ a.btn {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 40px;
+	padding-top: 15px; 
+	padding-bottom: 15px;
 	padding-left: 20px;
 	padding-right: 20px;
 	margin-left:30px;
-	margin-top:50px;
+	margin-top:200px;
 	margin-bottom:300px;
 	border-radius: 5px;
+	text-align: left;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border: 1px solid rgba(0,0,0,0.3);
@@ -385,12 +441,13 @@ a.btn.btn-blue {
 	background-color: #699DB6;
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	padding-top: 15px; 
+	padding-bottom: 15px;
+	padding-left: 20px;
+	margin-left: 3px;
+	padding-right: 20px;
 	color: #FFF;
-	padding-left: 30px;
-	padding-right: 30px;
-	margin-right: 0px;
-	margin-left: 200px;
-	margin-bottom:100px;
+	text-align: right;
 }
 
 	a.btn.btn-blue:hover {
@@ -402,22 +459,6 @@ a.btn.btn-blue {
 		background-color: #3C677B;
 		border-color: rgba(0,0,0,0.9);
 	}
-
-
-/* ============= Round 1 Game Play ============= */
-
-
-
-.p2 {
-	
-	
-	font-size: 10pt;
-	font-family: 'Fira Mono',sans-serif;
-    text-align: center;  
-	letter-spacing: 5px;
-	line-height: 115%;
-	margin-left: 30px;
-    }
 
 /* ============= FOOTER STYLES ============= */
 /* ============= made a change to footer height ============= */
