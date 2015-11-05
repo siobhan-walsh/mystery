@@ -6,13 +6,14 @@ body {
     
     font-family: 'Oxygen', sans-serif;
     font-weight: 300;
-    
     background: -webkit-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* Standard syntax */
-    
+        background: -o-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Firefox 3.6 to 15 */
+        background: linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* Standard syntax */
+
 }
+
+
 
 p {
 	
@@ -21,15 +22,15 @@ p {
 	font-family: 'Fira Mono',sans-serif;
     text-align:left;  
 	letter-spacing: 5px;
-	line-height: 133%;
+	
 	margin-left: 30px;
     }
 
 h1 {
-   	font-size: 55pt;
+   	font-size: 18pt;
 	font-family: 'Fira Mono', sans-serif;
     text-align: center; 
-	margin-top: 200px; 
+	 
 	font-weight: bold;
 	
 }
@@ -76,7 +77,7 @@ a:hover {
 .header {
     margin:0px;
     width:100%;
-    height:100px;
+    
     display:block;
    
 }
@@ -94,6 +95,10 @@ a:hover {
 
 /* ============= MAIN CONTENT STYLES ============= */
 
+.content {
+    
+ 
+}
 .content h4 {
     text-align:center;   
 }
@@ -388,18 +393,25 @@ a:hover {
 
 /* ============= Round 1 Game Play ============= */
 
-
+.buttonDiv {
+    
+    position:absolute;
+    bottom:20%;
+    
+    
+    
+}
 
 
 .p2 {
 	
 	
-	font-size: 10pt;
+	font-size: 12pt;
 	font-family: 'Fira Mono',sans-serif;
     text-align: left;  
 	letter-spacing: 5px;
 	line-height: 115%;
-	margin-left: 50px;
+
     }
 
 	
@@ -409,14 +421,13 @@ a.btn {
 	background-color: #F5ECEC;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 40px;
+	font-size: 12pt;
 	padding-top: 15px; 
 	padding-bottom: 15px;
 	padding-left: 20px;
 	padding-right: 20px;
 	margin-left:30px;
-	margin-top:200px;
-	margin-bottom:300px;
+	
 	border-radius: 5px;
 	text-align: left;
 	-moz-border-radius: 5px;
@@ -461,13 +472,14 @@ a.btn.btn-blue {
 	}
 
 /* ============= FOOTER STYLES ============= */
-/* ============= made a change to footer height ============= */
+
 .footer {
         
     
     box-shadow: 0px -2px 4px #666666;
     width:100%;
-    height:200px;
+    min-height:10%;
+    max-height:20%;
     background-color:#000000;
     position: fixed;
     bottom: 0;
@@ -476,6 +488,6 @@ a.btn.btn-blue {
 }
 
 .footer img {
-    width:15%;  
+    max-width:15%;  
     margin:2%;
 }
