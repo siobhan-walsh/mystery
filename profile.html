@@ -38,9 +38,9 @@
         
         
         <div id="options">
-        <button id="friends">Friends</button>
-        <button id="messenger">Messenger</button>
-        <button id="logout">Log Out</button>
+            <a href='friend.html'><button id="friends">Friends</button></a>
+            <a href='messenger.html'><button id="messenger">Messenger</button></a>
+            <a href='login.html'><button id="logout">Log Out</button></a>
         </div>
         </div>
         
@@ -60,6 +60,7 @@
 			"use strict";
             var displays = document.getElementById("display");
             var img = document.getElementById("DP");
+
             
             displays.onclick = function(){
                 img.remove();
@@ -74,16 +75,66 @@
                 (buttons).appendChild(upload);
                 (buttons).appendChild(camera);
                 (buttons).appendChild(cancel);
-                buttons.style.width:"100px";
-                buttons.style.height:"50px";
-                buttons.style.position:"fixed";
-                buttons.style.bottom:"430px";
-                buttons.style.left:"60px";
-                buttons.style.clear:"both";
-                buttons.style.float:"centre";
-                buttons.style.width:"70%";
-                buttons.style.margin:"auto";
+                buttons.style.width="100px";
+                buttons.style.height="50px";
+                buttons.style.position="fixed";
+                buttons.style.bottom="430px";
+                buttons.style.left="60px";
+                buttons.style.clear="both";
+                buttons.style.float="centre";
+                buttons.style.width="70%";
+                buttons.style.margin="auto";
                 
+                upload.style.backgroundColor="white";
+                upload.style.borderStyle="solid";
+                upload.style.borderColor="white";
+                upload.style.borderWidth="1px";
+                upload.style.clear="both";
+                upload.style.float="centre";
+                upload.style.width="100%";
+                upload.style.fontSize="12pt";
+                upload.style.marginBottom="20px";
+                upload.style.padding="10px";
+                upload.style.borderRadius="80px";
+                
+                camera.style.backgroundColor="white";
+                camera.style.borderStyle="solid";
+                camera.style.borderColor="white";
+                camera.style.borderWidth="1px";
+                camera.style.clear="both";
+                camera.style.float="centre";
+                camera.style.width="100%";
+                camera.style.fontSize="12pt";
+                camera.style.marginBottom="20px";
+                camera.style.padding="10px";
+                camera.style.borderRadius="80px";
+                
+                cancel.style.backgroundColor="white";
+                cancel.style.borderStyle="solid";
+                cancel.style.borderColor="white";
+                cancel.style.borderWidth="1px";
+                cancel.style.clear="both";
+                cancel.style.float="centre";
+                cancel.style.width="100%";
+                cancel.style.fontSize="12pt";
+                cancel.style.marginBottom="20px";
+                cancel.style.padding="10px";
+                cancel.style.borderRadius="80px";
+                
+                
+                cancel.onclick = function(){
+                    buttons.remove();
+                    document.body.appendChild(displays);
+                    
+                };
+                
+                camera.onclick = function(){
+                    
+                };
+                
+                upload.onclick = function(){
+                    
+                };
                 
             };
           };
