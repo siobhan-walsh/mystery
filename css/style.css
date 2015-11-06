@@ -263,6 +263,34 @@ a:hover {
 	left:100px;
     padding: 10px;
 }
+
+/* ------------- messenger pages ----------------*/
+
+#msg {
+    padding: 1px;
+    width:75%;
+    background-color:"white";
+    position: fixed;
+    bottom: 12vh;
+    left: 10px;
+}
+
+#send {
+    padding: 1px;
+    width:15%;
+    height: 3vh;
+    background-color:"white";
+    position: fixed;
+    bottom: 12vh;
+    margin-left: 83%;
+}
+
+
+
+
+
+
+
 /* ------------- gameOver pages ----------------*/
 #gameOver img{
     width:25vw;
