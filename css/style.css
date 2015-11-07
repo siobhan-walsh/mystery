@@ -24,10 +24,13 @@ p {
 
 	margin-left: 30px;
     }
+	
+
+
 
 h1 {
    	font-size: 18pt;
-	font-family: 'Fira Mono', sans-serif;
+	font-family: 'Roboto', sans-serif;
     text-align: center; 
  
 	font-weight: bold;
@@ -72,6 +75,28 @@ a:hover {
 .right-text {
     text-align:right;   
 }
+/* ============= SPLASH PAGE ============= */
+
+
+.splashlogo {
+	
+	text-align:center;  
+	
+	
+	}
+
+.thumb {
+  
+ 
+  vertical-align: middle; 
+  text-align: center;
+	}
+
+.crimetape {
+    
+ margin-right: 35px;
+  margin-left: -5px;
+	}
 /* ============= HEADER STYLES ============= */
 .header {
     margin:0px;
@@ -185,7 +210,7 @@ a:hover {
 }
 
 #options button{
-	background-color:#76a0b0;
+	background-color:#27A5A1; 
 	border-style:solid;
     border-color:grey;
     border-width: 1px;
@@ -382,19 +407,43 @@ a:hover {
 /* ============= Round 1 Game Play ============= */
 
 
+.p2 {
+	
+	
+	font-size: 10px;
+	font-family: 'Fira Mono',sans-serif;
+    text-align:left;  
+	padding-left: 15px;
+	letter-spacing: 3px;
+	line-height: 135%;
+	margin-left: 10px;
+    }
+
+
+
 .buttonDiv {
     
     position:absolute;
-    bottom:20%;
-    
-    
-    
+    bottom:15%;
+    margin: auto;
+	margin-left: 18px;
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+
 }
+
+
+.lock {
 	
+	margin-right: -8px; 
+   
+	
+	}	
 	
 .h2 {
 	
-	font-size: 12pt;
+	font-size: 10pt;
 	font-family: 'Fira Mono',sans-serif;
     text-align:left; 
 	font-weight: bold;
@@ -403,19 +452,7 @@ a:hover {
 	}
 
 	
-.imgA1 { 
-	padding-top: 5px;
-	padding-left: 0px;
-	padding-right: 5px; 
-	align-contents: right;
-	padding-bottom: 50px;
-	margin:auto;
-    width:auto;
-    height:auto;
-	display:left;
-	z-index: 1; 
 
-	}
 	
 
 a.btn {
@@ -424,13 +461,13 @@ a.btn {
 	background-color: #F5ECEC;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 12pt;
-	padding-top: 15px; 
-	padding-bottom: 15px;
-	padding-left: 20px;
-	padding-right: 20px;
-	margin-left:30px;
-    text-align: left;
+	font-size: 10pt;
+	padding-top: 3px; 
+	padding-bottom: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
+  	margin-left: 5px;
+	margin-right: 3px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -451,16 +488,15 @@ a.btn {
 /* blue button */
 
 a.btn.btn-blue {
-	background-color: #699DB6;
+	background-color: #27A5A1;
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-    padding-top: 15px; 
-	padding-bottom: 15px;
-	padding-left: 20px;
-	margin-left: 3px;
-	padding-right: 20px;
+    padding-top: 3px; 
+	padding-bottom: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
 	color: #FFF;
-	text-align: right;
+	
 }
 
 	a.btn.btn-blue:hover {
@@ -473,6 +509,11 @@ a.btn.btn-blue {
 		border-color: rgba(0,0,0,0.9);
 	}
 
+	.content hspace {
+	
+	}
+	
+	
 
 /* ============= FOOTER STYLES ============= */
 .footer {
