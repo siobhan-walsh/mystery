@@ -231,23 +231,23 @@ a:hover {
     border-width: 1px;
     background-color:black;
     opacity:0.15;
-    height:40vh;
+    height:37vh;
     width:90vw;
     position: fixed;
-    top:110px;
+    top:139px;
     left:18px;
     z-index:0px;
 
 }
 
 #display img{
-	top:170px;
+	top:190px;
     opacity:0.95;
 	z-index:2px;
 	width:45vw;
 	height:25vh;
 	position:fixed;
-	left:100px;
+	left:90px;
     padding: 10px;
 }
 
@@ -285,7 +285,7 @@ a:hover {
 	width:45vw;
 	height:25vh;
 	position:fixed;
-	left:100px;
+	left:90px;
     padding: 10px;
 }
 
