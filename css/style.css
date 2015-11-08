@@ -311,10 +311,22 @@ a:hover {
 }
 
 
+/* ------------- friend page ----------------*/
 
+#FriendList img{
+    width:15%;
+    margin-left: 10%;
+    padding:10px;
+}
 
-
-
+#list {
+    width:45%;
+    margin-bottom: 85%;
+    margin-top:0vw;
+    float:right;
+    padding:15px;
+    
+}
 
 /* ------------- gameOver pages ----------------*/
 #gameOver img{
