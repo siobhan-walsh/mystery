@@ -7,40 +7,43 @@
         <title>Login</title>
         <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/mediaqueries.css">
     </head>
 
     <body> 
         
-        
-        <div class = 'header'>
-            <div><img src = 'img/logo.png'></div>
-        
-        </div>
-        
-        
-        <div class = 'content'>
-          
-            <div class= 'hspace message'>
-                <h2>Log in</h2>
-                <p>Don't have an account yet? <a href = 'signup.html'>Sign up!</a></p>
+        <div id='device'>  
+            <div class='scroll'>
+                <div class = 'header'>
+                    <div><img src = 'img/logo.png'></div>
+
+                </div>
+
+
+                <div class = 'content'>
+
+                    <div class= 'hspace message'>
+                        <h2>Log in</h2>
+                        <p>Don't have an account yet? <a href = 'signup.html'>Sign up!</a></p>
+                    </div>
+                    <div class='center'>
+
+
+                       <input type='text' id='username' class='textbox' placeholder="username">
+                        <input type='password' id='password' class='textbox' placeholder="password">
+                        <p class='right-text '><small>Forgot your password?</small></p>
+                        <img src='img/enter-btn.png' id='enter'>
+                        <input type='button' id='fbbutton' class='buttons' value="Login through facebook">
+                    </div>
+
+                </div>
             </div>
-            <div class='center'>
-              
-                
-               <input type='text' id='username' class='textbox' placeholder="username">
-                <input type='password' id='password' class='textbox' placeholder="password">
-                <p class='right-text '><small>Forgot your password?</small></p>
-                <img src='img/enter-btn.png' id='enter'>
-                <input type='button' id='fbbutton' class='buttons' value="Login through facebook">
+        
+            <div class = 'footer'>
+
             </div>
-            
-        </div>
-        
-        
-        <div class = 'footer'>
         
         </div>
-        
         
     <script src="js/buttons.js"></script>    
     <script>

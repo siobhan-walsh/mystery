@@ -7,49 +7,51 @@
         <title>Sign Up</title>
         <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/mediaqueries.css">
     </head>
 
     <body> 
         
-        
-        <div class = 'header'>
-            <div><img src = 'img/logo.png'></div>
-        
-        </div>
-        
-        
-        <div class = 'content'>
-          
-            <div class= 'hspace'>
-                <h2>Sign Up</h2>
-                <p>Already have an account? <a href = 'login.html'>Log in!</a></p>
+        <div id='device'>  
+            <div class='scroll'>
+                <div class = 'header'>
+                    <div><img src = 'img/logo.png'></div>
+
+                </div>
+
+
+                <div class = 'content'>
+
+                    <div class= 'hspace'>
+                        <h2>Sign Up</h2>
+                        <p>Already have an account? <a href = 'login.html'>Log in!</a></p>
+                    </div>
+                    <div class='center'>
+
+                        <input type='text' id='fname' class='textbox'  placeholder="first name" oninput ="checkname(this);" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
+
+                        <input type='text' id='lname' class='textbox' placeholder="last" oninput ="checkname(this);" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$'>
+
+                        <input type='email' id='email' class='textbox' placeholder="email@example.com" maxlength="70">
+
+                        <input type='text' id='username' class='textbox' placeholder="username" required = 'true' oninput ="checkname(this);" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
+
+                        <input type='password' id='pw' class='textbox' placeholder="password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" onblur ="checkpass(this);" >
+
+                        <input type='password' id='pwRetype' class='textbox' placeholder="retype password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" onblur ="checkpass(this);">
+
+                        <input type='button' id='signup'  class='buttons' value="Sign up!">
+                        <input type='button' id='fbbutton' class='buttons' value="Sign up with facebook">
+                    </div>
+
+                </div>
+
             </div>
-            <div class='center'>
-              
-                <input type='text' id='fname' class='textbox'  placeholder="first name" oninput ="checkname(this);" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
-                
-                <input type='text' id='lname' class='textbox' placeholder="last" oninput ="checkname(this);" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$'>
-                
-                <input type='email' id='email' class='textbox' placeholder="email@example.com" maxlength="70">
-                
-                <input type='text' id='username' class='textbox' placeholder="username" required = 'true' oninput ="checkname(this);" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
-                
-                <input type='password' id='pw' class='textbox' placeholder="password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" onblur ="checkpass(this);" >
-               
-                <input type='password' id='pwRetype' class='textbox' placeholder="retype password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" onblur ="checkpass(this);">
-                
-                <input type='button' id='signup'  class='buttons' value="Sign up!">
-                <input type='button' id='fbbutton' class='buttons' value="Sign up with facebook">
+            <div class = 'footer'>
+
             </div>
-            
-        </div>
-        
-        
-        <div class = 'footer'>
         
         </div>
-        
-        
     <script src="js/buttons.js"></script>    
     <script>
         window.onload = function(){

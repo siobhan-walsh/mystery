@@ -231,25 +231,32 @@ a:hover {
     border-width: 1px;
     background-color:black;
     opacity:0.15;
-    height:37vh;
-    width:90vw;
-    position: fixed;
+    width:90%;
+    
+    /*
+    position: absolute;
     top:139px;
     left:18px;
     z-index:0px;
-
+    */
 }
 
+/*
 #display img{
-	top:190px;
-    opacity:0.95;
-	z-index:2px;
-	width:45vw;
-	height:25vh;
-	position:fixed;
+	
+    opacity:1;
+	
+	width:45%;
+    margin: 0 25%;
+	
+    top:190px;
+    z-index:2px;
+	position:absolute;
 	left:90px;
+   
     padding: 10px;
 }
+ */
 
 
 #buttons{
@@ -281,11 +288,13 @@ a:hover {
 
 #DP img{
 	opacity:0.95;
-	z-index:2px;
-	width:45vw;
-	height:25vh;
+    margin:0 25%;
+
+	width:45%;
+ /*
 	position:fixed;
 	left:90px;
+    */
     padding: 10px;
 }
 
@@ -436,22 +445,26 @@ a:hover {
 .buttonDiv {
     
     position:absolute;
-    bottom:15%;
+    bottom:14%;
+    width:100%;
     margin: auto;
-	margin-left: 18px;
+	
     position: absolute;
     text-align: center;
-    display: inline-block;
+    
 
 }
 
+.buttonDiv img a {
+    margin:0 8%;
+}
 
 .lock {
 	
-	margin-right: -8px; 
-   
+   vertical-align:bottom;
+   width:30%;
 	
-	}	
+}	
 	
 .h2 {
 	
@@ -474,12 +487,8 @@ a.btn {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 10pt;
-	padding-top: 3px; 
-	padding-bottom: 3px;
-	padding-left: 8px;
-	padding-right: 8px;
-  	margin-left: 5px;
-	margin-right: 3px;
+	width:26%;
+  	padding: 8px 0;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -503,10 +512,8 @@ a.btn.btn-blue {
 	background-color: #27A5A1;
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-    padding-top: 3px; 
-	padding-bottom: 3px;
-	padding-left: 8px;
-	padding-right: 8px;
+    width:26%;
+  	padding: 8px 0;
 	color: #FFF;
 	
 }
@@ -554,8 +561,7 @@ a.btn.btn-blue {
     
     box-shadow: 0px -2px 4px #666666;
     width:100%;
-    min-height:10%;
-    max-height:20%;
+    
     background-color:#000000;
     position: fixed;
     bottom: 0;
