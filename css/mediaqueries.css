@@ -13,14 +13,7 @@
 }
 
 
-@media only screen and (min-width: 40.063em){ 
-    
-    body {
-        
-        background:#ffffff;
-        
-    }
-    
+@media only screen and (min-width: 375pt) {  
     #device {
 
         margin:20px 80px;
@@ -32,8 +25,7 @@
         width:375px;
         display:block;
         position:relative;
-
-       background: -webkit-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; 
+        background: -webkit-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; 
         background: -o-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; 
         background: -moz-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed;
         background: linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed;

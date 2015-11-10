@@ -26,11 +26,11 @@ p {
     }
 	
 
-
+/* use Fira Mono for all headings look at top of character html to get link to put on your page*/
 
 h1 {
-   	font-size: 18pt;
-	font-family: 'Roboto', sans-serif;
+   	font-size: 100%;
+	font-family: 'Fira Mono',sans-serif;
     text-align: center; 
  
 	font-weight: bold;
@@ -231,32 +231,25 @@ a:hover {
     border-width: 1px;
     background-color:black;
     opacity:0.15;
-    width:90%;
-    
-    /*
-    position: absolute;
+    height:37vh;
+    width:90vw;
+    position: fixed;
     top:139px;
     left:18px;
     z-index:0px;
-    */
+
 }
 
-/*
 #display img{
-	
-    opacity:1;
-	
-	width:45%;
-    margin: 0 25%;
-	
-    top:190px;
-    z-index:2px;
-	position:absolute;
+	top:190px;
+    opacity:0.95;
+	z-index:2px;
+	width:45vw;
+	height:25vh;
+	position:fixed;
 	left:90px;
-   
     padding: 10px;
 }
- */
 
 
 #buttons{
@@ -288,13 +281,11 @@ a:hover {
 
 #DP img{
 	opacity:0.95;
-    margin:0 25%;
-
-	width:45%;
- /*
+	z-index:2px;
+	width:45vw;
+	height:25vh;
 	position:fixed;
 	left:90px;
-    */
     padding: 10px;
 }
 
@@ -401,11 +392,26 @@ a:hover {
 }
 /* ------------- character page ----------------*/
 
+.imgA1 {
+	padding-top: 5%;
+	padding-left: 10%;
+	padding-right: 90%;
+	max-width: 5%;
+	margin:auto;
+    width:auto;
+    height:auto;
+	display:block;
+   
+  
+	}
+
+
 
 .contentimg {
-	padding-top: 35px;
-	padding-left: 50px;
-	padding-bottom: 50px;
+	padding-top: 5%;
+	padding-left: 10%;
+	padding-right: 90%;
+	width: 100%;
 	margin:auto;
     width:auto;
     height:auto;
@@ -417,7 +423,7 @@ a:hover {
 .charcontent{
 	
 	
-	font-size: 11pt;
+	font-size: 150%;
 	font-family: 'Fira Mono',sans-serif;
     text-align:left;  
 	letter-spacing: 1px;
@@ -425,6 +431,17 @@ a:hover {
 	margin-left: 30px;
     }
 	
+	
+.chartable {
+	
+	width: 100%;
+	height: 100%; 
+	align: center;
+	valign: center;
+	margin-bottom: auto;
+	border: 0; 
+	
+	}
 /* ============= Round 1 Game Play ============= */
 
 
@@ -445,26 +462,22 @@ a:hover {
 .buttonDiv {
     
     position:absolute;
-    bottom:14%;
-    width:100%;
+    bottom:15%;
     margin: auto;
-	
+	margin-left: 18px;
     position: absolute;
     text-align: center;
-    
+    display: inline-block;
 
 }
 
-.buttonDiv img a {
-    margin:0 8%;
-}
 
 .lock {
 	
-   vertical-align:bottom;
-   width:30%;
+	margin-right: -8px; 
+   
 	
-}	
+	}	
 	
 .h2 {
 	
@@ -480,15 +493,19 @@ a:hover {
 
 	
 
-a.btn {
+.btn {
 	display: inline-block;
 	color: #666;
 	background-color: #F5ECEC;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 10pt;
-	width:26%;
-  	padding: 8px 0;
+	padding-top: 3px; 
+	padding-bottom: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
+  	margin-left: 5px;
+	margin-right: 3px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -496,34 +513,36 @@ a.btn {
 	border-bottom-width: 3px;
 }
 
-	a.btn:hover {
+.btn:hover {
 		background-color: #e3e3e3;
 		border-color: rgba(0,0,0,0.5);
 	}
 	
-	a.btn:active {
+.btn:active {
 		background-color: #CCC;
 		border-color: rgba(0,0,0,0.9);
 	}
 
 /* blue button */
 
-a.btn.btn-blue {
+.btn.btn-blue {
 	background-color: #27A5A1;
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-    width:26%;
-  	padding: 8px 0;
+    padding-top: 3px; 
+	padding-bottom: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
 	color: #FFF;
 	
 }
 
-	a.btn.btn-blue:hover {
+.btn.btn-blue:hover {
 		background-color: #4F87A2;
 		border-color: rgba(0,0,0,0.5);
 	}
 	
-	a.btn.btn-blue:active {
+.btn.btn-blue:active {
 		background-color: #3C677B;
 		border-color: rgba(0,0,0,0.9);
 	}
@@ -561,7 +580,8 @@ a.btn.btn-blue {
     
     box-shadow: 0px -2px 4px #666666;
     width:100%;
-    
+    min-height:10%;
+    max-height:20%;
     background-color:#000000;
     position: fixed;
     bottom: 0;
