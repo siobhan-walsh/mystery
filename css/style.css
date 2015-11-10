@@ -118,10 +118,7 @@ a:hover {
 }
 
 /* ============= MAIN CONTENT STYLES ============= */
-.content{
-    
-    
-}
+
 
 .content h4 {
     text-align:center;   
@@ -601,7 +598,7 @@ a:hover {
 .p2 {
 	
 	
-	font-size: 10px;
+	font-size: 10pt;
 	font-family: 'Fira Mono',sans-serif;
     text-align:left;  
 	padding-left: 15px;
@@ -616,14 +613,23 @@ a:hover {
     
     position:fixed;
     bottom:15%;
+	width:100%;
+	padding:4% 0;
     margin: auto;
-	margin-left: 18px;
+	display:block;
+	background-color:rgba(255,255,255,0.4);
 
-    text-align: center;
     display: inline-block;
 
 }
 
+.invisi{
+	display:block;
+	background-color:#F21E21;
+	width:10%;
+	float:left;
+	height:20px;	
+}
 
 .lock {
 	
@@ -664,6 +670,7 @@ a:hover {
 	-webkit-border-radius: 5px;
 	border: 1px solid rgba(0,0,0,0.3);
 	border-bottom-width: 3px;
+	
 }
 
 .btn:hover {
@@ -705,23 +712,23 @@ a:hover {
 
 .sin{
  
- 	margin-top: 5px;
-    margin:6%;
-	overflow-scrolling: auto;
+ 	width:100;
 	}	
+	
+	.sin img {
+		width:100%;
+		margin:auto;	
+	}
 
 .p3 {
 	
 	
-	font-size: 10px;
+	font-size: 10pt;
 	font-family: 'Fira Mono',sans-serif;
     text-align:left;  
-	padding-left: 15px;
-	margin-top: 10px;
-	margin-top: -15px;
+	padding: 4% 4%;
 	letter-spacing: 3px;
-	line-height: 135%;
-	margin-left: 10px;
+
 	 -webkit-overflow-scrolling: touch
     }
 /* ============= FOOTER STYLES ============= */
