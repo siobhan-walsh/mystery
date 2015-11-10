@@ -339,6 +339,42 @@ a:hover {
     
 }
 
+
+/* ------------- Setting page ----------------*/
+
+#privacy {
+    background-color:#599DAC;
+    color:#ffffff;
+    border:none;
+    clear:both;
+    float:inherit;
+    width:70%;
+    font-size:11pt;
+    margin-bottom:30px;
+    margin-top: 25px;
+    padding:10px;
+    border-radius:4px;
+}
+
+#termOfUse {
+    background-color:#599DAC;
+    color:#ffffff;
+    border:none;
+    clear:both;
+    float:inherit;
+    width:70%;
+    font-size:11pt;
+    margin-bottom:30px;
+    padding:10px;
+    border-radius:4px;
+    
+}
+
+#set {
+    
+    float:inherit;
+    margin-left:92px;
+}
 /* ------------- gameOver pages ----------------*/
 #gameOver img{
     width:25vw;
