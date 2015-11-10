@@ -134,6 +134,46 @@
                 };
                 
                 upload.onclick = function(){
+                    window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '902879339797602',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+      console.log(FB);
+      
+     // var but = document.getElementById("login");
+     // var userinfo = document.getElementById("userinfo");
+     
+      FB.login(function(resp){
+        console.log(resp);
+          if(resp.status == "connected"){
+            //alert("You Logged in");
+              FB.api("/me", function(resp2){
+                console.log(resp2);
+                  userinfo.innerHTML = "Hi " + resp2.name;
+              });
+              
+              FB.api("/me/picture", function(resp3){
+                console.log(resp3);
+                  var new_img = document.createElement("img");
+                  new_img.src = resp3.data.url;
+                  userinfo.appendChild(DP);
+              });
+          }
+          if(resp.status == "unknown") {
+            //alert("Go log in!");
+          }
+      });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
                     
                 };
                 
@@ -142,5 +182,6 @@
          
   
     </script>  
+
     </body>
 </html>
