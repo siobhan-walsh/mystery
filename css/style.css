@@ -314,17 +314,28 @@ a:hover {
 /* ------------- friend page ----------------*/
 
 #FriendList img{
-    width:15%;
-    margin-left: 10%;
-    padding:10px;
+    width: 65%;
+    height: 65%;
+    padding:10%
 }
 
+#FriendList{
+    position:fixed;
+    width:15%;
+    left:10%;
+    padding:1vh;
+    margin:1vh;
+    
+}
+
+
 #list {
-    width:45%;
-    margin-bottom: 85%;
-    margin-top:0vw;
+    position:fixed;
+    width:25%;
+    top:23%;
+    right:0;
     float:right;
-    padding:15px;
+    padding:30%;
     
 }
 
