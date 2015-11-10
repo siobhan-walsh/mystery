@@ -487,7 +487,7 @@ a:hover {
 .charcontent{
 	
 	
-	font-size: 150%;
+    font-size:16pt;
 	font-family: 'Fira Mono',sans-serif;
     text-align:left;  
 	letter-spacing: 1px;
@@ -506,6 +506,7 @@ a:hover {
 	border: 0; 
 	
 	}
+
 /* ============= Round 1 Game Play ============= */
 
 
@@ -525,11 +526,11 @@ a:hover {
 
 .buttonDiv {
     
-    position:absolute;
+    position:fixed;
     bottom:15%;
     margin: auto;
 	margin-left: 18px;
-    position: absolute;
+
     text-align: center;
     display: inline-block;
 
@@ -649,11 +650,27 @@ a:hover {
     background-color:#000000;
     position: fixed;
     bottom: 0;
+    z-index:1;
 	
          
 }
 
+
 .footer img {
     max-width:15%;  
     margin:2%;
+}
+.underfooter {
+        
+    
+    display:inline-block;
+    width:100%;
+
+    
+    min-height:100px;
+    max-height:20%;
+    z-index:2;
+
+	
+         
 }

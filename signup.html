@@ -14,9 +14,7 @@
     </head>
 
     <body> 
-        
-        <div id='device'>  
-            <div class='scroll'>
+
                 <div class = 'header'>
                     <div><img src = 'img/logo.png'></div>
 
@@ -49,12 +47,12 @@
 
                 </div>
 
-            </div>
+
             <div class = 'footer'>
 
             </div>
         
-        </div>
+
     <script src="js/buttons.js"></script>    
     <script>
         $(document).ready(function(){
@@ -148,10 +146,7 @@
                         input.setCustomValidity("Please enter a password with 1 Uppercase, 1 lowercase, and a number");
                         
                     } else if(pw.value != pwRetype.value){
-                        
-                        console.log("THEY DOnT MATCH");
-                        console.log("pw", pw.value);
-                        console.log("pwRetype", pwRetype.value);
+                 
                         input.style.borderColor = "#ffccee";
                         input.setCustomValidity("Your passwords don't match");
                         
@@ -160,7 +155,7 @@
                         input.style.borderColor = "#ffffff";
                         input.setCustomValidity("");
                         validpw = true;
-                        console.log("the pw good", validpw);
+                
                         
                     }
                     
@@ -171,23 +166,23 @@
                     if(input.validity.patternMismatch) {
                         
                         input.setCustomValidity("Please enter a name between 2-20 characters");
-                        console.log("the things good", validnames);
+                   
 
                       } 
 
                        else if(input.validity.valueMissing) {
                            input.setCustomValidity("You must enter a name!");
-                           console.log("the things good", validnames);
+             
 
                       } else if(input.validity.typeMismatch){
                            input.setCustomValidity("Please enter a valid email address");
-                          console.log("the things good", validnames);
+              
                           
                       }else {
                           input.setCustomValidity("");
                           
                           validnames = true;
-                          console.log("the things good", validnames);
+            
                 
                           
                       }
