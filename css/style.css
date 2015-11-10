@@ -484,28 +484,116 @@ a:hover {
   
 	}
 
-.charcontent{
+.charrow {
+	
+	width:100%;
+	margin:6% 0;	
+}
+
+.htitle{
 	
 	
     font-size:16pt;
 	font-family: 'Fira Mono',sans-serif;
-    text-align:left;  
+
 	letter-spacing: 1px;
 	line-height: 110%;
-	margin-left: 30px;
+	text-align:center;
     }
 	
-	
-.chartable {
-	
-	width: 100%;
-	height: 100%; 
-	align: center;
-	valign: center;
-	margin-bottom: auto;
-	border: 0; 
-	
+	.charname {
+			
+		font-size:14pt;
+		font-family: 'Fira Mono',sans-serif;
+		margin-left:2%;
 	}
+	
+.charcontent{	
+	
+	width:70%;
+    font-size:10pt;
+	font-family: 'Fira Mono',sans-serif;
+    text-align:left;  
+	letter-spacing: 1px;
+	float:left;
+
+    }
+	
+.charimg {
+	width:20%;
+	float:left;
+	margin-left:2%;
+}
+
+.plusimg {
+	width:8%;	
+	vertical-align:top;
+	float:left;
+}
+
+.buttonInvite {
+	width:100%;	
+	background-color:#A4EDBC;
+	clear:both;
+	float:left;
+	margin:2% 0;
+	
+}
+
+.invitebtn {
+	display: inline-block;
+	color: #666;
+	background-color: #F5ECEC;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 10pt;
+	padding-top: 3px; 
+	padding-bottom: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
+  	margin-left: 5px;
+	margin-right: 3px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-bottom-width: 3px;
+}
+
+.invitebtn:hover {
+		background-color: #e3e3e3;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+.invitebtn:active {
+		background-color: #CCC;
+		border-color: rgba(0,0,0,0.9);
+	}
+
+/* blue button */
+
+.btn.btn-blue {
+	background-color: #27A5A1;
+	border-color: rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+    padding-top: 3px; 
+	padding-bottom: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
+	color: #FFF;
+	
+}
+
+.btn.btn-blue:hover {
+		background-color: #4F87A2;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+.btn.btn-blue:active {
+		background-color: #3C677B;
+		border-color: rgba(0,0,0,0.9);
+	}
+
 
 /* ============= Round 1 Game Play ============= */
 
@@ -612,9 +700,6 @@ a:hover {
 		border-color: rgba(0,0,0,0.9);
 	}
 
-	.content hspace {
-	
-	}
 	
 /* ============= THEME ABOUT PAGE ============= */
 
