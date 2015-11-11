@@ -609,13 +609,13 @@ a:hover {
 	margin-left: 20%;
 	
 	}
-.buttonDiv3{
+/*.buttonDiv3{
     
     position:fixed;
-    bottom:30%;
 	width:100%;
-	padding:1% 0;
-    margin: auto;
+	padding:2% 2% 2% 2%;
+    margin: 0% 0% 50% 50%;
+	text-align: center;
     display: inline-block;
 	background-color:rgba(255,255,255,0.4);
 
@@ -624,13 +624,17 @@ a:hover {
 
 .btn1 {
 	display: inline-block;
+	float:left;
 	color: #666;
 	background-color: #eee;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 12px;
-	padding: 1% 1%;
-	
+	padding: 2% 2%;
+	margin-right: 54%;
+	margin-left: 4%;
+	margin-bottom: -40px;
+	margin-top: 5%;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -655,13 +659,13 @@ a:hover {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 12px;
-	padding: 1% 1%;
-	margin: 0 0 19% 19%;
+	padding: 2% 2%;
+	margin-right: 6%;
+	margin-top: 1%;
+	float: right;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
-	
-	
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
 	color: #FFF;
@@ -895,9 +899,9 @@ a:hover {
     width:100%;
 
     
-    min-height:300px;
+    min-height:100px;
     max-height:100%;
-    z-index:2;
+    z-index:-2;
 
 	
          
