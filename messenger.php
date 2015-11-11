@@ -1,46 +1,20 @@
-<!DOCTYPE html>
-<html>
-    
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1.0">
-        <title>profile</title>
-        <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        
+<?php
 
-    </head>
+	include("head.php");
+	include("header.php");
 
-    <body> 
-        
+?>
 
-        
-        <div class = 'header'>
-            <div><img src = 'img/logo.png'></div>
-        
-        </div>
-        
         
         <div class = 'content'>
             <h4>Messenger</h4>
-        <div>
-            <input id="msg">
-            <button id="send">Send</button>
-            
-        </div>
+            <div>
+                <input id="msg">
+                <button id="send">Send</button>
+                
+            </div>
         </div>
         
- 
-        
-        <div class = 'footer'>
-            <a href='index.html'><img src = 'img/homeicon.png' alt='home'></a>
-            <a href='profile.html'><img src = 'img/profileicon.png' alt='profile'></a>
-            <a href='notifications.html'><img src = 'img/notificationsicon.png' alt='notifications'></a>
-            <a href = 'game.html'><img src = 'img/gameicon.png' alt='game'></a>
-            <a href= 'settings.html'><img src = 'img/settingsicon.png' alt='settings'></a>
-        
-        </div>
-
     <script>
         window.onload = function(){
 	           "use restrict";
@@ -74,5 +48,4 @@
          
   
     </script>  
-    </body>
-</html>
+  <?php include("footer.php"); ?>

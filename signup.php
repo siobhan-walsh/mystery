@@ -1,31 +1,14 @@
-<!DOCTYPE html>
-<html>
-  
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1.0">
-        <title>Sign Up</title>
-        <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/mediaqueries.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    </head>
+<?php
 
-    <body> 
-        
-        <div id='device'>  
-            <div class='scroll'>
-                <div class = 'header'>
-                    <div><img src = 'img/logo.png'></div>
+	include("head.php");
+	include("header.php");
 
-                </div>
-
-
+?>
                 <div class = 'content'>
 
                     <div class= 'hspace'>
                         <h2>Sign Up</h2>
-                        <p>Already have an account? <a href = 'login.html'>Log in!</a></p>
+                        <p>Already have an account? <a href = 'login.php'>Log in!</a></p>
                     </div>
                     <div class='center'>
 
@@ -47,12 +30,10 @@
 
                 </div>
 
-            </div>
             <div class = 'footer'>
 
             </div>
-        
-        </div>
+
     <script src="js/buttons.js"></script>    
     <script>
         $(document).ready(function(){

@@ -1,61 +1,34 @@
-<!DOCTYPE html>
-<html>
-    
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1.0">
-        <title>profile</title>
-        <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/mediaqueries.css">
+<?php
+
+	include("head.php");
+	include("header.php");
+
+?>
+
+    <div class = 'content'>
+        <h4>Profile</h4>
+
+        <div id = "DP">
+            <img id = 'dpimg' src="img/characters/character1.png"/>
+        </div>
         
+        <!-- i don't think it's necessary to have two images. just change the src of the first one
+        <div id = "display">
 
-    </head>
+            <img src="img/characters/character1.png"/>
 
-    <body> 
-        
-
-
-                <div class = 'header'>
-                    <div><img src = 'img/logo.png'></div>
-
-                </div>
-
-
-                <div class = 'content'>
-                    <h4>Profile</h4>
-
-                    <div id = "DP">
-                        <img id = 'dpimg' src="img/characters/character1.png"/>
-                    </div>
-                    
-                    <!-- i don't think it's necessary to have two images. just change the src of the first one
-                    <div id = "display">
-
-                        <img src="img/characters/character1.png"/>
-
-                     </div>
-                    -->
+         </div>
+        -->
 
 
 
 
-                    <div id="options">
-                        <a href='friend.html'><button id="friends">Friends</button></a>
-                        <a href='messenger.html'><button id="messenger">Messenger</button></a>
-                        <a href='login.html'><button id="logout">Log Out</button></a>
-                    </div>
-                </div>
-
-            <div class = 'footer'>
-                <a href='index.html'><img src = 'img/homeicon.png' alt='home'></a>
-                <a href='profile.html'><img src = 'img/profileicon.png' alt='profile'></a>
-                <a href='notifications.html'><img src = 'img/notificationsicon.png' alt='notifications'></a>
-                <a href = 'game.html'><img src = 'img/gameicon.png' alt='game'></a>
-                <a href= 'settings.html'><img src = 'img/settingsicon.png' alt='settings'></a>
-
-            </div>
-
+        <div id="options">
+            <a href='friend.php'><button id="friends">Friends</button></a>
+            <a href='messenger.php'><button id="messenger">Messenger</button></a>
+            <a href='login.php'><button id="logout">Log Out</button></a>
+        </div>
+    </div>
     <script>
         window.onload = function(){
 			"use strict";
@@ -235,5 +208,4 @@ var_dump($response);
         
         
         </script>
-    </body>
-</html>
+<?php include("footer.php"); ?>

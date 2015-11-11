@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html>
-    
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1.0">
-        <title>login-options</title>
-        <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-    </head>
+<?php
+	include("head.php");
+?>
 
     <body> 
         
@@ -25,8 +18,8 @@
             <div class='login-buttons'>
                 
                 
-                <a href = 'login.html'><input type='button' class='buttons' id='loginbutton' value="Login"></a>
-                <a href = 'signup.html'><input type='button' id='signupbutton' class='buttons' value="Sign up"></a>
+                <a href = 'login.php'><input type='button' class='buttons' id='loginbutton' value="Login"></a>
+                <a href = 'signup.php'><input type='button' id='signupbutton' class='buttons' value="Sign up"></a>
                 <input type='button' id='fbbutton' class='buttons' value="Login through facebook">
             </div>
             

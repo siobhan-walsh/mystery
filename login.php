@@ -1,25 +1,7 @@
-<!DOCTYPE html>
-<html>
-    
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1.0">
-        <title>Login</title>
-        <link href='https://fonts.googleapis.com/css?family=Fira+Mono' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/mediaqueries.css">
-    </head>
-
-    <body> 
-        
-        <div id='device'>  
-            <div class='scroll'>
-                <div class = 'header'>
-                    <div><img src = 'img/logo.png'></div>
-
-                </div>
-
-
+<?php
+	include("head.php");
+	include("header.php");
+?>
                 <div class = 'content'>
 
                     <div class= 'hspace message'>
@@ -37,13 +19,13 @@
                     </div>
 
                 </div>
-            </div>
+        
         
             <div class = 'footer'>
 
             </div>
         
-        </div>
+  
         
     <script src="js/buttons.js"></script>    
     <script>
