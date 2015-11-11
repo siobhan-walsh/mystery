@@ -1,5 +1,20 @@
 /* style for mystery --- view site in mobile view for best results*/
 
+
+/* ============= BUTTON STUFF ============= */
+/*theme about page
+/*.btn.btn-blue {
+	background-color: #27A5A1;
+	border-color: rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+ 	margin:0% 0% 0% 45%; 
+	color: #FFF; }*/
+
+
+
+
+
+
 body {
     margin:0;
     padding:0;
@@ -609,27 +624,20 @@ a:hover {
 
 
 
-.buttonDiv {
+.buttonDiv2 {
     
     position:fixed;
     bottom:15%;
 	width:100%;
-	padding:4% 0;
+	padding:1% 0;
     margin: auto;
 	display:block;
-	background-color:rgba(255,255,255,0.4);
-
+	text-align: center;
     display: inline-block;
 
 }
 
-.invisi{
-	display:block;
-	background-color:#F21E21;
-	width:10%;
-	float:left;
-	height:20px;	
-}
+
 
 .lock {
 	
@@ -689,10 +697,7 @@ a:hover {
 	background-color: #27A5A1;
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-    padding-top: 3px; 
-	padding-bottom: 3px;
-	padding-left: 8px;
-	padding-right: 8px;
+ 	margin:0% 0% 0% 49%; 
 	color: #FFF;
 	
 }
@@ -731,6 +736,68 @@ a:hover {
 
 	 -webkit-overflow-scrolling: touch
     }
+	
+.buttonDiv{
+    
+    position:fixed;
+    bottom:15%;
+	width:100%;
+	padding:1% 0;
+    margin: auto;
+    display: inline-block;
+	background-color:rgba(255,255,255,0.4);
+
+}
+
+.themebtn.btn-bluetheme {
+	background-color: #27A5A1;
+	border-color: rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+ 	margin:0% 0% 0% 49%; 
+	color: #FFF;
+	
+}
+.themebtn.btn-blue:hover {
+		background-color: #4F87A2;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+.themebtn.btn-blue:active {
+		background-color: #3C677B;
+		border-color: rgba(0,0,0,0.9);
+	}
+
+
+.themebtn {
+	display: inline-block;
+	color: #666;
+	background-color: #F5ECEC;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 10pt;
+	padding-top: 3px; 
+	padding-bottom: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
+  	margin-left: 5px;
+	margin-right: 3px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-bottom-width: 3px;
+	
+}
+
+.themebtn:hover {
+		background-color: #e3e3e3;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+.themebtn:active {
+		background-color: #CCC;
+		border-color: rgba(0,0,0,0.9);
+	}
 /* ============= FOOTER STYLES ============= */
 .footer {
         
