@@ -2,13 +2,73 @@
 
 
 /* ============= BUTTON STUFF ============= */
-/*theme about page
-/*.btn.btn-blue {
-	background-color: #27A5A1;
+/*customize for your page, i made them links on my page not buttons, its a sudo class so you gotta name the blue one with the white button name like i did below
+
+*****container
+
+.buttonDiv{
+    
+    position:fixed;
+    bottom:15%;
+	width:100%;
+	padding:1% 0;
+    margin: auto;
+    display: inline-block;
+	====>>> some pages ====>>> background-color:rgba(255,255,255,0.4);
+
+}
+
+
+
+/*******white button*********
+
+.btn {
+	display: inline-block;
+	color: #666;
+	background-color: #eee;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	padding: 10px 30px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-bottom-width: 3px;
+	
+}
+
+.btn:hover {
+		background-color: #e3e3e3;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+.btn:active {
+		background-color: #CCC;
+		border-color: rgba(0,0,0,0.9);
+	}
+	
+/******blue button*********
+btn.btn-blue {
+	background-color: #699DB6;
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
- 	margin:0% 0% 0% 45%; 
-	color: #FFF; }*/
+	color: #FFF;
+}
+
+btn.btn-blue:hover {
+		background-color: #4F87A2;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+btn.btn-blue:active {
+		background-color: #3C677B;
+		border-color: rgba(0,0,0,0.9);
+	}
+
+
+
+*/
 
 
 
@@ -524,9 +584,10 @@ a:hover {
 	
 	width:70%;
     font-size:10pt;
+	margin-top: 1%;
 	font-family: 'Fira Mono',sans-serif;
     text-align:left;  
-	letter-spacing: 1px;
+	letter-spacing: 3px;
 	float:left;
 
     }
@@ -543,68 +604,86 @@ a:hover {
 	float:left;
 }
 
-.buttonInvite {
-	width:100%;	
-	background-color:#A4EDBC;
-	clear:both;
-	float:left;
-	margin:2% 0;
+.charname {
 	
-}
+	margin-left: 20%;
+	
+	}
+.buttonDiv3{
+    
+    position:fixed;
+    bottom:30%;
+	width:100%;
+	padding:1% 0;
+    margin: auto;
+    display: inline-block;
+	background-color:rgba(255,255,255,0.4);
 
-.invitebtn {
+}
+/*******character white button*********/
+
+.btn1 {
 	display: inline-block;
 	color: #666;
-	background-color: #F5ECEC;
+	background-color: #eee;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 10pt;
-	padding-top: 3px; 
-	padding-bottom: 3px;
-	padding-left: 8px;
-	padding-right: 8px;
-  	margin-left: 5px;
-	margin-right: 3px;
+	font-size: 12px;
+	padding: 1% 1%;
+	
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border: 1px solid rgba(0,0,0,0.3);
 	border-bottom-width: 3px;
+	
 }
 
-.invitebtn:hover {
+.btn1:hover {
 		background-color: #e3e3e3;
 		border-color: rgba(0,0,0,0.5);
 	}
 	
-.invitebtn:active {
+.btn1:active {
 		background-color: #CCC;
 		border-color: rgba(0,0,0,0.9);
 	}
-
-/* blue button */
-
-.btn.btn-blue {
+	
+/****** character blue button*********/
+.btnchar-blue {
 	background-color: #27A5A1;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	padding: 1% 1%;
+	margin: 0 0 19% 19%;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+	
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-    padding-top: 3px; 
-	padding-bottom: 3px;
-	padding-left: 8px;
-	padding-right: 8px;
 	color: #FFF;
-	
 }
 
-.btn.btn-blue:hover {
+.btnchar-blue:hover {
 		background-color: #4F87A2;
 		border-color: rgba(0,0,0,0.5);
 	}
 	
-.btn.btn-blue:active {
+.btnchar-blue:active {
 		background-color: #3C677B;
 		border-color: rgba(0,0,0,0.9);
 	}
+
+
+
+
+
+
+
+
 
 
 /* ============= Round 1 Game Play ============= */
@@ -624,18 +703,6 @@ a:hover {
 
 
 
-.buttonDiv2 {
-    
-    position:fixed;
-    bottom:15%;
-	width:100%;
-	padding:1% 0;
-    margin: auto;
-	display:block;
-	text-align: center;
-    display: inline-block;
-
-}
 
 
 
@@ -657,27 +724,36 @@ a:hover {
 	}
 
 	
+.buttonDiv2 {
+    
+    position:fixed;
+    bottom:15%;
+	width:100%;
+
+    margin: auto;
+	display:block;
+	text-align: center;
+    display: inline-block;
+
+}
 
 	
 
 .btn {
 	display: inline-block;
 	color: #666;
-	background-color: #F5ECEC;
+	background-color: #eee;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 10pt;
-	padding-top: 3px; 
-	padding-bottom: 3px;
-	padding-left: 8px;
-	padding-right: 8px;
-  	margin-left: 5px;
-	margin-right: 3px;
+	font-size: 12px;
+	padding: 10px 30px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border: 1px solid rgba(0,0,0,0.3);
 	border-bottom-width: 3px;
+	
+	
 	
 }
 
@@ -697,7 +773,7 @@ a:hover {
 	background-color: #27A5A1;
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
- 	margin:0% 0% 0% 49%; 
+
 	color: #FFF;
 	
 }
@@ -749,20 +825,19 @@ a:hover {
 
 }
 
-.themebtn.btn-bluetheme {
-	background-color: #27A5A1;
+.bluetheme {
+	background-color: #699DB6;
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
- 	margin:0% 0% 0% 49%; 
 	color: #FFF;
 	
 }
-.themebtn.btn-blue:hover {
+.bluetheme:hover {
 		background-color: #4F87A2;
 		border-color: rgba(0,0,0,0.5);
 	}
 	
-.themebtn.btn-blue:active {
+.bluetheme:active {
 		background-color: #3C677B;
 		border-color: rgba(0,0,0,0.9);
 	}
@@ -771,22 +846,16 @@ a:hover {
 .themebtn {
 	display: inline-block;
 	color: #666;
-	background-color: #F5ECEC;
+	background-color: #eee;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 10pt;
-	padding-top: 3px; 
-	padding-bottom: 3px;
-	padding-left: 8px;
-	padding-right: 8px;
-  	margin-left: 5px;
-	margin-right: 3px;
+	font-size: 12px;
+	padding: 10px 30px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border: 1px solid rgba(0,0,0,0.3);
 	border-bottom-width: 3px;
-	
 }
 
 .themebtn:hover {
@@ -826,8 +895,8 @@ a:hover {
     width:100%;
 
     
-    min-height:100px;
-    max-height:20%;
+    min-height:300px;
+    max-height:100%;
     z-index:2;
 
 	
