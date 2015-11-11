@@ -134,7 +134,9 @@
                 };
                 
                 upload.onclick = function(){
-                    window.fbAsyncInit = function() {
+
+                    
+    window.fbAsyncInit = function() {
     FB.init({
       appId      : '902879339797602',
       xfbml      : true,
@@ -144,11 +146,17 @@
       
      // var but = document.getElementById("login");
      // var userinfo = document.getElementById("userinfo");
-     
-      FB.login(function(resp){
+
+                        
+FB.login(function(resp){
         console.log(resp);
           if(resp.status == "connected"){
             //alert("You Logged in");
+      console.log('Logged in.');
+  }else {
+    FB.login();
+  }
+     
               FB.api("/me", function(resp2){
                 console.log(resp2);
                   userinfo.innerHTML = "Hi " + resp2.name;
@@ -160,7 +168,7 @@
                   new_img.src = resp3.data.url;
                   userinfo.appendChild(DP);
               });
-          }
+          
           if(resp.status == "unknown") {
             //alert("Go log in!");
           }
@@ -179,9 +187,53 @@
                 
             };
           };
-         
+  
   
     </script>  
+<script>
+        
+$fb = new Facebook\Facebook([
+  'app_id' => '{app-id}',
+  'app_secret' => '{app-secret}',
+  'default_graph_version' => 'v2.2',
+  ]);
 
+try {
+  // Returns a `Facebook\FacebookResponse` object
+  $response = $fb->get('/me?fields=id,name', '{access-token}');
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+  echo 'Graph returned an error: ' . $e->getMessage();
+  exit;
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+  echo 'Facebook SDK returned an error: ' . $e->getMessage();
+  exit;
+}
+
+$user = $response->getGraphUser();
+
+echo 'Name: ' . $user['name'];
+// OR
+// echo 'Name: ' . $user->getName();
+                            
+$fb = new Facebook\Facebook(/* . . . */);
+
+// Send the request to Graph
+try {
+  $response = $fb->get('/me');
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+  // When Graph returns an error
+  echo 'Graph returned an error: ' . $e->getMessage();
+  exit;
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+  // When validation fails or other local issues
+  echo 'Facebook SDK returned an error: ' . $e->getMessage();
+  exit;
+}
+
+var_dump($response);
+// class Facebook\FacebookResponse . . .
+        
+        
+        </script>
     </body>
 </html>
