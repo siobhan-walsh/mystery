@@ -7,8 +7,9 @@
 
     <div class = 'content'>
         <h4>Profile</h4>
-
+        
         <div id = "DP">
+          <h4><div id="name"></div></h4> 
             <img id = 'dpimg' src="img/characters/character1.png"/>
         </div>
         
@@ -40,7 +41,7 @@
                 
                 var buttons = document.createElement("div");
                 var upload = document.createElement("button");
-                    upload.innerHTML="upload from library";
+                    upload.innerHTML="Use FaceBook Photo";
                 var camera = document.createElement("button");
                     camera.innerHTML="camera";
                 var cancel = document.createElement("button");
@@ -108,8 +109,7 @@
                 
                 upload.onclick = function(){
 
-                    
-    window.fbAsyncInit = function() {
+  window.fbAsyncInit = function() {
     FB.init({
       appId      : '902879339797602',
       xfbml      : true,
@@ -117,36 +117,28 @@
     });
       console.log(FB);
       
-     // var but = document.getElementById("login");
-     // var userinfo = document.getElementById("userinfo");
-
-                        
-FB.login(function(resp){
+      FB.login(function(resp){
+          var name=document.getElementById("name");
         console.log(resp);
           if(resp.status == "connected"){
             //alert("You Logged in");
-      console.log('Logged in.');
-  }else {
-    FB.login();
-  }
-     
               FB.api("/me", function(resp2){
                 console.log(resp2);
-                  userinfo.innerHTML = "Hi " + resp2.name;
+                  name.innerHTML = "Hi " + resp2.name;
               });
               
               FB.api("/me/picture", function(resp3){
                 console.log(resp3);
                   var new_img = document.createElement("img");
                   new_img.src = resp3.data.url;
-                  userinfo.appendChild(DP);
+                  DP.appendChild(new_img);
               });
-          
+          }
           if(resp.status == "unknown") {
             //alert("Go log in!");
           }
       });
-  };
+ };
 
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
@@ -155,15 +147,17 @@ FB.login(function(resp){
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
                     
+                    buttons.remove();
                 };
                 
             };
-          };
-  
-  
-    </script>  
+        };
+        
+</script>
 <script>
+    
         
 $fb = new Facebook\Facebook([
   'app_id' => '{app-id}',
