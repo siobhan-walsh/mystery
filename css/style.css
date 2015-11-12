@@ -2,7 +2,7 @@
 
 
 /* ============= BUTTON STUFF ============= */
-/*customize for your page, i made them links on my page not buttons, its a sudo class so you gotta name the blue one with the white button name like i did below
+/*customize for your page, i made them links on my page not buttons
 
 *****container
 
@@ -630,10 +630,10 @@ a:hover {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 12px;
-	padding: 2% 2%;
+	padding: 3% 3%;
 	margin-right: 54%;
 	margin-left: 4%;
-	margin-bottom: -40px;
+	margin-bottom: -63px;
 	margin-top: 5%;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -659,11 +659,12 @@ a:hover {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 12px;
-	padding: 2% 2%;
+	padding: 3% 3%;
 	margin-right: 6%;
-	margin-top: 1%;
+	margin-top: 5%;
 	float: right;
 	border-radius: 5px;
+	border-bottom-width: 3px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-color: rgba(0,0,0,0.3);
@@ -683,16 +684,21 @@ a:hover {
 
 
 
-
-
-
-
-
-
-
 /* ============= Round 1 Game Play ============= */
 
 
+.buttonDiv2 {
+    
+    position:fixed;
+    bottom:15%;
+	width:100%;
+overflow: scroll;
+    margin: auto;
+	display: block;
+	text-align: center;
+    display: inline-block;
+	 
+}
 .p2 {
 	
 	
@@ -700,9 +706,11 @@ a:hover {
 	font-family: 'Fira Mono',sans-serif;
     text-align:left;  
 	padding-left: 15px;
+	margin-bottom: 12%;
 	letter-spacing: 3px;
 	line-height: 135%;
 	margin-left: 10px;
+	overflow: scroll;
     }
 
 
@@ -712,8 +720,11 @@ a:hover {
 
 .lock {
 	
-	margin-right: -8px; 
-   
+	margin-right: -55px; 
+	margin-left: -100px;
+	margin-top: 120px;
+	width: 25%;
+	
 	
 	}	
 	
@@ -728,38 +739,33 @@ a:hover {
 	}
 
 	
-.buttonDiv2 {
-    
-    position:fixed;
-    bottom:15%;
-	width:100%;
-
-    margin: auto;
-	display:block;
-	text-align: center;
-    display: inline-block;
-
-}
 
 	
 
 .btn {
 	display: inline-block;
+	float:left;
 	color: #666;
 	background-color: #eee;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 12px;
-	padding: 10px 30px;
+	padding: 3% 3%;
+	margin-left: 5%;
+	margin-right: 15%;
+	margin-bottom: 15%;
+	margin-top: 45%;
+
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border: 1px solid rgba(0,0,0,0.3);
 	border-bottom-width: 3px;
 	
-	
-	
 }
+	
+	
+
 
 .btn:hover {
 		background-color: #e3e3e3;
@@ -774,12 +780,22 @@ a:hover {
 /* blue button */
 
 .btn.btn-blue {
-	background-color: #27A5A1;
+background-color: #27A5A1;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	padding: 3% 3%;
+	margin-right: 5%;
+	margin-bottom: 10%;
+	margin-top: 45%;
+	float: right;
+	border-radius: 5px;
+	border-bottom-width: 3px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-
 	color: #FFF;
-	
 }
 
 .btn.btn-blue:hover {
@@ -811,6 +827,7 @@ a:hover {
 	font-size: 10pt;
 	font-family: 'Fira Mono',sans-serif;
     text-align:left;  
+	margin-bottom: 12px;
 	padding: 4% 4%;
 	letter-spacing: 3px;
 
@@ -819,18 +836,30 @@ a:hover {
 	
 .buttonDiv{
     
-    position:fixed;
-    bottom:15%;
+      position:fixed;
+    bottom:5%;
 	width:100%;
-	padding:1% 0;
+
     margin: auto;
+	display: block;
+	text-align: center;
     display: inline-block;
-	background-color:rgba(255,255,255,0.4);
 
 }
 
 .bluetheme {
-	background-color: #699DB6;
+background-color: #27A5A1;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	padding: 3% 3%;
+	margin-left: 15%;
+	margin-right: 5%;
+	float: right;
+	border-radius: 5px;
+	border-bottom-width: 3px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
 	color: #FFF;
@@ -854,7 +883,8 @@ a:hover {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 12px;
-	padding: 10px 30px;
+	padding: 3% 3%;
+	margin-right: 22%;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;

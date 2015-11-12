@@ -22,13 +22,14 @@
 			going to be high and there is no limit to what could happen.
              
        </div>
+      
              
        <div class='buttonDiv2'>
 
-          <a href='theme.php' class="btn">Back</a>
+          <a href='theme.php' class="themebtn">Back</a>
     
 
-           <a href="characters.php" class="btn btn-blue">Characters</a>
+           <a href="characters.php" class="bluetheme">Characters</a>
        </div>
             
            

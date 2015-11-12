@@ -21,7 +21,7 @@
         	 </div>
         
         		<div class="thumb">
-      			<a href="index.html"><img src = 'img/enter-btn.png'></a>
+      			<a href="index.php"><img src = 'img/enter-btn.png'></a>
         
     		    <!--<a href="index.html"><h1> ENTER </h1></a> -->
            		 </div>

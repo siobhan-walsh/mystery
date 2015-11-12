@@ -14,16 +14,17 @@
                 <div class = 'p2'>
                     The Paramount Casino is throwing a party of epic proportions.
                     With the highest rollers and the gutsiest gamblers, the stakes are
-                    going to be high and there is no limit to what could happen. Mimi Martini, the cocktail waitress seems to be extra chatty tonight with all the high rollers and looks like she's collecting extra tips. Suddenly there's a scream from the Piano<br> Lounge 
+                    going to be high and there is no limit to what could happen. Mimi Martini, the cocktail waitress seems to be extra chatty tonight with all the high rollers and looks like she's collecting extra tips. Suddenly there's a scream from the Piano Lounge 
 
                 </div>
 
 
-                <div class='buttonDiv2'>
+                <div class='buttonDiv'>
 
                     <a href='characters.php' class="btn">Back</a> 
-                    <img src = 'img/lock.png' class="lock">
+                   <img src = 'img/lock.png' class="lock">
                     <a href='game.html' class="btn btn-blue" > Next</a>
+                     
                 </div>
 
 
