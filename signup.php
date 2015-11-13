@@ -1,7 +1,9 @@
 <?php
-
+	
+	
 	include("head.php");
 	include("header.php");
+	
 
 ?>
                 <div class = 'content'>
@@ -12,17 +14,17 @@
                     </div>
                     <div class='center'>
 
-                        <input type='text' id='fname' class='textbox'  placeholder="first name" oninput ="checkname(this);" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
+                        <input type='text' id='fname' class='textbox'  placeholder="first name" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
 
-                        <input type='text' id='lname' class='textbox' placeholder="last" oninput ="checkname(this);" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$'>
+                        <input type='text' id='lname' class='textbox' placeholder="last" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$'>
 
                         <input type='email' id='email' class='textbox' placeholder="email@example.com" maxlength="70">
 
-                        <input type='text' id='username' class='textbox' placeholder="username" required = 'true' oninput ="checkname(this);" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
+                        <input type='text' id='username' class='textbox' placeholder="username" required = 'true' pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
 
-                        <input type='password' id='pw' class='textbox' placeholder="password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" onblur ="checkpass(this);" >
+                        <input type='password' id='pw' class='textbox' placeholder="password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" >
 
-                        <input type='password' id='pwRetype' class='textbox' placeholder="retype password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" onblur ="checkpass(this);">
+                        <input type='password' id='pwRetype' class='textbox' placeholder="retype password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" >
 
                         <input type='button' id='signup'  class='buttons' value="Sign up!">
                         <input type='button' id='fbbutton' class='buttons' value="Sign up with facebook">
@@ -47,51 +49,51 @@
                 var pwRetype = document.getElementById('pwRetype');
                 var validnames = false;
                 var validpw = false;
-                //var input = document.querySelector('input');
+               
             
               
                 
                 signupbtn.onclick = function() {
                     
-                    success();
+                    
                     console.log("clicked");
                  
                     //send stuff to database 
 					
 					$.ajax({
 						url:"server.php",
-						type:"post",
-						dataType:"json",
+						type:"POST",
+						dataType:"JSON",
 						data:{
-							mode:1, //0 to get all users, 1 is to get a specific user
-							un:un,
-							pw:pw
+							
+							fname:fname.value,
+							lname:lname.value,
+							email:email.value,
+							un:un.value,
+							pw:pw.value
 							
 							},
 						success:function(resp){
 							
 							console.log("yaya success resp is:", resp);	
 							
-							var msgDiv = document.getElementById('msg');
-							
-							
-							
-							for(i = 0; i< resp.length; i++){
-								var newh3 = document.createElement('h3');
-					
-								newh3.innerHTML = "hi " + resp[i].username + ", your password is: " + resp[i].password + "<br>";
+							console.log("resp.first_name");
+							var tyDiv = document.createElement('div');
+
+							document.body.appendChild(tyDiv);
+							tyDiv.innerHTML = "<p>Hey " + resp.first_name + ", thank you for making an account! <a href='themes.php'>Go check out our different themes to start a game!</a></p>";
+							tyDiv.style.position = 'fixed';
+							tyDiv.style.top = '200px';
+							tyDiv.style.backgroundColor = '#C4FFe6';
+							tyDiv.style.width = '80vw';
+							tyDiv.style.left = '10vw';
+							tyDiv.style.padding = '30px 10px ';
+							tyDiv.style.boxShadow = "4px 4px 4px #666666";
 								
-								msgDiv.appendChild(newh3);
-								
-								if(resp[i].img != null){
-									var newimg = document.createElement('img');
-									newimg.src = resp[i].img;
-									newh3.appendChild(newimg);	
-								}
-								
-							}
 							
-							
+						},
+						error:function(err){
+							console.log("sorry there was an error"); 	
 						}
 						
 					});	
@@ -100,25 +102,7 @@
                 
                 
             
-                function success(){
-                        var tyDiv = document.createElement('div');
-
-                        document.body.appendChild(tyDiv);
-                        tyDiv.innerHTML = "<p>Hey " + fname.value + ", thank you for making an account! Please check your email for a confirmation link.</p>";
-                        tyDiv.style.position = 'fixed';
-                        tyDiv.style.top = '200px';
-                        tyDiv.style.backgroundColor = '#C4FFe6';
-                        tyDiv.style.width = '80vw';
-                        tyDiv.style.left = '10vw';
-                        tyDiv.style.padding = '30px 10px ';
-                        tyDiv.style.boxShadow = "4px 4px 4px #666666";
-
-
-                    }
             
-          
-        
-
         
                 function checkpass(input){
                     

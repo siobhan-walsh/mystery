@@ -3,111 +3,55 @@
 //start session first:
 
 
-
 //tell server to communicate with the database:
 include("connection.php");
 
 
-function getAllUsers(){
+function signingup(){
 	
 	global $con;
 	
 	$arrToSend = array();
 	
-	$query = "SELECT username, password FROM user";
-	$result = mysqli_query($con, $query);
+	$insertquery = "INSERT INTO users (user_name, first_name, last_name, password, email) VALUES ('" . $_POST['un'] . "','" . $_POST['fname'] . "', '" . $_POST['lname'] . "', '" . $_POST['pw'] . "', '" . $_POST['email'] . "');";
 	
 	
+	$insertresult = mysqli_query($con, $insertquery);
 	
-	if($result){
+	
+	$selectquery = "SELECT user_name, first_name, last_name, email FROM users WHERE user_name ='" . $_POST['un']. "' AND password ='" . $_POST['pw'] . "';";
+	
+	
+	$showresult = mysqli_query($con, $selectquery);
+	
+	
+	if($showresult){
 		
 		
 		
-		while($row = mysqli_fetch_array($result)){
+		while($row = mysqli_fetch_array($showresult)){
 			
 			$arr = array(
-				"username" => $row['username'],
-				"password" => $row['password'],
-				
+				"user_name" => $row['user_name'],
+				"first_name" => $row['first_name'],
+				"last_name" => $row['last_name'],
+				"email" => $row['email']
 			
 			);
 			
-			$_SESSION['username'] = $row['username'];
-			
-			$_SESSION['isloggedin'] = TRUE;
-			
-			
-			array_push($arrToSend, $arr);
-			
-			//var_dump($arr);
-			
-			
-			
-		}
-			
-	}
-	
-	
-	echo json_encode($arrToSend);
-	
-	/*
-	echo "<pre>" ;
-	echo var_dump($arrToSend);
-	echo "</pre>";
-	*/
-}
-
-
-function getOneUser(){
-	
-	global $con;
-	
-	$arrToSend = array();
-	
-	$query = "SELECT username, password FROM user WHERE username ='" . $_POST['un']. "' AND password ='" . $_POST['pw'] . "';";
-	$result = mysqli_query($con, $query);
-	
-	
-	
-	if($result){
-		
-		
-		
-		while($row = mysqli_fetch_array($result)){
-			
-			$arr = array(
-				"username" => $row['username'],
-				"password" => $row['password']
+			//array_push($arrToSend, $arr);
 				
-			);
-			
-			array_push($arrToSend, $arr);
-			
-			//var_dump($arr);
-			
-			
 			
 		}
-			
+		
 	}
+
 	
+	echo json_encode($arr);
 	
-	echo json_encode($arrToSend);
-	
-	/*
-	echo "<pre>" ;
-	echo var_dump($arrToSend);
-	echo "</pre>";
-	*/
+
 }
 
-
-if($_POST['mode'] == 0){
-	getAllUsers();
-} 
-
-if($_POST['mode'] == 1){
-	getOneUser();	
-}
+signingup();
 
 ?>
