@@ -4,7 +4,7 @@
 
     <body> 
         
-        
+        <div class = 'tablet-size'>
         <div class = 'header'>
             
         
@@ -30,7 +30,7 @@
         
         </div>
         
-        
+        </div>
 <script src="js/buttons.js"></script>        
     <script>
         window.onload = function(){

@@ -22,7 +22,7 @@
                 <div class='buttonDiv'>
 
                     <a href='characters.php' class="btn">Back</a> 
-                   <img src = 'img/lock.png' class="lock">
+                    <img src = 'img/lock.png' class="lock">
                     <a href='game.html' class="btn btn-blue" > Next</a>
                      
                 </div>

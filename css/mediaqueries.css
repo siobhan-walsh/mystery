@@ -1,7 +1,7 @@
 
 
 @media only screen 
-    and (max-width:375px)
+
 {
     body{
         background-image: -webkit- radial-gradient(ellipse farthest-corner at 245pt 115pt , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Safari 5.1 to 6.0 */
@@ -9,12 +9,7 @@
         background-image: -moz-radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Firefox 3.6 to 15 */
         background-image: radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* Standard syntax */
 
-}
-}
-
-
-@media only screen and (min-width: 375pt) {  
-
+	}
     .footer {
         
     
@@ -42,4 +37,66 @@
 	
          
 }
+}
+
+@media only screen and (min-width: 64em) { 
+
+	body{
+    
+	background-image:none;    
+	background-color:#ffffff;
+}
+
+/*-----------------profile page-------------------*/
+
+#DP img{
+	opacity:0.95;
+	z-index:2px;
+	width:40%;
+	margin: 0 30%;
+	/*height:23vh;
+	position:fixed;
+	left:27%;*/
+    padding: 1%;
+}
+
+
+ .scroll {
+	 height:864px;
+	 overflow:scroll;
+}
+
+	.tablet-size{
+		
+		position:relative;
+		border-style:solid;
+		border-width:40px;
+		border-color:#565656;
+		border-radius:10px;
+		width:768px;	
+		height:1024px;
+		margin:auto;
+		background-image: -webkit- radial-gradient(ellipse farthest-corner at 245pt 115pt , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Safari 5.1 to 6.0 */
+        background: -o-radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Opera 11.1 to 12.0 */
+        background-image: -moz-radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Firefox 3.6 to 15 */
+        background-image: radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* Standard syntax */
+	}
+	
+	
+	.footer {
+        
+    
+    box-shadow: 0px -2px 4px #666666;
+    max-width:768px;	
+    height:160px;
+    background-color:#000000;
+    position: absolute;
+    bottom: 0;
+	
+         
+    }
+	
+	
+
+
 }

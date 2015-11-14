@@ -6,7 +6,7 @@
 
                     <div class= 'hspace message'>
                         <h2>Log in</h2>
-                        <p>Don't have an account yet? <a href = 'signup.html'>Sign up!</a></p>
+                        <p>Don't have an account yet? <a href = 'signup.php'>Sign up!</a></p>
                     </div>
                     <div class='center'>
 
@@ -26,7 +26,7 @@
 
             </div>
         
-  
+  			</div>
         
     <script src="js/buttons.js"></script>    
     <script>
