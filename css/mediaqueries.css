@@ -1,13 +1,13 @@
 
 
 @media only screen 
-    and (max-width:375pt)
+    and (max-width:375px)
 {
     body{
-        background: -webkit-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Firefox 3.6 to 15 */
-        background: linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* Standard syntax */
+        background-image: -webkit- radial-gradient(ellipse farthest-corner at 245pt 115pt , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Safari 5.1 to 6.0 */
+        background: -o-radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Opera 11.1 to 12.0 */
+        background-image: -moz-radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Firefox 3.6 to 15 */
+        background-image: radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* Standard syntax */
 
 }
 }

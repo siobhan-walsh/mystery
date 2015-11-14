@@ -6,20 +6,20 @@
         
         <div class = 'content'>
             <h4>Friend</h4>
-            <div id="FriendList">
-                <img src="img/characters/character1.png" /><br>
-                 <img src="img/characters/character2.png" /><br>
-                <img src="img/characters/character3.png" /><br>
-                <img src="img/characters/character4.png" /><br>
-            </div>
-            <div id='list'>
-            <p>John</p>
-            <p>Jenny</p>
-            <p>Bernard</p> 
-            <p>Erin</p>
-            </div>
-            
-           
+        <div id="AllFriends">
+        <div><img src="img/frdsList/F1.png" />
+             <p>John</p><hr/>
+        </div>
+        <div><img src="img/frdsList/F2.png" />
+             <p>John</p><hr/>
+        </div>
+        <div><img src="img/frdsList/F4.png" />
+             <p>John</p><hr/>
+        </div>
+        <div><img src="img/frdsList/F2.png" />
+             <p>John</p>
+        </div>
+        </div>
         </div>
         
 <?php

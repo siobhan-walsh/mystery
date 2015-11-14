@@ -82,12 +82,20 @@ body {
     font-family: 'Oxygen', sans-serif;
     font-weight: 300;
     
-    background: -webkit-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Firefox 3.6 to 15 */
-        background: linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* Standard syntax */
-    
+
+      
+        background-image: -webkit- radial-gradient(ellipse farthest-corner at 245pt 115pt , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Safari 5.1 to 6.0 */
+        background: -o-radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Opera 11.1 to 12.0 */
+        background-image: -moz-radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Firefox 3.6 to 15 */
+        background-image: radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* Standard syntax */
+
+
+
 }
+
+
+
+
 
 p {
 	
@@ -268,6 +276,8 @@ a:hover {
 
 /* ------------- profile pages ----------------*/
 
+
+
 #options{
 	width:100px;
     height:50px;
@@ -297,31 +307,9 @@ a:hover {
 }
 
 
-#display{
-	border-style:solid;
-    border-color:lightgrey;
-    border-radius:60px;
-    border-width: 1px;
-    background-color:black;
-    opacity:0.15;
-    height:37vh;
-    width:90vw;
-    position: fixed;
-    top:139px;
-    left:18px;
-    z-index:0px;
-
-}
-
-#display img{
-	top:180px;
-    opacity:0.95;
-	z-index:2px;
-	width:45vw;
-	height:25vh;
-	position:fixed;
-	left:90px;
-    padding: 2%;
+#DP{
+    
+    height: 70vh;
 }
 
 
@@ -393,26 +381,43 @@ a:hover {
 }
 
 #FriendList{
-    position:fixed;
-    width:15%;
-    left:10%;
-    padding:1vh;
-    margin:1vh;
+    height: 70vh;
     
+    
+}
+#FriendList img{
+   width:15%;
+    height:13%;
+    padding:2%;
+    margin-left:10%;
 }
 
 
 #list {
     position:fixed;
     width:25%;
-    top:23%;
+    top:13%;
     right:0;
     float:right;
-    padding:30%;
+    padding:40%;
+
     
 }
 
+#list p{
+    
+    padding:10%;
+}
+#AllFriends p{
+    
+    float:right;
+    width:30vw;
+}
 
+#AllFriendes{
+    
+    
+}
 /* ------------- Setting page ----------------*/
 
 #privacy {
@@ -488,45 +493,10 @@ a:hover {
 }
 /* ------------- notification pages ----------------*/
 
-#display1{
-	border-style:solid;
-    border-color:lightgrey;
-    border-radius:40px;
-    border-width: 1px;
-    background-color:black;
-    opacity:0.15;
-    height:70vh;
-    width:99vw;
-    position: fixed;
-    top:110px;
-    left:0.5px;
-    z-index:0px;
 
-}
 
-#imgNoti{
-	width:30vw;
-	height:50vh;
-	margin-left:10px;
-	position:absolute;
-}
 
-#imgNoti img{
-	width:50%;
-    padding:15px;
-}
 
-#msgNoti{
-	width:65vw;
-	height:50vh;
-	margin-left:35vw;
-	position:absolute;
-	margin-top: 15px;
-}
-
-#msgNoti p{
-    font-size: 12pt;
-}
 /* ------------- character page ----------------*/
 
 .imgA1 {
@@ -539,7 +509,6 @@ a:hover {
     height:auto;
 	display:block;
    
-  
 	}
 
 
