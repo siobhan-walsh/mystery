@@ -13,15 +13,21 @@
 
                        <input type='text' id='username' class='textbox' placeholder="username">
                         <input type='password' id='password' class='textbox' placeholder="password">
-                        <button id="loginFB">Login with Facebook</button>
+                        
                         <p class='right-text '><small>Forgot your password?</small></p>
-                        <img src='img/enter-btn.png' id='enter'>
+                       <!-- 
+                       
+                       <button id="loginFB">Login with Facebook</button>
+                       <img src='img/enter-btn.png' id='enter'> 
+                       
+                       -->
+                       <input type='button' id='loginbtn' class='buttons' value="Login">
                         <input type='button' id='fbbutton' class='buttons' value="Login through facebook">
                     </div>
 
                 </div>
         
-        
+        	<div class ='underfooter'></div>
             <div class = 'footer'>
 
             </div>
@@ -38,16 +44,21 @@
     });
       console.log(FB);
       
-      var but = document.getElementById("loginFB");
+      var but = document.getElementById("fbbutton");
       var userinfo = document.getElementById("userinfo");
       but.onclick = function(){
       FB.login(function(resp){
         console.log(resp);
           if(resp.status == "connected"){
-            alert("You Logged in");
-            var txt = "Welcome!";
-              document.write("<p>Link: " + txt.link("themes.php") + "</p>");
+			  
 
+            alert("You Logged in");
+			
+			window.location="/themes.php" ;
+			
+            /*var txt = "Welcome!";
+              document.write("<p>Link: " + txt.link("themes.php") + "</p>");
+			*/
           }
           if(resp.status == "unknown") {
             alert("Login Failed");

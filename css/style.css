@@ -96,11 +96,10 @@ p {
     text-align:left;  
 	letter-spacing: 5px;
 
-	margin-left: 30px;
     }
 	
 
-/* use Fira Mono for all headings look at top of character html to get link to put on your page*/
+/* use Fira Mono for all headings*/
 
 h1 {
    	font-size: 100%;

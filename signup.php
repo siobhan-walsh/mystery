@@ -14,13 +14,13 @@
                     </div>
                     <div class='center'>
 
-                        <input type='text' id='fname' class='textbox'  placeholder="first name" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
+                        <input type='text' id='fname' class='nval textbox'  placeholder="first name" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
 
-                        <input type='text' id='lname' class='textbox' placeholder="last" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$'>
+                        <input type='text' id='lname' class='nval textbox' placeholder="last" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$'>
 
-                        <input type='email' id='email' class='textbox' placeholder="email@example.com" maxlength="70">
+                        <input type='email' id='email' class='nval textbox' placeholder="email@example.com" maxlength="70">
 
-                        <input type='text' id='username' class='textbox' placeholder="username" required = 'true' pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
+                        <input type='text' id='username' class='nval textbox' placeholder="username" required = 'true' pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
 
                         <input type='password' id='pw' class='textbox' placeholder="password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" >
 
@@ -31,7 +31,7 @@
                     </div>
 
                 </div>
-
+			<div class='underfooter'></div>
             <div class = 'footer'>
 
             </div>
@@ -50,9 +50,112 @@
                 var pwRetype = document.getElementById('pwRetype');
                 var validnames = false;
                 var validpw = false;
+				var nval = document.querySelectorAll('.nval');
+				var msg = document.createElement('span');
                
             
-              
+              	//validating while inputing:
+				
+				
+					pw.addEventListener("blur",
+						function checkpass(){
+							
+							if(pw.validity.patternMismatch){
+								
+								pw.setCustomValidity("Please enter a password with 1 Uppercase, 1 lowercase, and a number");			
+								$("<p id ='p'><small>Please enter a password with 1 Uppercase, 1 lowercase, and a number</small></p>").insertAfter(pw);
+								
+							} else if(this.validity.valueMissing) {
+						   
+						   		this.setCustomValidity("Please enter a password with 1 Uppercase, 1 lowercase, and a number");	
+								$("<p id ='p'><small>Please enter a password with 1 Uppercase, 1 lowercase, and a number</small></p>").insertAfter(pw);
+					 	 	} else{
+								 $('#p').remove();
+							}
+						 
+						});
+							
+					pwRetype.addEventListener("blur",
+						function(){	
+							if(pw.value != pwRetype.value){
+								
+								pw.style.borderColor = "#ffccee";
+								pw.setCustomValidity("Your passwords don't match");
+								pwRetype.style.borderColor = "#ffccee";
+								pwRetype.setCustomValidity("Your passwords don't match");
+								
+								
+								$("<p id ='pm'><small>Your passwords don't match</small></p>").insertAfter(pwRetype);
+								
+								
+							} else if(pw.value == pwRetype.value){
+								pw.style.borderColor = "#ffffff";
+								pw.setCustomValidity("");
+								pwRetype.style.borderColor = "#ffffff";
+								pwRetype.setCustomValidity("");
+								
+								$('#p').remove();
+								
+								 
+                				validpw = true;
+								
+							}
+							
+						}
+						
+				);
+						
+					
+				
+				
+				
+				for(var i = 0; i < nval.length; i++){    
+            
+					nval[i].addEventListener("input", 
+					
+	   
+						function checkname(){
+									if(this.validity.patternMismatch) {
+										
+										this.setCustomValidity("Please enter a name between 2-20 characters");
+										
+										
+										$("<p id ='s" + i + "'><small>Please enter a name between 2-20 characters</small></p>").insertAfter(this);
+										
+									  } 
+				
+									   else if(this.validity.valueMissing) {
+										    this.setCustomValidity("You must enter a name");
+										  
+											
+											$("<p id ='s" + i + "'><small>Please enter a name between 2-20 characters</small><p>").insertAfter(this);
+										   
+										
+									  } else if(this.validity.typeMismatch){
+										   this.setCustomValidity("Please enter a valid email address");
+										  
+										
+											$("<p id ='s" + i + "'><small>Please enter a valid email address</small></p>").insertAfter(this);
+										 
+									  } else {
+										  this.setCustomValidity("");
+										  
+										  $('#s' + i).remove();
+										  validnames = true;
+										  
+									  }
+								 
+								}
+								
+								
+						//myScript
+						
+						);
+				
+			}
+			  
+			  
+			  
                 
                 signupbtn.onclick = function() {
                     
@@ -101,65 +204,10 @@
 					  
                 };
                 
-                
-            
-            
-        
-                function checkpass(input){
-                    
-                    if(input.validity.patternMismatch){
-                        
-                        input.setCustomValidity("Please enter a password with 1 Uppercase, 1 lowercase, and a number");
-                        
-                    } else if(pw.value != pwRetype.value){
-                        
-                        console.log("THEY DOnT MATCH");
-                        console.log("pw", pw.value);
-                        console.log("pwRetype", pwRetype.value);
-                        input.style.borderColor = "#ffccee";
-                        input.setCustomValidity("Your passwords don't match");
-                        
-                        
-                    } else if(pw.value == pwRetype.value){
-                        input.style.borderColor = "#ffffff";
-                        input.setCustomValidity("");
-                        validpw = true;
-                        console.log("the pw good", validpw);
-                        
-                    }
-                    
-                }
-                
-                   
-        function checkname(input){
-                    if(input.validity.patternMismatch) {
-                        
-                        input.setCustomValidity("Please enter a name between 2-20 characters");
-                        console.log("the things good", validnames);
-
-                      } 
-
-                       else if(input.validity.valueMissing) {
-                           input.setCustomValidity("You must enter a name!");
-                           console.log("the things good", validnames);
-
-                      } else if(input.validity.typeMismatch){
-                           input.setCustomValidity("Please enter a valid email address");
-                          console.log("the things good", validnames);
-                          
-                      }else {
-                          input.setCustomValidity("");
-                          
-                          validnames = true;
-                          console.log("the things good", validnames);
-                
-                          
-                      }
-                 
-                }
-        }
-        
-  );
+              
+			  
+			
+});
     </script>  
     </body>
 </html>
