@@ -7,7 +7,9 @@
             
         <div id="notificatDiv">
         <div>
-        	<img src="img/frdsList/F1.png"/><p>Katie has accepted your friend request! </p><hr/>
+            <p>Katie has accepted your friend request! </p>
+        	<img src="img/frdsList/F1.png"/>
+            <p>Katie has accepted your friend request! </p><hr/>
         </div>
         
         <div>
@@ -18,7 +20,7 @@
         	<img src="img/frdsList/F4.png"/><p>Katie has accepted your friend request! </p><hr/>
         </div>
     	<div>
-        	<img src="img/frdsList/F1.png"/><p>Katie has accepted your friend request! </p><hr/>
+        	<img src="img/frdsList/F1.png"/><hr/>
         </div>
         </div>
 <?php include("footer.php"); ?>

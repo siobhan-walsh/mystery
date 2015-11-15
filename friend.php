@@ -8,16 +8,16 @@
             <h4>Friend</h4>
             <div id="AllFriends">
                 <div><img src="img/frdsList/F1.png" />
-                     <p>John</p><hr/>
+                     <p>Alison</p><hr/>
                 </div>
                 <div><img src="img/frdsList/F2.png" />
-                     <p>John</p><hr/>
+                     <p>Dylan</p><hr/>
                 </div>
                 <div><img src="img/frdsList/F4.png" />
-                     <p>John</p><hr/>
+                     <p>Bella</p><hr/>
                 </div>
                 <div><img src="img/frdsList/F2.png" />
-                     <p>John</p>
+                     <p>Joshua</p>
                 </div>
             </div>
         </div>
