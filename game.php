@@ -22,8 +22,8 @@
                 <div class='buttonDiv'>
 
                     <a href='characters.php' class="btn">Back</a> 
-                    <img src = 'img/lock.png' class="lock">
-                    <a href='game.html' class="btn btn-blue" > Next</a>
+                    <a href='guess.php'><img src = 'img/lock.png' class="lock"></a>
+                    <a href='game.php' class="btn btn-blue" > Next</a>
                      
                 </div>
 

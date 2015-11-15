@@ -714,7 +714,7 @@ a:hover {
 	background-color: #eee;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 12px;
+	font-size: 100%;
 	
 	margin:0 5%;
 	
@@ -756,7 +756,7 @@ a:hover {
 background-color: #27A5A1;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 12px;
+	font-size: 100%;
 	float:right;
   /*
   	padding: 3% 3%;
@@ -764,10 +764,10 @@ background-color: #27A5A1;
 	margin-bottom: 10%;
 	margin-top: 45%; */
 	
-	border-radius: 5px;
-	border-bottom-width: 3px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+	border-radius: 5%;
+	border-bottom-width: 5%;
+	-moz-border-radius: 5%;
+	-webkit-border-radius: 5%;
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
 	color: #FFF;
@@ -814,7 +814,8 @@ background-color: #27A5A1;
     position:absolute;
     bottom:20%;
 	width:100%;
-	padding:0;
+	padding-bottom:5%;
+	 -webkit-overflow-scrolling: touch
 	
 /*    margin: auto;
 	display: block;
@@ -877,6 +878,41 @@ background-color: #27A5A1;
 		background-color: #CCC;
 		border-color: rgba(0,0,0,0.9);
 	}
+
+
+/* ============= GUESS PAGE============= */
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.guess {
+  width: 100%;
+
+}
+
+img {
+  width: 23%;
+  margin-right: 4%;
+
+}
+
+img#first {
+  margin-left: 9%;
+}
+
+img#last {
+  margin-right: 4%;
+}
+
+
+
+
+
+
+
+
 /* ============= FOOTER STYLES ============= */
 
 
@@ -894,7 +930,7 @@ background-color: #27A5A1;
     
     min-height:100px;
     max-height:100%;
-    z-index:-2;
+    z-index:-1;
 
 	
          
