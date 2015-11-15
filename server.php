@@ -7,6 +7,69 @@
 include("connection.php");
 
 
+if($_POST['mode'] == 'signup'){
+	signingup();
+
+}
+
+
+if($_POST['mode'] == 'login'){
+	
+	login();
+}
+
+function login(){
+	
+	global $con;
+	
+	$loginarr = array();
+	
+	$searchquery = "SELECT * FROM users";
+	
+	
+	$loginresults = mysqli_query($con, $searchquery);
+	
+	if($loginresults){
+		
+		while($row = mysqli_fetch_array($loginresults)){
+			
+			if($_POST['un'] == $row['user_name'] && $_POST['pw'] == $row['password']){
+			
+				$match = "wow a match";	
+				
+			}
+			
+		
+		}
+		
+		echo json_encode($match);
+		
+	}
+	
+	/*if($loginresults){
+		
+		
+		
+		while($row = mysqli_fetch_array($loginresults)){
+			
+			
+			$arr = array(
+				"user_name" => $row['user_name'],
+				"first_name" => $row['first_name'],
+				"last_name" => $row['last_name'],
+				"email" => $row['email']
+			
+			);
+			
+			//array_push($arrToSend, $arr);
+				
+			
+		}
+	*/
+	
+}
+
+
 function signingup(){
 	
 	global $con;
@@ -52,6 +115,6 @@ function signingup(){
 
 }
 
-signingup();
+
 
 ?>

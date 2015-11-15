@@ -11,7 +11,7 @@
                     <div class='center'>
 
 
-                       <input type='text' id='username' class='textbox' placeholder="username">
+                        <input type='text' id='username' class='textbox' placeholder="username">
                         <input type='password' id='password' class='textbox' placeholder="password">
                         
                         <p class='right-text '><small>Forgot your password?</small></p>
@@ -36,6 +36,58 @@
         
     <script src="js/buttons.js"></script>    
     <script>
+	
+	var un = document.getElementById('username');
+	var pw = document.getElementById('password');
+	var loginbtn = document.getElementById('loginbtn');
+	
+	loginbtn.onclick = function(){
+	
+		$.ajax({
+						url:"server.php",
+						type:"POST",
+						dataType:"JSON",
+						data:{
+							
+							mode:'login',
+							un:un.value,
+							pw:pw.value
+							
+							},
+						success:function(resp){
+							
+							console.log("yaya success resp is:", resp);	
+							
+							console.log("resp.first_name");
+							var tyDiv = document.createElement('div');
+
+							document.body.appendChild(tyDiv);
+							tyDiv.innerHTML = "<p>Hey " + resp.first_name + ", thank you for making an account! <a href='themes.php'>Go check out our different themes to start a game!</a></p>";
+							tyDiv.style.position = 'fixed';
+							tyDiv.style.top = '200px';
+							tyDiv.style.backgroundColor = '#C4FFe6';
+							tyDiv.style.width = '80vw';
+							tyDiv.style.left = '10vw';
+							tyDiv.style.padding = '30px 10px ';
+							tyDiv.style.boxShadow = "4px 4px 4px #666666";
+								
+							
+						},
+						error:function(err){
+							console.log("sorry there was an error"); 	
+						}
+						
+					});	
+					  
+              
+	
+		
+		
+	};
+	
+	
+	
+	
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '989824554418300',

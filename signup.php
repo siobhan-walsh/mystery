@@ -170,6 +170,7 @@
 						dataType:"JSON",
 						data:{
 							
+							mode:'signup',
 							fname:fname.value,
 							lname:lname.value,
 							email:email.value,
