@@ -455,12 +455,15 @@ a:hover {
 
 #set {
     
-    float:inherit;
-    margin-left:18%;
+	width:90%;
+	margin:4% 5%;
+	text-align:left;
+   /* float:inherit;
+    margin-left:18%; */
 }
 #policy {
     
-     font-size:6pt;
+     font-size:10pt;
 }
 #contact {
     background-color: #27A5A1;
@@ -946,37 +949,9 @@ img#last {
 
 
 /* ============= FOOTER STYLES ============= */
-.footer {
-        
-    
-    box-shadow: 0px -2px 4px #666666;
-    width:100%;
-    min-height:10%;
-    max-height:12%;
-    background-color:#000000;
-    position: fixed;
-    bottom: 0;
-    z-index:1;
-	
-         
-}
 
 
 .footer img {
     max-width:15%;  
     margin:2%;
-}
-.underfooter {
-        
-    
-    display:inline-block;
-    width:100%;
-
-    
-    min-height:100px;
-    max-height:100%;
-    z-index:-2;
-
-	
-         
 }

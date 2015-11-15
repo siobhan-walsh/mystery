@@ -13,6 +13,9 @@
             
             <div class = 'themecase'>
             
+            <a href='themeabout.php'><img src="img/themes/murder.png"></a>
+            <h2>Coming soon:</h2>
+            
             </div>
             
             

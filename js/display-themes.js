@@ -1,5 +1,5 @@
- var themes = ["Cruising", "HoHo", "lightscamera",  "murderinsincity", "onceuponamurder"];
-                var themeImg = ["img/themes/Cruising.png", "img/themes/HoHo.png",  "img/themes/lightscamera.png", "img/themes/murderinsincity.png", "img/themes/onceuponamurder.png"];
+ var themes = ["cruising", "hoho", "lightscamera",  "onceuponamurder"];
+                var themeImg = ["img/themes/cruising.png", "img/themes/hoho.png",  "img/themes/lightscamera.png", "img/themes/onceuponamurder.png"];
                 
                 var themecase = document.querySelector('.themecase');
                

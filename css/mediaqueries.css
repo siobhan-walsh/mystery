@@ -3,25 +3,40 @@
 @media only screen 
 
 {
-    body{
-        background-image: -webkit- radial-gradient(ellipse farthest-corner at 245pt 115pt , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Safari 5.1 to 6.0 */
-        background: -o-radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Opera 11.1 to 12.0 */
-        background-image: -moz-radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Firefox 3.6 to 15 */
-        background-image: radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* Standard syntax */
+	
+	 body{
+     background: -webkit-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Safari 5.1 to 6.0 */
+     background: -o-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Opera 11.1 to 12.0 */
+     background: -moz-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Firefox 3.6 to 15 */
+     background: linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* Standard syntax */
 
 	}
+	/*
+    body{
+        background-image: -webkit- radial-gradient(ellipse farthest-corner at 245pt 115pt , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Safari 5.1 to 6.0 
+        background: -o-radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Opera 11.1 to 12.0 
+        background-image: -moz-radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Firefox 3.6 to 15 
+        background-image: radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* Standard syntax 
+		background-repeat:no-repeat;
+
+	}
+	*/
+	
     .footer {
         
     
     box-shadow: 0px -2px 4px #666666;
     width:100%;
-    height:200px;
+    height:100px;
     background-color:#000000;
     position: fixed;
     bottom: 0;
 	
          
     }
+	
+	
+	
     
     .underfooter {
         
@@ -30,7 +45,7 @@
     width:100%;
 
     
-    min-height:200px;
+    min-height:100px;
     max-height:20%;
     z-index:2;
 
@@ -46,6 +61,9 @@
 	background-image:none;    
 	background-color:#ffffff;
 }
+
+
+
 
 /*-----------------profile page-------------------*/
 
@@ -76,10 +94,13 @@
 		width:768px;	
 		height:1024px;
 		margin:auto;
-		background-image: -webkit- radial-gradient(ellipse farthest-corner at 245pt 115pt , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Safari 5.1 to 6.0 */
-        background: -o-radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Opera 11.1 to 12.0 */
-        background-image: -moz-radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* For Firefox 3.6 to 15 */
-        background-image: radial-gradient(ellipse farthest-corner at 245px 115px , #fff 5%, rgba(0, 0, 0, 0) 0%, #000 100%); /* Standard syntax */
+		background: -webkit-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* For Firefox 3.6 to 15 */
+        background: linear-gradient(#ffffff 20%, #d1d1d1 , #b2b2b2 , #9f9f9f 60%) fixed; /* Standard syntax */
+
+		
+		
 	}
 	
 	

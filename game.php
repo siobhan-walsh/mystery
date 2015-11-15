@@ -21,7 +21,7 @@
 
                 <div class='buttonDiv'>
 
-                    <a href='characters.php' class="btn">Back</a> 
+                    <button id='backbtn' class="btn">Back</button> 
                     <a href='guess.php'><img src = 'img/lock.png' class="lock"></a>
                     <a href='game.php' class="btn btn-blue" > Next</a>
                      
@@ -29,7 +29,7 @@
 
 
             </div>
-    
+<script src='js/backbtn.js'></script>
 <?php
 
 	include("footer.php");
