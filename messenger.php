@@ -13,8 +13,9 @@
                 <button id="send">Send</button>
                 
             </div>
+            <button id='backbtn' class="btn">Back</button> 
         </div>
-        
+     <script src='js/backbtn.js'></script>   
     <script>
         window.onload = function(){
 	           "use restrict";

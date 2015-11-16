@@ -20,8 +20,9 @@
                      <p>Joshua</p>
                 </div>
             </div>
+            <button id='backbtn' class="btn">Back</button>
         </div>
-        
+<script src='js/backbtn.js'></script>        
 <?php
 	include("footer.php");
 ?>
