@@ -174,20 +174,37 @@ a:hover {
 .header {
     margin:0px;
     width:100%;
+	display:block;
+    clear:both;
+	float:left;
+}
 
-    display:block;
+.logospot {
+	
+	width:30%;	
+	margin-left:35%;
+	float:left;
+}
+
+.logospot img {
+	width:100%;
    
 }
-
-.header div {
-    margin:auto;
-    width:30%;
+#userinfo {
+    
+	
+	float:right;
+	width:15%;
+   
+}
+#userinfo img {
+	width:100%;	
 }
 
-.header img {
-    height:auto;
-    width:100%;
-    
+#usern{
+	font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+	
 }
 
 /* ============= MAIN CONTENT STYLES ============= */
