@@ -10,14 +10,14 @@
     	<div class = 'scroll'>
             <div class = 'header'>
                 <br><br>
-                <div><img src = 'img/logo.png'></div>
+                <div class='blogo'><img src = 'img/logo.png'></div>
                 
             </div> 
                 <div class = 'content'>
 
                     <div class= 'hspace'>
-                        <h2>Sign Up</h2>
-                        <p>Already have an account? <a href = 'login.php'>Log in!</a></p>
+                        <h2>Sign Up</h2><br>
+                        <p>Already have an account? <a href = 'login.php'>Log in!</a></p><br>
                     </div>
                     <div class='center'>
 
@@ -32,6 +32,15 @@
                         <input type='password' id='pw' class='textbox' placeholder="password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" >
 
                         <input type='password' id='pwRetype' class='textbox' placeholder="retype password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" >
+                        
+                        <input type="radio" name="avi" value="f1" id="f1">
+						<label for="f1"><img src="img/frdsList/F1.png"></label>
+
+						<input type="radio" name="avi" value="f2" id="f2">
+						<label for="f2"><img src="img/frdsList/F2.png"></label>
+                        
+                        <input type="radio" name="avi" value="f4" id="f4">
+						<label for="f4"><img src="img/frdsList/F4.png"></label>
 
                         <input type='button' id='signup'  class='buttons' value="Sign up!">
                         <input type='button' id='fbbutton' class='buttons' value="Sign up with facebook">

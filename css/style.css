@@ -111,12 +111,12 @@ h1 {
 }
 
 h2 {
-    font-size:10pt;
-    font-family: 'Oxygen', sans-serif;
+    font-size:16pt;
+    font-family: 'Fira Mono',sans-serif;
     font-weight: 400;
 }
 input {
-    font-family: 'Oxygen', sans-serif;
+    font-family: 'Fira Mono',sans-serif;
     font-weight: 300;
 }
 a {
@@ -258,6 +258,16 @@ a:hover {
 
 /* ------------- login page ----------------*/
 
+.blogo {
+    width: 100%;
+}
+
+.blogo img {
+	
+	width:30;
+	margin:0 35%;
+	
+}
 
 
 .textbox {

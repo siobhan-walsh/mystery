@@ -5,38 +5,38 @@
 <body> 
         
 	<div class = 'tablet-size'>	
-    <div class = 'scroll'>
-    <div class = 'header'>
-        <br><br>
-        <div><img src = 'img/logo.png'></div>
-        
-    </div>
+    	<div class = 'scroll'>
+    		<div class = 'header'>
+                <br><br>
+                <div class='blogo'><img src = 'img/logo.png'></div>
                 
-                <div class = 'content'>
+            </div> 
+                
+            <div class = 'content'>
 
-                    <div class= 'hspace message'>
-                        <h2>Log in</h2>
-                        <p>Don't have an account yet? <a href = 'signup.php'>Sign up!</a></p>
-                    </div>
-                    <div class='center'>
-
-						<span id='warn' style='color:red'></span>
-                        <input type='text' id='username' class='textbox' placeholder="username">
-                        <input type='password' id='password' class='textbox' placeholder="password">
-                        
-                        <p class='right-text '><small>Forgot your password?</small></p>
-                       <!-- 
-                       
-                       <button id="loginFB">Login with Facebook</button>
-                       <img src='img/enter-btn.png' id='enter'> 
-                       
-                       -->
-                       <input type='button' id='loginbtn' class='buttons' value="Login">
-                        <input type='button' id='fbbutton' class='buttons' value="Login through facebook">
-                        <button id='check'>check</button>
-                    </div>
-
+                <div class= 'hspace message'>
+                    <h2>Log in</h2><br>
+                    <p>Don't have an account yet? <a href = 'signup.php'>Sign up!</a></p>
                 </div>
+                <div class='center'>
+
+                    <span id='warn' style='color:red'></span>
+                    <input type='text' id='username' class='textbox' placeholder="username">
+                    <input type='password' id='password' class='textbox' placeholder="password">
+                    
+                    <p class='right-text '><small>Forgot your password?</small></p>
+                   <!-- 
+                   
+                   <button id="loginFB">Login with Facebook</button>
+                   <img src='img/enter-btn.png' id='enter'> 
+                   
+                   -->
+                   <input type='button' id='loginbtn' class='buttons' value="Login">
+                    <input type='button' id='fbbutton' class='buttons' value="Login through facebook">
+                    <button id='check'>check</button>
+                </div>
+
+            </div>
         
         	<div class ='underfooter'></div>
             <div class = 'footer'>
