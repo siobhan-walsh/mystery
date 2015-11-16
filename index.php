@@ -20,7 +20,7 @@
                 
                 <a href = 'login.php'><input type='button' class='buttons' id='loginbutton' value="Login"></a>
                 <a href = 'signup.php'><input type='button' id='signupbutton' class='buttons' value="Sign up"></a>
-                <input type='button' id='fbbutton' class='buttons' value="Login through facebook">
+                <!--<input type='button' id='fbbutton' class='buttons' value="Login through facebook">-->
             </div>
             
         </div>

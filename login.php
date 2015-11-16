@@ -16,24 +16,24 @@
 
                 <div class= 'hspace message'>
                     <h2>Log in</h2><br>
-                    <p>Don't have an account yet? <a href = 'signup.php'>Sign up!</a></p>
+                    <p>Don't have an account yet? <a href = 'signup.php'>Sign up!</a></p><br>
                 </div>
-                <div class='center'>
+                <div class=' center'>
 
                     <span id='warn' style='color:red'></span>
-                    <input type='text' id='username' class='textbox' placeholder="username">
-                    <input type='password' id='password' class='textbox' placeholder="password">
+                    <input type='text' id='username' class='textbox' placeholder="username" required='true'>
+                    <input type='password' id='password' class='textbox' placeholder="password" required='true'>
                     
-                    <p class='right-text '><small>Forgot your password?</small></p>
-                   <!-- 
+                   <!-- <p class='right-text '><small>Forgot your password?</small></p><br>
+                    
                    
                    <button id="loginFB">Login with Facebook</button>
                    <img src='img/enter-btn.png' id='enter'> 
                    
                    -->
                    <input type='button' id='loginbtn' class='buttons' value="Login">
-                    <input type='button' id='fbbutton' class='buttons' value="Login through facebook">
-                    <button id='check'>check</button>
+                  <!--  <input type='button' id='fbbutton' class='buttons' value="Login through facebook">
+                    <button id='check'>check</button> -->
                 </div>
 
             </div>
@@ -56,39 +56,41 @@
 	loginbtn.onclick = function(){
 		document.getElementById('warn').innerHTML = '';
 		$.ajax({
-						url:"server.php",
-						type:"POST",
-						dataType:"JSON",
-						data:{
-							
-							mode:'login',
-							un:un.value,
-							pw:pw.value
-							
-							},
-						success:function(resp){
-							
-							console.log("yaya success resp is:", resp);	
-							
-							if(resp == 'yes'){
-								
-								//window.location = "/themes.php"
-								
-								
-							} else if(resp == 'no'){
-								
-								document.getElementById('warn').innerHTML = "Sorry, that is not the correct username or password";
-									
-							}
-							
-							
-							
-						},
-						error:function(err){
-							console.log("sorry there was an error"); 	
-						}
+			url:"server.php",
+			type:"POST",
+			dataType:"JSON",
+			data:{
+				
+				mode:'login',
+				un:un.value,
+				pw:pw.value
+				
+				},
+			success:function(resp){
+				
+				console.log("yaya success resp is:", resp);	
+				
+				if(resp == 'yes'){
+					
+					window.location = "/themes.php"
+					
+					
+					
+				} else if(resp == 'no'){
+					
+					document.getElementById('warn').innerHTML = "Sorry, that is not the correct username or password";
 						
-					});	
+				}
+				
+				
+				
+			},
+			error:function(err){
+				console.log("sorry there was an error"); 
+				document.getElementById('warn').innerHTML = "Sorry, that is not the correct username or password";	
+			}
+			
+		});	
 					  
               
 	
@@ -96,72 +98,7 @@
 		
 	};
 	
-	
-	check.onclick = function(){
-		$.ajax({
-						url:"server.php",
-						type:"POST",
-						dataType:"JSON",
-						data:{
-							
-							mode:'checksession',
-							
-							
-							},
-						success:function(sessyo){
-							
-							console.log("Session GET returned: ", sessyo);	
-							
-							
-						},
-						error:function(err){
-							console.log("error"); 	
-						}
-						
-					});	
-					  
-	}
-	function getUserProfileInfo() {
-
-                $.ajax({
-                    url: "sessions.php",
-                    type: "POST",
-                    dataType: "JSON",
-                    data: {
-						mode:'checksession'
-						},
-                    success: function(resultData) {
-                        console.log("Session GET returned: ", resultData);
-
-					/*
-                        var status = resultData['status'];
-                        if(status == 'success') {
-
-                            var userProfileData = "";
-                            for(var key in resultData) {
-                                if(key != 'status') {
-                                    userProfileData += key + ":" + resultData[key] + " ";
-                                }
-                            }
-                           
-						   
-						
-                        } else {
-							
-							console.log("idk");
-						}
-						   */
-
-                    },
-                    error: function() {
-                        console.log("error");
-                    }
-                });
-
-            }
-	
-	
-	
+	/*
 	
 	
   window.fbAsyncInit = function() {
@@ -186,7 +123,7 @@
 			
             /*var txt = "Welcome!";
               document.write("<p>Link: " + txt.link("themes.php") + "</p>");
-			*/
+			
           }
           if(resp.status == "unknown") {
             alert("Login Failed");
@@ -202,7 +139,7 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-  
+  */
     </script>  
     </body>
 </html>

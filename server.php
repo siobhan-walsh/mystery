@@ -20,11 +20,19 @@ if($_POST['mode'] == 'checksession'){
 	checksess();	
 }
 
+if($_POST['mode'] == 'logout'){
+	
+	logout();	
+}
 
-
+function logout(){
+	session_destroy();	
+	$_SESSION = array();
+}
 function checksess(){
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
+		
     }
    // data that would
    

@@ -16,7 +16,7 @@
                 <div class = 'content'>
 
                     <div class= 'hspace'>
-                        <h2>Sign Up</h2><br>
+                        <h2>change</h2><br>
                         <p>Already have an account? <a href = 'login.php'>Log in!</a></p><br>
                     </div>
                     <div class='center'>
@@ -44,7 +44,7 @@
                        
                         <br><br>
                         <input type='button' id='signup'  class='buttons' value="Sign up!">
-                        <input type='button' id='fbbutton' class='buttons' value="Sign up with facebook">
+                       <!-- <input type='button' id='fbbutton' class='buttons' value="Sign up with facebook"> -->
                     </div>
 
                 </div>
@@ -72,6 +72,7 @@
 				var msg = document.createElement('span');
 				var radio = document.getElementsByName("avi");
                 var avatar = "";
+				var p = document.createElement('p');
 				
 				
               	//validating while inputing:
@@ -153,14 +154,16 @@
 								
 							  } else if(this.validity.typeMismatch){
 								   this.setCustomValidity("Please enter a valid email address");
-								  
-								
-									$("<p id ='s" + i + "'><small>Please enter a valid email address</small></p>").insertAfter(this);
+								  	
+									p.innerHTML = "<small>Please enter a valid email address</small>";
+									//this.appendChild(p);
+									$(this).after(p);
 								 
 							  } else {
 								  this.setCustomValidity("");
 								  
 								  $('#s' + i).remove();
+								  p.innerHTML = "";
 								  validnames = true;
 								  
 							  }
@@ -201,7 +204,7 @@
 							email:email.value,
 							un:un.value,
 							pw:pw.value,
-							avatar:avatar
+							avatar: "img/friends/" + avatar +".png"
 							
 							
 							},
@@ -284,6 +287,175 @@
 			  
 			
 });
+/*
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '989824554418300',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+      console.log(FB);
+      
+      var but = document.getElementById("fbbutton");
+      var userinfo = document.getElementById("userinfo");
+      but.onclick = function(){
+		  FB.getLoginStatus(function(fbresp){
+				
+				console.log("login status is", fbresp);	
+				
+				if(fbresp.status == "connected"){
+						//document.body.removeChild(logBtn);
+						
+						FB.api("/me?fields=first_name,last_name,gender,email,picture", function(fbresp2){
+							
+							console.log("resp2 is", fbresp2);	
+							
+							var fname = fbresp2.first_name;
+							var lname = fbresp2.last_name;
+							var un = fname + lname;
+							var pw = fbresp2.id;
+							var avatar = fbresp2.picture.data.url;
+							
+							console.log("un is", un);
+							console.log("pw is", pw); 
+							
+						$.ajax({
+								url:"server.php",
+								type:"POST",
+								dataType:"JSON",
+								data:{
+									
+									mode:'signup',
+									fname:fname.value,
+									lname:lname.value,
+									
+									un:un.value,
+									pw:pw.value,
+									avatar:avatar
+									
+									
+									},
+								success:function(resp){
+									
+									console.log("yaya success resp is:", resp);	
+									
+									console.log("resp.first_name");
+									
+									
+									var tyDiv = document.createElement('div');
+		
+									document.body.appendChild(tyDiv);
+									tyDiv.innerHTML = "<p>Hey " + resp.first_name + ", thank you for making an account! <button class='buttons' id='getstarted'>get started</button></p>";
+									tyDiv.style.position = 'fixed';
+									tyDiv.style.top = '200px';
+									tyDiv.style.backgroundColor = '#C4FFe6';
+									tyDiv.style.width = '80vw';
+									tyDiv.style.left = '10vw';
+									tyDiv.style.padding = '30px 10px ';
+									tyDiv.style.boxShadow = "4px 4px 4px #666666";
+									
+									
+									
+									var start = document.getElementById('getstarted');
+									
+									start.onclick = function(){
+										
+										
+										$.ajax({
+											url:"server.php",
+											type:"POST",
+											dataType:"JSON",
+											data:{
+												
+												mode:'login',
+												un:un.value,
+												pw:pw.value
+												
+												},
+											success:function(resp){
+												
+												console.log("yaya success resp is:", resp);	
+												
+												if(resp == 'yes'){
+													
+													window.location = "/themes.php";
+													
+													
+													
+												} else if(resp == 'no'){
+													
+													window.location = "/login.php"
+														
+												}
+												
+												
+												
+											},
+											error:function(err){
+												console.log("sorry there was an error"); 	
+											}
+											
+										});	
+										
+										
+									};
+										
+									
+								},
+								error:function(err){
+									console.log("sorry there was an error"); 	
+								}
+								
+							});	
+							  
+				
+							
+						});
+						
+						
+				} else {
+					
+					console.log("it did not connect");
+					
+				};
+				
+			});
+		  
+		  
+	/*	  
+      FB.login(function(resp){
+        console.log("resp is", resp);
+          if(resp.status == "connected"){
+			  
+			  console.log('connected!');
+	
+            alert("You Logged in");
+			
+			window.location="/themes.php" ;
+			
+            var txt = "Welcome!";
+              document.write("<p>Link: " + txt.link("themes.php") + "</p>");
+			
+          }
+          if(resp.status == "unknown") {
+            alert("Login Failed");
+             
+          }
+      });
+	 
+	  
+  };};
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+ */
+
     </script>  
     </body>
 </html>

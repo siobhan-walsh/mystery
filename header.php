@@ -22,31 +22,31 @@
 			var header = document.getElementById('header');
 			var mclick = false;
 		
-		$.ajax({
-			url:"server.php",
-			type:"POST",
-			dataType:"JSON",
-			data:{
-				
-				mode:'checksession',
-				
-				
+			$.ajax({
+				url:"server.php",
+				type:"POST",
+				dataType:"JSON",
+				data:{
+					
+					mode:'checksession',
+					
+					
+					},
+				success:function(sess){
+					
+					console.log("Session info returned: ", sess);
+					var user = sess.username;	
+					var pic = sess.avatar;
+					
+					document.getElementById('userpic').src = sess.avatar;
+					document.getElementById('usern').innerHTML = sess.username;
+					
 				},
-			success:function(sess){
+				error:function(err){
+					console.log("error"); 	
+				}
 				
-				console.log("Session info returned: ", sess);
-				var user = sess.username;	
-				var pic = sess.avatar;
-				
-				//document.getElementById('userpic').src = "img/friends/" + sess.avatar +".png";
-				//document.getElementById('usern').innerHTML = sess.username;
-				
-			},
-			error:function(err){
-				console.log("error"); 	
-			}
-			
-		});	
+			});	
 		
 		
 		var userinfo = document.getElementById('userinfo');
@@ -85,9 +85,28 @@
 			
 			console.log("i wanna log out");
 			
-			<?php
-				session_destroy();
-			?>
+			$.ajax({
+			url:"server.php",
+			type:"POST",
+			dataType:"JSON",
+			data:{
+				
+				mode:'logout'
+				
+				
+				},
+			success:function(){
+				
+				console.log("logout ");
+				window.location = "/index.php";
+				
+			},
+			error:function(errr){
+				console.log("error"); 
+				window.location = "/index.php";
+			}
+			
+		});	
 			
 				
 		}
@@ -95,4 +114,4 @@
 		
 });
 
-</script>
+	</script>
