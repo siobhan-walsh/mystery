@@ -18,7 +18,7 @@
                   
                     <img class = 'plusimg' src="img/plusbutton.png"/>
                
-        <div class = 'charcontent'>Floor manager. Precious is aware that the profits from casino are dwindling...and they 		can’t be attributed to gambling losses. Her job may be on the line if she can’t find the thief.<br></br> </div>
+        <div class = 'charcontent'>Floor manager. Precious is aware that the profits from casino are dwindling...and they 		can’t be attributed to gambling losses. Her job may be on the line if she can’t find the thief.</div>
     
                </div>
                
@@ -28,7 +28,7 @@
                     <img class = 'charimg' src ="img/characters/character11.png"/>
                    
                     <img class = 'plusimg' src="img/plusbutton.png"/>
-                     <div class = 'charcontent'>Casino owner. Ronald is the owner of the Paramount Casino, the largest and grandest 		casino on the Las Vegas strip. Ronald is a man you don’t want to betray—the result could be deadly!<br></br> </div>
+                     <div class = 'charcontent'>Casino owner. Ronald is the owner of the Paramount Casino, the largest and grandest 		casino on the Las Vegas strip. Ronald is a man you don’t want to betray—the result could be deadly!</div>
                 </div>
                 
                 <h3 class='charname'> Mimi Martini: </h3>
@@ -37,7 +37,7 @@
                     <img class = 'charimg' src ="img/characters/character10.png"/>
          
                     <img class = 'plusimg' src="img/plusbutton.png"/>
-        <div class = 'charcontent'>Cocktail Waitress. A money-hungry cocktail waitress, Mimi will do anything (and use 		anyone) to advance herself out of the casino lounge. <br></br> 
+        <div class = 'charcontent'>Cocktail Waitress. A money-hungry cocktail waitress, Mimi will do anything (and use 		anyone) to advance herself out of the casino lounge. 
         </div>
                   
                </div>
@@ -56,12 +56,13 @@
                 
         
              
-          
+           <div class='buttonDiv'>
                 
                  <a href='invitefriends.html' class="btn1">Invite Friends</a> 
             
                 
                 <a href="game.php" class="btnchar-blue"> Start Game!</a>
+  </div>
 
         
         </div>

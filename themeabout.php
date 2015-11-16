@@ -5,14 +5,14 @@
 
 ?>
 
-<div class = 'content'>
+<!--div class = 'content'>!-->
 
        <div class = 'sin'>
        		<img src = 'img/welcome1.png'>
        </div>
         
         
-       <div class="p3" >
+       <div class="p2" >
        
        		It has been a year since the Paramount Casino has changed ownership
 			and Ronald Trump, the new owner, is ready to celebrate!As the largest 
@@ -22,16 +22,18 @@
 			going to be high and there is no limit to what could happen.
              
        </div>
-      
              
-       <div class='buttonDiv2'>
+       <div class='buttonDiv'>
 
-          <button  id='backbtn' class="themebtn">Back</button>
+          <a href='theme.php' class="btn">Back</a>
+    
+
            <a href="characters.php" class="bluetheme">Characters</a>
        </div>
             
            
-     </div>
+     
+
+<?php include("footer.php"); ?>
      
      <script src='js/backbtn.js'></script>
-<?php include("footer.php"); ?>
