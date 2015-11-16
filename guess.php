@@ -6,34 +6,35 @@
 ?>
 
 
+    <br> 
 
                 <h1> Click On Your Guess</h1>
 
-
+ <br> 
          <div id = "guess">
-        <a href="wrong.php"><img id="first"  src="img/characters/character6.png"></a>
-         <a href="wrong.php"><img src="img/characters/character7.png"></a>
-          <a href="wrong.php"><img src="img/characters/character8.png"></a>
-       	 <a href="wrong.php"><img id="first" src="img/characters/character5.png"></a>
-      	 <a href="wrong.php"><img src="img/characters/character9.png"></a>
-      	  <a href="wrong.php"><img src="img/characters/character10.png"></a>
-       	 <a href="wrong.php"><img id="first" src="img/characters/character3.png"></a>
-		 <a href="wrong.php"><img src="img/characters/character11.png"></a>
-       	 <a href="wrong.php"><img id="last" src="img/characters/character4.png"> </a>
+        <img id="first"  src="img/characters/character6.png">
+        <img src="img/characters/character7.png">
+        <img src="img/characters/character8.png">
+        <img id="first" src="img/characters/character5.png">
+        <img src="img/characters/character9.png">
+        <img src="img/characters/character10.png">
+        <img id="first" src="img/characters/character3.png">
+      	<img src="img/characters/character11.png">
+         <img id="last" src="img/characters/character4.png"> 
        
     </div>
 
 
                 <div class='buttonDiv'>
 
-                    <a href='game.php' ><button id='backbtn' class="btn">Back</button> </a>
+                    <a href='game.php' class="btn">Back</a> 
                 
-                 <a href='game.php' class="btn btn-blue" > Cancel</a>
+                 <a href='gameover.php' class="btn btn-blue" > Next</a>
                      
                 </div>
 
 
-        <script src='js/backbtn.js'></script>
+        
     
 <?php
 

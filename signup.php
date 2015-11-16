@@ -2,17 +2,10 @@
 	
 	
 	include("head.php");
+	include("header.php");
 	
+
 ?>
-<body> 
-        
-	<div class = 'tablet-size'>	
-    	<div class = 'scroll'>
-            <div class = 'header'>
-                <br><br>
-                <div><img src = 'img/logo.png'></div>
-                
-            </div> 
                 <div class = 'content'>
 
                     <div class= 'hspace'>

@@ -9,15 +9,15 @@
         <div>
             <p>Katie has accepted your friend request! </p>
         	<img src="img/frdsList/F1.png"/>
-            <p>Katie has accepted your friend request! </p><hr/>
+            <p>Marcus just added you as a friend! </p><hr/>
         </div>
         
         <div>
-            <img src="img/frdsList/F2.png"/><p>Katie has accepted your friend request! </p><hr/>
+            <img src="img/frdsList/F2.png"/><p>Alison just send you a message! </p><hr/>
         </div>
         
     	<div>
-        	<img src="img/frdsList/F4.png"/><p>Katie has accepted your friend request! </p><hr/>
+        	<img src="img/frdsList/F4.png"/><p>Bella has accepted your friend request! </p><hr/>
         </div>
     	<div>
         	<img src="img/frdsList/F1.png"/><hr/>

@@ -1,17 +1,7 @@
 <?php
 	include("head.php");
-	
+	include("header.php");
 ?>
-<body> 
-        
-	<div class = 'tablet-size'>	
-    <div class = 'scroll'>
-    <div class = 'header'>
-        <br><br>
-        <div><img src = 'img/logo.png'></div>
-        
-    </div>
-                
                 <div class = 'content'>
 
                     <div class= 'hspace message'>
@@ -20,7 +10,7 @@
                     </div>
                     <div class='center'>
 
-						<span id='warn' style='color:red'></span>
+
                         <input type='text' id='username' class='textbox' placeholder="username">
                         <input type='password' id='password' class='textbox' placeholder="password">
                         
@@ -33,7 +23,6 @@
                        -->
                        <input type='button' id='loginbtn' class='buttons' value="Login">
                         <input type='button' id='fbbutton' class='buttons' value="Login through facebook">
-                        <button id='check'>check</button>
                     </div>
 
                 </div>
@@ -51,10 +40,9 @@
 	var un = document.getElementById('username');
 	var pw = document.getElementById('password');
 	var loginbtn = document.getElementById('loginbtn');
-	var check = document.getElementById('check');
 	
 	loginbtn.onclick = function(){
-		document.getElementById('warn').innerHTML = '';
+	
 		$.ajax({
 						url:"server.php",
 						type:"POST",
@@ -70,18 +58,19 @@
 							
 							console.log("yaya success resp is:", resp);	
 							
-							if(resp == 'yes'){
+							console.log("resp.first_name");
+							var tyDiv = document.createElement('div');
+
+							document.body.appendChild(tyDiv);
+							tyDiv.innerHTML = "<p>Hey " + resp.first_name + ", thank you for making an account! <a href='themes.php'>Go check out our different themes to start a game!</a></p>";
+							tyDiv.style.position = 'fixed';
+							tyDiv.style.top = '200px';
+							tyDiv.style.backgroundColor = '#C4FFe6';
+							tyDiv.style.width = '80vw';
+							tyDiv.style.left = '10vw';
+							tyDiv.style.padding = '30px 10px ';
+							tyDiv.style.boxShadow = "4px 4px 4px #666666";
 								
-								//window.location = "/themes.php"
-								
-								
-							} else if(resp == 'no'){
-								
-								document.getElementById('warn').innerHTML = "Sorry, that is not the correct username or password";
-									
-							}
-							
-							
 							
 						},
 						error:function(err){
@@ -95,71 +84,6 @@
 		
 		
 	};
-	
-	
-	check.onclick = function(){
-		$.ajax({
-						url:"server.php",
-						type:"POST",
-						dataType:"JSON",
-						data:{
-							
-							mode:'checksession',
-							
-							
-							},
-						success:function(sessyo){
-							
-							console.log("Session GET returned: ", sessyo);	
-							
-							
-						},
-						error:function(err){
-							console.log("error"); 	
-						}
-						
-					});	
-					  
-	}
-	function getUserProfileInfo() {
-
-                $.ajax({
-                    url: "sessions.php",
-                    type: "POST",
-                    dataType: "JSON",
-                    data: {
-						mode:'checksession'
-						},
-                    success: function(resultData) {
-                        console.log("Session GET returned: ", resultData);
-
-					/*
-                        var status = resultData['status'];
-                        if(status == 'success') {
-
-                            var userProfileData = "";
-                            for(var key in resultData) {
-                                if(key != 'status') {
-                                    userProfileData += key + ":" + resultData[key] + " ";
-                                }
-                            }
-                           
-						   
-						
-                        } else {
-							
-							console.log("idk");
-						}
-						   */
-
-                    },
-                    error: function() {
-                        console.log("error");
-                    }
-                });
-
-            }
-	
 	
 	
 	

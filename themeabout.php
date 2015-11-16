@@ -12,7 +12,7 @@
        </div>
         
         
-       <div class="p2" >
+       <div class="p3" >
        
        		It has been a year since the Paramount Casino has changed ownership
 			and Ronald Trump, the new owner, is ready to celebrate!As the largest 
@@ -24,10 +24,10 @@
        </div>
       
              
-       <div class='buttonDiv'>
+       <div class='buttonDiv2'>
 
-          <button  id='backbtn' class="btn">Back</button>
-           <a href="characters.php" class="btn btn-blue">Characters</a>
+          <button  id='backbtn' class="themebtn">Back</button>
+           <a href="characters.php" class="bluetheme">Characters</a>
        </div>
             
            
