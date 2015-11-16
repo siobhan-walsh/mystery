@@ -1,0 +1,1014 @@
+/* style for mystery --- view site in mobile view for best results*/
+
+
+/* ============= BUTTON STUFF ============= */
+/*customize for your page, i made them links on my page not buttons
+
+*****container
+
+.buttonDiv{
+    
+    position:fixed;
+    bottom:15%;
+	width:100%;
+	padding:1% 0;
+    margin: auto;
+    display: inline-block;
+	====>>> some pages ====>>> background-color:rgba(255,255,255,0.4);
+
+}
+
+
+
+/*******white button*********
+
+.btn {
+	display: inline-block;
+	color: #666;
+	background-color: #eee;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	padding: 10px 30px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-bottom-width: 3px;
+	
+}
+
+.btn:hover {
+		background-color: #e3e3e3;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+.btn:active {
+		background-color: #CCC;
+		border-color: rgba(0,0,0,0.9);
+	}
+	
+/******blue button*********
+btn.btn-blue {
+	background-color: #699DB6;
+	border-color: rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	color: #FFF;
+}
+
+btn.btn-blue:hover {
+		background-color: #4F87A2;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+btn.btn-blue:active {
+		background-color: #3C677B;
+		border-color: rgba(0,0,0,0.9);
+	}
+
+
+
+*/
+
+
+
+
+
+
+body {
+    margin:0;
+    padding:0;
+    
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+    	
+}
+
+
+
+
+
+p {
+	
+	
+	font-size: 100%;
+	font-family: 'Fira Mono',sans-serif;
+    text-align:left;  
+	letter-spacing: 5px;
+
+    }
+	
+
+/* use Fira Mono for all headings*/
+
+h1 {
+   	font-size: 125%;
+	font-family: 'Fira Mono',sans-serif;
+    text-align: center; 
+ 
+	font-weight: bold;
+	
+}
+
+h2 {
+    font-size:10pt;
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 400;
+}
+input {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+}
+a {
+    text-decoration:none;
+    color:#627f73;
+}
+
+a:hover {
+    
+    color:#C4FFe6;
+}
+
+.hspace {
+    margin: 0 4%;   
+}
+.vspace {
+    margin: 4% 0;   
+}
+
+.center {
+    width: 60%;
+    margin:auto;
+
+}
+
+.center-text {
+    text-align:center;   
+}
+.right-text {
+    text-align:right;   
+}
+/* ============= SPLASH PAGE ============= */
+
+
+.splashlogo {
+	
+	text-align:center;  
+	
+	
+	}
+
+.thumb {
+  
+ 
+  vertical-align: middle; 
+  text-align: center;
+	}
+
+.crimetape {
+    
+ margin-right: 35px;
+  margin-left: -5px;
+	}
+/* ============= HEADER STYLES ============= */
+.header {
+    margin:0px;
+    width:100%;
+
+    display:block;
+   
+}
+
+.header div {
+    margin:auto;
+    width:30%;
+}
+
+.header img {
+    height:auto;
+    width:100%;
+    
+}
+
+/* ============= MAIN CONTENT STYLES ============= */
+
+
+.content h4 {
+    text-align:center;   
+}
+
+/* ------------- theme page ----------------*/
+.themecase {
+    margin:auto;   
+    width:90%;
+}
+.themecase img {
+    width:44%; 
+    margin:3%;
+}
+.themecase img:nth-child(3n+0) {
+    width: 92%;
+    margin:5 0 4 0;
+    
+}
+
+
+/* ------------- login or sign up page ----------------*/
+
+.biglogo {
+    width: 40%;
+    margin: 6% 30% 0%;
+
+}
+.login-buttons {
+    width: 60%;
+    margin:auto;
+    padding-top: 40px;
+}
+.buttons {
+    background-color:#599DAC;
+    color:#ffffff;
+    border:none;
+    clear:both;
+    float:left;
+    width:100%;
+    font-size:12pt;
+    margin-bottom:20px;
+    padding:10px;
+    border-radius:4px;
+}
+
+
+/* ------------- login page ----------------*/
+
+
+
+.textbox {
+  
+    border-style:solid;
+    border-color:#ffffff;
+    border-width: 1px;
+    clear:both;
+    float:left;
+    width:100%;
+    font-size:12pt;
+    margin-bottom:20px;
+    padding:10px;
+    border-radius:4px;
+    background-color:rgba(100, 100, 100, 0);
+}
+
+#enter {
+    
+    width:70%;
+    margin-left:15%;
+}
+
+/* ------------- profile pages ----------------*/
+
+
+
+#options{
+	width:60%;
+	margin:0 20%;
+	float:left;
+    /*height:50px;
+    position: fixed;
+    bottom: 200px;
+    left: 110px;
+	clear:both;
+    float:centre;
+	width: 40%;
+    margin:auto;
+*/
+}
+
+#options button{
+	background-color:#27A5A1; 
+	border-style:solid;
+    border-color:grey;
+    border-width: 1px;
+	clear:both;
+    color: aliceblue;
+    float:left;
+    width:100%;
+    font-size:12pt;
+    margin-bottom:15px;
+    padding:8px;
+    border-radius:4px;
+}
+
+
+#DP{
+    
+	/*width:70vh;*/
+}
+
+
+#buttons{
+	width:100px;
+    height:50px;
+    position: fixed;
+    bottom: 430px;
+    left: 60px;
+	clear:both;
+    float:centre;
+	width: 70%;
+    margin:auto;
+
+}
+
+#buttons button{
+	background-color:white;
+	border-style:solid;
+    border-color:white;
+    border-width: 1px;
+	clear:both;
+    float:centre;
+    width:100%;
+    font-size:12pt;
+    margin-bottom:20px;
+    padding:10px;
+    border-radius:80px;
+}
+
+#DP img{
+	opacity:0.95;
+	z-index:2px;
+	width:45%;
+	margin: 0 25%;
+	/*height:23vh;
+	position:fixed;
+	left:27%;*/
+    padding: 1%;
+}
+
+/* ------------- messenger pages ----------------*/
+
+#msg {
+    padding: 1px;
+    width:75%;
+    background-color:"white";
+    position: fixed;
+    bottom: 12vh;
+    left: 10px;
+}
+
+#send {
+    padding: 1px;
+    width:15%;
+    height: 3vh;
+    background-color:"white";
+    position: fixed;
+    bottom: 12vh;
+    margin-left: 83%;
+}
+
+
+/* ------------- friend page ----------------*/
+
+#FriendList img{
+    width: 65%;
+    height: 65%;
+    padding:10%
+}
+
+#FriendList{
+    height: 70vh;
+    
+    
+}
+#FriendList img{
+   width:15%;
+    height:13%;
+    padding:2%;
+    margin-left:10%;
+}
+
+
+#list {
+    position:fixed;
+    width:25%;
+    top:13%;
+    right:0;
+    float:right;
+    padding:40%;
+
+    
+}
+
+#list p{
+    
+    padding:10%;
+}
+#AllFriends p{
+    margin-right:10%;
+    float:right;
+    width:30vw;
+    margin-top:5%;
+}
+
+/* ------------- Setting page ----------------*/
+
+#privacy {
+    /*background-color:#599DAC;
+    color:#ffffff;
+    border:none;
+    clear:both;
+    float:inherit;
+    width:70%;
+    font-size:11pt;
+    margin-bottom:30px;
+    margin-top: 25px;
+    padding:10px;
+    border-radius:4px;*/
+    background-color: #27A5A1;
+	text-transform:inherit;
+	letter-spacing: 2px;
+	font-size: 100%;
+	float:inherit;
+	border-radius: 5%;
+	border-bottom-width: 5%;
+	-moz-border-radius: 5%;
+	-webkit-border-radius: 5%;
+	border-color: rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	color: #FFF;
+
+}
+
+#termOfUse {
+    background-color: #27A5A1;
+	text-transform:inherit;
+	letter-spacing: 2px;
+	font-size: 100%;
+	float:inherit;
+	border-radius: 5%;
+	border-bottom-width: 5%;
+	-moz-border-radius: 5%;
+	-webkit-border-radius: 5%;
+	border-color: rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	color: #FFF;
+    
+}
+
+#set {
+    
+	width:90%;
+	margin:4% 5%;
+	text-align:left;
+   /* float:inherit;
+    margin-left:18%; */
+}
+#policy {
+    
+     font-size:10pt;
+}
+#contact {
+    background-color: #27A5A1;
+	text-transform:inherit;
+	letter-spacing: 2px;
+	font-size: 100%;
+	float:inherit;
+	border-radius: 5%;
+	border-bottom-width: 5%;
+	-moz-border-radius: 5%;
+	-webkit-border-radius: 5%;
+	border-color: rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	color: #FFF;
+    margin-left:18%;
+    
+}
+/* ------------- gameOver pages ----------------*/
+#gameOver img{
+    width:25vw;
+    height:30vw;
+    margin-left:37vw;
+    margin-top:30vw;
+}
+#gameOver h4{
+    font-size:20pt;
+    font-family: 'Fira Mono',sans-serif;
+}
+#gameOver p{
+    font-size:12pt;
+    font-family: 'Fira Mono',sans-serif;
+}
+#gameOver h3{
+    font-size:15pt;
+    font-family: 'Fira Mono',sans-serif;
+    margin-left:31vw;
+    margin-top:10vw;
+}
+/* ------------- notification pages ----------------*/
+
+#notificatDiv p{
+    margin-bottom:15vw;
+    margin-left:20vw;
+    font-size:8pt;
+    position:absolute;
+    margin-top:7%;
+    
+    
+}
+
+#notificatDiv img{
+    margin-bottom:0vw;
+}
+#notificatDiv {
+    margin-bottom:15%;
+    margin-top:5%;
+}
+
+
+
+
+/* ------------- character page ----------------*/
+
+.imgA1 {
+	padding-top: 5%;
+	padding-left: 10%;
+	padding-right: 90%;
+	max-width: 5%;
+	margin:auto;
+    width:auto;
+    height:auto;
+	display:block;
+   
+	}
+
+
+
+.contentimg {
+	padding-top: 5%;
+	padding-left: 10%;
+	padding-right: 90%;
+	width: 75%;
+	margin:auto;
+    width:auto;
+    height:auto;
+	display:block;
+   
+  
+	}
+
+.charrow {
+	
+	width:100%;
+	margin:6% 0;	
+}
+
+.htitle{
+	
+	
+    font-size:16pt;
+	font-family: 'Fira Mono',sans-serif;
+
+	letter-spacing: 1px;
+	line-height: 110%;
+	text-align:center;
+    }
+	
+	.charname {
+			
+		font-size:14pt;
+		font-family: 'Fira Mono',sans-serif;
+		margin-left:2%;
+	}
+	
+.charcontent{	
+	
+	width:70%;
+    font-size:10pt;
+	margin-top: 1%;
+	font-family: 'Fira Mono',sans-serif;
+    text-align:left;  
+	letter-spacing: 3px;
+	float:left;
+
+    }
+	
+.charimg {
+	width:20%;
+	float:left;
+	margin-left:2%;
+}
+
+.plusimg {
+	width:8%;	
+	vertical-align:top;
+	float:left;
+}
+
+.charname {
+	
+	margin-left: 20%;
+	
+	}
+/*.buttonDiv3{
+    
+    position:fixed;
+	width:100%;
+	padding:2% 2% 2% 2%;
+    margin: 0% 0% 50% 50%;
+	text-align: center;
+    display: inline-block;
+	background-color:rgba(255,255,255,0.4);
+
+}
+/*******character white button*********/
+
+.btn1 {
+	display: inline-block;
+	float:left;
+	color: #666;
+	background-color: #eee;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	padding: 3% 3%;
+	margin-right: 54%;
+	margin-left: 4%;
+	margin-bottom: -63px;
+	margin-top: 5%;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-bottom-width: 3px;
+	
+}
+
+.btn1:hover {
+		background-color: #e3e3e3;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+.btn1:active {
+		background-color: #CCC;
+		border-color: rgba(0,0,0,0.9);
+	}
+	
+/****** character blue button*********/
+.btnchar-blue {
+	background-color: #27A5A1;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	padding: 3% 3%;
+	margin-right: 6%;
+	margin-top: 5%;
+	float: right;
+	border-radius: 5px;
+	border-bottom-width: 3px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-color: rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	color: #FFF;
+}
+
+.btnchar-blue:hover {
+		background-color: #4F87A2;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+.btnchar-blue:active {
+		background-color: #3C677B;
+		border-color: rgba(0,0,0,0.9);
+	}
+
+
+
+/* ============= Round 1 Game Play ============= */
+
+.gameDiv{
+    
+    position:absolute;
+    bottom:12%;
+	width:100%;
+	
+	padding-bottom:1%;
+	 -webkit-overflow-scrolling: touch;
+	
+/*    margin: auto;
+	display: block;
+	text-align: center;
+    display: inline-block; */
+
+}
+
+
+
+
+.buttonDiv2 {
+    
+    position:fixed;
+    bottom:15%;
+	width:100%;
+	overflow: scroll;
+    margin: auto;
+	display: block;
+	text-align: center;
+    display: inline-block;
+	 
+}
+.p2 {
+	
+	
+	font-size: 125%;
+	font-family: 'Fira Mono',sans-serif;
+    text-align:left;  
+	padding-left: 5%;
+	padding-right: 5%;
+	margin-bottom: 12%;
+	letter-spacing: 3px;
+	line-height: 135%;
+	margin-left: 5%;
+	overflow: scroll;
+    }
+
+
+
+
+
+
+.lock {
+	
+  /*margin-right: -55px; 
+	margin-left: -100px;
+	margin-top: 120px; */
+	width: 14%;
+	vertical-align:bottom;
+	margin:0 16% 40px;
+	
+	
+	}	
+	
+.h2 {
+	
+	font-size: 10pt;
+	font-family: 'Fira Mono',sans-serif;
+    text-align:left; 
+	font-weight: bold;
+
+	
+	}
+
+	
+
+	
+
+.btn {
+	
+	float:left;
+	color: #666;
+	background-color: #eee;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 100%;
+	padding: 1%;
+	width: 15%;
+	margin:0 5%;
+	
+	width:13%;
+	
+	text-align:center;
+/*	
+	
+	display: inline-block;
+	padding: 3% 3%;
+	margin-right: 15%;
+	margin-bottom: 15%;
+	margin-top: 45%;
+*/
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-bottom-width: 3px;
+	
+}
+	
+	
+
+
+.btn:hover {
+		background-color: #e3e3e3;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+.btn:active {
+		background-color: #CCC;
+		border-color: rgba(0,0,0,0.9);
+	}
+
+/* blue button */
+
+.btn.btn-blue {
+background-color: #27A5A1;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 1%;
+	width: 15%;
+	font-size: 97%;
+	float:right;
+  /*
+  	padding: 3% 3%;
+  	margin-right: 5%;
+	margin-bottom: 10%;
+	margin-top: 45%; */
+	
+	border-radius: 5%;
+	border-bottom-width: 5%;
+	-moz-border-radius: 5%;
+	-webkit-border-radius: 5%;
+	border-color: rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	color: #FFF;
+}
+
+.btn.btn-blue:hover {
+		background-color: #4F87A2;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+.btn.btn-blue:active {
+		background-color: #3C677B;
+		border-color: rgba(0,0,0,0.9);
+	}
+
+/* ============= Wrong Answer ============= */
+	.wrongbtn {
+		
+		position: absolute;
+    	top: 50%;
+		width: 50%;
+		margin-left: 25%;
+		margin-right: 45%;
+		padding: 5%;
+		font-size: 200%;
+		background-color: #27A5A1;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-size: 12px;
+		float: right;
+		border-radius: 5px;
+		border-bottom-width: 3px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-color: rgba(0,0,0,0.3);
+		text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+		color: #FFF;
+		
+		}
+		
+		.sad{
+			
+		position: absolute;
+		margin-left: 40%;
+		margin-bottom: 3%;
+		margin-top: 10%;
+		margin-right: 55%;
+			
+			
+			}
+/* ============= THEME ABOUT PAGE ============= */
+
+.sin{
+ 
+ 	width:100;
+	}	
+	
+	.sin img {
+		width:100%;
+		margin:auto;	
+	}
+
+.p3 {
+	
+	
+	font-size: 10pt;
+	font-family: 'Fira Mono',sans-serif;
+    text-align:left;  
+	margin-bottom: 12px;
+	padding: 4% 4%;
+	letter-spacing: 3px;
+
+	 -webkit-overflow-scrolling: touch
+    }
+	
+.buttonDiv{
+    
+    position:absolute;
+    bottom:17%;
+	width:100%;
+	
+	padding-bottom:1%;
+	 -webkit-overflow-scrolling: touch;
+	
+/*    margin: auto;
+	display: block;
+	text-align: center;
+    display: inline-block; */
+
+}
+
+.bluetheme {
+	background-color: #27A5A1;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	padding: 3% 3%;
+	margin-left: 15%;
+	margin-right: 5%;
+	float: right;
+	border-radius: 5px;
+	border-bottom-width: 3px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-color: rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	color: #FFF;
+	
+}
+.bluetheme:hover {
+		background-color: #4F87A2;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+.bluetheme:active {
+		background-color: #3C677B;
+		border-color: rgba(0,0,0,0.9);
+	}
+
+
+.themebtn {
+	display: inline-block;
+	color: #666;
+	background-color: #eee;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	padding: 3% 3%;
+	margin-right: 22%;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-bottom-width: 3px;
+}
+
+.themebtn:hover {
+		background-color: #e3e3e3;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+.themebtn:active {
+		background-color: #CCC;
+		border-color: rgba(0,0,0,0.9);
+	}
+
+
+/* ============= GUESS PAGE============= */
+
+*{
+  margin: 0;
+  padding-bottom: 2%;
+}
+
+.guess {
+  width: 100%;
+
+}
+
+img {
+  width: 23%;
+  margin-right: 4%;
+
+}
+
+img#first {
+  margin-left: 9%;
+}
+
+img#last {
+  margin-right: 4%;
+}
+
+
+
+
+
+
+
+
+/* ============= FOOTER STYLES ============= */
+
+
+.footer img {
+    max-width:15%;  
+    margin:2%;
+}
