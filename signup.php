@@ -34,14 +34,15 @@
                         <input type='password' id='pwRetype' class='textbox' placeholder="retype password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" >
                         
                         <input type="radio" name="avi" value="f1" id="f1">
-						<label for="f1"><img src="img/frdsList/F1.png"></label>
+						<label for="f1"><img src="img/friends/f1.png"></label>
 
 						<input type="radio" name="avi" value="f2" id="f2">
-						<label for="f2"><img src="img/frdsList/F2.png"></label>
+						<label for="f2"><img src="img/friends/f2.png"></label>
                         
                         <input type="radio" name="avi" value="f4" id="f4">
-						<label for="f4"><img src="img/frdsList/F4.png"></label>
-
+						<label for="f4"><img src="img/friends/f4.png"></label>
+                       
+                        <br><br>
                         <input type='button' id='signup'  class='buttons' value="Sign up!">
                         <input type='button' id='fbbutton' class='buttons' value="Sign up with facebook">
                     </div>
@@ -53,7 +54,8 @@
             </div>
             </div>
 
-    <script src="js/buttons.js"></script>    
+    <script src="js/buttons.js"></script> 
+    
     <script>
         $(document).ready(function(){
                 
@@ -68,8 +70,10 @@
                 var validpw = false;
 				var nval = document.querySelectorAll('.nval');
 				var msg = document.createElement('span');
-               
-            
+				var radio = document.getElementsByName("avi");
+                var avatar = "";
+				
+				
               	//validating while inputing:
 				
 				
@@ -131,37 +135,37 @@
 					
 	   
 						function checkname(){
-									if(this.validity.patternMismatch) {
-										
-										this.setCustomValidity("Please enter a name between 2-20 characters");
-										
-										
-										$("<p id ='s" + i + "'><small>Please enter a name between 2-20 characters</small></p>").insertAfter(this);
-										
-									  } 
-				
-									   else if(this.validity.valueMissing) {
-										    this.setCustomValidity("You must enter a name");
-										  
-											
-											$("<p id ='s" + i + "'><small>Please enter a name between 2-20 characters</small><p>").insertAfter(this);
-										   
-										
-									  } else if(this.validity.typeMismatch){
-										   this.setCustomValidity("Please enter a valid email address");
-										  
-										
-											$("<p id ='s" + i + "'><small>Please enter a valid email address</small></p>").insertAfter(this);
-										 
-									  } else {
-										  this.setCustomValidity("");
-										  
-										  $('#s' + i).remove();
-										  validnames = true;
-										  
-									  }
+							if(this.validity.patternMismatch) {
+								
+								this.setCustomValidity("Please enter a name between 2-20 characters");
+								
+								
+								$("<p id ='s" + i + "'><small>Please enter a name between 2-20 characters</small></p>").insertAfter(this);
+								
+							  } 
+		
+							   else if(this.validity.valueMissing) {
+									this.setCustomValidity("You must enter a name");
+								  
+									
+									$("<p id ='s" + i + "'><small>Please enter a name between 2-20 characters</small><p>").insertAfter(this);
+								   
+								
+							  } else if(this.validity.typeMismatch){
+								   this.setCustomValidity("Please enter a valid email address");
+								  
+								
+									$("<p id ='s" + i + "'><small>Please enter a valid email address</small></p>").insertAfter(this);
 								 
-								}
+							  } else {
+								  this.setCustomValidity("");
+								  
+								  $('#s' + i).remove();
+								  validnames = true;
+								  
+							  }
+						 
+						}
 								
 								
 						//myScript
@@ -176,8 +180,13 @@
                 signupbtn.onclick = function() {
                     
                     
-                    console.log("clicked");
-                 
+                    
+					avatar = document.querySelector('input[name="avi"]:checked').value;
+                
+					console.log("clicked", avatar);
+					//var avatar = "<img src='" + avi + ".png'>";
+					
+				  
                     //send stuff to database 
 					
 					$.ajax({
@@ -191,7 +200,9 @@
 							lname:lname.value,
 							email:email.value,
 							un:un.value,
-							pw:pw.value
+							pw:pw.value,
+							avatar:avatar
+							
 							
 							},
 						success:function(resp){
@@ -199,10 +210,12 @@
 							console.log("yaya success resp is:", resp);	
 							
 							console.log("resp.first_name");
+							
+							
 							var tyDiv = document.createElement('div');
 
 							document.body.appendChild(tyDiv);
-							tyDiv.innerHTML = "<p>Hey " + resp.first_name + ", thank you for making an account! <a href='themes.php'>Go check out our different themes to start a game!</a></p>";
+							tyDiv.innerHTML = "<p>Hey " + resp.first_name + ", thank you for making an account! <button class='buttons' id='getstarted'>get started</button></p>";
 							tyDiv.style.position = 'fixed';
 							tyDiv.style.top = '200px';
 							tyDiv.style.backgroundColor = '#C4FFe6';
@@ -210,6 +223,52 @@
 							tyDiv.style.left = '10vw';
 							tyDiv.style.padding = '30px 10px ';
 							tyDiv.style.boxShadow = "4px 4px 4px #666666";
+							
+							
+							
+							var start = document.getElementById('getstarted');
+							
+							start.onclick = function(){
+								
+								
+								$.ajax({
+									url:"server.php",
+									type:"POST",
+									dataType:"JSON",
+									data:{
+										
+										mode:'login',
+										un:un.value,
+										pw:pw.value
+										
+										},
+									success:function(resp){
+										
+										console.log("yaya success resp is:", resp);	
+										
+										if(resp == 'yes'){
+											
+											window.location = "/themes.php";
+											
+											
+											
+										} else if(resp == 'no'){
+											
+											window.location = "/login.php"
+												
+										}
+										
+										
+										
+									},
+									error:function(err){
+										console.log("sorry there was an error"); 	
+									}
+									
+								});	
+								
+								
+							}
 								
 							
 						},

@@ -31,7 +31,7 @@ function checksess(){
    $data = array('status' => 'notloggedin');
    
    if($_SESSION['loggedin'] == true){
-      $data = array("status" => "success", "username" => $_SESSION['user_name'], "password" => $_SESSION['password']);   
+      $data = array("status" => "success", "username" => $_SESSION['user_name'], "password" => $_SESSION['password'], "avatar" => $_SESSION['avatar']);   
    }
     echo json_encode($data, JSON_FORCE_OBJECT);
   };
@@ -57,7 +57,9 @@ function login(){
 	
 		$arr = array(
 					"user_name" => $row['user_name'],
-					"password" => $row['password']
+					"password" => $row['password'],
+					"avatar" => $row["avatar"]
+					
 				);
 			
 			
@@ -69,6 +71,7 @@ function login(){
 				
 				$_SESSION['user_name'] = $arr['user_name'];
 				$_SESSION['password'] = $arr['password'];
+				$_SESSION['avatar'] = $arr['avatar'];
 				$_SESSION['loggedin'] = true;
 				
 				$sid = session_id();
@@ -106,13 +109,14 @@ function signingup(){
 	
 	$arrToSend = array();
 	
-	$insertquery = "INSERT INTO users (user_name, first_name, last_name, password, email) VALUES ('" . $_POST['un'] . "','" . $_POST['fname'] . "', '" . $_POST['lname'] . "', '" . $_POST['pw'] . "', '" . $_POST['email'] . "');";
+	$insertquery = "INSERT INTO users (user_name, first_name, last_name, password, email, avatar) VALUES ('" . $_POST['un'] . "','" . $_POST['fname'] . "', '" . $_POST['lname'] . "', '" . $_POST['pw'] . "', '" . $_POST['email'] . "', '" . $_POST['avatar'] . "');";
 	
 	
 	$insertresult = mysqli_query($con, $insertquery);
 	
 	
-	$selectquery = "SELECT user_name, first_name, last_name, email FROM users WHERE user_name ='" . $_POST['un']. "' AND password ='" . $_POST['pw'] . "';";
+	$selectquery = "SELECT user_name, first_name, last_name, email, avatar FROM users WHERE user_name ='" . $_POST['un']. "' AND password ='" . $_POST['pw'] . "';";
+	
 	
 	
 	$showresult = mysqli_query($con, $selectquery);
@@ -128,7 +132,8 @@ function signingup(){
 				"user_name" => $row['user_name'],
 				"first_name" => $row['first_name'],
 				"last_name" => $row['last_name'],
-				"email" => $row['email']
+				"email" => $row['email'],
+				"avatar" => $row['avatar']
 			
 			);
 			

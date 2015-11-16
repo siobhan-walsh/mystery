@@ -2,7 +2,7 @@
         
 	<div class = 'tablet-size'>	
     <div class = 'scroll'>
-    <div class = 'header'>
+    <div class= 'header' id = 'header'>
 
         	<div class = 'logospot'>
             	<img id='logo' src = 'img/logo.png'>
@@ -17,6 +17,11 @@
     
     <script>
 		$(document).ready(function(){
+			
+			var logmenu = document.createElement('div');
+			var header = document.getElementById('header');
+			var mclick = false;
+		
 		$.ajax({
 			url:"server.php",
 			type:"POST",
@@ -27,12 +32,14 @@
 				
 				
 				},
-			success:function(sessyo){
+			success:function(sess){
 				
-				console.log("Session GET returned: ", sessyo);
-				var user = sessyo.username;	
+				console.log("Session info returned: ", sess);
+				var user = sess.username;	
+				var pic = sess.avatar;
 				
-				//document.getElementById('userinfo').innerHTML = user;
+				//document.getElementById('userpic').src = "img/friends/" + sess.avatar +".png";
+				//document.getElementById('usern').innerHTML = sess.username;
 				
 			},
 			error:function(err){
@@ -40,6 +47,52 @@
 			}
 			
 		});	
+		
+		
+		var userinfo = document.getElementById('userinfo');
+		
+		userinfo.onclick = function(){
+			
+			if(mclick == false){
+		
+				
+				
+				var height = $('#userinfo').height();
+				
+				logmenu.innerHTML = 'logout';
+				
+				logmenu.style.position = 'absolute';
+				logmenu.style.right ='0';
+				logmenu.style.top = height + "px";
+				logmenu.style.width= '20%';
+				logmenu.style.backgroundColor = '#2CA5E4';
+				logmenu.style.padding = '10px';
+				
+				console.log("logmenu", logmenu);
+				
+				header.appendChild(logmenu);
+				
+				mclick = true;
+		
+			} else if( mclick == true){
+				
+				logmenu.remove();
+				mclick = false;
+			}
+		}
+		
+		logmenu.onclick = function(){
+			
+			console.log("i wanna log out");
+			
+			<?php
+				session_destroy();
+			?>
+			
+				
+		}
+		
+		
 });
 
-	</script>
+</script>
