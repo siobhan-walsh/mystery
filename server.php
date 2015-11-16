@@ -1,8 +1,6 @@
 <?php
 
-//start session first:
-
-
+session_start();
 //tell server to communicate with the database:
 include("connection.php");
 
@@ -18,9 +16,34 @@ if($_POST['mode'] == 'login'){
 	login();
 }
 
+if($_POST['mode'] == 'checksession'){
+	checksess();	
+}
+
+
+
+function checksess(){
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+   // data that would
+   
+   $data = array('status' => 'notloggedin');
+   
+   if($_SESSION['loggedin'] == true){
+      $data = array("status" => "success", "username" => $_SESSION['user_name'], "password" => $_SESSION['password']);   
+   }
+    echo json_encode($data, JSON_FORCE_OBJECT);
+  };
+  
+  
+  
 function login(){
 	
 	global $con;
+	
+	$match = "no";
+	
 	
 	$loginarr = array();
 	
@@ -29,46 +52,53 @@ function login(){
 	
 	$loginresults = mysqli_query($con, $searchquery);
 	
-	if($loginresults){
-		
-		while($row = mysqli_fetch_array($loginresults)){
+	while($row = mysqli_fetch_array($loginresults)){
+	
+	
+		$arr = array(
+					"user_name" => $row['user_name'],
+					"password" => $row['password']
+				);
 			
-			if($_POST['un'] == $row['user_name'] && $_POST['pw'] == $row['password']){
 			
-				$match = "wow a match";	
+			if($_POST['un'] == $arr['user_name'] && $_POST['pw'] == $arr['password']){
+				
+			
+				$match = "yes";
+				
+				
+				$_SESSION['user_name'] = $arr['user_name'];
+				$_SESSION['password'] = $arr['password'];
+				$_SESSION['loggedin'] = true;
+				
+				$sid = session_id();
+				
+				//echo $_SESSION['user_name'];	
 				
 			}
 			
-		
+			
 		}
 		
-		echo json_encode($match);
+			
+			
+			echo json_encode($match);
 		
 	}
 	
-	/*if($loginresults){
-		
-		
-		
-		while($row = mysqli_fetch_array($loginresults)){
-			
-			
-			$arr = array(
-				"user_name" => $row['user_name'],
-				"first_name" => $row['first_name'],
-				"last_name" => $row['last_name'],
-				"email" => $row['email']
-			
-			);
-			
-			//array_push($arrToSend, $arr);
-				
-			
-		}
-	*/
 	
-}
 
+/*	
+	
+				$_SESSION['user_name'] = $row['user_name'];
+				$_SESSION['password'] = $row['password'];
+				$_SESSION['isloggedin'] = true;
+				
+				$sid = session_id();
+				
+				$data = array("status" => "success", "sid" => $sid);
+			}
+	*/
 
 function signingup(){
 	
