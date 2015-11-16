@@ -25,15 +25,15 @@
              
        <div class='buttonDiv'>
 
-          <a href='theme.php' class="btn">Back</a>
+          <button id='backbtn' class="btn">Back</button>
     
 
            <a href="characters.php" class="bluetheme">Characters</a>
        </div>
             
            
-     
+      <script src='js/backbtn.js'></script>
 
 <?php include("footer.php"); ?>
      
-     <script src='js/backbtn.js'></script>
+    

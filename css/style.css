@@ -406,7 +406,7 @@ a:hover {
 }
 
 #backbtnMessenger {
-    :80%;
+    width:80%;
 }
 /* ------------- friend page ----------------*/
 
@@ -595,6 +595,11 @@ a:hover {
 	
 	width:100%;
 	margin:6% 0;	
+}
+
+.add span {
+	color:#627f73;
+	cursor:pointer;
 }
 
 .htitle{
