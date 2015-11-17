@@ -11,6 +11,10 @@
                 <img id='userpic' src='img/frdsList/F1.png'><br>
                 <span id='usern'>name</span>
         	</div>
+            <div id = 'popdiv'>
+            	<input id = 'searchbox' type='text' placeholder = 'search by username'>
+                <button id= 'searchbtn'> search </button>
+            </div>
    
     	
     </div>
@@ -40,6 +44,10 @@
 					
 					document.getElementById('userpic').src = sess.avatar;
 					document.getElementById('usern').innerHTML = sess.username;
+					var usrdata = document.getElementById('usern').getAttribute('data-usr');
+					
+					$('#usern').data('user', sess.users_id);
+					
 					
 				},
 				error:function(err){

@@ -99,8 +99,10 @@
 					add[i].addEventListener('click', function(){
 						frienddiv.innerHTML = "<br><h1><br>" + this.getAttribute('data-char') + "</h1><br><h2>Friends:</h2>";
 						cancel.innerHTML = 'cancel';
-						frienddiv.appendChild(cancel);
+						
 						frienddiv.style.display = 'block';
+						frienddiv.appendChild(cancel);
+						
 					});
 					
 				};
