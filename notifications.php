@@ -2,75 +2,36 @@
 	include("head.php");
 	include("header.php");
 ?>
-       
-     
+  
+            <h5> Notifications </h5>
+            
+        <div class = 'noticontent'>
+    
+            <div class="notice info"><img src="img/frdsList/F1.png"/><p>Alison accepted your friend request!</p></div>
 
-     
-        
-            
-           <h3 class='htitle'> Notifications </h3>
-                
-              
-      <div class="container">
-   <div class="row">
-   
-      <div class="col-sm-11 pitch-list">
-         <div class="row">
-            <div class="col-sm-6">
-               <ul class="notification-list">
-                  <span class="notification-img">
-                     <img src="img/frdsList/F1.png"/>
-                   </span>
-                    
-                     <p class="notification-type">
-                       Katie has accepted your invite!
-                     </p>
-                    
-               </a>
-            </li>
-                 
-               	<ul class="notification-list">
-                  <span class="notification-img">
-                     <img src="img/frdsList/F2.png"/>
-                   </span>
-                   
-                     <p class="notification-type">
-                        Robert wants you to play Murder in Sin City!
-                     </p>
-                    
-               
-            </li>
-      
-               <ul class="notification-list">
-                  <span class="notification-img">
-                     <img src="img/frdsList/F4.png"/>
-                   </span>
-                    
-                     <p class="notification-type">
-                       Debby accepted your invite to play Once Upon a Murder
-                     </p>
-                    
-               
-        
+			<div class="notice success"><img src="img/frdsList/F2.png"/><p>Dylan accepted your request to play Murder in Sin City!</p></div>
+
+			<div class="notice warning"><img src="img/frdsList/F4.png"/><p>Bella invited you to play Once Upon A Murder!</p></div>
+			<div class="notice error"><img src="img/frdsList/F2.png"/><p>Joshua sent you a message!</p></div>
+             <br></br>  <br></br>
              
-		</div>
-     	 </div>   
-   		</div>
-		</div>
-  		 </div>
-        
-      
-         <div class='buttonDiv'>
-                
-                 <button id='backbtn' class="btn1">Back</button> 
+             </div>
+             
+              <button id='backbtn' class="btn">Back</button>
+        </div>
             
-                
-                
-  		
-</div>               
+            
+        
+
+
+
+<script src='js/backbtn.js'></script>
+      
+     
         
              
 
         
- <script src='js/backbtn.js'></script>
+ 
+
 <?php include("footer.php"); ?>

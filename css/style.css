@@ -1275,12 +1275,16 @@ img#last {
 
 /* ============= notifications ============= */
 
-
+.container {
+	
+	margin-bottom: 4%;
+	
+	}
 .pitch-list {
-   margin: 10% auto;
-   padding: 10%;
+   margin: auto;
+   padding: 5%;
    
-   box-shadow: 0 2px 7px -1px gray;
+ 
    
      ul.notification-list {
         list-style: none;
@@ -1296,21 +1300,18 @@ img#last {
               float: left;
               margin-right: 20%;
               height: 30%;
-              padding-top: 10%;
+              padding-top: 2%;
               img {
                  border-radius: 50%;
-                 width: 60px;
-                 height: 60px;
+                 width: 60%;
+                 height: 60%;
               }
            }
            p {
-              margin-bottom: 10%;
+              margin-bottom: 0;
               color: #8D8D8D;
-              font-size: 14px;
-              &.notification-type {
-                 font-size: 16%;
-                 color: #E63A45;
-              }
+              font-size: 50%;
+            
              
            }
         }
