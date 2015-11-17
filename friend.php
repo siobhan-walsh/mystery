@@ -1,10 +1,12 @@
 	<?php
 	include("head.php");
 	include("header.php");
+	
 ?>
   
         
         <div class = 'content'>
+        <button id='test'>test</button>
             <h4>Friends</h4>
             <div id="AllFriends">
                 <div class='frndrow'><img src="img/frdsList/F1.png" />
@@ -29,6 +31,9 @@
 	$(document).ready(function(){
 		
 		var allfriends = document.getElementById('AllFriends');
+		var test = document.getElementById('test');
+		
+		test.onclick = function(){
 		
 		$.ajax({
 			url:"server.php",
@@ -36,14 +41,13 @@
 			dataType:"JSON",
 			data:{
 				
-				mode:'getfriends',
+				mode:'getfriends'
 				
 				
 				},
 			success:function(fresp){
 				
 				console.log("yaya friends:", fresp);	
-				
 				
 				
 			},
@@ -55,6 +59,7 @@
 		});	
 	
 		
+		};
 		
 	});
 	
