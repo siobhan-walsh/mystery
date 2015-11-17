@@ -46,8 +46,7 @@ function checksess(){
         session_start();
 		
     }
-   // data that would
-   
+
    $data = array('status' => 'notloggedin');
    
    if($_SESSION['loggedin'] == true){
@@ -62,7 +61,7 @@ function searchppl(){
 	global $con;
 	
 	
-	$term = "No-one"; //$_POST['term'];
+	$term = "donaldduck"; //$_POST['term'];
 	
 	$searcharr = array();
 	
