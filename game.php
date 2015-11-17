@@ -23,7 +23,7 @@
 
                     <button id='backbtn' class="btn">Back</button> 
                     <a href='guess.php'><img src = 'img/lock.png' class="lock"></a>
-                    <a href='game.php' class="btn btn-blue" > Next</a>
+                    <a href='game2.php' class="btn btn-blue" > Next</a>
                      
                 </div>
 
