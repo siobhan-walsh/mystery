@@ -16,6 +16,12 @@ if($_POST['mode'] == 'login'){
 	login();
 }
 
+if($_POST['mode'] == 'getfriends'){
+	
+	getfriends();	
+}
+
+
 if($_POST['mode'] == 'checksession'){
 	checksess();	
 }
@@ -39,12 +45,59 @@ function checksess(){
    $data = array('status' => 'notloggedin');
    
    if($_SESSION['loggedin'] == true){
-      $data = array("status" => "success", "username" => $_SESSION['user_name'], "password" => $_SESSION['password'], "avatar" => $_SESSION['avatar']);   
+      $data = array("status" => "success", "users_id" => $_SESSION['users_id'], "username" => $_SESSION['user_name'], "password" => $_SESSION['password'], "avatar" => $_SESSION['avatar']);   
    }
     echo json_encode($data, JSON_FORCE_OBJECT);
   };
   
   
+function getfriends(){
+	global $con;
+	
+
+	
+	//SELECT * FROM friends WHERE user_a = 3 OR user_b = 3 AND status = 1;
+	
+	$friendsarr = array();
+	
+	$id = (int) $_SESSION['users_id'];
+	
+	
+	
+	$friendssql = "SELECT * FROM friends WHERE user_a = " . $id . " OR user_b = " . $id . " AND status = 1;";
+	
+	$friendsresults = mysqli_query($con, $friendssql);
+	
+	while($row = mysqli_fetch_array($friendsresults)){
+	
+		
+		
+		
+		$friend = array(
+					"user_a" => $row['user_a'],
+					"user_b" => $row['user_b'],
+					"status" => $row["status"]
+					
+				);
+		
+				array_push($friendsarr, $friend);
+			
+			
+		}
+		
+		var_dump($friendsarr);
+		
+		for ($x = 0; $x <= $friendsarr.length; $x++) {
+    		 echo $friendsarr.[$x].[user_a];
+		} 
+		
+		/*
+		//"SELECT user_name, avatar, email FROM users WHERE users_id = 3 OR users_id = 1;
+		$getinfosql = "SELECT user_name, avatar, email FROM users WHERE users_id = " . $row['user_a'] . "OR users_id =" . $row['user_b'] . ";";
+		$friendsresults = mysqli_query($con, $friendssql);
+			
+		*/
+};
   
 function login(){
 	
@@ -64,6 +117,7 @@ function login(){
 	
 	
 		$arr = array(
+					"users_id" => $row['users_id'],
 					"user_name" => $row['user_name'],
 					"password" => $row['password'],
 					"avatar" => $row["avatar"]
@@ -76,7 +130,7 @@ function login(){
 			
 				$match = "yes";
 				
-				
+				$_SESSION['users_id'] = $arr['users_id'];
 				$_SESSION['user_name'] = $arr['user_name'];
 				$_SESSION['password'] = $arr['password'];
 				$_SESSION['avatar'] = $arr['avatar'];
