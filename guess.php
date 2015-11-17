@@ -10,11 +10,11 @@
 
          <div id = "guess">
         <a href="wrong.php"><img id="first"  src="img/characters/character6.png"></a>
-         <a href="wrong.php"><img src="img/characters/character7.png"></a>
+         <a href="youwon.php"><img src="img/characters/character7.png"></a>
           <a href="wrong.php"><img src="img/characters/character8.png"></a>
        	 <a href="wrong.php"><img id="first" src="img/characters/character5.png"></a>
       	 <a href="wrong.php"><img src="img/characters/character9.png"></a>
-      	  <a href="wrong.php"><img src="img/characters/character10.png"></a>
+      	  <a href="youwon.php"><img src="img/characters/character10.png"></a>
        	 <a href="wrong.php"><img id="first" src="img/characters/character3.png"></a>
 		 <a href="wrong.php"><img src="img/characters/character11.png"></a>
        	 <a href="wrong.php"><img id="last" src="img/characters/character4.png"> </a>

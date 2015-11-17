@@ -529,37 +529,6 @@ a:hover {
     margin-left:31vw;
     margin-top:10vw;
 }
-/* ------------- notification pages ----------------*/
-
-#notificatDiv p{
-    margin-bottom:15vw;
-    margin-left:20vw;
-    font-size:8pt;
-    position:absolute;
-    margin-top:7%;
-    
-    
-}
-
-#notificatDiv img{
-    margin-bottom:0vw;
-}
-#notificatDiv {
-    margin-bottom:15%;
-    margin-top:5%;
-}
-#notificatDiv p{
-    font-size: 10pt;
-	font-family: 'Fira Mono',sans-serif;
-     
-	padding-left: 20%;
-	margin-bottom: 12%;
-	letter-spacing: 2px;
-	line-height: 135%;
-	margin-left: 10px;
-	overflow: scroll;
-}
-
 
 
 /* ------------- character page ----------------*/
@@ -1304,6 +1273,50 @@ img#last {
 }
 
 
+/* ============= notifications ============= */
+
+
+.pitch-list {
+   margin: 10% auto;
+   padding: 10%;
+   
+   box-shadow: 0 2px 7px -1px gray;
+   
+     ul.notification-list {
+        list-style: none;
+       li.notification-item {
+          list-style: none;
+          padding: 5%;
+          margin-right: 0;
+          width: auto;
+         }
+      
+        .notification-anchor {           
+           span.notification-img {
+              float: left;
+              margin-right: 20%;
+              height: 30%;
+              padding-top: 10%;
+              img {
+                 border-radius: 50%;
+                 width: 60px;
+                 height: 60px;
+              }
+           }
+           p {
+              margin-bottom: 10%;
+              color: #8D8D8D;
+              font-size: 14px;
+              &.notification-type {
+                 font-size: 16%;
+                 color: #E63A45;
+              }
+             
+           }
+        }
+      }
+   
+}
 
 
 

@@ -2,25 +2,75 @@
 	include("head.php");
 	include("header.php");
 ?>
-        <div class = 'content'>
-            <h4>Notification</h4>
+       
+     
+
+     
+        
             
-        <div id="notificatDiv">
-        <div>
-            <p>Katie has accepted your friend request! </p>
-        	<img src="img/frdsList/F1.png"/>
-            <p>Marcus just added you as a friend! </p><hr/>
-        </div>
+           <h3 class='htitle'> Notifications </h3>
+                
+              
+      <div class="container">
+   <div class="row">
+   
+      <div class="col-sm-11 pitch-list">
+         <div class="row">
+            <div class="col-sm-6">
+               <ul class="notification-list">
+                  <span class="notification-img">
+                     <img src="img/frdsList/F1.png"/>
+                   </span>
+                    
+                     <p class="notification-type">
+                       Katie has accepted your invite!
+                     </p>
+                    
+               </a>
+            </li>
+                 
+               	<ul class="notification-list">
+                  <span class="notification-img">
+                     <img src="img/frdsList/F2.png"/>
+                   </span>
+                   
+                     <p class="notification-type">
+                        Robert wants you to play Murder in Sin City!
+                     </p>
+                    
+               
+            </li>
+      
+               <ul class="notification-list">
+                  <span class="notification-img">
+                     <img src="img/frdsList/F4.png"/>
+                   </span>
+                    
+                     <p class="notification-type">
+                       Debby accepted your invite to play Once Upon a Murder
+                     </p>
+                    
+               
         
-        <div>
-            <img src="img/frdsList/F2.png"/><p>Alison just send you a message! </p><hr/>
-        </div>
+             
+		</div>
+     	 </div>   
+   		</div>
+		</div>
+  		 </div>
         
-    	<div>
-        	<img src="img/frdsList/F4.png"/><p>Bella has accepted your friend request! </p><hr/>
-        </div>
-    	<div>
-        	<img src="img/frdsList/F1.png"/><hr/>
-        </div>
-        </div>
+      
+         <div class='buttonDiv'>
+                
+                 <button id='backbtn' class="btn1">Back</button> 
+            
+                
+                
+  		
+</div>               
+        
+             
+
+        
+ <script src='js/backbtn.js'></script>
 <?php include("footer.php"); ?>
