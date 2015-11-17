@@ -8,15 +8,12 @@
 
             <div class='content'>
 
-                <h1> Start Round 3 </h1>
+                <h1> Start Round 4 </h1>
 
 
                 <div class = 'p2'>
             
-There’s a crowd around the Piano Lounge and there laying dead is Betty Deville 
-the young and beautiful aspiring singer who worked as a cocktail waitress during the week.
-It looks like it was death by stabbing, and there was broken glass everywhere. Mimi Martini seems to be upset about losing her coworker but seems to be happy that she will be taking over her hours at the Piano Bar, as money has been tight. 
-Paula Piano suddenly runs off, what seems to be the matter with her? ask Mimi Martini if she was working while this happened. 
+Mimi Martini states that she has suspicions that the casino owner, Donald Trump has had affairs with a lot of the female staff, and this has caused a lot of friction between the workers, which may have lead to Betty's death. It comes to your attention, that something really bad could've happened while your job was to oversee everything on the floor. Could this be a crime of heartbreak and jealousy? you than find a broken wine glass with blood on it..
 
                 </div>
 
@@ -25,7 +22,7 @@ Paula Piano suddenly runs off, what seems to be the matter with her? ask Mimi Ma
 
                     <button id='backbtn' class="btn">Back</button> 
                     <a href='guess.php'><img src = 'img/lock.png' class="lock"></a>
-                    <a href='game4.php' class="btn btn-blue" > Next</a>
+                    <a href='youwon.php' class="btn btn-blue" > Next</a>
                      
                 </div>
 

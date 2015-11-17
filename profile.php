@@ -33,7 +33,19 @@
 			"use strict";
             var displays = document.getElementById("DP");
             var img = document.getElementById("dpimg");
-
+            var bdis = document.getElementById("name");
+            var newp = document.createElement("p");
+            var usern = document.getElementById("usern");
+           
+            var userpic = document.getElementById('userpic');
+            
+            img.src = userpic.getAttribute('src');
+           
+          src.value = usern.value;
+            (userpic).appendChild(newp);
+            
+            
+            
             
             displays.onclick = function(){
                 
