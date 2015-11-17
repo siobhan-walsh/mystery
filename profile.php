@@ -6,7 +6,7 @@
 ?>
 
     <div class = 'content'>
-        <h4>Profile</h4>
+        <h2>Profile</h2>
         
         <div id = "DP">
           <h4><div id="name"></div></h4> 
