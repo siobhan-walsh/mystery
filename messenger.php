@@ -8,12 +8,12 @@
         
         <div class = 'content'>
             <h4>Messenger</h4>
-            <div>
-                <input id="msg">
-                <button id="send">Send</button>
-                
-            </div>
             <button id='backbtn' class="btn">Back</button> 
+            <div id="textBox">
+                <input id="msg">
+                <button id="send">Send</button>  
+            </div>
+            
         </div>
      <script src='js/backbtn.js'></script>   
     <script>

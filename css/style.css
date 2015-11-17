@@ -375,12 +375,12 @@ a:hover {
 /* ------------- messenger pages ----------------*/
 
 #msg {
-    padding: 1px;
+    padding: 8px;
     width:60%;
     background-color:"white";
    
     bottom: 12vh;
-    left: 10px;
+    left: 8px;
 }
 
 #send {
@@ -400,14 +400,16 @@ a:hover {
     width:20%;
     font-size:12pt;
     margin-bottom:15px;
-    padding:1%;
+    padding:3%;
     border-radius:4px;
-    margin-right:16%;
-   
+    margin-right:10%;
+    text-transform: uppercase;
 }
 
-#backbtnMessenger {
-    width:80%;
+
+#textBox {
+    margin-top:70%;
+    margin-left:5%;
 }
 /* ------------- friend page ----------------*/
 
