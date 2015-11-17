@@ -3,7 +3,7 @@
 	include("header.php");
 ?>
   
-            <h5> Notifications </h5>
+<h2> Notifications</h2>
             
         <div class = 'noticontent'>
     
@@ -17,11 +17,13 @@
              
              </div>
              
-              <button id='backbtn' class="btn">Back</button>
-        </div>
-            
-            
         
+               <div class='buttonDiv'>
+
+                    <button id='backbtn' class="btn">Back</button> 
+                  
+                     
+                </div>
 
 
 
@@ -35,3 +37,32 @@
  
 
 <?php include("footer.php"); ?>
+<script> 
+    
+    
+
+
+    
+$(document).ready(function(){
+
+    
+    var height = document.getElementById("buttoncase");
+
+			var height = $('#buttoncase').height();
+				
+				
+				height.style.position = 'absolute';
+				height.style.backgroundColor = '#eee';
+                height.style.left ='2';
+				height.style.top = height + "px";
+				height.style.width= '15%';
+				height.style.padding = '3%';
+				
+				
+
+                });
+
+
+
+
+</script>
