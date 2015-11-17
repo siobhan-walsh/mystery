@@ -284,9 +284,9 @@
                 };
                 
               
-			  
+        });
 			
-});
+
 
   window.fbAsyncInit = function() {
     FB.init({
@@ -295,6 +295,7 @@
       version    : 'v2.5'
     });
       console.log(FB);
+      
       
       var but = document.getElementById("fbbutton");
       var userinfo = document.getElementById("userinfo");
@@ -305,24 +306,31 @@
 				
 				if(fbresp.status == "connected"){
 						//document.body.removeChild(logBtn);
-						FB.api("/me",{fields: 'email'},function(fbresp1){
-						FB.api("/me?fields=first_name,last_name,gender,email,picture", function(fbresp2){
+						FB.api("/me",{fields: 'first_name,last_name,gender,email,picture'},function(fbresp1){
+						
                             
-					<fb:but scope="public_profile,email" onlogin="checkLoginState();">
-</fb:but>		
-							console.log("resp2 is", fbresp2);	
+							
+							console.log("resp1 is", fbresp1);	
 
-	
-                            FB.login(function(response) { console.log(response);}, {scope: 'user_friends'});                            
-							var fname = fbresp2.first_name;
-							var lname = fbresp2.last_name;
+ FB.login(function(response) {
+     if (response.authResponse) {
+               console.log('Welcome!  Fetching your information.... ');
+               FB.api('/me', function(response) {
+                   console.log('Good to see you, ' + response.email + '.');
+                   alert('Good to see you, ' + response.email + '.');
+               });
+            
+
+							var fname = fbresp1.first_name;
+							var lname = fbresp1.last_name;
 							var un = fname + lname;
-							var pw = fbresp2.id;
-							var avatar = fbresp2.picture.data.url;
+							var pw = fbresp1.id;
+							var avatar = fbresp1.picture.data.url;
+                            var email = fbresp1.email;
 							
 							console.log("un is", un);
 							console.log("pw is", pw); 
-							
+							console.log(JSON.stringify(fbresp1));
 						$.ajax({
 								url:"server.php",
 								type:"POST",
@@ -330,15 +338,16 @@
 								data:{
 									
 									mode:'signup',
-									fname:fname.value,
-									lname:lname.value,
+									fname:fname,
+									lname:lname,
+                                    email:email,
 									
-									un:un.value,
-									pw:pw.value,
-									avatar:avatar
+									un:un,
+									pw:pw,
+									           avatar:fbresp1.picture.data.url
 									
 									
-									},
+                                },
 								success:function(resp){
 									
 									console.log("yaya success resp is:", resp);	
@@ -412,11 +421,16 @@
 								
 							});	
 							  
-				
+				} else {
+                console.log('User cancelled login or did not fully authorize.');
+            }
+        },
+   // handle the response
+  {scope: 'public_profile,email'});
 							
 						});
-                        });
-						
+                   
+					 	
 						
 				} else {
 					
@@ -438,7 +452,7 @@
 			
 			window.location="/themes.php" ;
 			
-            var txt = "Welcome!";
+            var txt = "Welcome!" ;
               document.write("<p>Link: " + txt.link("themes.php") + "</p>");
               
              
@@ -453,7 +467,7 @@
 	  
   };};
 
-  (function(d, s, id){
+  (function(d, s, id){  
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement(s); js.id = id;
