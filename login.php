@@ -56,12 +56,11 @@
 	loginbtn.onclick = function(){
 		document.getElementById('warn').innerHTML = '';
 		$.ajax({
-			url:"server.php",
+			url:"server/login-server.php",
 			type:"POST",
 			dataType:"JSON",
 			data:{
-				
-				mode:'login',
+			
 				un:un.value,
 				pw:pw.value
 				
@@ -85,9 +84,12 @@
 				
 				
 			},
-			error:function(err){
-				console.log("sorry there was an error"); 
+			 error: function(jqXHR, textStatus, errorThrown) {
+                        //console.log(jqXHR.statusText, textStatus, errorThrown);
+                        console.log(jqXHR.statusText, textStatus);
+                  
 				document.getElementById('warn').innerHTML = "Sorry, that is not the correct username or password";	
+		
 			}
 			
 		});	
