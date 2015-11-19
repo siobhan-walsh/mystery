@@ -79,7 +79,7 @@
                    
 				   
 				   
-				    $data = array("status" => "success", "friendsrequesting" => $fidarr);
+				    $data = $fidarr;
 
 
                   
