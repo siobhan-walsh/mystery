@@ -12,8 +12,7 @@
                 <span id='usern'>name</span>
         	</div>
             <div id = 'popdiv'>
-            	<input id = 'searchbox' type='text' placeholder = 'search by username'>
-                <button id= 'searchbtn'> search </button>
+            	
             </div>
    
     	

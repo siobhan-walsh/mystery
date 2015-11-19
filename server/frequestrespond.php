@@ -88,6 +88,13 @@
 						$statement->execute(array(":uid" => $user_b, ":fuid" => $fuid));
 						$statement->execute();
 						
+						$moresql = "INSERT INTO friends (user_id, user_b, status) VALUES ((SELECT user_id from users WHERE user_id= :user_id), :userb , 1);";
+						
+						
+						
+						$otherstatement = $conn->prepare($moresql);
+						$otherstatement->execute(array(":user_id" => $user_b, ":userb" => $fuid));
+						
 						
 						
 						$data = 'accepted';

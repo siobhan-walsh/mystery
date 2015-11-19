@@ -64,7 +64,7 @@
 
 
                     } else {
-                        $data = array("status" => "fail", "msg" => "Sorry, that user does not exist");
+                        $data = "sorry";
                     }
 
 

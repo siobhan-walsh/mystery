@@ -1,8 +1,5 @@
 <?php
-    // http://php.net/manual/en/function.session-start.php
-    // http://stackoverflow.com/questions/11768816/php-session-variables-not-preserved-with-ajax
-    // http://stackoverflow.com/questions/9560240/how-session-start-function-works
-    // get the session
+    
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
@@ -39,7 +36,7 @@
                     $conn = new PDO("mysql:host=$DBHost;dbname=$DBname", $dblogin, $DBpassword);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    $sql = "SELECT * FROM friends WHERE user_b = :uid AND status = 0";
+                    $sql = "SELECT * FROM friends WHERE user_b = :uid AND status = 3";
 					
                     $statement = $conn->prepare($sql);
                     $statement->execute(array(":uid" => $user_id));

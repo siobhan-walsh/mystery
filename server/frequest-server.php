@@ -39,47 +39,52 @@
                     $conn = new PDO("mysql:host=$DBHost;dbname=$DBname", $dblogin, $DBpassword);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    $sql = "INSERT INTO friends (user_id, user_b, status) VALUES (:user_id,  :userb, :status)";
+                    $sql = "SELECT * FROM friends WHERE user_id = :user_id AND user_b = :user_b;";
+					
+					//SELECT * FROM friends WHERE user_id = 4 AND user_b = 1;
+					
+					//"INSERT INTO friends (user_id, user_b, status) VALUES (:user_id,  :userb, :status)";
 					
 					//"SELECT * FROM users WHERE user_name = $login AND password = $password;";
 
 //SELECT * FROM users WHERE user_name = 'mickeymouse' AND password = 'Mickey!1';
 
                     $statement = $conn->prepare($sql);
-                    $statement->execute(array(":user_id" => $user_id,  ":userb" => $fuid, ":status" => $status));
+                    $statement->execute(array(":user_id" => $user_id,  ":user_b" => $fuid));
 					$statement->execute();
 					
 					
-					$moresql = "UPDATE users SET notification = 1  WHERE user_id= :userb";
 					
-					$selectstatement = $conn->prepare($moresql);
-					$selectstatement->execute(array(":userb" => $fuid));
-					$selectstatement->execute();
+					 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+					 
+					// $data = var_dump($rows);
+					 
+					 if($rows[0]['status'] == 3){
+							$data = 'request already pending'; 
+					 } else if ($rows[0]['status'] == 1){
+							$data = 'already friends'; 
+					 } else if ($rows[0]['status'] == 2){
+							$data = 'friend blocked'; 
+					 } else {
+						 
+						
+						$insertsql = "INSERT INTO friends (user_id, user_b, status) VALUES (:user_id,  :userb, :status)";
+						
+						$insertstatement = $conn->prepare($insertsql);
+						$insertstatement->execute(array(":user_id" => $user_id, ":userb" => $fuid, ":status" => 3));
+						//$insertstatement->execute();
+						
+						
+						
+						$moresql = "UPDATE users SET notification = 1  WHERE user_id= :userb";
+						
+						$selectstatement = $conn->prepare($moresql);
+						$selectstatement->execute(array(":userb" => $fuid));
+						$selectstatement->execute();
+						
+						$data = 'request sent';
+					 };
 					
-					$data = $selectstatement;
-
-                    // this should be one if there's a user by that user value and password value
-					/*
-                    $count = $selectstatement->rowCount();
-				
-                    if($count > 0) {
-                        // success, so fetch the first and hopefully only record
-
-                        // http://stackoverflow.com/questions/15287905/convert-pdo-recordset-to-json-in-php
-                        // http://php.net/manual/en/pdostatement.fetchall.php
-                        $rows = $selectstatement->fetchAll(PDO::FETCH_ASSOC);
-                        $user= $rows[0]['user_id'];
-						$userb= $rows[0]['user_b'];
-						$status= $rows[0]['status'];
-                       
-                       
-                        $data = array("status" => "success", "user" => $user, "userb" => $userb, "status" => $status);
-
-
-                    } else {
-                        $data = array("status" => "fail", "msg" => "Sorry, that user does not exist");
-                    }
-*/
 
                 } catch(PDOException $e) {
                     $data = array("status" => "fail", "msg" => $e->getMessage());

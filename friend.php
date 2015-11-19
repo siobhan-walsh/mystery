@@ -112,41 +112,53 @@
 		
 		var theight = $('.header').height();
 		var bheight = $('.footer').height();
-		var inp = document.getElementById('searchbox');
-		var searchbtn = document.getElementById('searchbtn');
-		frienddiv = document.getElementById('popdiv');
-		var resultsdiv = document.createElement('div');
 		
-		var cancel = document.createElement('button');
 		
-		cancel.className = 'btn';
-		
-		frienddiv.style.position = 'absolute';
-		frienddiv.style.top = theight + 'px';
-		frienddiv.style.width = '100%';
-		frienddiv.style.bottom = bheight + 'px';
-		frienddiv.style.backgroundColor = '#ffffff';
-		frienddiv.style.zIndex = 2;
-		frienddiv.style.boxShadow = "0px -2px 4px #666666";
-		frienddiv.style.display = 'none';
-		
-		cancel.innerHTML = 'cancel';
-		
-		frienddiv.appendChild(cancel);
-		document.getElementById('header').appendChild(frienddiv);
-		
-		cancel.onclick = function(){
-			frienddiv.style.display = 'none';	
-		};
 		
 		
 		addf.onclick = function(){
 			
 			console.log('popuptosearchfriends');	
 			
-			frienddiv.style.display = 'block';	
+			var inp = document.createElement('input');
+			var searchbtn = document.createElement('button');
 			
-		};
+			searchbtn.id = 'searchbtn';
+			searchbtn.innerHTML = 'search';
+			inp.placeholder = 'search by username';
+			
+			frienddiv = document.getElementById('popdiv');
+			
+			var resultsdiv = document.createElement('div');
+			
+			var cancel = document.createElement('button');
+			
+			cancel.className = 'btn';
+			
+			frienddiv.style.position = 'absolute';
+			frienddiv.style.top = theight + 'px';
+			frienddiv.style.width = '100%';
+			frienddiv.style.bottom = bheight + 'px';
+			frienddiv.style.backgroundColor = '#ffffff';
+			frienddiv.style.zIndex = 2;
+			frienddiv.style.boxShadow = "0px -2px 4px #666666";
+			frienddiv.style.display = 'block';
+			
+			cancel.innerHTML = 'cancel';
+			
+			frienddiv.appendChild(cancel);
+			frienddiv.appendChild(inp);
+			frienddiv.appendChild(searchbtn);
+			document.getElementById('header').appendChild(frienddiv);
+			
+			cancel.onclick = function(){
+				frienddiv.style.display = 'none';
+				frienddiv.innerHTML = '';	
+		
+			};
+		
+			
+	
 		
 		searchbtn.onclick = function(){
 			
@@ -167,7 +179,7 @@
 				
 				console.log("sresp:", sresp);	
 				
-				if(sresp.length < 1){
+				if(sresp == 'sorry'){
 					
 					resultsdiv.innerHTML = "Sorry, there are no users with that name";
 					frienddiv.appendChild(resultsdiv);
@@ -214,9 +226,25 @@
 									},
 								success:function(requestresp){
 									
-									console.log("requestresp:", requestresp);	
+									console.log("requestresp:", requestresp);
 									
 									
+									
+									frienddiv.innerHTML = '';	
+									
+									var sentdiv = document.createElement('div');
+									sentdiv.innerHTML = requestresp;
+									sentdiv.style.fontSize = '16pt';
+									sentdiv.style.width = '100vw';
+									sentdiv.style.margin = '20%';
+									frienddiv.appendChild(sentdiv);
+									$(sentdiv).fadeIn('slow').delay(1000).fadeOut('slow', function(){
+												$(sentdiv).remove();
+												frienddiv.style.display = 'none';
+											
+										});
+									
+							
 									
 								},
 								error: function(jqXHR, textStatus, errorThrown) {
@@ -254,7 +282,7 @@
 			
 		};
 		
-		
+	};
 	
 	
 	});
