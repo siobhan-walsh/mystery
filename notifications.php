@@ -6,7 +6,7 @@
 <h2> Notifications</h2>
             
         <div class = 'noticontent'>
-    
+   <!--
             <div class="notice info"><img id="green" src="img/circle_green.png"/><img src="img/frdsList/F1.png"/><p>Alison accepted your friend request!</p></div>
 
 			<div class="notice success"><img id="green" src="img/circle_green.png"/><img src="img/frdsList/F2.png"/><p>Dylan accepted your request to play Murder in Sin City!</p></div>
@@ -15,10 +15,10 @@
 			
             <div class="notice error"><img id="green" src="img/circle_purple.png"/><img src="img/frdsList/F2.png"/><p>Joshua sent you a message!</p></div>
              <br></br>  <br></br>
-             
+                -->
              </div>
              
-        
+     
                <div class='buttonDiv'>
 
                     <button id='backbtn' class="btn">Back</button> 
@@ -63,16 +63,23 @@ $(document).ready(function(){
 
             
 */
+		
+		seen();
+		shownotis();
+		
+		function seen(){	
 			$.ajax({
-				url:"server/seerequest-server.php",
+				url:"server/seennotification.php",
 				type:"POST",
 				dataType:"JSON",
 				data:{
-					status:'zero'	
+					status:'seen'	
 				},
-				success:function(seerequest){
+				success:function(seennotification){
 					
-					console.log('seerequest', seerequest);
+					console.log('seennotification', seennotification);
+					
+					
 			
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
@@ -82,7 +89,62 @@ $(document).ready(function(){
 				}
 				
 			});	
-
+		};
+		
+		function shownotis(){
+			
+			$.ajax({
+				url:"server/seerequest.php",
+				type:"POST",
+				dataType:"JSON",
+				data:{
+					status:'list'	
+				},
+				success:function(seennotification){
+					
+					console.log('seennotification', seennotification);
+					
+					
+			
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+						console.log('getrequest error');
+						console.log(jqXHR.statusText, errorThrown, textStatus);
+				  
+				}
+				
+			});	
+			
+			
+		};
+		
+		function getfriendinfo(){
+			
+			$.ajax({
+				url:"server/seerequest.php",
+				type:"POST",
+				dataType:"JSON",
+				data:{
+					status:'list'	
+				},
+				success:function(seerequest){
+					
+					console.log('seerequest', seerequest);
+					
+					
+			
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+						console.log('seerequest error');
+						console.log(jqXHR.statusText, errorThrown, textStatus);
+				  
+				}
+				
+			});	
+			
+			
+		}
+		
 });
 
 </script>

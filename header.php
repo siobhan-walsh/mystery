@@ -75,7 +75,7 @@
 							var footerheight = $('.footer').height() - 20;
 							
 						
-							
+							notialert.id = 'notialert';
 							notialert.style.width = '30px';
 							notialert.style.height = '20px';
 							notialert.style.borderRadius = '50%';
