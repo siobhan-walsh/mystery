@@ -6,15 +6,15 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-  /*
+
 	$DBHost = 'localhost';
 	$dblogin = 'root';
 	$DBpassword = 'root';
 	$DBname = 'mystery';
 
-	$conn-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-*/
+
+
     $methodType = $_SERVER['REQUEST_METHOD'];
     $data = array("status" => "fail", "msg" => "$methodType");
 

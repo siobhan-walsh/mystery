@@ -46,6 +46,7 @@
   			</div>
         
     <script src="js/buttons.js"></script>    
+
     <script>
 	
 	var un = document.getElementById('username');
@@ -67,15 +68,15 @@
 				},
 			success:function(resp){
 				
-				console.log("yaya success resp is:", resp);	
+				console.log("resp is:", resp);	
 				
-				if(resp == 'yes'){
+				if(resp.status == 'success'){
 					
-					window.location = "/themes.php"
+					window.location = "themes.php"
 					
+					console.log("ya you're logged in ok");
 					
-					
-				} else if(resp == 'no'){
+				} else if(resp.status == 'fail'){
 					
 					document.getElementById('warn').innerHTML = "Sorry, that is not the correct username or password";
 						
@@ -88,7 +89,7 @@
                         //console.log(jqXHR.statusText, textStatus, errorThrown);
                         console.log(jqXHR.statusText, textStatus);
                   
-				document.getElementById('warn').innerHTML = "Sorry, that is not the correct username or password";	
+			
 		
 			}
 			

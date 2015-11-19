@@ -27,8 +27,8 @@
 			var mclick = false;
 		
 			$.ajax({
-				url:"server.php",
-				type:"POST",
+				url:"server/sessioninfo.php",
+				type:"GET",
 				dataType:"JSON",
 				data:{
 					
@@ -39,19 +39,20 @@
 				success:function(sess){
 					
 					console.log("Session info returned: ", sess);
-					var user = sess.username;	
-					var pic = sess.avatar;
 					
-					document.getElementById('userpic').src = sess.avatar;
-					document.getElementById('usern').innerHTML = sess.username;
+					
+					document.getElementById('userpic').src = sess.userProfile.avatar;
+					document.getElementById('usern').innerHTML = sess.userProfile.user_name;
 					var usrdata = document.getElementById('usern').getAttribute('data-usr');
 					
-					$('#usern').data('user', sess.users_id);
+					$('#usern').data('user', sess.userProfile.user_id);
 					
 					
 				},
-				error:function(err){
-					console.log("error"); 	
+				error: function(jqXHR, textStatus, errorThrown) {
+                        //console.log(jqXHR.statusText, textStatus, errorThrown);
+                        console.log(jqXHR.statusText, textStatus);
+                  
 				}
 				
 			});	
@@ -92,26 +93,25 @@
 		logmenu.onclick = function(){
 			
 			console.log("i wanna log out");
+			var sendData = {logout: "true"};
 			
 			$.ajax({
-			url:"server.php",
+			url:"server/logout-server.php",
 			type:"POST",
 			dataType:"JSON",
-			data:{
-				
-				mode:'logout'
-				
-				
-				},
+			data:sendData,
 			success:function(){
 				
 				console.log("logout ");
 				window.location = "/index.php";
 				
 			},
-			error:function(errr){
-				console.log("error"); 
-				window.location = "/index.php";
+			error: function(jqXHR, textStatus, errorThrown) {
+                        //console.log(jqXHR.statusText, textStatus, errorThrown);
+                        console.log(jqXHR.statusText, textStatus);
+                  
+				console.log('lame errors');
+				//window.location = "/index.php";
 			}
 			
 		});	
