@@ -103,7 +103,7 @@
 			success:function(){
 				
 				console.log("logout ");
-				window.location = "/index.php";
+				window.location = "index.php";
 				
 			},
 			error: function(jqXHR, textStatus, errorThrown) {

@@ -46,16 +46,23 @@
                     $conn = new PDO("mysql:host=$DBHost;dbname=$DBname", $dblogin, $DBpassword);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    $sql = "INSERT INTO users (user_name, first_name, last_name, password, email, avatar) VALUES (?,  ?, ?,  ?,  ?, ?)";
+                    //$sql = "INSERT INTO users (user_name, first_name, last_name, password, email, avatar) VALUES (:un,  :fn, :ln,  :pw,  :email, :avatar)";
 					
 					//INSERT INTO users (user_name, first_name, last_name, password, email, avatar) VALUES ('mickeymouse','mickey', 'mouse', 'Mickey!1', 'mmouse@gmail.com', "img/friends/f1.png");
 
-                    $statement = $conn->prepare($sql);
-                    $statement->execute(array($username, $fname, $lname,  $password,  $email, $avatar));
+                    $statement = $conn->prepare("INSERT INTO users (user_name, first_name, last_name, password, email, avatar) VALUES (:un,  :fn, :ln,  :pw,  :email, :avatar);");
+					
+					$statement->bindParam(":un",  $username);
+					$statement->bindParam(":fn",  $fname);
+					$statement->bindParam(":ln",  $lname);
+					$statement->bindParam(":pw",  $password);
+					$statement->bindParam(":email",  $email);
+					$statement->bindParam(":avatar",  $avatar);
+                   
 					$statement->execute();
 					
 					
-                 $data = $statement;
+                 $data = array("un" => $username, "pw" => $password);
 
 
                 } catch(PDOException $e) {
@@ -80,7 +87,7 @@
         $data = array("status" => "fail", "msg" => "Error: only POST allowed.");
     }
 
-    echo json_encode($statement, JSON_FORCE_OBJECT);
+    echo json_encode($data, JSON_FORCE_OBJECT);
 
 ?>
 

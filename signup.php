@@ -111,72 +111,52 @@
 							
 							
 							},
-						success:function(resp){
+						success:function(signupresp){
 							
-							console.log("yaya success resp is:", resp);	
-							
-							console.log("resp.first_name");
+							console.log("yaya success resp is:", signupresp);	
 							
 							
-							var tyDiv = document.createElement('div');
-
-							document.body.appendChild(tyDiv);
-							tyDiv.innerHTML = "<p>Hey " + resp.first_name + ", thank you for making an account! <button class='buttons' id='getstarted'>get started</button></p>";
-							tyDiv.style.position = 'fixed';
-							tyDiv.style.top = '200px';
-							tyDiv.style.backgroundColor = '#C4FFe6';
-							tyDiv.style.width = '80vw';
-							tyDiv.style.left = '10vw';
-							tyDiv.style.padding = '30px 10px ';
-							tyDiv.style.boxShadow = "4px 4px 4px #666666";
-							
-							
-							/*
-							var start = document.getElementById('getstarted');
-							
-							start.onclick = function(){
+							$.ajax({
+								url:"server/login-server.php",
+								type:"POST",
+								dataType:"JSON",
+								data:{
 								
-								
-								$.ajax({
-									url:"server.php",
-									type:"POST",
-									dataType:"JSON",
-									data:{
-										
-										mode:'login',
-										un:un.value,
-										pw:pw.value
-										
-										},
-									success:function(resp){
-										
-										console.log("yaya success resp is:", resp);	
-										
-										if(resp == 'yes'){
-											
-											window.location = "/themes.php";
-											
-											
-											
-										} else if(resp == 'no'){
-											
-											window.location = "/login.php"
-												
-										}
-										
-										
-										
+									un:signupresp.un,
+									pw:signupresp.pw
+									
 									},
-									error:function(err){
-										console.log("sorry there was an error"); 	
+								success:function(loginresp){
+									
+									console.log("loginresp is:", loginresp);	
+									
+									if(loginresp.status == 'success'){
+										
+										window.location = "themes.php"
+										
+										console.log("ya you're logged in ok");
+										
+									} else if(loginresp.status == 'fail'){
+										
+										document.getElementById('warn').innerHTML = "Sorry, that is not the correct username or password";
+											
 									}
 									
-								});	
+									
+									
+								},
+								 error: function(jqXHR, textStatus, errorThrown) {
+											//console.log(jqXHR.statusText, textStatus, errorThrown);
+											console.log(jqXHR.statusText, textStatus);
+									  
 								
+							
+								}
 								
-							}
-								
-							*/
+							});	
+										  
+								  
+						
 						},
 						 error: function(jqXHR, textStatus, errorThrown) {
 							console.log(jqXHR.statusText, textStatus, errorThrown);
