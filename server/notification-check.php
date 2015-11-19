@@ -1,8 +1,5 @@
 <?php
-    // http://php.net/manual/en/function.session-start.php
-    // http://stackoverflow.com/questions/11768816/php-session-variables-not-preserved-with-ajax
-    // http://stackoverflow.com/questions/9560240/how-session-start-function-works
-    // get the session
+
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
@@ -23,13 +20,10 @@
 
         if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])
             && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-            // yes, is AJAX call
-            // answer POST call and get the data that was sent
+            
             if(isset($_POST["status"]) && !empty($_POST["status"])){
 
 
-                // get the data from the post and store in variables
-                
 				$user_id = $_SESSION['user_id'];
 				$status = $_POST['status'];
 				
@@ -51,42 +45,12 @@
                 
                     $count = $statement->rowCount();
 				
-                 
-                        
-						
-                    $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-                        
-						/*
-						$user_id= $rows[0]['user_id'];
-						$userbthatsyou= $rows[0]['user_b'];
-						$status= $rows[0]['status'];
-						
-						
-						$requestarr = array();
-					
-					
-                       while( $rows = $statement->fetchAll(PDO::FETCH_ASSOC)){
-	
-	
-						$sarr = array(
-									"fid "=> $rows['user_id'],
-									"user_id" => $rows['user_b'],
-									"status" => $rows['status']
-								
-								);
-								
-								//array_push($requestarr, $sarr);
-								
-							
-							
-						}
-						*/
-									   
-                        $data = array("status" => "success", "notifications" => $count);
+                 	$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+                     
+					$data = array("status" => "success", "notifications" => $count);
 
 
                   
-				
 
                 } catch(PDOException $e) {
                     $data = array("status" => "fail", "msg" => $e->getMessage());

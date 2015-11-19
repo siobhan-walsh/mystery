@@ -53,32 +53,59 @@
 					} else {
 						console.log('hey you have a friend request');
 						
-						var footer = document.getElementById('footer');
+						$.ajax({
+						url:"server/notification-check.php",
+						type:"POST",
+						dataType:"JSON",
+						data:{
+							
+							status:'check'
+							
+							},
+						success:function(checking){
+							
+							console.log('checking', checking);
+							
+							var footer = document.getElementById('footer');
 						
-						var notialert = document.createElement('div');
+							var notialert = document.createElement('div');
+							
+							var notiwidth = $('#noti').width() *3.5;
+							
+							var footerheight = $('.footer').height() - 20;
+							
 						
-						var notiwidth = $('#noti').width() *3.5;
+							
+							notialert.style.width = '30px';
+							notialert.style.height = '20px';
+							notialert.style.borderRadius = '50%';
+							notialert.style.backgroundColor = '#ff0000';
+							notialert.style.position = 'absolute';
+							notialert.style.left = notiwidth + 'px';
+							notialert.style.bottom = footerheight + 'px';
+							notialert.style.textAlign = 'center';
+							notialert.style.lineHeight = "2";
+							notialert.style.color = '#ffffff';
+							notialert.style.fontWeight = '400';
+							notialert.style.fontSize = '16pt';
+							
+							notialert.innerHTML = checking.notifications;
+							
+							footer.appendChild(notialert);
+								
+							
+							
+						},
+						error: function(jqXHR, textStatus, errorThrown) {
+							//console.log(jqXHR.statusText, textStatus, errorThrown);
+							console.log(jqXHR.statusText, textStatus);
+                  
+						}
+				
+						});	
+
 						
-						var footerheight = $('.footer').height() - 20;
 						
-						console.log('notiwidth is', notiwidth );
-						
-						notialert.style.width = '30px';
-						notialert.style.height = '20px';
-						notialert.style.borderRadius = '50%';
-						notialert.style.backgroundColor = '#ff0000';
-						notialert.style.position = 'absolute';
-						notialert.style.left = notiwidth + 'px';
-						notialert.style.bottom = footerheight + 'px';
-						notialert.style.textAlign = 'center';
-						notialert.style.lineHeight = "2";
-						notialert.style.color = '#ffffff';
-						notialert.style.fontWeight = '400';
-						notialert.style.fontSize = '16pt';
-						
-						notialert.innerHTML = 1;
-						
-						footer.appendChild(notialert);
 						
 								
 					}

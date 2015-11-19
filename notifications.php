@@ -46,7 +46,7 @@
     
 $(document).ready(function(){
 
-    
+ /*   
     var height = document.getElementById("buttoncase");
 
 			var height = $('#buttoncase').height();
@@ -61,31 +61,28 @@ $(document).ready(function(){
 				
 				
 
-                });
-
-/*
+            
+*/
 			$.ajax({
 				url:"server/seerequest-server.php",
 				type:"POST",
 				dataType:"JSON",
 				data:{
-					
-					uid:sess.userProfile.user_id
-					
+					status:'zero'	
 				},
-				success:function(requestinfo){
+				success:function(seerequest){
 					
-					console.log('requestinfo is', requestinfo);
+					console.log('seerequest', seerequest);
 			
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
 						console.log('getrequest error');
-						console.log(jqXHR.statusText, textStatus);
+						console.log(jqXHR.statusText, errorThrown, textStatus);
 				  
 				}
 				
 			});	
 
-*/
+});
 
 </script>
