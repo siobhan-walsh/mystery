@@ -25,26 +25,25 @@
             && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
             // yes, is AJAX call
             // answer POST call and get the data that was sent
-            if(isset($_POST["un"]) && !empty($_POST["un"])
-                && isset($_POST["pw"]) && !empty($_POST["pw"])){
+            if(isset($_POST["term"]) && !empty($_POST["term"])){
 
 
                 // get the data from the post and store in variables
-                $login = $_POST["un"];
-                $password = $_POST["pw"];
+                $term = $_POST["term"];
+               
 	
                 try {
                     $conn = new PDO("mysql:host=$DBHost;dbname=$DBname", $dblogin, $DBpassword);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    $sql = "SELECT * FROM users WHERE user_name = :log AND password = :pwd;";
+                    $sql = "SELECT * FROM users WHERE user_name = :term;";
 					
 					//"SELECT * FROM users WHERE user_name = $login AND password = $password;";
 
 //SELECT * FROM users WHERE user_name = 'mickeymouse' AND password = 'Mickey!1';
 
                     $statement = $conn->prepare($sql);
-                    $statement->execute(array(":log" => $login, ":pwd" =>  $password));
+                    $statement->execute(array(":term" => $term));
 					$statement->execute();
 
                     // this should be one if there's a user by that user value and password value
@@ -56,28 +55,16 @@
                         // http://stackoverflow.com/questions/15287905/convert-pdo-recordset-to-json-in-php
                         // http://php.net/manual/en/pdostatement.fetchall.php
                         $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-                        $returnedLogin = $rows[0]['user_name'];
-						$returnedID = $rows[0]['user_id'];
-						
-                        $returnedPassword = $rows[0]['password'];
-
-                        // now put into the session that we're logged in
-                        // also, could have an HMAC
-                        // http://php.net/manual/en/function.hash-hmac.php
-                        // http://stackoverflow.com/questions/4495950/how-do-stateless-servers-work/4496016#4496016
-                        $_SESSION['username'] = $returnedLogin;
-						$_SESSION['user_id'] = $returnedID;
-                        $_SESSION['loggedin'] = true;
-
-                        // normally you don't put the session id in since it's already
-                        // send in the HTTP header but here it is so that you can
-                        // see that it was generated
-                        $sid= session_id();
-                        $data = array("status" => "success", "sid" => $sid);
+                        $searchusername= $rows[0]['user_name'];
+						$searchemail= $rows[0]['email'];
+						$searchavatar= $rows[0]['avatar'];
+                        $searchuid= $rows[0]['user_id'];
+                       
+                        $data = array("status" => "success", "username" => $searchusername, "email" => $searchemail, "avatar" => $searchavatar, "uid" => $searchuid);
 
 
                     } else {
-                        $data = array("status" => "fail", "msg" => "User name and/or password not correct.");
+                        $data = array("status" => "fail", "msg" => "Sorry, that user does not exist");
                     }
 
 
@@ -87,7 +74,7 @@
 
 
             } else {
-                $data = array("status" => "fail", "msg" => "Either login or password were absent.");
+                $data = array("status" => "fail", "msg" => "search term was absent.");
             }
 
 

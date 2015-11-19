@@ -47,7 +47,7 @@
 		
 		
 	
-		
+		/*
 		$.ajax({
 			url:"server.php",
 			type:"POST",
@@ -108,7 +108,7 @@
 			
 		});	
 	
-		
+		*/
 		
 		var theight = $('.header').height();
 		var bheight = $('.footer').height();
@@ -144,8 +144,7 @@
 			
 			console.log('popuptosearchfriends');	
 			
-				frienddiv.style.display = 'block';
-				
+			frienddiv.style.display = 'block';	
 			
 		};
 		
@@ -154,19 +153,19 @@
 			
 			
 			$.ajax({
-			url:"server.php",
+			url:"server/friends-server.php",
 			type:"POST",
 			dataType:"JSON",
 			data:{
 				
-				mode:'searchppl',
+				
 				term:inp.value
 				
 				
 				},
 			success:function(sresp){
 				
-				console.log("searchppls:", sresp);	
+				console.log("sresp:", sresp);	
 				
 				if(sresp.length < 1){
 					
@@ -175,20 +174,66 @@
 					
 				} else {
 					
-					for(var i = 0; i < sresp.length; i++){
+					
 						
 						var img = document.createElement('img');	
 						var p = document.createElement('p');
+						var addbtn = document.createElement('button');
 						
-						img.src = sresp[i].avatar;
-						p.innerHTML = sresp[i].user_name;
+						var resultsun = sresp.username;
+						var resultsavi = sresp.avatar;
+						var resultsuid = sresp.uid;
+						
+						
+						addbtn.innerHTML = "Send Friend Request";
+						
+						
+						img.src = resultsavi;
+						p.innerHTML = resultsun;
 						
 						resultsdiv.appendChild(img);
 						resultsdiv.appendChild(p);
+						resultsdiv.appendChild(addbtn);
 						
 						frienddiv.appendChild(resultsdiv);
 						
-					}
+						addbtn.onclick = function(){
+							
+							console.log('add as friend');
+							
+							$.ajax({
+								url:"server/frequest-server.php",
+								type:"POST",
+								dataType:"JSON",
+								data:{
+									
+									
+									fun: resultsun,
+									fuid: resultsuid
+									
+									},
+								success:function(requestresp){
+									
+									console.log("requestresp:", requestresp);	
+									
+									
+									
+								},
+								error: function(jqXHR, textStatus, errorThrown) {
+									
+									console.log(jqXHR.statusText, textStatus, errorThrown);
+									console.log('friendrequest error');
+									  
+								
+							
+								}
+								
+							});	
+						};
+						
+						
+						
+					
 				}
 				
 				
@@ -196,15 +241,22 @@
 				
 				
 			},
-			error:function(err){
-				console.log(" srchppl error"); 
+			error: function(jqXHR, textStatus, errorThrown) {
 				
+				console.log(jqXHR.statusText, textStatus, errorThrown);
+				console.log('search error');
+                  
+			
+		
 			}
 			
 		});	
 			
 		};
 		
+		
+	
+	
 	});
 	
 	

@@ -25,61 +25,61 @@
             && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
             // yes, is AJAX call
             // answer POST call and get the data that was sent
-            if(isset($_POST["un"]) && !empty($_POST["un"])
-                && isset($_POST["pw"]) && !empty($_POST["pw"])){
+            if(isset($_POST["fuid"]) && !empty($_POST["fuid"])
+			   &&  isset($_POST["fun"]) && !empty($_POST["fun"])){
 
 
                 // get the data from the post and store in variables
-                $login = $_POST["un"];
-                $password = $_POST["pw"];
+                $fuid = $_POST["fuid"];
+				$user_id = $_SESSION['user_id'];
+				$status = 0;
+               
 	
                 try {
                     $conn = new PDO("mysql:host=$DBHost;dbname=$DBname", $dblogin, $DBpassword);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    $sql = "SELECT * FROM users WHERE user_name = :log AND password = :pwd;";
+                    $sql = "INSERT INTO friends (user_id, user_b, status) VALUES (:user_id,  :userb, :status)";
 					
 					//"SELECT * FROM users WHERE user_name = $login AND password = $password;";
 
 //SELECT * FROM users WHERE user_name = 'mickeymouse' AND password = 'Mickey!1';
 
                     $statement = $conn->prepare($sql);
-                    $statement->execute(array(":log" => $login, ":pwd" =>  $password));
+                    $statement->execute(array(":user_id" => $user_id,  ":userb" => $fuid, ":status" => $status));
 					$statement->execute();
+					
+					
+					$moresql = "UPDATE users SET notification = 1  WHERE user_id= :userb";
+					
+					$selectstatement = $conn->prepare($moresql);
+					$selectstatement->execute(array(":userb" => $fuid));
+					$selectstatement->execute();
+					
+					$data = $selectstatement;
 
                     // this should be one if there's a user by that user value and password value
-                    $count = $statement->rowCount();
+					/*
+                    $count = $selectstatement->rowCount();
 				
                     if($count > 0) {
                         // success, so fetch the first and hopefully only record
 
                         // http://stackoverflow.com/questions/15287905/convert-pdo-recordset-to-json-in-php
                         // http://php.net/manual/en/pdostatement.fetchall.php
-                        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-                        $returnedLogin = $rows[0]['user_name'];
-						$returnedID = $rows[0]['user_id'];
-						
-                        $returnedPassword = $rows[0]['password'];
-
-                        // now put into the session that we're logged in
-                        // also, could have an HMAC
-                        // http://php.net/manual/en/function.hash-hmac.php
-                        // http://stackoverflow.com/questions/4495950/how-do-stateless-servers-work/4496016#4496016
-                        $_SESSION['username'] = $returnedLogin;
-						$_SESSION['user_id'] = $returnedID;
-                        $_SESSION['loggedin'] = true;
-
-                        // normally you don't put the session id in since it's already
-                        // send in the HTTP header but here it is so that you can
-                        // see that it was generated
-                        $sid= session_id();
-                        $data = array("status" => "success", "sid" => $sid);
+                        $rows = $selectstatement->fetchAll(PDO::FETCH_ASSOC);
+                        $user= $rows[0]['user_id'];
+						$userb= $rows[0]['user_b'];
+						$status= $rows[0]['status'];
+                       
+                       
+                        $data = array("status" => "success", "user" => $user, "userb" => $userb, "status" => $status);
 
 
                     } else {
-                        $data = array("status" => "fail", "msg" => "User name and/or password not correct.");
+                        $data = array("status" => "fail", "msg" => "Sorry, that user does not exist");
                     }
-
+*/
 
                 } catch(PDOException $e) {
                     $data = array("status" => "fail", "msg" => $e->getMessage());
@@ -87,7 +87,7 @@
 
 
             } else {
-                $data = array("status" => "fail", "msg" => "Either login or password were absent.");
+                $data = array("status" => "fail", "msg" => "search term was absent.");
             }
 
 

@@ -63,7 +63,29 @@ $(document).ready(function(){
 
                 });
 
+/*
+			$.ajax({
+				url:"server/seerequest-server.php",
+				type:"POST",
+				dataType:"JSON",
+				data:{
+					
+					uid:sess.userProfile.user_id
+					
+				},
+				success:function(requestinfo){
+					
+					console.log('requestinfo is', requestinfo);
+			
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+						console.log('getrequest error');
+						console.log(jqXHR.statusText, textStatus);
+				  
+				}
+				
+			});	
 
-
+*/
 
 </script>
