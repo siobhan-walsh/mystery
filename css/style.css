@@ -413,6 +413,12 @@ a:hover {
     margin-top:70%;
     margin-left:5%;
 }
+
+#backmessenger {
+    margin-left:71%;
+    margin-top:55%;
+    width:19%;
+}
 /* ------------- contactUs pages ----------------*/
 #feedback {
     
@@ -458,9 +464,12 @@ a:hover {
 }
 /* ------------- friend page ----------------*/
 
+#addfriend {
+    width:40%;
+    margin-left:30%;
+}
 
-
-
+/*
 #AllFriends p{
     margin-right:50%;
     float:right;
@@ -476,7 +485,7 @@ a:hover {
 }
 #AllFriends img{
     margin-left:5%;
-}
+}*/
 /* ------------- Setting page ----------------*/
 
 #privacy {
@@ -817,7 +826,7 @@ a:hover {
 	
 	margin:0 5%;
 	
-	width:15%;
+	width:25%;
 	padding:20px 0;
 	text-align:center;
 /*	
