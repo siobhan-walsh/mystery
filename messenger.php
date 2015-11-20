@@ -7,7 +7,7 @@
 
         
         <div class = 'content'>
-            <h4>Messenger</h4>
+            <h2>Messenger</h2>
             <button id='backmessenger' class="btn">Back</button> 
             <div id="textBox">
                 <input id="msg">

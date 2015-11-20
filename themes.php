@@ -9,7 +9,7 @@
         
         
         <div class = 'content'>
-            <h4>Choose a theme!</h4>
+            <h2>Choose a theme!</h2>
             
             <div class = 'themecase'>
             
