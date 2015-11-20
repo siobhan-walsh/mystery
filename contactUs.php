@@ -8,13 +8,13 @@
         
         <div class = 'content'>
             <h4>Contact Us</h4>
-     <div id="">    
+     <div id="form">    
   <p>Fill out the form below.</p>
   <form action="" method="post">
   <label>First Name: <br />
-  <input name="firstname" type="text" placeholder="- Enter First Name -" /><br /></label>
+  <input id="fn" name="firstname" type="text" placeholder="- Enter First Name -" /><br /></label>
   <label>Last Name: <br />
-  <input name="lastname" type="text" placeholder="- Enter Last Name -" /><br /></label>
+  <input id="ln" name="lastname" type="text" placeholder="- Enter Last Name -" /><br /></label>
   <label>1star: 
   <input name="1star" type="checkbox" value="1star" /><br /></label>
   <label>2stars: 

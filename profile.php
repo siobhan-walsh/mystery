@@ -10,7 +10,7 @@
         
         <div id = "DP">
           <h4><div id="name"></div></h4> 
-            <img id = 'dpimg' src="img/friends/f1.png"/>
+            <img id = 'dpimg' src="img/profile.png"/>
         </div>
         
         <!-- i don't think it's necessary to have two images. just change the src of the first one
