@@ -228,6 +228,37 @@
 				
 			
 			});
+            
+            	  
+	  $.ajax({
+			url:"server/character-server.php",
+			type:"POST",
+			dataType:"JSON",
+			data:{
+				characters: 'showcharacters'
+				},
+			success:function(characterresp){
+				
+				console.log("characterresp is:", characterresp);	
+				
+				var p2 = document.getElementById('p2');
+				
+				console.log('descriptionis', characterresp[0].description);
+				
+				p2.innerHTML = characterresp[0].description;
+				
+				
+				
+			},
+			 error: function(jqXHR, textStatus, errorThrown) {
+                        //console.log(jqXHR.statusText, textStatus, errorThrown);
+                        console.log("character error", jqXHR.statusText, textStatus);
+                  
+			
+		
+			}
+			
+		});	
 		
 		</script>
         
