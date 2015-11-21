@@ -23,57 +23,36 @@
 
         if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])
             && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-            // yes, is AJAX call
-            // answer POST call and get the data that was sent
-            if(isset($_POST["un"]) && !empty($_POST["un"])
-                && isset($_POST["pw"]) && !empty($_POST["pw"])){
+ 
+            if(isset($_POST["theme"]) && !empty($_POST["theme"])){
 
 
                 // get the data from the post and store in variables
-                $login = $_POST["un"];
-                $password = $_POST["pw"];
-	
+               
                 try {
                     $conn = new PDO("mysql:host=$DBHost;dbname=$DBname", $dblogin, $DBpassword);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    $sql = "SELECT * FROM users WHERE user_name = :log AND password = :pwd;";
-					
-					//"SELECT * FROM users WHERE user_name = $login AND password = $password;";
-
-//SELECT * FROM users WHERE user_name = 'mickeymouse' AND password = 'Mickey!1';
+                    $sql = "SELECT * FROM themes";
+	
 
                     $statement = $conn->prepare($sql);
-                    $statement->execute(array(":log" => $login, ":pwd" =>  $password));
+        
 					$statement->execute();
 
                     // this should be one if there's a user by that user value and password value
                     $count = $statement->rowCount();
 				
                     if($count > 0) {
-                        // success, so fetch the first and hopefully only record
-
-                        // http://stackoverflow.com/questions/15287905/convert-pdo-recordset-to-json-in-php
-                        // http://php.net/manual/en/pdostatement.fetchall.php
-                        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-                        $returnedLogin = $rows[0]['user_name'];
-						$returnedID = $rows[0]['users_id'];
 						
-                        $returnedPassword = $rows[0]['password'];
-
-                        // now put into the session that we're logged in
-                        // also, could have an HMAC
-                        // http://php.net/manual/en/function.hash-hmac.php
-                        // http://stackoverflow.com/questions/4495950/how-do-stateless-servers-work/4496016#4496016
-                        $_SESSION['username'] = $returnedLogin;
-						$_SESSION['user_id'] = $returnedID;
-                        $_SESSION['loggedin'] = true;
-
-                        // normally you don't put the session id in since it's already
-                        // send in the HTTP header but here it is so that you can
-                        // see that it was generated
-                        $sid= session_id();
-                        $data = array("status" => "success", "sid" => $sid);
+						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+						
+					$themeinfo = array();
+					
+					$data = $rows;
+					
+					
+                        //$data = array("status" => "success", "themeinfo" => $themeinfo);
 
 
                     } else {
