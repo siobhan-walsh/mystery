@@ -329,6 +329,7 @@ a:hover {
 	width: 40%;
     margin:auto;
 */
+   
 }
 
 #options button{
@@ -345,6 +346,7 @@ a:hover {
     padding:8px;
     border-radius:4px;
     text-transform: uppercase;
+     font-family: 'amble';
 }
 
 
@@ -500,6 +502,20 @@ margin-left:20%;
 #addfriend {
     width:40%;
     margin-left:30%;
+    background-color:#27A5A1; 
+	border-style:solid;
+    border-color:grey;
+    border-width: 1px;
+	clear:both;
+    color: aliceblue;
+    margin-top:20%;
+    
+    font-size:12pt;
+    margin-bottom:15px;
+    padding:8px;
+    border-radius:4px;
+    text-transform: uppercase;
+     font-family: 'amble';
 }
 
 /*
@@ -567,7 +583,7 @@ margin-left:20%;
 }
 #set p{
     font-size: 10pt;
-	font-family: 'Fira Mono',sans-serif;
+	font-family:'afta sans';
     text-align:left;  
 	padding-left: 15px;
 	margin-bottom: 12%;
@@ -575,6 +591,9 @@ margin-left:20%;
 	line-height: 135%;
 	margin-left: 10px;
 	overflow: scroll;
+}
+#set input{
+    font-family: 'amble';
 }
 #policy {
     

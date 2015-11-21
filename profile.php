@@ -24,7 +24,7 @@
 		
         <div id="options">
             <a href='friend.php'><button id="friends">Friends</button></a>
-            <a href='messenger.php'><button id="messenger">Messenger</button></a>
+            <a href='messenger.php'><button id="email">Email</button></a>
             <a href='login.php'><button id="logout">Log Out</button></a>
         </div>
     </div>
