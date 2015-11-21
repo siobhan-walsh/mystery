@@ -21,7 +21,7 @@
 
                 <div class='gameDiv'>
 
-                    <button id='backbtn' class="btn">Back</button> 
+                    <button id='backbtn' class="btn1">Back</button> 
                     <a href='guess.php'><img src = 'img/lock.png' class="lock"></a>
                     <a href='game2.php' class="btn btn-blue" > Next</a>
                      

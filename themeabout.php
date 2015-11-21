@@ -27,7 +27,7 @@
              
        <div class='buttonDiv'>
 
-          <button id='backbtn' class="btn1">Back</button>
+          <button id='backbtn' class="btn">Back</button>
     
 
            <a href="characters.php" class="bluetheme">Characters</a>

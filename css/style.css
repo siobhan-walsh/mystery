@@ -733,7 +733,7 @@ margin-left:20%;
 	letter-spacing: 2px;
 	font-size:100%;
 	padding: 3% 3%;
-	margin-bottom: -114px;
+	margin-bottom: 35%;
 	margin-right: 55%;
 	margin-left: 4%;
 
@@ -848,48 +848,7 @@ margin-left:20%;
 
 	
 
-.btn {
-	
-	float:left;
-	color: #666;
-	background-color: #eee;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	
-	
-	margin:0 5%;
-	
-	width:25%;
-	padding:20px 0;
-	text-align:center;
-/*	
-	
-	display: inline-block;
-	padding: 3% 3%;
-	margin-right: 15%;
-	margin-bottom: 15%;
-	margin-top: 45%;
-*/
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border: 1px solid rgba(0,0,0,0.3);
-	border-bottom-width: 3px;
-	
-}
-	
-	
 
-
-.btn:hover {
-		background-color: #e3e3e3;
-		border-color: rgba(0,0,0,0.5);
-	}
-	
-.btn:active {
-		background-color: #CCC;
-		border-color: rgba(0,0,0,0.9);
-	}
 
 /* blue button */
 
@@ -1130,12 +1089,12 @@ img#last {
 .btn {
 	float:left;
 	color: #666;
-	+	background-color: #eee;
-	+	text-transform: uppercase;
-	+	letter-spacing: 2px;
+	background-color: #eee;
+	text-transform: uppercase;
+	letter-spacing: 2px;
 	padding: 2%;
 	margin:0 5%;
-	width:15%;
+	width: 5%;
 	text-align:center;
 	text-transform: uppercase;
 	letter-spacing: 2px;

@@ -9,7 +9,7 @@
        
             <h4>Friends</h4>
             
-            <button id='addfriend' class='btn'>Add Friend</button><br>
+            <button id='addfriend' class='btnf'>Add Friend</button><br>
             
             <div id="AllFriends">
             
@@ -133,7 +133,7 @@
 			
 			var cancel = document.createElement('button');
 			
-			cancel.className = 'btn';
+			cancel.className = 'btnf';
 			
 			frienddiv.style.position = 'absolute';
 			frienddiv.style.top = theight + 'px';
