@@ -235,7 +235,7 @@
 			type:"POST",
 			dataType:"JSON",
 			data:{
-				characters: 'showcharacters'
+				character: 'showcharacters'
 				},
 			success:function(characterresp){
 				
