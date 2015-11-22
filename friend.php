@@ -290,8 +290,50 @@
 	
 	
 </script>
-
+<script>
     
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '989824554418300',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+    
+    FB.ui({method: 'apprequests',
+      message: 'YOUR_MESSAGE_HERE'
+    }, function(response){
+        console.log(response);
+    });
+    
+    FB.ui({method: 'apprequests',
+      message: 'Friend Smash Request!',
+      filters: [{name:'GROUP_1_NAME', user_ids:['USER_ID','USER_ID','USER_ID']},{name:'GROUP_2_NAME', user_ids: ['USER_ID','USER_ID','USER_ID']}]
+    }, function(response){
+        console.log(response);
+    }});
+    
+    FB.api(
+    "/me/invitable_friends",
+    function (response) {
+      if (response && !response.error) {
+       
+      }
+    }
+);
+
+
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+    
+
 <?php
 	include("footer.php");
 ?>
