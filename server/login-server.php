@@ -61,17 +61,13 @@
 						
                         $returnedPassword = $rows[0]['password'];
 
-                        // now put into the session that we're logged in
-                        // also, could have an HMAC
-                        // http://php.net/manual/en/function.hash-hmac.php
-                        // http://stackoverflow.com/questions/4495950/how-do-stateless-servers-work/4496016#4496016
+                      
                         $_SESSION['username'] = $returnedLogin;
 						$_SESSION['user_id'] = $returnedID;
                         $_SESSION['loggedin'] = true;
+						
 
-                        // normally you don't put the session id in since it's already
-                        // send in the HTTP header but here it is so that you can
-                        // see that it was generated
+                       
                         $sid= session_id();
                         $data = array("status" => "success", "sid" => $sid);
 

@@ -77,9 +77,9 @@
 				var theight = $('.header').height();
 				var bheight = $('.footer').height();
 				var test = document.getElementById('test');
-				var cancel = document.createElement('button');
+				
 				var character = 'b';
-				cancel.className = 'btn';
+				
 				
 				frienddiv.style.position = 'absolute';
 				frienddiv.style.top = theight + 'px';
@@ -94,172 +94,204 @@
 				frienddiv.innerHTML = '';
 				document.getElementById('header').appendChild(frienddiv);
 				
-				function showfriends(){
+				for( var i = 0; i < add.length; i++){
+					
+					add[i].addEventListener("click", bindClick(i));
+				};
+			
+			
 				
-				$.ajax({
-					url:"server.php",
+				
+				 function bindClick(i) {
+				  return function(){
+						 console.log('popuptosearchfriends');	
+			
+							var inp = document.createElement('input');
+							var searchbtn = document.createElement('button');
+							
+							searchbtn.id = 'searchbtn';
+							searchbtn.innerHTML = 'search';
+							inp.placeholder = 'search by user email';
+							
+							
+							
+							var resultsdiv = document.createElement('div');
+							var cancel = document.createElement('button');
+							
+							frienddiv.appendChild(cancel);
+							frienddiv.appendChild(inp);
+							frienddiv.appendChild(searchbtn);
+							frienddiv.style.display = 'block';
+							document.getElementById('header').appendChild(frienddiv);
+							
+							cancel.onclick = function(){
+								frienddiv.style.display = 'none';
+								frienddiv.innerHTML = '';	
+						
+							};
+						
+							
+					
+						
+						searchbtn.onclick = function(){
+							
+							
+							
+							$.ajax({
+							url:"server/friends-server.php",
+							type:"POST",
+							dataType:"JSON",
+							data:{
+								
+								
+								term:inp.value
+								
+								
+								},
+							success:function(sresp){
+								
+								console.log("sresp:", sresp);	
+								
+								if(sresp == 'sorry'){
+									
+									resultsdiv.innerHTML = "Sorry, there are no users with that email";
+									frienddiv.appendChild(resultsdiv);
+									
+								} else {
+									
+									
+										
+										var img = document.createElement('img');	
+										var p = document.createElement('p');
+										var addbtn = document.createElement('button');
+										
+										var resultsun = sresp.username;
+										var resultsavi = sresp.avatar;
+										var resultsuid = sresp.uid;
+										
+										
+										addbtn.innerHTML = "Invite to play";
+										
+										
+										img.src = resultsavi;
+										p.innerHTML = resultsun;
+										
+										resultsdiv.appendChild(img);
+										resultsdiv.appendChild(p);
+										resultsdiv.appendChild(addbtn);
+										
+										frienddiv.appendChild(resultsdiv);
+										
+										addbtn.onclick = function(){
+											
+											console.log('sending request');
+											
+										/*	$.ajax({
+												url:"server/frequest-server.php",
+												type:"POST",
+												dataType:"JSON",
+												data:{
+													
+													
+													fun: resultsun,
+													fuid: resultsuid
+													
+													},
+												success:function(requestresp){
+													
+													console.log("requestresp:", requestresp);
+													
+													
+													
+													frienddiv.innerHTML = '';	
+													
+													var sentdiv = document.createElement('div');
+													sentdiv.innerHTML = requestresp;
+													sentdiv.style.fontSize = '16pt';
+													sentdiv.style.width = '100vw';
+													sentdiv.style.margin = '20%';
+													frienddiv.appendChild(sentdiv);
+													$(sentdiv).fadeIn('slow').delay(1000).fadeOut('slow', function(){
+																$(sentdiv).remove();
+																frienddiv.style.display = 'none';
+															
+														});
+													
+											
+													
+												},
+												error: function(jqXHR, textStatus, errorThrown) {
+													
+													console.log(jqXHR.statusText, textStatus, errorThrown);
+													console.log('friendrequest error');
+													  
+												
+											
+												}
+												
+											});	
+											*/
+											
+										};
+										
+										
+										
+									
+								}
+								
+							
+							},
+							error: function(jqXHR, textStatus, errorThrown) {
+								
+								console.log(jqXHR.statusText, textStatus, errorThrown);
+								console.log('search error');
+								  
+							
+						
+								}
+							
+							});	
+							
+						};
+						
+					};
+				};
+				
+	
+  
+				
+            	  
+			  $.ajax({
+					url:"server/character-server.php",
 					type:"POST",
 					dataType:"JSON",
 					data:{
-						
-						mode:'getfriends'
-						
-						
+						character: 'showcharacters'
 						},
-					success:function(fresp){
+					success:function(characterresp){
 						
-						console.log("yaya friends:", fresp);	
+						console.log("characterresp is:", characterresp);	
 						
-						if(fresp.length < 1){
-							
-							console.log("emptyyo");
-							var words = document.createElement('div');
-							
-							
-							
-							words.innerHTML = "You don't have any friends yet! Click here to search for them!";
-							
-							
-							
-							
-							
-							allfriends.appendChild(words);
-							
-						} else {
+						var p2 = document.getElementById('p2');
 						
-							for(var i = 0; i < fresp.length; i++){
-								
-								var frndrow = document.createElement('div');
-								var img = document.createElement('img');
-								var worddiv = document.createElement('span');
-								var assignbtn = document.createElement('button');
-								var fnam = fresp[i].user_name;
-								
-								console.log('character is', character);
-								
-								assignbtn.class = "assnbtn";
-								
-								frndrow.style.float = 'left';
-								frndrow.style.width = '100%';
-								frndrow
-								
-								img.style.width = '20%';
-								img.style.margin = '0 10%';
-								img.src = fresp[i].avatar;
-								
-								worddiv.float = 'right';
-								worddiv.width = '50%';
-								worddiv.clear = 'none';
-								worddiv.innerHTML = fresp[i].user_name;
-								worddiv.id = "pid" + i;
-								$('#pid' + i).data('friendid', fresp[i].users_id);
-								
-								assignbtn.innerHTML = "assign";
-								
-								worddiv.appendChild(assignbtn);
-								
-								frndrow.appendChild(img);
-								frndrow.appendChild(worddiv);
-								
-								
-								frienddiv.appendChild(frndrow);
-								
-								assignbtn.onclick = function(){
-									
-									console.log('hiiii');
-									frienddiv.style.display = 'none';
-									
-									var thddiv = "'#" + character +" span'";
-									
-									console.log('char', character);
-									$('#' + character + ' span').html(fnam);
-									
-										
-								}
-								
-								
-							}
-							
-						}
-				//ALTER TABLE Murder in Sin City-Character RENAME TO character;
-  
+						console.log('descriptionis', characterresp[0].description);
+						
+						p2.innerHTML = characterresp[0].description;
+						
 						
 						
 					},
-					error:function(err){
-						console.log(" oh error"); 
-						
+					 error: function(jqXHR, textStatus, errorThrown) {
+								//console.log(jqXHR.statusText, textStatus, errorThrown);
+								console.log("character error", jqXHR.statusText, textStatus);
+						  
+					
+				
 					}
 					
-				});		
-					
-				}
-			
-				for( var i = 0; i < add.length; i++){
-					
-					add[i].addEventListener('click', function(){
-						frienddiv.innerHTML = "<br><h1><br>" + this.getAttribute('data-char') + "</h1><br><h2>Friends:</h2>";
-						cancel.innerHTML = 'cancel';
-						
-						character = this.id;
-						
-						character = character.replace(/\s+/g, '');
-						
-					
-					 
-						console.log('character', character);
-						
-						frienddiv.style.display = 'block';
-						
-						
-						showfriends();
-						
-						frienddiv.appendChild(cancel);
-						
-						
-					});
-					
-				};
-			
-				cancel.onclick = function(){
-					frienddiv.style.display = 'none';	
-				}
-				
-				
-			
+				});	
+		
 			});
-            
-            	  
-	  $.ajax({
-			url:"server/character-server.php",
-			type:"POST",
-			dataType:"JSON",
-			data:{
-				character: 'showcharacters'
-				},
-			success:function(characterresp){
-				
-				console.log("characterresp is:", characterresp);	
-				
-				var p2 = document.getElementById('p2');
-				
-				console.log('descriptionis', characterresp[0].description);
-				
-				p2.innerHTML = characterresp[0].description;
-				
-				
-				
-			},
-			 error: function(jqXHR, textStatus, errorThrown) {
-                        //console.log(jqXHR.statusText, textStatus, errorThrown);
-                        console.log("character error", jqXHR.statusText, textStatus);
-                  
-			
-		
-			}
-			
-		});	
-		
 		</script>
         
         <?php 

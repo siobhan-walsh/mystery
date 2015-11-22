@@ -18,7 +18,7 @@
         if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])
             && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
 
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true  && isset($_SESSION['username']) && !empty(($_SESSION['username']) && isset($_SESSION['user_id'])) && !empty(($_SESSION['user_id']))){
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true){
 
                 $login = $_SESSION['username'];
                 // if the above worked then we got the session back and the minimal

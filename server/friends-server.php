@@ -36,7 +36,7 @@
                     $conn = new PDO("mysql:host=$DBHost;dbname=$DBname", $dblogin, $DBpassword);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    $sql = "SELECT * FROM users WHERE user_name = :term;";
+                    $sql = "SELECT * FROM users WHERE email = :term;";
 					
 					//"SELECT * FROM users WHERE user_name = $login AND password = $password;";
 
