@@ -21,7 +21,7 @@ Trump, the owner of the casino, relies on you to take care of what goes on on th
                 <div class='gameDiv'>
 
                     <button id='backbtn' class="btn">Back</button> 
-                    <a href='guess.php'><img src = 'img/lock.png' class="lock"></a>
+                    
                     <a href='game3.php' class="btn btn-blue" > Next</a>
                      
                 </div>

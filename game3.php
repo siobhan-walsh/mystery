@@ -24,7 +24,7 @@ Paula Piano suddenly runs off, what seems to be the matter with her? ask Mimi Ma
                 <div class='gameDiv'>
 
                     <button id='backbtn' class="btn">Back</button> 
-                    <a href='guess.php'><img src = 'img/lock.png' class="lock"></a>
+                    
                     <a href='game4.php' class="btn btn-blue" > Next</a>
                      
                 </div>
