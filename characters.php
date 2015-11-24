@@ -91,7 +91,7 @@
 							plusimg.src = 'img/plusbutton.png';
 							
 							var span = document.createElement('span');
-							span.innerHTML = "Invite a friend to play this character";
+							span.innerHTML = "Assign character";
 							
 							var charcontent = document.createElement('div');
 							charcontent.className = 'charcontent';

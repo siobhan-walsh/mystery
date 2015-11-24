@@ -161,6 +161,38 @@
 								console.log("gresp:", gresp);	
 								
 								
+								var ch_id = gresp['gameinfo'][0]['character_id'];
+								var player_id = gresp
+								
+								
+								console.log('gamemememe', gresp['msg'] );
+								
+								/*if(gresp['msg'] == 'alreadygame'){
+									
+									console.log("sorry you already have a game");
+									
+									var msgdiv = document.createElement('div');
+									//frienddiv.style.display = 'block';
+									msgdiv.style.padding = '4%';
+									
+									//msgdiv.innerHTML = 'sorry, you already are part of a game.<a href = "game.php">go to current game</a>';
+									//frienddiv.appendChild(msgdiv);
+									
+									
+								} else {
+									*/
+									console.log("ok game get started");	
+									$('#' + ch_id + ' span').html('you');
+									$('#' + ch_id + ' img').attr('src', 'img/circle_green.png');
+									
+									
+									
+									
+									
+									
+									
+								
+								
 									
 							
 							
