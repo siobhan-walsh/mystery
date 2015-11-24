@@ -33,7 +33,7 @@
                     $conn = new PDO("mysql:host=$DBHost;dbname=$DBname", $dblogin, $DBpassword);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    $sql = "SELECT character_description FROM characters";
+                    $sql = "SELECT character_id, character_name, character_description, character_img FROM characters WHERE theme_id = 1";
 	
 
                     $statement = $conn->prepare($sql);
@@ -66,7 +66,7 @@
 						
 						//var_dump($rows);
 						
-						$data = array("status" => "success", "charnfo" => $rows);
+						$data = array($rows);
 
 
 
