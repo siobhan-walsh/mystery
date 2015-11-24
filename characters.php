@@ -11,6 +11,8 @@
            <h3 class='htitle'> Pick Your Characters </h3>
                 
                 <h3 class='charname' id='prec'> Precious Trump: </h3> 
+                
+                <!--
                 <div class = "charrow">
                 
                 
@@ -52,7 +54,7 @@
                     <div class = 'charcontent'> Lounge Singer. Money hungry and love hungry. Late nights in the lounge leave Paula singing a lonely tune.<br></br> </div>
              </div>
                
-                
+              
                 
         
              
@@ -63,11 +65,11 @@
                 
                 <a href="game.php" class="btnchar-blue"> Start Game!</a>
   </div>
-
+  -->
         
         </div>
 
-		<script src='js/backbtn.js'></script>
+		<!--<script src='js/backbtn.js'></script>-->
         
         <script>
 			$(document).ready(function(){
@@ -265,18 +267,15 @@
 					url:"server/character-server.php",
 					type:"POST",
 					dataType:"JSON",
-					data:{
-						character: 'showcharacters'
-						},
 					success:function(characterresp){
 						
 						console.log("characterresp is:", characterresp);	
 						
-						var p2 = document.getElementById('p2');
+						//var p2 = document.getElementById('p2');
 						
-						console.log('descriptionis', characterresp[0].description);
+						//console.log('descriptionis', characterresp[0].description);
 						
-						p2.innerHTML = characterresp[0].description;
+						//p2.innerHTML = characterresp[0].description;
 						
 						
 						

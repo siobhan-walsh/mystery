@@ -24,7 +24,7 @@
         if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])
             && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
  
-            if(isset($_POST["character"]) && !empty($_POST["character"])){
+         
 
 
                 // get the data from the post and store in variables
@@ -33,7 +33,7 @@
                     $conn = new PDO("mysql:host=$DBHost;dbname=$DBname", $dblogin, $DBpassword);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    $sql = "SELECT * FROM characters";
+                    $sql = "SELECT character_description FROM characters";
 	
 
                     $statement = $conn->prepare($sql);
@@ -43,32 +43,36 @@
                     // this should be one if there's a user by that user value and password value
                     $count = $statement->rowCount();
 				
-                    if($count > 0) {
+               		$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 						
-						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+					
+					/*
+						$char = array();
 						
-					$themeinfo = array();
-					
-					$data = $rows;
-					
-					
-                        //$data = array("status" => "success", "themeinfo" => $themeinfo);
+							for($i = 0; $i < $count; $i++){
+								
+								$charinfo = array(
+												"character_id" => $rows[$i]['character_id'],
+												"character_name" => $rows[$i]['character_name'],
+												"character_description" => $rows[$i]['character_description'],
+												"character_img" => $rows[$i]["character_img"]
+											);
+				
+								array_push($char, $charinfo);
+								
+							}
+								
+						*/
+						
+						//var_dump($rows);
+						
+						$data = array("status" => "success", "charnfo" => $rows);
 
-
-                    } else {
-                        $data = array("status" => "fail", "msg" => "User name and/or password not correct.");
-                    }
 
 
                 } catch(PDOException $e) {
                     $data = array("status" => "fail", "msg" => $e->getMessage());
                 }
-
-
-            } else {
-                $data = array("status" => "fail", "msg" => "Either login or password were absent.");
-            }
-
 
 
         } else {

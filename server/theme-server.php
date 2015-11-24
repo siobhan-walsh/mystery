@@ -47,9 +47,9 @@
 						
 						$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 						
-					$themeinfo = array();
+						$themeinfo = array();
 					
-					$data = $rows;
+						$data = $rows;
 					
 					
                         //$data = array("status" => "success", "themeinfo" => $themeinfo);
