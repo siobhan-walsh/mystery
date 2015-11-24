@@ -21,11 +21,11 @@ Paula Piano suddenly runs off, what seems to be the matter with her? ask Mimi Ma
                 </div>
 
 
-                <div class='gameDiv'>
+        <div class='gameDiv'>
 
                     <button id='backbtn' class="btn">Back</button> 
-                    
-                    <a href='game4.php' class="btn btn-blue" > Next</a>
+                   
+                    <a href='game2.php' class="btn btn-blue" > Next</a>
                      
                 </div>
 

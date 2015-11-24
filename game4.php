@@ -18,11 +18,11 @@ Mimi Martini states that she has suspicions that the casino owner, Donald Trump 
                 </div>
 
 
-                <div class='gameDiv'>
+            <div class='gameDiv'>
 
                     <button id='backbtn' class="btn">Back</button> 
- 
-                    <a href='youwon.php' class="btn btn-blue" > Next</a>
+                   
+                    <a href='game2.php' class="btn btn-blue" > Next</a>
                      
                 </div>
 

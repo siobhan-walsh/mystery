@@ -19,7 +19,7 @@
              </div>
              
         
-               <div class='buttonDiv'>
+               <div class='gameDiv'>
 
                     <button id='backbtn' class="btn">Back</button> 
                   
@@ -159,8 +159,7 @@ $(document).ready(function(){
 				}
 			
 			
-		};
-		
+			});
 		function accept(){
 			
 			var respbtn = document.querySelectorAll('.respbtn');
