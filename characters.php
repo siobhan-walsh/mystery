@@ -227,13 +227,23 @@
 											console.log('sending request');
 											
 										/*	ajax call that sends request goes here. send the character_id (already made the variable character_id), user_id of friend is resulstsuid, these need to go into the game table			*/
-											 
+                                         /*   $.ajax({
+				                                 url:"server/invite-server.php",
+							                     type:"POST",
+							                     dataType:"JSON",
+							                     data:{
+								
+								                    sresp
+								                    },
+											 success:function(respInv){
+                                                 	console.log("game table", respInv);	
+*/
 										};
 										
 										
 										
 									
-								}
+								
 								
 							
 							},
