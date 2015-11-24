@@ -57,7 +57,7 @@
                         // http://php.net/manual/en/pdostatement.fetchall.php
                         $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
                         $returnedLogin = $rows[0]['user_name'];
-						$returnedID = $rows[0]['users_id'];
+						$returnedID = $rows[0]['user_id'];
 						
                         $returnedPassword = $rows[0]['password'];
 

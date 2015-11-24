@@ -148,20 +148,36 @@
 			
 							var inp = document.createElement('input');
 							var searchbtn = document.createElement('button');
+							var br = document.createElement('br');
+							var cprow = document.createElement('div');
+							cprow.style.width = '100%';
 							
 							searchbtn.id = 'searchbtn';
 							searchbtn.innerHTML = 'search';
+							searchbtn.className = 'whitebtn';
 							inp.placeholder = 'search by user email';
+							inp.style.margin = '4%';
+							
 							
 							
 							
 							var resultsdiv = document.createElement('div');
 							var cancel = document.createElement('button');
 							
-							frienddiv.appendChild(cancel);
-							frienddiv.appendChild(inp);
-							frienddiv.appendChild(searchbtn);
+							cancel.innerHTML = 'cancel';
+							
+							cancel.className = 'whitebtn';
+							
+							cprow.appendChild(inp);
+							
+							cprow.appendChild(searchbtn);
+							cprow.appendChild(cancel);
+							
+							frienddiv.appendChild(cprow);
+							
 							frienddiv.style.display = 'block';
+							
+							
 							document.getElementById('header').appendChild(frienddiv);
 							
 							cancel.onclick = function(){
@@ -209,6 +225,7 @@
 										var resultsavi = sresp.avatar;
 										var resultsuid = sresp.uid;
 										
+										addbtn.className = 'whitebtn';
 										
 										addbtn.innerHTML = "Invite to play";
 										
@@ -216,6 +233,7 @@
 										img.src = resultsavi;
 										p.innerHTML = resultsun;
 										
+										resultsdiv.style.padding = '6%';
 										resultsdiv.appendChild(img);
 										resultsdiv.appendChild(p);
 										resultsdiv.appendChild(addbtn);
@@ -243,7 +261,7 @@
 										
 										
 									
-								
+									};
 								
 							
 							},
