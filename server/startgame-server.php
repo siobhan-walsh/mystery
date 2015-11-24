@@ -22,7 +22,7 @@
             && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
 
             if(isset($_POST["character_id"]) && !empty($_POST["character_id"])
-			   &&  isset($_POST["frienduid"]) && !empty($_POST["frienduid"])){
+			   &&  isset($_POST["theme_id"]) && !empty($_POST["theme_id"])){
 
 
                 // get the data from the post and store in variables
@@ -31,10 +31,9 @@
                 
                 $theme_id = 1;
                 $host_id = $_SESSION['user_id'];
-                $player_id = $_POST['user_id'];
-				$friendid = $_POST["frienduid"];
+                $player_id = $_SESSION['user_id'];
                 $character_id = $_POST['character_id'];
-				$status = $_POST['status'];
+				$status = 'idk';
 				
                
 	
