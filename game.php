@@ -18,8 +18,7 @@
 
                 </div>
 
-
-                <div class='gameDiv'>
+                <div id='btndiv'>
 
                     <button id='backbtn' class="btn">Back</button> 
                    
@@ -29,8 +28,13 @@
 
 
             </div>
-<script src='js/backbtn.js'></script>
-<?php
+            
+ 
 
+<?php
+	
 	include("footer.php");
+	
 ?>
+<script src='js/btndiv.js'></script>
+<script src='js/backbtn.js'></script>
