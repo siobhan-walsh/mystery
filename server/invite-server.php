@@ -31,10 +31,9 @@
                 
                 $theme_id = 1;
                 $host_id = $_SESSION['user_id'];
-                $player_id = $_POST['user_id'];
 				$friendid = $_POST["frienduid"];
                 $character_id = $_POST['character_id'];
-				$status = $_POST['status'];
+	
 				
                
 	
@@ -42,47 +41,19 @@
                     $conn = new PDO("mysql:host=$DBHost;dbname=$DBname", $dblogin, $DBpassword);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    $sql = "INSERT INTO game FROM characters WHERE player_id = :uid AND status = 2";
-                    
-					
-                    $statement = $conn->prepare($sql);
-                    $statement->execute(array(":uid" => $user_id));
-					$statement->execute();
-					
-					
-					
-					$data = $statement;
-                
-                    $count = $statement->rowCount();
-				
-                 
-                        
+                   $statement = $conn->prepare("INSERT INTO game (host_id, theme_id, player_id, character_id) VALUES (:host,  :theme, :player,  :character);");
 						
-                    $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-					
-					$invitefrd = array();
-					
-					
-
-				   
-				   
-				    if($count > 0) {
-                        // success, so fetch the first and hopefully only record
-
-                        // http://stackoverflow.com/questions/15287905/convert-pdo-recordset-to-json-in-php
-                        // http://php.net/manual/en/pdostatement.fetchall.php
-                        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-                        $theme= $rows[0]['theme_id'];
-						$email= $rows[0]['email'];
-						$character= $rows[0]['character_id'];
-                        $player= $rows[0]['user_id'];
-                       
-                        $data = array("status" => "success", "theme" => $theme, "email" => $email, "character" => $character, "user id" => $player);
-
-
-                    } else {
-                        $data = "sorry";
-                    }
+						$statement->bindParam(":host",  $host_id);
+						$statement->bindParam(":theme",  $theme_id);
+						$statement->bindParam(":player",  $friendid);
+						$statement->bindParam(":character",  $character_id);
+						
+						
+					   
+						$statement->execute();
+						
+						$data = 'invited to play game';	
+						
 
 
                 } catch(PDOException $e) {
