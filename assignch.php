@@ -42,6 +42,8 @@
 				var frienddiv = document.createElement('div');
 				var theight = $('.header').height();
 				var bheight = $('.footer').height();
+				var takench = [];
+				var takenuinfo = [];
 				
 				frienddiv.style.position = 'absolute';
 				frienddiv.style.top = theight + 'px';
@@ -106,9 +108,26 @@
 								
 								for(var i = 0; i < gamecharchecksize; i++){
 									console.log('heyjey');
-									gamecharcheck['hostchcheck'][''];
+									
+									if(chid == gamecharcheck['hostchcheck'][i]['character_id']){
+										
+									} else {
+										
+										
+										
+										var takenthing = {
+											
+												character: gamecharcheck['hostchcheck'][i]['character_id'],
+												playerid: gamecharcheck['hostchcheck'][i]['player_id']
+											}
+											
+											
+										
+										takench.push(takenthing);
+									};
+									
 								};
-								
+								console.log('takench', takench);
 								
 							},
 							error: function(jqXHR, textStatus, errorThrown) {
@@ -118,6 +137,38 @@
 							}
 							
 						});	
+						
+						/*
+						for(var i = 0; i < takench.length; i++){
+							
+							 
+							$.ajax({
+								url:"server/character-server.php",
+								type:"POST",
+								dataType:"JSON",
+								data: {
+									
+									playerid: takench[i].playerid,
+									characterid: takench[i].characterid
+									
+								},
+								success:function(takenresp){
+									takenuinfo.push(takenresp);
+								},
+								error: function(jqXHR, textStatus, errorThrown) {
+								
+									console.log(jqXHR.statusText, textStatus, errorThrown);
+									console.log('taken error');
+								  
+							
+						
+								}
+							
+							});
+						};
+						
+						*/
+						
 				
 				$.ajax({
 					url:"server/character-server.php",
@@ -130,6 +181,9 @@
 							var charcterrespLength = objectSize(characterresp[0]);
 							console.log('yknow', charcterrespLength);
 							
+							//something for if playerid in taken array get playerid info(name)
+							
+							//SELECT username FROM users WHERE user_id IN (playerid, otherplayerid);
 	
 									for( var i = 0; i < charcterrespLength; i++){
 										
@@ -191,7 +245,7 @@
 										} else if(characterresp[0][i]['character_id'] == chid){
 										
 										
-										}else {
+										} else {
 											console.log('not my character', i);	
 											
 											var charname = document.createElement('h3');

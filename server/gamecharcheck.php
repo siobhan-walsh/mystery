@@ -52,6 +52,17 @@
 					
 					
 						$rows = $checkgame->fetchAll(PDO::FETCH_ASSOC);
+						
+						for($i = 0; $i < count($rows); $i++){
+							
+							$takench = $rows[$i]['character_id'];
+							$takenuser = $rows[$i]['player_id'];
+							
+							
+						};
+						
+						//SELECT * FROM users WHERE user_id IN (playerid);
+						
 						$data = array("status" => "success", 'hostchcheck' => $rows);
 				
 	
