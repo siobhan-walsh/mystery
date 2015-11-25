@@ -52,7 +52,11 @@
 					   
 						$statement->execute();
 						
-						$data = 'invited to play game';	
+						$notistatement = $conn->prepare("UPDATE users SET notification = 2  WHERE user_id= :friendid;");
+						$notistatement->bindParam(":friendid",  $friendid);
+						$notistatement->execute();
+						
+						$data = 'invited';	
 						
 
 

@@ -47,24 +47,10 @@
 					
 					$('#usern').data('user', sess.userProfile.user_id);
 					
-					if(sess.userProfile.notification == 2){
+					if(sess.userProfile.notification == 1){
 						console.log("no notifications");	
-					} else {
-						console.log('hey you have a friend request');
+					} else if(sess.userProfile.notification != 1){
 						
-						$.ajax({
-						url:"server/notification-check.php",
-						type:"POST",
-						dataType:"JSON",
-						data:{
-							
-							status:'check'
-							
-							},
-						success:function(checking){
-							
-							console.log('checking', checking);
-							
 							var footer = document.getElementById('footer');
 						
 							var notialert = document.createElement('div');
@@ -88,28 +74,13 @@
 							notialert.style.fontWeight = '400';
 							notialert.style.fontSize = '16pt';
 							
-							notialert.innerHTML = checking.notifications;
+							notialert.innerHTML = 1;
 							
 							footer.appendChild(notialert);
 								
 							
 							
-						},
-						error: function(jqXHR, textStatus, errorThrown) {
-							//console.log(jqXHR.statusText, textStatus, errorThrown);
-							console.log(jqXHR.statusText, textStatus);
-                  
-						}
-				
-						});	
-
-						
-						
-						
-								
-					}
-					
-					
+					};
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
                         //console.log(jqXHR.statusText, textStatus, errorThrown);
@@ -150,7 +121,7 @@
 				logmenu.remove();
 				mclick = false;
 			}
-		}
+		};
 		
 		logmenu.onclick = function(){
 			
@@ -179,7 +150,7 @@
 		});	
 			
 				
-		}
+		};
 		
 		
 });

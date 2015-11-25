@@ -156,7 +156,8 @@
 							data:{
 								
 								theme_id:1,
-								character_id: character_id
+								character_id: character_id,
+								status:2
 								
 								},
 							success:function(gresp){
@@ -460,6 +461,12 @@
 								                    },
 											 	success:function(respInv){
                                                  	console.log("game table", respInv);	
+													
+													var thisdiv = document.getElementById(character_id);
+													
+													thisdiv.innerHTML = '<img class="plusimg" src ="img/circle_purple.png"><span>You invited ' + resultsun +', their response is pending</span>';
+													
+													
 													
 											 	},
 											 	error: function(jqXHR, textStatus, errorThrown) {

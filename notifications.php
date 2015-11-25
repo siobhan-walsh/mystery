@@ -64,8 +64,10 @@ $(document).ready(function(){
             
 */
 		
-		seen();
-		getrequestinfo();
+		//need to do an if else thingy here with the different numbers in notification to determine the type before doing ajax call
+		
+		//seen();
+		//getrequestinfo();
 		
 		function seen(){
 			$.ajax({
@@ -148,7 +150,7 @@ $(document).ready(function(){
 						accept();
 							
 						
-					}	
+					};	
 
 			
 				},
@@ -160,6 +162,7 @@ $(document).ready(function(){
 			
 			
 			});
+			
 		function accept(){
 			
 			var respbtn = document.querySelectorAll('.respbtn');
@@ -167,12 +170,12 @@ $(document).ready(function(){
 			var fuid = '';
 			var statuss = '';
 			
-			for(var i=0; i< respbtn.length; i++) {
-				   respbtn[i].addEventListener("click", bindClick(i));
-			};
-			
-			 function bindClick(i) {
-				return function(){
+				for(var i=0; i< respbtn.length; i++) {
+					   respbtn[i].addEventListener("click", bindClick(i));
+				};
+				
+			 	function bindClick(i) {
+					return function(){
 						 console.log("you clicked button number " + i);
 						
 						fuid = $(this).data('frienduserid');
@@ -249,11 +252,10 @@ $(document).ready(function(){
 			}
 		  }
 		  return object_size;
-		}
+		};
 		
 	
-			});	
-
+	};
 });
 
 </script>

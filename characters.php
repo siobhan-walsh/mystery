@@ -255,6 +255,7 @@
 							                     data:{
 													 character_id: character_id,
 													 frienduid: resultsuid
+													
 													 
 								                    },
 											 	success:function(respInv){

@@ -22,7 +22,8 @@
             && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
 
             if(isset($_POST["character_id"]) && !empty($_POST["character_id"])
-			   &&  isset($_POST["theme_id"]) && !empty($_POST["theme_id"])){
+			   &&  isset($_POST["theme_id"]) && !empty($_POST["theme_id"])
+			   &&  isset($_POST["status"]) && !empty($_POST["status"])){
 
 
                 // get the data from the post and store in variables
@@ -33,6 +34,7 @@
                 $host_id = $_SESSION['user_id'];
                 $player_id = $_SESSION['user_id'];
                 $character_id = $_POST['character_id'];
+				$status = $_POST['status'];
 			
 				
                
@@ -61,12 +63,13 @@
 					
 					
 
-						$statement = $conn->prepare("INSERT INTO game (host_id, theme_id, player_id, character_id) VALUES (:host,  :theme, :player,  :character);");
+						$statement = $conn->prepare("INSERT INTO game (host_id, theme_id, player_id, character_id, status) VALUES (:host,  :theme, :player,  :character, :status);");
 						
 						$statement->bindParam(":host",  $host_id);
 						$statement->bindParam(":theme",  $theme_id);
 						$statement->bindParam(":player",  $player_id);
 						$statement->bindParam(":character",  $character_id);
+						$statement->bindParam(":status",  $status);
 						
 						
 					   
