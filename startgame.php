@@ -36,6 +36,7 @@
 				var content = document.querySelector('.content');
 				
 				var character = 'b';
+				var charstuff = '';
 				
 				var frienddiv = document.createElement('div');
 				var theight = $('.header').height();
@@ -61,6 +62,8 @@
 					success:function(characterresp){
 						
 						console.log("characterresp is:", characterresp);	
+						
+							charstuff = characterresp;
 						
 						
 							var charcterrespLength = objectSize(characterresp[0]);
@@ -182,11 +185,130 @@
 								} else {
 									*/
 									console.log("ok game get started");	
-									$('#' + ch_id + ' span').html('you');
-									$('#' + ch_id + ' img').attr('src', 'img/circle_green.png');
 									
 									
+									console.log('now were here charstuff', charstuff);
 									
+									content.innerHTML = '';
+									
+									var charstuffLength = objectSize(charstuff[0]);
+										
+										
+										console.log('charstuff id ', charstuff[0][0]['character_id']);
+										console.log('charstuff length', charstuffLength);
+										console.log('chid is', ch_id);
+									
+									for( var i = 0; i < charstuffLength; i++){
+										
+										
+										if(charstuff[0][i]['character_id'] == ch_id){
+											
+											
+											console.log("my character is", i, ch_id);	
+											
+											var charname = document.createElement('h3');
+											charname.className = 'charname';
+											charname.innerHTML = charstuff[0][i]['character_name']
+											
+											var charrow = document.createElement('div');
+											charrow.className = 'charrow';
+											
+											var add = document.createElement('div');
+											add.id = ch_id;
+											add.className = 'add';
+											
+										
+											var img = document.createElement('img');
+											img.className = 'charimg';
+											img.src = charstuff[0][i]['character_img'];
+											
+											
+											var checkimg = document.createElement('img');
+											checkimg.className = 'plusimg';
+											checkimg.src = 'img/circle_green.png';
+											
+											var span = document.createElement('span');
+											span.style.color = '#000000';
+											span.style.fontSize = '16pt';
+											span.innerHTML = "You are playing this character";
+											
+											var charcontent = document.createElement('div');
+											charcontent.className = 'charcontent';
+											charcontent.innerHTML = charstuff[0][i]['character_description'];
+											
+											console.log('img src is', charstuff[0][i]['character_img']);
+											
+											
+											
+											add.appendChild(checkimg);
+											add.appendChild(span);
+											
+											
+											
+											charrow.appendChild(img);
+											charrow.appendChild(add);
+											charrow.appendChild(charcontent);
+											
+											content.appendChild(charname);
+											content.appendChild(charrow);
+												
+											
+											
+											
+										} else {
+											console.log('not my character', i);	
+											
+											var charname = document.createElement('h3');
+											charname.className = 'charname';
+											charname.innerHTML = charstuff[0][i]['character_name']
+											
+											var charrow = document.createElement('div');
+											charrow.className = 'charrow';
+											
+											var img = document.createElement('img');
+											img.className = 'charimg';
+											img.src = charstuff[0][i]['character_img'];
+											
+											var add = document.createElement('div');
+											add.className = 'add';
+											add.id = charstuff[0][i]['character_id'];
+											add.addEventListener("click", blindClick(i));
+											
+											var plusimg = document.createElement('img');
+											plusimg.className = 'plusimg';
+											plusimg.src = 'img/plusbutton.png';
+											
+											var span = document.createElement('span');
+											span.innerHTML = "assign character";
+											
+											var charcontent = document.createElement('div');
+											charcontent.className = 'charcontent';
+											charcontent.innerHTML = charstuff[0][i]['character_description'];
+											
+											console.log('img src is', charstuff[0][i]['character_img']);
+											
+											
+											
+											add.appendChild(plusimg);
+											add.appendChild(span);
+											
+											
+											
+											charrow.appendChild(img);
+											charrow.appendChild(add);
+											charrow.appendChild(charcontent);
+											
+											content.appendChild(charname);
+											content.appendChild(charrow);
+										}
+										
+										
+										
+										
+									};
+									
+												
+												
 									
 									
 									
@@ -211,6 +333,19 @@
 					}; 
 				};
 				
+				
+				
+			function blindClick(i) {	
+				 return function(){
+				
+					console.log('assigning character to firend');
+					
+					//put assigning character functionality here
+					
+					
+					
+				 };
+			};
 			function objectSize(the_object) {
 							  /* function to validate the existence of each key in the object to get the number of valid keys. */
 							  var object_size = 0;
