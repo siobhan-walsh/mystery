@@ -1,10 +1,6 @@
 <?php
 
-    // get the session
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-
+include("connection.php");
 
     $methodType = $_SERVER['REQUEST_METHOD'];
     $data = array("status" => "fail", "msg" => "$methodType");

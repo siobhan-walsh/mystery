@@ -1,15 +1,6 @@
 <?php
     
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-
-	$DBHost = 'localhost';
-	$dblogin = 'root';
-	$DBpassword = 'root';
-	$DBname = 'mystery';
-
-
+  include("connection.php");
 
 
     $methodType = $_SERVER['REQUEST_METHOD'];

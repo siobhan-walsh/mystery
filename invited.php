@@ -97,9 +97,26 @@
 					infodiv.innerHTML = '<img src = "' + inviteinfo.characterinfo.character_img + '" > <br> <p>' + inviteinfo.characterinfo.character_description + '</p>';
 					
 					var acceptbttn = document.createElement('button');
+					acceptbttn.innerHTML = 'Accept';
+					acceptbttn.className = 'whitebtn';
+					
+					var declinebttn = document.createElement('button');
+					declinebttn.innerHTML = 'Decline';
+					declinebttn.className = 'whitebtn';
 					
 					invitedmsg.appendChild(h3);
 					invitedmsg.appendChild(infodiv);
+					invitedmsg.appendChild(acceptbttn);
+					invitedmsg.appendChild(declinebttn);
+					
+					
+					acceptbttn.onclick = function(){
+						console.log('clicked acceptbtn');
+					};
+					
+					declinebttn.onclick = function(){
+						console.log('clicked declinebtn');
+					};
 					
 					
 					
@@ -117,6 +134,26 @@
 	  
 	  
 	  //on accept, go to rounds page
+	  
+	  
+	  function acceptbttn(){
+		  
+		  $.ajax({
+				url:"server/accept.php",
+				type:"POST",
+				dataType:"JSON",
+				success:function(accept){
+				
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+						//console.log(jqXHR.statusText, textStatus, errorThrown);
+						console.log('accept', jqXHR.statusText, textStatus);
+				  
+				}
+				
+			});	
+		  
+	  };
 	  
 	  		//on the rounds page you need to get gameinof where playerid = sessionuserid, then use the characterid from that to get round info
 	  
