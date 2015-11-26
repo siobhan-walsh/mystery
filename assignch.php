@@ -36,14 +36,14 @@
 				var content = document.querySelector('.content');
 				
 				var character = 'b';
-				var charstuff = '';
+				var characterstuff = [];
 				var chid = '';
+				var takencharacters = [];
 				
 				var frienddiv = document.createElement('div');
 				var theight = $('.header').height();
 				var bheight = $('.footer').height();
-				var takench = [];
-				var takenuinfo = [];
+				var takenchinfo = [];
 				
 				frienddiv.style.position = 'absolute';
 				frienddiv.style.top = theight + 'px';
@@ -57,6 +57,56 @@
 				
 				frienddiv.innerHTML = '';
 				document.getElementById('header').appendChild(frienddiv);
+				
+				
+				getcharacters();
+				
+				
+				
+				//first get the character info and push to the global array
+				
+				function getcharacters(){
+				
+					$.ajax({
+						url:"server/character-server.php",
+						type:"POST",
+						dataType:"JSON",
+						success:function(characterresp){
+							
+							
+								//console.log('characterresp zero is', characterresp[0]);
+								
+								characterrespSize = objectSize(characterresp);
+								
+							
+									characterstuff = characterresp[0];
+									
+								
+								
+								console.log('characterstuff is', characterstuff);
+								
+								hostscharacter();
+				
+								
+								
+								
+						},
+						error: function(jqXHR, textStatus, errorThrown) {
+										
+										console.log(jqXHR.statusText, textStatus, errorThrown);
+										console.log('search error');
+										  
+									
+								
+						}
+								
+					});	
+				
+				};
+				
+				//then get the host's character info
+				
+				function hostscharacter(){
 				
 				$.ajax({
 							url:"server/gamecheck.php",
@@ -77,7 +127,61 @@
 								console.log('this ch id is', gcheck['gamecheck'][0]['character_id']);
 								
 								chid = gcheck['gamecheck'][0]['character_id'];
+								
+								console.log('pushing chid', chid);
+								takencharacters.push(chid);
+								
+								chindex = chid - 1;
+								
+								console.log("my character is", chid);	
+											
+											var charname = document.createElement('h3');
+											charname.className = 'charname';
+											charname.innerHTML = characterstuff[chindex]['character_name'];
+											
+											console.log('charname is', characterstuff[chindex]['character_name']);
+											
+											var charrow = document.createElement('div');
+											charrow.className = 'charrow';
+											
+											var add = document.createElement('div');
+											add.id = chid;
+											add.className = 'add';
+											
+										
+											var img = document.createElement('img');
+											img.className = 'charimg';
+											img.src = characterstuff[chindex]['character_img'];
+											
+											
+											var checkimg = document.createElement('img');
+											checkimg.className = 'plusimg';
+											checkimg.src = 'img/circle_green.png';
+											
+											var span = document.createElement('span');
+											span.style.color = '#000000';
+											span.style.fontSize = '16pt';
+											span.innerHTML = "You are playing this character";
+											
+											var charcontent = document.createElement('div');
+											charcontent.className = 'charcontent';
+											charcontent.innerHTML = characterstuff[chindex]['character_description'];
+											
+											
+											
+											add.appendChild(checkimg);
+											add.appendChild(span);
+											
+											
+											
+											charrow.appendChild(img);
+											charrow.appendChild(add);
+											charrow.appendChild(charcontent);
+											
+											content.appendChild(charname);
+											content.appendChild(charrow);
 				
+								otheruserscharacters();	
 								
 							},
 							error: function(jqXHR, textStatus, errorThrown) {
@@ -87,8 +191,18 @@
 							}
 							
 						});	
+					
+					
+					
+						
+				};
+						
+						
+					//then show the characters that have already been assigned to a user	
+					
+				function otheruserscharacters(){
 				
-				$.ajax({
+					$.ajax({
 							url:"server/gamecharcheck.php",
 							type:"POST",
 							dataType:"JSON",
@@ -104,98 +218,29 @@
 								
 								console.log("gamecharcheck info returned: ", gamecharcheck);
 								
-								var gamecharchecksize = objectSize(gamecharcheck['hostchcheck']);
+								takenchinfo = gamecharcheck.takeninfo;
 								
-								for(var i = 0; i < gamecharchecksize; i++){
-									console.log('heyjey');
-									
-									if(chid == gamecharcheck['hostchcheck'][i]['character_id']){
-										
-									} else {
-										
-										
-										
-										var takenthing = {
-											
-												character: gamecharcheck['hostchcheck'][i]['character_id'],
-												playerid: gamecharcheck['hostchcheck'][i]['player_id']
-											}
-											
-											
-										
-										takench.push(takenthing);
-									};
-									
-								};
-								console.log('takench', takench);
+								takenchinfoSize = objectSize(takenchinfo) 
 								
-							},
-							error: function(jqXHR, textStatus, errorThrown) {
-									//console.log(jqXHR.statusText, textStatus, errorThrown);
-									console.log('gcheck fail', jqXHR.statusText, textStatus);
-							  
-							}
-							
-						});	
-						
-						/*
-						for(var i = 0; i < takench.length; i++){
-							
-							 
-							$.ajax({
-								url:"server/character-server.php",
-								type:"POST",
-								dataType:"JSON",
-								data: {
-									
-									playerid: takench[i].playerid,
-									characterid: takench[i].characterid
-									
-								},
-								success:function(takenresp){
-									takenuinfo.push(takenresp);
-								},
-								error: function(jqXHR, textStatus, errorThrown) {
+								console.log('takenchinfo is', takenchinfo);
 								
-									console.log(jqXHR.statusText, textStatus, errorThrown);
-									console.log('taken error');
-								  
-							
-						
-								}
-							
-							});
-						};
-						
-						*/
-						
-				
-				$.ajax({
-					url:"server/character-server.php",
-					type:"POST",
-					dataType:"JSON",
-					success:function(characterresp){
-						
-						console.log("characterresp is:", characterresp);	
-						
-							var charcterrespLength = objectSize(characterresp[0]);
-							console.log('yknow', charcterrespLength);
-							
-							//something for if playerid in taken array get playerid info(name)
-							
-							//SELECT username FROM users WHERE user_id IN (playerid, otherplayerid);
-	
-									for( var i = 0; i < charcterrespLength; i++){
-										
-										
-										if(characterresp[0][i]['character_id'] == chid){
-											
-											
-											console.log("my character is", i, chid);	
-											
-											var charname = document.createElement('h3');
+								for(var i = 0; i< takenchinfoSize; i++){
+									
+									console.log('this is an array right');
+									
+									takencharacters.push(takenchinfo[i].takench);
+									
+									chnum = takenchinfo[i].takench - 1;
+									usname = takenchinfo[i].takeninfo;
+									
+									
+									console.log('chnum is', chnum);
+									
+									
+									
+									var charname = document.createElement('h3');
 											charname.className = 'charname';
-											charname.innerHTML = characterresp[0][i]['character_name']
+											charname.innerHTML = characterstuff[chnum]['character_name'];
 											
 											var charrow = document.createElement('div');
 											charrow.className = 'charrow';
@@ -207,28 +252,16 @@
 										
 											var img = document.createElement('img');
 											img.className = 'charimg';
-											img.src = characterresp[0][i]['character_img'];
+											img.src = characterstuff[chnum]['character_img'];
 											
 											
-											var checkimg = document.createElement('img');
-											checkimg.className = 'plusimg';
-											checkimg.src = 'img/circle_green.png';
-											
-											var span = document.createElement('span');
-											span.style.color = '#000000';
-											span.style.fontSize = '16pt';
-											span.innerHTML = "You are playing this character";
 											
 											var charcontent = document.createElement('div');
 											charcontent.className = 'charcontent';
-											charcontent.innerHTML = characterresp[0][i]['character_description'];
-											
-											console.log('img src is', characterresp[0][i]['character_img']);
+											charcontent.innerHTML = characterstuff[chnum]['character_description'];
 											
 											
-											
-											add.appendChild(checkimg);
-											add.appendChild(span);
+											add.innerHTML = '<img class="plusimg" src ="img/circle_purple.png"><span>You invited ' + usname +', their response is pending</span>';
 											
 											
 											
@@ -238,30 +271,61 @@
 											
 											content.appendChild(charname);
 											content.appendChild(charrow);
-												
 											
-											
-											
-										} else if(characterresp[0][i]['character_id'] == chid){
-										
-										
-										} else {
-											console.log('not my character', i);	
-											
+									
+								};
+								
+								unassignedCharacters();
+							},
+							error: function(jqXHR, textStatus, errorThrown) {
+									//console.log(jqXHR.statusText, textStatus, errorThrown);
+									console.log('gcheck fail', jqXHR.statusText, textStatus);
+							  
+							}
+							
+						});	
+						
+						
+						
+				};
+				
+				function unassignedCharacters(){
+						console.log('characterstuff is a thing', characterstuff);
+						
+						characterstuffSize = objectSize(characterstuff);
+						
+						
+						
+						//takencharacters.push('4');
+						console.log('takencharacters are', takencharacters);
+						
+						var takenresult = (jQuery.inArray('4', takencharacters));
+						
+						console.log('is 4 in the array', takenresult);
+						
+						for(var i = 0; i < characterstuffSize; i++){
+							
+							
+							if(jQuery.inArray(characterstuff[i]['character_id'], takencharacters) == -1){
+								
+								console.log('these characters are free', characterstuff[i]['character_id']);
+								
+								
+								
 											var charname = document.createElement('h3');
 											charname.className = 'charname';
-											charname.innerHTML = characterresp[0][i]['character_name']
+											charname.innerHTML = characterstuff[i]['character_name']
 											
 											var charrow = document.createElement('div');
 											charrow.className = 'charrow';
 											
 											var img = document.createElement('img');
 											img.className = 'charimg';
-											img.src = characterresp[0][i]['character_img'];
+											img.src = characterstuff[i]['character_img'];
 											
 											var add = document.createElement('div');
 											add.className = 'add';
-											add.id = characterresp[0][i]['character_id'];
+											add.id = characterstuff[i]['character_id'];
 											add.addEventListener("click", blindClick(i));
 											
 											var plusimg = document.createElement('img');
@@ -273,9 +337,9 @@
 											
 											var charcontent = document.createElement('div');
 											charcontent.className = 'charcontent';
-											charcontent.innerHTML = characterresp[0][i]['character_description'];
+											charcontent.innerHTML = characterstuff[i]['character_description'];
 											
-											console.log('img src is', characterresp[0][i]['character_img']);
+											console.log('img src is', characterstuff[i]['character_img']);
 											
 											
 											
@@ -290,40 +354,24 @@
 											
 											content.appendChild(charname);
 											content.appendChild(charrow);
-										}
-										
-										
-										
-										
-									};
-									
-												
-												
-									
-									
-									
-									
 								
 								
-									
-							
-							
-							},
-							error: function(jqXHR, textStatus, errorThrown) {
 								
-								console.log(jqXHR.statusText, textStatus, errorThrown);
-								console.log('search error');
-								  
-							
-						
+								
+								
+								
+								
+							} else if(jQuery.inArray(characterstuff[i]['character_id'], takencharacters) == 0){
+								
+								console.log('these characters are not free', characterstuff[i]['character_id']);
+								
 							}
 							
-							});	
-					
-					
-				
-				
-				
+							
+						};
+						
+				};
+						
 			function blindClick(i) {	
 				 return function(){
 				
@@ -507,7 +555,7 @@
   
 				
             	  
-			  
+			 
 		
 			});
 		</script>

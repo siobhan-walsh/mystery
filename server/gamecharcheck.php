@@ -49,21 +49,41 @@
 					$count = $checkgame->rowCount();
 					
 					
+					//all character_id in game, player_id in game, username from user where user_id is player_id
 					
 					
 						$rows = $checkgame->fetchAll(PDO::FETCH_ASSOC);
 						
+						$takencharacters = array();
+						
 						for($i = 0; $i < count($rows); $i++){
 							
-							$takench = $rows[$i]['character_id'];
-							$takenuser = $rows[$i]['player_id'];
+							if($rows[$i]['player_id'] == $rows[$i]['host_id']){
+								
+							} else {
+								
+								$chuser = $conn->prepare("SELECT user_name FROM users WHERE user_id = :player");
+								$chuser->bindParam(":player",  $rows[$i]['player_id']);
+					
+								$chuser->execute();
+								
+								$chresult = $chuser->fetchAll(PDO::FETCH_ASSOC);
 							
-							
+								$playcharinfo = array(
+								
+									'takench' => $rows[$i]['character_id'],
+									'takenuser' => $rows[$i]['player_id'],
+									'takeninfo' => $chresult[0]['user_name']
+								
+								);
+								
+								array_push($takencharacters, $playcharinfo);
+							};
 						};
 						
 						//SELECT * FROM users WHERE user_id IN (playerid);
 						
-						$data = array("status" => "success", 'hostchcheck' => $rows);
+						$data = array("status" => "success", 'takeninfo' => $takencharacters);
 				
 	
                 } catch(PDOException $e) {

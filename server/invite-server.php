@@ -41,7 +41,7 @@
                     $conn = new PDO("mysql:host=$DBHost;dbname=$DBname", $dblogin, $DBpassword);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                   $statement = $conn->prepare("INSERT INTO game (host_id, theme_id, player_id, character_id) VALUES (:host,  :theme, :player,  :character);");
+                   $statement = $conn->prepare("INSERT INTO game (host_id, theme_id, player_id, character_id, stage) VALUES (:host,  :theme, :player,  :character, 2);");
 						
 						$statement->bindParam(":host",  $host_id);
 						$statement->bindParam(":theme",  $theme_id);

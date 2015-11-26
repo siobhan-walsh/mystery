@@ -41,6 +41,7 @@
 								} else if (gcheck['gamecheck'][0]['stage'] == 1){
 									
 									console.log('they have their own character picked, but not others');
+									window.location = "assignch.php";	
 									
 								};
 								
