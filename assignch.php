@@ -471,7 +471,7 @@
 							
 							
 						};
-						
+					bbtn();	
 				};
 						
 			function blindClick(i) {	
@@ -648,21 +648,62 @@
 						
 				 };
 			};
-			function objectSize(the_object) {
+				function objectSize(the_object) {
 							  /* function to validate the existence of each key in the object to get the number of valid keys. */
-							  var object_size = 0;
-							  for (key in the_object){
-								if (the_object.hasOwnProperty(key)) {
-								  object_size++;
-								}
-							  }
-							  return object_size;
-							};
+					  var object_size = 0;
+					  for (key in the_object){
+						if (the_object.hasOwnProperty(key)) {
+						  object_size++;
+						}
+					  }
+					  return object_size;
+				};
   
 				
             	  
-			 
 		
+				function bbtn(){	 
+					var bigbtn = document.createElement('button');
+					var clicked = false;
+					bigbtn.innerHTML = "Begin Game";
+					bigbtn.style.width = '80%';
+					bigbtn.style.height = '40px';
+					bigbtn.style.border = 'none';
+					bigbtn.style.borderRadius = '10px';
+					bigbtn.style.margin = '2% 10%';
+					bigbtn.style.fontSize = '14pt';
+					bigbtn.style.backgroundColor = '#298F73';
+					bigbtn.style.textAlign = 'center';
+					
+					$(content).after( bigbtn );
+					//content.appendChild(bigbtn);
+					
+					
+					bigbtn.onmousedown = function(){
+						bigbtn.style.backgroundColor = '#35C4B6';
+					};
+					bigbtn.onmouseup= function(){
+						bigbtn.style.backgroundColor = '#298F73';
+					};
+					bigbtn.onclick = function(){
+						
+						
+							//send host_id (user_id);
+							
+							//update all the players to stage 5
+							
+								//"UPDATE game SET stage = 5 WHERE host_id= host_id;
+								
+							//then update the host to stage 4
+							
+								//UPDATE game SET stage = 4 WHERE player_id = host_id;
+							
+							//on success redirect to rounds page
+					};
+					
+				};
+				
+				
 			});
 		</script>
         
