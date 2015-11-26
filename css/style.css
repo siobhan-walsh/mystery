@@ -412,6 +412,7 @@ a:hover {
     padding: 1%;
 }
 
+
 /* ------------- messenger pages ----------------*/
 
 #msg {
@@ -556,6 +557,7 @@ margin-left:20%;
 /* ------------- Setting page ----------------*/
 
 #privacy {
+    /*
     background-color: #27A5A1;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -570,11 +572,15 @@ margin-left:20%;
 	-webkit-border-radius: 5%;
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-	color: #FFF;
-    
+	color: #FFF;*/
+    color:#ffffff;
+    font-family: 'amble'
 }
 
 #termOfUse {
+    color:#ffffff;
+    font-family: 'amble'
+    /*
    background-color: #27A5A1;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -589,7 +595,7 @@ margin-left:20%;
 	border-color: rgba(0,0,0,0.3);
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
 	color: #FFF;
-    margin-left:11%;
+    margin-left:11%;*/
 }
 
 #set {

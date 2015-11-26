@@ -60,6 +60,8 @@
 									
 									console.log('they are the host and have started the round');
 									
+									window.location = 'round1.php';
+									
 									//stage 4 they are the host and have started the rounds
 										//planning for rounds pages
 											//have to get gameinfo
@@ -69,6 +71,8 @@
 								} else if (gcheck['gamecheck'][0]['stage'] == 5){
 									
 									console.log('they are NOT the host and have started the round');
+									
+									window.location = 'round1.php';
 									//stage 5 they are not the host but have started the rounds	
 								}
 							},
