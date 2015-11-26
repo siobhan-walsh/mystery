@@ -68,13 +68,13 @@
 				},
 			success:function(resp){
 				
-				console.log("resp is:", resp);	
+			
 				
 				if(resp.status == 'success'){
 					
-					window.location = "themes.php"
+					window.location = "direction.php"
 					
-					console.log("ya you're logged in ok");
+				
 					
 				} else if(resp.status == 'fail'){
 					

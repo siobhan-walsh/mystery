@@ -38,11 +38,16 @@
 									console.log('no game go to homepage');
 									
 									window.location = "themes.php";	
+									
 								} else if (gcheck['gamecheck'][0]['stage'] == 1){
 									
 									console.log('they have their own character picked, but not others');
 									window.location = "assignch.php";	
 									
+								}  else if (gcheck['gamecheck'][0]['stage'] == 2){
+									console.log('they have been invited to play a game');
+									
+									window.location = 'invited.php';
 								};
 								
 								
