@@ -31,6 +31,8 @@
         <script>
 			$(document).ready(function(){
 				
+
+				
 				//var add = document.querySelectorAll('.add');
 				
 				var content = document.querySelector('.content');
@@ -38,8 +40,15 @@
 				var character = 'b';
 				var characterstuff = [];
 				var chid = '';
-				var takencharacters = [];
+				var pendingarr = [];
+				var acceptedarr = [];
 				
+				//global array for pending response characters
+				
+				//acceptedarr = [] global array for accepted response characters
+				
+				
+				//if characterid is not in accepter array, AND is not in pending
 				var frienddiv = document.createElement('div');
 				var theight = $('.header').height();
 				var bheight = $('.footer').height();
@@ -85,6 +94,8 @@
 								
 								console.log('characterstuff is', characterstuff);
 								
+								
+	/*--------------- show hosts character --------------------------*/
 								hostscharacter();
 				
 								
@@ -129,7 +140,7 @@
 								chid = gcheck['gamecheck'][0]['character_id'];
 								
 								console.log('pushing chid', chid);
-								takencharacters.push(chid);
+								pendingarr.push(chid);
 								
 								chindex = chid - 1;
 								
@@ -180,9 +191,10 @@
 											
 											content.appendChild(charname);
 											content.appendChild(charrow);
-				
-								otheruserscharacters();	
-								
+	/*--------------- show accepted characters --------------------------*/
+	
+					acceptedusers();			
+	
 							},
 							error: function(jqXHR, textStatus, errorThrown) {
 									//console.log(jqXHR.statusText, textStatus, errorThrown);
@@ -197,6 +209,98 @@
 						
 				};
 						
+						
+				function acceptedusers(){
+				
+					$.ajax({
+							url:"server/accepcharcheck.php",
+							type:"POST",
+							dataType:"JSON",
+							data:{
+								
+								mode:'checkgame',
+								
+								
+								},
+							success:function(accepchar){
+								
+								
+								
+								console.log("accepchar is returned: ", accepchar);
+								
+								
+								accepcharinfo = accepchar.acceptinfo;
+								
+								accepcharSize = objectSize(accepcharinfo) 
+								
+								console.log('accepchar is', accepchar);
+								
+								for(var i = 0; i< accepcharSize; i++){
+									
+									console.log('this is an array right');
+									
+									pendingarr.push(accepcharinfo[i].accch);
+									
+									achnum = accepcharinfo[i].accch - 1;
+									usname = accepcharinfo[i].accinfo;
+									
+									
+									console.log('achnum is', achnum);
+									
+									
+									
+									var charname = document.createElement('h3');
+											charname.className = 'charname';
+											charname.innerHTML = characterstuff[achnum]['character_name'];
+											
+											var charrow = document.createElement('div');
+											charrow.className = 'charrow';
+											
+											var add = document.createElement('div');
+											add.id = accepcharinfo[i].accch;
+											add.className = 'add';
+											
+										
+											var img = document.createElement('img');
+											img.className = 'charimg';
+											img.src = characterstuff[achnum]['character_img'];
+											
+											
+											
+											var charcontent = document.createElement('div');
+											charcontent.className = 'charcontent';
+											charcontent.innerHTML = characterstuff[achnum]['character_description'];
+											
+											
+											add.innerHTML = '<img class="plusimg" src ="img/circle_green.png"><span>' + usname +' has accepted this character</span>';
+											
+											
+											
+											charrow.appendChild(img);
+											charrow.appendChild(add);
+											charrow.appendChild(charcontent);
+											
+											content.appendChild(charname);
+											content.appendChild(charrow);
+											
+									
+								};
+	
+			/*--------------- show pending characters -------*/
+								otheruserscharacters();	
+								
+							},
+							error: function(jqXHR, textStatus, errorThrown) {
+									//console.log(jqXHR.statusText, textStatus, errorThrown);
+									console.log('accepchar fail', jqXHR.statusText, textStatus);
+							  
+							}
+							
+						});	
+						
+						
+						
+				};
 						
 					//then show the characters that have already been assigned to a user	
 					
@@ -228,7 +332,7 @@
 									
 									console.log('this is an array right');
 									
-									takencharacters.push(takenchinfo[i].takench);
+									pendingarr.push(takenchinfo[i].takench);
 									
 									chnum = takenchinfo[i].takench - 1;
 									usname = takenchinfo[i].takeninfo;
@@ -274,7 +378,7 @@
 											
 									
 								};
-								
+	
 								unassignedCharacters();
 							},
 							error: function(jqXHR, textStatus, errorThrown) {
@@ -296,17 +400,15 @@
 						
 						
 						
-						//takencharacters.push('4');
-						console.log('takencharacters are', takencharacters);
 						
-						var takenresult = (jQuery.inArray('4', takencharacters));
+						var takenresult = (jQuery.inArray('4', pendingarr));
 						
 						console.log('is 4 in the array', takenresult);
 						
 						for(var i = 0; i < characterstuffSize; i++){
 							
 							
-							if(jQuery.inArray(characterstuff[i]['character_id'], takencharacters) == -1){
+							if(jQuery.inArray(characterstuff[i]['character_id'], pendingarr) == -1){
 								
 								console.log('these characters are free', characterstuff[i]['character_id']);
 								
@@ -361,7 +463,7 @@
 								
 								
 								
-							} else if(jQuery.inArray(characterstuff[i]['character_id'], takencharacters) == 0){
+							} else if(jQuery.inArray(characterstuff[i]['character_id'], pendingarr) == 0){
 								
 								console.log('these characters are not free', characterstuff[i]['character_id']);
 								

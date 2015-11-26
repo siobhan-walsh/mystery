@@ -30,7 +30,7 @@
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 					
 					
-					$checkgame = $conn->prepare("SELECT * FROM game WHERE host_id = :host AND stage = 2");
+					$checkgame = $conn->prepare("SELECT * FROM game WHERE host_id = :host AND stage = 3");
 					$checkgame->bindParam(":host",  $host_id);
 					
 					$checkgame->execute();
@@ -62,9 +62,9 @@
 							
 								$playcharinfo = array(
 								
-									'takench' => $rows[$i]['character_id'],
-									'takenuser' => $rows[$i]['player_id'],
-									'takeninfo' => $chresult[0]['user_name']
+									'accch' => $rows[$i]['character_id'],
+									'accuser' => $rows[$i]['player_id'],
+									'accinfo' => $chresult[0]['user_name']
 								
 								);
 								
@@ -74,7 +74,7 @@
 						
 						//SELECT * FROM users WHERE user_id IN (playerid);
 						
-						$data = array("status" => "success", 'takeninfo' => $takencharacters);
+						$data = array("status" => "success", 'acceptinfo' => $takencharacters);
 				
 	
                 } catch(PDOException $e) {
