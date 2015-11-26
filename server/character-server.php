@@ -41,32 +41,12 @@
 					$statement->execute();
 
                     // this should be one if there's a user by that user value and password value
-                    $count = $statement->rowCount();
+                   
 				
                		$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 						
 					
-					/*
-						$char = array();
-						
-							for($i = 0; $i < $count; $i++){
-								
-								$charinfo = array(
-												"character_id" => $rows[$i]['character_id'],
-												"character_name" => $rows[$i]['character_name'],
-												"character_description" => $rows[$i]['character_description'],
-												"character_img" => $rows[$i]["character_img"]
-											);
-				
-								array_push($char, $charinfo);
-								
-							}
-								
-						*/
-						
-						//var_dump($rows);
-						
-						$data = array($rows);
+					$data = array($rows);
 
 
 

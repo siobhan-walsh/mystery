@@ -498,13 +498,17 @@
 											 	success:function(respInv){
                                                  	console.log("game table", respInv);	
 													
-													var thisdiv = document.getElementById(character_id);
+													if(respInv == 'unavailable'){
+														resultsdiv.innerHTML = "Sorry, that user is unavailable";
+													} else if(respInv == 'invited'){
 													
-													thisdiv.innerHTML = '<img class="plusimg" src ="img/circle_purple.png"><span>You invited ' + resultsun +', their response is pending</span>';
-													
-													frienddiv.innerHTML = '';
-													frienddiv.style.display = 'none';
-													
+														var thisdiv = document.getElementById(character_id);
+														
+														thisdiv.innerHTML = '<img class="plusimg" src ="img/circle_purple.png"><span>You invited ' + resultsun +', their response is pending</span>';
+														
+														frienddiv.innerHTML = '';
+														frienddiv.style.display = 'none';
+													};
 													
 											 	},
 											 	error: function(jqXHR, textStatus, errorThrown) {

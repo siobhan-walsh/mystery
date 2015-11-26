@@ -40,8 +40,20 @@
                 try {
                     $conn = new PDO("mysql:host=$DBHost;dbname=$DBname", $dblogin, $DBpassword);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+					
+					
+					$dotheyplay = $conn->prepare("SELECT * FROM game WHERE player_id = :friendid;");
+					$dotheyplay->bindParam(":friendid",  $friendid);
+					$dotheyplay->execute();
+					
+					$rows = $dotheyplay->fetchAll(PDO::FETCH_ASSOC);
+					$count = $dotheyplay->rowCount();
 
-                   $statement = $conn->prepare("INSERT INTO game (host_id, theme_id, player_id, character_id, stage) VALUES (:host,  :theme, :player,  :character, 2);");
+
+					if($count > 0){
+						$data = 'unavailable';	
+					} else {
+                    	$statement = $conn->prepare("INSERT INTO game (host_id, theme_id, player_id, character_id, stage) VALUES (:host,  :theme, :player,  :character, 2);");
 						
 						$statement->bindParam(":host",  $host_id);
 						$statement->bindParam(":theme",  $theme_id);
@@ -58,7 +70,7 @@
 						
 						$data = 'invited';	
 						
-
+					}
 
                 } catch(PDOException $e) {
                     $data = array("status" => "fail", "msg" => $e->getMessage());
