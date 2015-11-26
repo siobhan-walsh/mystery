@@ -74,8 +74,6 @@
 					
 					window.location = "direction.php"
 					
-				
-					
 				} else if(resp.status == 'fail'){
 					
 					document.getElementById('warn').innerHTML = "Sorry, that is not the correct username or password";
