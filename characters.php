@@ -194,6 +194,7 @@
 						searchbtn.onclick = function(){
 							
 							resultsdiv.innerHTML = '';
+                            resultsdiv.style.width='50%';
 							
 							$.ajax({
 							url:"server/friends-server.php",
