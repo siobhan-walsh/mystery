@@ -690,15 +690,46 @@
 						
 							//send host_id (user_id);
 							
-							//update all the players to stage 5
+							
+							 $.ajax({
+								 url:"server/begin.php",
+								 type:"POST",
+								 dataType:"JSON",
+								 data:{
+									 startgame:'startgame'
+									},
+								success:function(begin){
+									console.log('begin is', begin);
+									
+									window.location = 'direction.php';
+									
+									//update all the players to stage 5
 							
 								//"UPDATE game SET stage = 5 WHERE host_id= host_id;
 								
-							//then update the host to stage 4
-							
+									//then update the host to stage 4
+											
 								//UPDATE game SET stage = 4 WHERE player_id = host_id;
+									
+									//on success redirect to rounds page
+									
+								},
+								error: function(jqXHR, textStatus, errorThrown) {
+				
+									console.log(jqXHR.statusText, textStatus, errorThrown);
+									console.log('begin error');
+								  
 							
-							//on success redirect to rounds page
+						
+								}
+	
+						});
+							
+							
+							
+							
+							
+							
 					};
 					
 				};

@@ -147,7 +147,7 @@
 							console.log('character_id is', character_id);
 			
 							$.ajax({
-							url:"server/startgame-server.php",
+							url:"server/setupgame.php",
 							type:"POST",
 							dataType:"JSON",
 							data:{

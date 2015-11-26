@@ -30,7 +30,7 @@
           <button id='backbtn' class="btn">Back</button>
     
 
-           <a href="startgame.php" class="bluetheme">Start Game</a>
+           <a href="choosegame.php" class="bluetheme">Start Game</a>
        </div>
             
            

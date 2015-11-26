@@ -58,6 +58,8 @@
 								
 								} else if (gcheck['gamecheck'][0]['stage'] == 4){
 									
+									console.log('they are the host and have started the round');
+									
 									//stage 4 they are the host and have started the rounds
 										//planning for rounds pages
 											//have to get gameinfo
@@ -65,6 +67,8 @@
 											//then Select round1 from characters where character_id = gameinfocharacterid
 									
 								} else if (gcheck['gamecheck'][0]['stage'] == 5){
+									
+									console.log('they are NOT the host and have started the round');
 									//stage 5 they are not the host but have started the rounds	
 								}
 							},
@@ -75,16 +79,6 @@
 							}
 							
 						});	
-				
-				
-				
-				
-				
-				//check if they've been invited to a game
-				
-				//go to current game status
-				
-				
 				
 		
 			});
