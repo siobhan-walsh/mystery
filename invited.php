@@ -16,6 +16,8 @@
       
       <script>
 	  
+	  window.onload = function(){
+	  
 	  //need to get gameinfo and characterinfo
 	  
 	  var host = '';
@@ -112,11 +114,43 @@
 					
 					acceptbttn.onclick = function(){
 						console.log('clicked acceptbtn');
+						 $.ajax({
+							url:"server/accept.php",
+							type:"POST",
+							dataType:"JSON",
+							success:function(accept){
+								window.location = "direction.php";
+								
+							},
+							error: function(jqXHR, textStatus, errorThrown) {
+									//console.log(jqXHR.statusText, textStatus, errorThrown);
+									console.log('accept', jqXHR.statusText, textStatus);
+							  
+							}
+							
+						});	
 					};
 					
 					declinebttn.onclick = function(){
 						console.log('clicked declinebtn');
+						 //on decline delete the row, then go back to direction page
+						  $.ajax({
+							url:"server/decline.php",
+							type:"POST",
+							dataType:"JSON",
+							success:function(decline){
+								console.log('declined', decline);
+								
+							},
+							error: function(jqXHR, textStatus, errorThrown) {
+									//console.log(jqXHR.statusText, textStatus, errorThrown);
+									console.log('accept', jqXHR.statusText, textStatus);
+							  
+							}
+							
+						});	
 					};
+					
 					
 					
 					
@@ -133,33 +167,11 @@
 		};
 	  
 	  
-	  //on accept, go to rounds page
-	  
-	  
-	  function acceptbttn(){
-		  
-		  $.ajax({
-				url:"server/accept.php",
-				type:"POST",
-				dataType:"JSON",
-				success:function(accept){
-				
-				},
-				error: function(jqXHR, textStatus, errorThrown) {
-						//console.log(jqXHR.statusText, textStatus, errorThrown);
-						console.log('accept', jqXHR.statusText, textStatus);
-				  
-				}
-				
-			});	
-		  
-	  };
-	  
 	  		//on the rounds page you need to get gameinof where playerid = sessionuserid, then use the characterid from that to get round info
 	  
-	  //on decline delete the row, then go back to direction page
+	 
 	  
-	  
+	  };
 	  
 	  </script>
       

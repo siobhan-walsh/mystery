@@ -48,9 +48,15 @@
 									console.log('they have been invited to play a game');
 									
 									window.location = 'invited.php';
+								} else if (gcheck['gamecheck'][0]['stage'] == 3){
+									
+									//stage 3 they have accepted but are not the host
+									
+									console.log('they should go to rounds');
+									
+									//window.location = 'rounds.php';
+								
 								};
-								
-								
 							},
 							error: function(jqXHR, textStatus, errorThrown) {
 									//console.log(jqXHR.statusText, textStatus, errorThrown);

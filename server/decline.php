@@ -18,17 +18,13 @@
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 					
 				
-					$playing = $conn->prepare("UPDATE game SET status = 2 WHERE player_id= :user;");
-					$playing->bindParam(":user",  $user);
-					$playing->execute();
+					$declinesql = $conn->prepare("DELETE FROM game WHERE player_id = :user OR host_id = :user");
+					$declinesql->bindParam(":user",  $user);
+					$declinesql->execute();
 					
-					$stage = 3;
 					
-					$stageplaying = $conn->prepare("UPDATE game SET stage = 3 WHERE player_id= :user;");
-					$stageplaying->bindParam(":user",  $user);
-					$stageplaying->execute();
 					
-					$data = 'playing';
+					$data = 'deleted';
 
                 } catch(PDOException $e) {
                     $data = array("status" => "fail", "msg" => $e->getMessage());
