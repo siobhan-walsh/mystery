@@ -13,14 +13,15 @@
                 <div class='blogo'><img src = 'img/logo.png'></div>
                 
             </div> 
-                <div class = 'content'>
+                <div id = 'content' class = 'content'>
 
                     <div class= 'hspace'>
                         <h2>Sign Up</h2><br>
                         <p>Already have an account? <a href = 'login.php'>Log in!</a></p><br>
                     </div>
                     <div class='center'>
-
+						<input type='button' id='fbbutton' class='buttons' value="Sign up with facebook"> 
+                        
                         <input type='text' id='fname' class='nval textbox'  placeholder="first name" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
 
                         <input type='text' id='lname' class='nval textbox' placeholder="last" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$'>
@@ -44,7 +45,7 @@
                        
                         <br><br>
                         <input type='button' id='signup'  class='buttons' value="Sign up!">
-                       <input type='button' id='fbbutton' class='buttons' value="Sign up with facebook"> 
+                       
                     </div>
 
                 </div>
@@ -115,47 +116,54 @@
 							
 							console.log("yaya success resp is:", signupresp);	
 							
+							if(signupresp.account == 'hasaccount'){
+										
+										document.getElementById('content').innerHTML = '<p class = "hspace" >You already have an account, please go to <a href = "login.php">login</a></p>'
+										
+							} else {
 							
-							$.ajax({
-								url:"server/login-server.php",
-								type:"POST",
-								dataType:"JSON",
-								data:{
-								
-									un:signupresp.un,
-									pw:signupresp.pw
+								$.ajax({
+									url:"server/login-server.php",
+									type:"POST",
+									dataType:"JSON",
+									data:{
 									
-									},
-								success:function(loginresp){
-									
-									console.log("loginresp is:", loginresp);	
-									
-									if(loginresp.status == 'success'){
+										un:signupresp.un,
+										pw:signupresp.pw
 										
-										window.location = "themes.php"
+										},
+									success:function(loginresp){
 										
-										console.log("ya you're logged in ok");
+										console.log("loginresp is:", loginresp);	
 										
-									} else if(loginresp.status == 'fail'){
 										
-										document.getElementById('warn').innerHTML = "Sorry, that is not the correct username or password";
+										
+										if(loginresp.account == 'success'){
 											
+											window.location = "themes.php"
+											
+											console.log("ya you're logged in ok");
+											
+										} else if(loginresp.status == 'fail'){
+											
+											document.getElementById('warn').innerHTML = "Sorry, that is not the correct username or password";
+												
+										}
+										
+										
+										
+									},
+									 error: function(jqXHR, textStatus, errorThrown) {
+												//console.log(jqXHR.statusText, textStatus, errorThrown);
+												console.log(jqXHR.statusText, textStatus);
+										  
+									
+								
 									}
 									
-									
-									
-								},
-								 error: function(jqXHR, textStatus, errorThrown) {
-											//console.log(jqXHR.statusText, textStatus, errorThrown);
-											console.log(jqXHR.statusText, textStatus);
-									  
-								
-							
-								}
-								
-							});	
+								});	
 										  
-								  
+							};
 						
 						},
 						 error: function(jqXHR, textStatus, errorThrown) {
@@ -172,7 +180,8 @@
               
         });
 			
-/*
+
+//signup with fb
 
   window.fbAsyncInit = function() {
     FB.init({
@@ -180,7 +189,7 @@
       xfbml      : true,
       version    : 'v2.5'
     });
-      console.log(FB);
+  
       
       
       var but = document.getElementById("fbbutton");
@@ -197,16 +206,6 @@
                             
 							
 							console.log("resp1 is", fbresp1);	
-
- FB.login(function(response) {
-     if (response.authResponse) {
-               console.log('Welcome!  Fetching your information.... ');
-               FB.api('/me', function(response) {
-                   console.log('Good to see you, ' + response.email + '.');
-                   alert('Good to see you, ' + response.email + '.');
-               });
-            
-
 							var fname = fbresp1.first_name;
 							var lname = fbresp1.last_name;
 							var un = fname + lname;
@@ -216,108 +215,84 @@
 							
 							console.log("un is", un);
 							console.log("pw is", pw); 
-							console.log(JSON.stringify(fbresp1));
-						$.ajax({
-								url:"server.php",
+							console.log('avatar is', avatar);
+							
+							
+							$.ajax({
+								url:"server/signup-server.php",
 								type:"POST",
 								dataType:"JSON",
 								data:{
 									
-									mode:'signup',
-									fname:fname,
-									lname:lname,
-                                    email:email,
-									
 									un:un,
 									pw:pw,
-									           avatar:fbresp1.picture.data.url
+									fname:fname,
+									lname:lname,
+									email:email,
+									avatar: avatar
 									
 									
-                                },
-								success:function(resp){
+									},
+								success:function(signupresp){
 									
-									console.log("yaya success resp is:", resp);	
+									console.log("yaya success resp is:", signupresp);	
+								
 									
-									console.log("resp.first_name");
-									
-									
-									var tyDiv = document.createElement('div');
-		
-									document.body.appendChild(tyDiv);
-									tyDiv.innerHTML = "<p>Hey " + resp.first_name + ", thank you for making an account! <button class='buttons' id='getstarted'>get started</button></p>";
-									tyDiv.style.position = 'fixed';
-									tyDiv.style.top = '200px';
-									tyDiv.style.backgroundColor = '#C4FFe6';
-									tyDiv.style.width = '80vw';
-									tyDiv.style.left = '10vw';
-									tyDiv.style.padding = '30px 10px ';
-									tyDiv.style.boxShadow = "4px 4px 4px #666666";
-									
-									
-									
-									var start = document.getElementById('getstarted');
-									
-									start.onclick = function(){
-										
-										
 										$.ajax({
-											url:"server.php",
+											url:"server/login-server.php",
 											type:"POST",
 											dataType:"JSON",
 											data:{
-												
-												mode:'login',
-												un:un.value,
-												pw:pw.value
+											
+												un:signupresp.un,
+												pw:signupresp.pw
 												
 												},
-											success:function(resp){
+											success:function(loginresp){
 												
-												console.log("yaya success resp is:", resp);	
+												console.log("loginresp is:", loginresp);	
 												
-												if(resp == 'yes'){
+												if(loginresp.status == 'success'){
 													
-													window.location = "/themes.php";
+													window.location = "direction.php"
 													
+													console.log("ya you're logged in ok");
 													
+												} else if(loginresp.status == 'fail'){
 													
-												} else if(resp == 'no'){
-													
-													window.location = "/login.php"
+													document.getElementById('warn').innerHTML = "Sorry, that is not the correct username or password";
 														
 												}
 												
 												
 												
 											},
-											error:function(err){
-												console.log("sorry there was an error"); 	
+											 error: function(jqXHR, textStatus, errorThrown) {
+														//console.log(jqXHR.statusText, textStatus, errorThrown);
+														console.log(jqXHR.statusText, textStatus);
+												  
+											
+										
 											}
 											
 										});	
-										
-										
-									};
-										
-									
-								},
-								error:function(err){
-									console.log("sorry there was an error"); 	
-								}
+												  
 								
+								},
+								 error: function(jqXHR, textStatus, errorThrown) {
+									console.log(jqXHR.statusText, textStatus, errorThrown);
+									console.log(jqXHR.statusText, textStatus);
+									console.log("blah error signupu");
+					
+				
+								}
 							});	
-							  
-				} else {
-                console.log('User cancelled login or did not fully authorize.');
-            }
-        },
-   // handle the response
-  {scope: 'public_profile,email'});
 							
+							
+					
+
 						});
-                   
-					 	
-						
+
 				} else {
 					
 					console.log("it did not connect");
@@ -326,31 +301,7 @@
 				
 			});
 		  
-	  
-  
-      FB.login(function(resp){
-        console.log("resp is", resp);
-          if(resp.status == "connected"){
-			  
-			  console.log('connected!');
 	
-            alert("You Logged in");
-			
-			window.location="/themes.php" ;
-			
-            var txt = "Welcome!" ;
-              document.write("<p>Link: " + txt.link("themes.php") + "</p>");
-              
-             
-			
-          }
-          if(resp.status == "unknown") {
-            alert("Login Failed");
-             
-          }
-      });
-	 
-	  
   };};
 
   (function(d, s, id){  
@@ -361,7 +312,7 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
-*/
+
 
     </script>  
  	  

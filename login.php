@@ -120,7 +120,7 @@
 
             alert("You Logged in");
 			
-			window.location="/themes.php" ;
+			//window.location="/themes.php" ;
 			
             /*var txt = "Welcome!";
               document.write("<p>Link: " + txt.link("themes.php") + "</p>");
