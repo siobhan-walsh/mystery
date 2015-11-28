@@ -13,30 +13,19 @@
         
         
        <div id = 'p2' class="p2" >
+      
+       </div>
+             
        
-       <!--
-       		It has been a year since the Paramount Casino has changed ownership
-			and Ronald Trump, the new owner, is ready to celebrate!As the largest 
-            and most extravagant casino on the Las Vegas strip,
-			The Paramount Casino is throwing a party of epic proportions.
-			With the highest rollers and the gutsiest  gamblers, the stakes are
-			going to be high and there is no limit to what could happen.
-            -->
-             
-       </div>
-             
-       <div class='buttonDiv'>
 
-           <a href="themes.php" class="themebtn">Back</button>
-    
-
-           <a href="choosegame.php" class="bluetheme">Start Game</a>
-       </div>
+          
+   
             
            
-      <script src='js/backbtn.js'></script>
+     
       
       <script>
+	
 	  
 	  $.ajax({
 			url:"server/theme-server.php",
@@ -71,8 +60,9 @@
 	  
 	  
 	  </script>
-      
+    
 
 <?php include("footer.php"); ?>
      
-    
+    <script src='js/themeabout.js'></script>
+   <script src='js/backbtn.js'></script> 

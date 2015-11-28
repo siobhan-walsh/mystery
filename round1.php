@@ -11,13 +11,8 @@
                 <h1> Start Round 1 </h1>
 
 
-                <div id = 'rinfo' class = 'p2'>
-                    
-                   <!-- 
-                    The Paramount Casino is throwing a party of epic proportions.
-                    With the highest rollers and the gutsiest gamblers, the stakes are
-                    going to be high and there is no limit to what could happen. Mimi Martini, the cocktail waitress seems to be extra chatty tonight with all the high rollers and looks like she's collecting extra tips. Suddenly there's a scream from the Piano Lounge 
-				-->
+                <div id = 'rinfo'>
+                 
                 </div>
 
                 <div id='btndiv'>

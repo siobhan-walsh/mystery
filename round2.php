@@ -11,7 +11,7 @@
                 <h1> Start Round 2 </h1>
 
 
-                <div id = 'rinfo' class = 'p2'>
+                <div id = 'rinfo'>
                     
                  
                 </div>

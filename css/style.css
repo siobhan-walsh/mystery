@@ -146,6 +146,9 @@ a:hover {
 	display:block;
     clear:both;
 	float:left;
+	margin-bottom:4px;
+	background-color:rgba(66,192,192, 0.4);
+	
 }
 
 .logospot {
@@ -153,6 +156,7 @@ a:hover {
 	width:30%;	
 	margin-left:35%;
 	float:left;
+	
 }
 
 .logospot img {
@@ -830,19 +834,12 @@ padding: 10% 10%;
 	
 .buttonDiv{
     
-    position:absolute;
+
 	width:100%;
-	font-size: 100%;
 	font-size: 100%;
 	padding:10%;
 	margin-bottom: 5%;
-	margin-right: 25%; 
-	margin-left: -7%;  
-	
-/*    margin: auto;
-	display: block;
-	text-align: center;
-    display: inline-block; */
+	background-color:#ffffff;
 
 }
 
@@ -969,7 +966,7 @@ img#last {
 	padding-right: 5%;
 	margin-bottom: 12%;
 	letter-spacing: 3px;
-	margin-left: 10%;
+	/*margin-left: 10%;*/
 	
     }
 
@@ -1193,7 +1190,8 @@ background-color: #27A5A1;
 	letter-spacing: 2px;
 	font-size: 12px;
 	padding: 3% 3%;
-	margin-right: 22%;
+	margin-left:2%;
+	margin-right: 20%;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
