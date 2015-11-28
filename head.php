@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1.0">
         <title>Mystery</title>
-        <link href='https://fonts.googleapis.com/css?family=Fira+Mono' rel='stylesheet' type='text/css'>
+       <link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:300,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/mediaqueries.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
        

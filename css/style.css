@@ -1,89 +1,14 @@
 /* style for mystery --- view site in mobile view for best results*/
 
-
-/* ============= BUTTON STUFF ============= */
-/*customize for your page, i made them links on my page not buttons
-
-*****container
-
-.buttonDiv{
-    
-    position:fixed;
-    bottom:15%;
-	width:100%;
-	padding:1% 0;
-    margin: auto;
-    display: inline-block;
-	====>>> some pages ====>>> background-color:rgba(255,255,255,0.4);
-
-}
-
-
-
-/*******white button*********
-
-.btn {
-	display: inline-block;
-	color: #666;
-	
-	background-color: #eee;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 12px;
-	padding: 10px 30px;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border: 1px solid rgba(0,0,0,0.3);
-	border-bottom-width: 3px;
-	
-}
-
-
-.btn:hover {
-		background-color: #e3e3e3;
-		border-color: rgba(0,0,0,0.5);
-	}
-	
-.btn:active {
-		background-color: #CC
-		C;
-		border-color: rgba(0,0,0,0.9);
-	}
-	
-/******blue button*********
-btn.btn-blue {
-	background-color: #699DB6;
-	border-color: rgba(0,0,0,0.3);
-	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-	color: #FFF;
-}
-
-btn.btn-blue:hover {
-		background-color: #4F87A2;
-		border-color: rgba(0,0,0,0.5);
-	}
-	
-btn.btn-blue:active {
-		background-color: #3C677B;
-		border-color: rgba(0,0,0,0.9);
-	}
-
-
-
-*/
-
-
-
-
-
-
 body {
     margin:0;
     padding:0;
     background-color: #D4D4D4;
-    font-family: 'Oxygen', sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
     font-weight: 300;
+	line-height:1.2;
+	
+	
     	
 }
 
@@ -94,7 +19,7 @@ body {
 	background-color: #eee;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 12px;
+	font-size: 120%;
 	padding: 10px 30px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -118,7 +43,7 @@ body {
     border-width: 1px;
     clear:both;
     float:left;
-    font-size:12pt;
+    font-size:120%;
     padding:2% 1%;
     border-radius:4px;
     background-color:rgba(100, 100, 100, 0);
@@ -128,7 +53,8 @@ p {
 	
 	
 	font-size: 100%;
-	font-family: 'Fira Mono',sans-serif;
+	font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
     text-align:left;  
 	letter-spacing: 5px;
 
@@ -139,26 +65,32 @@ p {
 
 h1 {
    	font-size: 145%;
-	font-family: 'Fira Mono',sans-serif;
+	font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
     text-align: center; 
- 
-	font-weight: bold;
+	font-weight: 700;
+	line-height:1.2;
 	
 }
 
 h2 {
-    font-size:16pt;
+    font-size:140%;
     text-align: center;
-    font-family: 'Fira Mono',sans-serif;
-    font-weight: 400;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 700;
+	line-height:1.2;
 }
 input {
-    font-family: 'Fira Mono',sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
     font-weight: 300;
+	line-height:1.2;
 }
 a {
     text-decoration:none;
     color:#627f73;
+	font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:1.2;
 }
 
 a:hover {
@@ -231,17 +163,23 @@ a:hover {
     
 	
 	float:right;
-	width:15%;
+	width:30%;
+	text-align:right;
+	margin:0;
    
 }
 #userinfo img {
-	width:100%;	
+	width:50%;	
+	margin-left:20%;
+	float:right;
+	border-radius:50%;
 }
 
 #usern{
-	font-family: 'Oxygen', sans-serif;
+	font-family: 'Merriweather Sans', sans-serif;
     font-weight: 300;
-	
+	line-height:1.2;
+	padding-right:2%;
 }
 
 /* ============= MAIN CONTENT STYLES ============= */
@@ -375,20 +313,13 @@ a:hover {
     color: aliceblue;
     float:left;
     width:100%;
-    font-size:12pt;
+    font-size:100%;
     margin-bottom:15px;
     padding:8px;
     border-radius:4px;
     text-transform: uppercase;
      font-family: 'amble';
 }
-
-
-#DP{
-    
-	/*width:70vh;*/
-}
-
 
 #buttons{
 	width:100px;
@@ -411,7 +342,9 @@ a:hover {
 	clear:both;
     float:centre;
     width:100%;
-    font-size:12pt;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:1.2;
     margin-bottom:20px;
     padding:10px;
     border-radius:80px;
@@ -428,56 +361,10 @@ a:hover {
     padding: 1%;
 }
 
-
-/* ------------- messenger pages ----------------*/
-
-#msg {
-    padding: 8px;
-    width:60%;
-    background-color:"white";
-   
-    bottom: 12vh;
-    left: 8px;
-}
-
-#send {
-   /* padding: 1px;
-    width:15%;
-    height: 3vh;
-    background-color:"white";
-    position: fixed;
-    bottom: 12vh;*/
-    background-color:#27A5A1; 
-	border-style:solid;
-    border-color:grey;
-    border-width: 1px;
-	clear:both;
-    color: aliceblue;
-    float:right;
-    width:20%;
-    font-size:12pt;
-    margin-bottom:15px;
-    padding:3%;
-    border-radius:4px;
-    margin-right:10%;
-    text-transform: uppercase;
-}
-
-
-#textBox {
-    margin-top:70%;
-    margin-left:5%;
-}
-
-#backmessenger {
-    margin-left:71%;
-    margin-top:55%;
-    width:19%;
-}
 /* ------------- contactUs pages ----------------*/
 #feedback {
     
-     background-color:#27A5A1; 
+    background-color:#27A5A1; 
 	border-style:solid;
     border-color:grey;
     border-width: 1px;
@@ -485,7 +372,9 @@ a:hover {
     color: aliceblue;
     
     width:25%;
-    font-size:10pt;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:1.2;
     margin-bottom:15px;
     padding:2%;
     border-radius:4px;
@@ -510,7 +399,9 @@ a:hover {
     color: aliceblue;
     margin-left:38%;
     width:20%;
-    font-size:12pt;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:1.2;
     margin-bottom:15px;
     padding:3%;
     border-radius:4px;
@@ -519,7 +410,9 @@ a:hover {
 }
 #form p{
     float:right;
-    font-family: 'Fira Mono',sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:1.2;
     
 }
 #form label{
@@ -532,44 +425,7 @@ a:hover {
     
 margin-left:20%;
 }
-/* ------------- friend page ----------------*/
 
-#addfriend {
-    width:40%;
-    margin-left:30%;
-    background-color: #DBD3D3; 
-	border-style:solid;
-    border-color:grey;
-    border-width: 1px;
-	clear:both;
-    color: aliceblue;
-    margin-top:20%;
-    
-    font-size:12pt;
-    margin-bottom:15px;
-    padding:8px;
-    border-radius:4px;
-    text-transform: uppercase;
-     font-family: 'amble';
-}
-
-/*
-#AllFriends p{
-    margin-right:50%;
-    float:right;
-  
-    margin-top:7%; 
-    font-size: 10pt;
-	font-family: 'Fira Mono',sans-serif;
-	letter-spacing: 2px;
-	
-	
-	overflow: scroll;
-    
-}
-#AllFriends img{
-    margin-left:5%;
-}*/
 /* ------------- Setting page ----------------*/
 
 #privacy {
@@ -590,12 +446,16 @@ margin-left:20%;
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
 	color: #FFF;*/
     color:#ffffff;
-    font-family: 'amble'
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:1.2;
 }
 
 #termOfUse {
     color:#ffffff;
-    font-family: 'amble'
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:1.2;
     /*
    background-color: #27A5A1;
 	text-transform: uppercase;
@@ -624,7 +484,9 @@ margin-left:20%;
 }
 #set p{
     font-size: 10pt;
-	font-family:'afta sans';
+	font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:1.2;
     text-align:left;  
 	padding-left: 15px;
 	margin-bottom: 12%;
@@ -634,11 +496,13 @@ margin-left:20%;
 	
 }
 #set input{
-    font-family: 'amble';
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:1.2;
 }
 #policy {
     
-     font-size:10pt;
+     font-size:80%;
 }
 #contact {
     background-color: #27A5A1;
@@ -666,16 +530,19 @@ margin-left:20%;
     margin-top:30vw;
 }
 #gameOver h4{
-    font-size:20pt;
-    font-family: 'Fira Mono',sans-serif;
+   font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:1.2;
 }
 #gameOver p{
-    font-size:12pt;
-    font-family: 'Fira Mono',sans-serif;
+   font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:1.2;
 }
 #gameOver h3{
-    font-size:15pt;
-    font-family: 'Fira Mono',sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:1.2;
     margin-left:31vw;
     margin-top:10vw;
 }
@@ -725,18 +592,19 @@ margin-left:20%;
 .htitle{
 	
 	
-    font-size:16pt;
-	font-family: 'Fira Mono',sans-serif;
+    font-size:120%;
+	font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 700;
+	line-height:1.2;
 
 	letter-spacing: 1px;
-	line-height: 110%;
 	text-align:center;
     }
 	
 	.charname {
-			
-		font-size:130%;
-		font-family: 'Fira Mono',sans-serif;
+		font-family: 'Merriweather Sans', sans-serif;
+    	font-weight: 700;
+		line-height:1.2;
 		margin-left:2%;
 		padding-bottom: 0;
 		padding-top: 2%;
@@ -748,7 +616,9 @@ margin-left:20%;
     font-size:115%;
 	margin-top: 2%;
 	margin-bottom: 1%;
-	font-family: 'Fira Mono',sans-serif;
+	font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:1.2;
     text-align:left;  
 	letter-spacing: 3px;
 	float:left;
@@ -817,7 +687,7 @@ margin-left:20%;
 	background-color: #27A5A1;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 100x;
+	font-size: 100%;
 	padding: 3% 3%;
 	margin-right: 6%;
 	margin-top: 5%;
@@ -880,10 +750,12 @@ margin-left:20%;
 	
 .h2 {
 	
-	font-size: 10pt;
-	font-family: 'Fira Mono',sans-serif;
+	font-size: 120%;
+	font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 700;
+	line-height:1.2;
     text-align:left; 
-	font-weight: bold;
+	
 
 	
 	}
@@ -933,7 +805,7 @@ padding: 10% 10%;
 
 .sin{
  
- 	width:100;
+ 	width:100%;
 	}	
 	
 	.sin img {
@@ -944,8 +816,10 @@ padding: 10% 10%;
 .p3 {
 	
 	
-	font-size: 10pt;
-	font-family: 'Fira Mono',sans-serif;
+	font-size: 100%;
+	font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:1.2;
     text-align:left;  
 	margin-bottom: 12px;
 	padding: 4% 4%;
@@ -1087,13 +961,14 @@ img#last {
 	
 	
 	font-size: 125%;
-	font-family: 'Fira Mono',sans-serif;
+	font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:1.2;
     text-align:left;  
 	padding-left: 5%;
 	padding-right: 5%;
 	margin-bottom: 12%;
 	letter-spacing: 3px;
-	line-height: 135%;
 	margin-left: 10%;
 	
     }
@@ -1116,17 +991,6 @@ img#last {
 	
 	}	
 	
-.h2 {
-	
-	font-size: 10pt;
-	font-family: 'Fira Mono',sans-serif;
-    text-align:left; 
-	font-weight: bold;
-
-	
-	}
-	
-
 
 .btn {
 	float:left;
@@ -1372,44 +1236,6 @@ img#last {
   margin-right: 4%;
 }
 
-
-/* ============= notifications ============= */
-
-.noticontent {
-
-    margin-left: 20%;
-    margin-bottom: 0;
-    
-}
-
-.notihead {
-    font-size: 125%;
-    text-align: center;
-font-weight: 200; 
-    
-    
-}
-
-
-
-.buttoncase {
-    
-position: absolute;
-margin-bottom: 2%;  
-    
-}
-
-.green {
- 
-    width: 8%;
-    
-    
-}
-#backbtn {
-    width:15%;
-    position:fixed;
-  
-}
 /* ============= FOOTER STYLES ============= */
 
 

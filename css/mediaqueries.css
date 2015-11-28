@@ -24,6 +24,10 @@
    		background-position: center top;
     	background-size: cover;
    		background-repeat: no-repeat;
+		font-family: 'Merriweather Sans', sans-serif;
+    	font-weight: 300;
+		line-height:1.2;
+		font-size: 12px;
 	}
 
 
@@ -85,6 +89,7 @@
     
 	background-image:none;    
 	background-color:#ffffff;
+	font-size: 16px;
 }
 
 
