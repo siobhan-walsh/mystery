@@ -1,18 +1,4 @@
 
-
-@media only screen 
-
-{
-	
-
-	
-	body {
-background: url ("../img/background.png");
-    background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
 @media screen and (min-width: 400px) and (max-width: 1024px) {
 .body {
     background: background: url ("../img/background.png");
@@ -25,7 +11,22 @@ background: url ("../img/background.png");
     background: url ("../img/background.png");
 }
 }
+
+
+@media only screen 
+
+{
 	
+
+	
+	body {
+		background: url ("../img/background.png");
+   		background-position: center top;
+    	background-size: cover;
+   		background-repeat: no-repeat;
+	}
+
+
 	
 	
 	/*
@@ -39,6 +40,12 @@ background: url ("../img/background.png");
 	}
 	*/
 	
+	
+	#frienddiv {
+	
+	position:fixed;	
+}
+	
     .footer {
         
     
@@ -48,6 +55,7 @@ background: url ("../img/background.png");
     background-color:#000000;
     position: fixed;
     bottom: 0;
+	z-index:2;
 	
          
     }
@@ -117,6 +125,13 @@ background: url ("../img/background.png");
 		
 		
 	}
+	
+	#frienddiv {
+		
+		position:absolute;
+		
+	}
+	
 	
 	
 	.footer {

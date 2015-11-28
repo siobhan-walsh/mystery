@@ -54,15 +54,18 @@
 				var bheight = $('.footer').height();
 				var takenchinfo = [];
 				
-				frienddiv.style.position = 'absolute';
-				frienddiv.style.top = theight + 'px';
+			
+				frienddiv.id = 'frienddiv';
+				//frienddiv.style.top = theight + 'px';
 				frienddiv.style.width = '100%';
-				frienddiv.style.bottom = bheight + 'px';
-				frienddiv.style.backgroundColor = '#ffffff';
-				frienddiv.style.zIndex = 2;
+				frienddiv.style.height = '80vh';
+				frienddiv.style.bottom = '0px';
+				frienddiv.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+				frienddiv.style.zIndex = 1;
 				frienddiv.style.boxShadow = "0px -2px 4px #666666";
 				frienddiv.style.display = 'none';
 				frienddiv.style.overflow = 'scroll';
+				
 				
 				frienddiv.innerHTML = '';
 				document.getElementById('header').appendChild(frienddiv);
@@ -478,6 +481,7 @@
 				 return function(){
 				
 					console.log('assigning character to firend');
+					content.style.filter = 'blur(1px)';
 					
 					//put assigning character functionality here
 					
@@ -491,12 +495,15 @@
 							var cprow = document.createElement('div');
 							cprow.style.width = '100%';
 							
+							
 							searchbtn.id = 'searchbtn';
 							searchbtn.innerHTML = 'search';
 							searchbtn.className = 'whitebtn';
 							searchbtn.style.backgroundColor = '#e3e3e3';
+							searchbtn.style.marginRight = '10%';
+							
 							inp.placeholder = 'search by user email';
-							inp.style.margin = '4%';
+							inp.id = 'searchinp';
 							
 							
 							
@@ -509,12 +516,17 @@
 							
 							cancel.className = 'whitebtn';
 							
-							cprow.appendChild(inp);
-							
+						
+							cprow.style.width = '90%';
+							cprow.style.margin = '4%';
+						
 							cprow.appendChild(searchbtn);
 							cprow.appendChild(cancel);
 							
+							frienddiv.appendChild(inp);
+							
 							frienddiv.appendChild(cprow);
+							frienddiv.appendChild(resultsdiv);
 							
 							frienddiv.style.display = 'block';
 							
@@ -524,6 +536,7 @@
 							cancel.onclick = function(){
 								frienddiv.style.display = 'none';
 								frienddiv.innerHTML = '';	
+								content.style.filter = 'none';
 						
 							};
 						
@@ -531,6 +544,8 @@
 					
 						
 						searchbtn.onclick = function(){
+							
+							
 							
 							resultsdiv.innerHTML = '';
 							
@@ -552,7 +567,7 @@
 								if(sresp == 'sorry'){
 									
 									resultsdiv.innerHTML = "Sorry, there are no users with that email";
-									frienddiv.appendChild(resultsdiv);
+									//frienddiv.appendChild(resultsdiv);
 									
 								} else {
 									
@@ -574,12 +589,12 @@
 										img.src = resultsavi;
 										p.innerHTML = resultsun;
 										
-										resultsdiv.style.padding = '6%';
+										resultsdiv.style.padding = '4%';
 										resultsdiv.appendChild(img);
 										resultsdiv.appendChild(p);
 										resultsdiv.appendChild(addbtn);
 										
-										frienddiv.appendChild(resultsdiv);
+										//frienddiv.appendChild(resultsdiv);
 										
 										addbtn.onclick = function(){
 											
@@ -587,7 +602,7 @@
 											console.log('this character is', character_id);
 											addbtn.style.backgroundColor = '#e3e3e3';
 											
-										/*	ajax call that sends request goes here. send the character_id (already made the variable character_id), user_id of friend is resulstsuid, these need to go into the game table			*/
+										
                                         $.ajax({
 				                                 url:"server/invite-server.php",
 							                     type:"POST",
@@ -608,6 +623,7 @@
 														
 														thisdiv.innerHTML = '<img class="plusimg" src ="img/circle_purple.png"><span>You invited ' + resultsun +', their response is pending</span>';
 														
+														content.style.filter = 'none';
 														frienddiv.innerHTML = '';
 														frienddiv.style.display = 'none';
 													};

@@ -140,6 +140,7 @@
 							dataType:"JSON",
 							success:function(decline){
 								console.log('declined', decline);
+								window.location = "direction.php";
 								
 							},
 							error: function(jqXHR, textStatus, errorThrown) {
