@@ -3,6 +3,18 @@
 	
 ?>
 <body> 
+
+<!--Adobe Edge Runtime-->
+    <script type="text/javascript" charset="utf-8" src="splash animation/splash animation_edgeActions.js"></script>
+    <script type="text/javascript" charset="utf-8" src="splash animation/splash animation_edgeActions.js"></script>
+          <style>
+
+        .edgeLoad-EdgeContent { visibility:hidden; }
+
+    </style>
+<!--Adobe Edge Runtime End-->
+
+<div id="Stage" class="EdgeContent"></div>
         
 	<div class = 'tablet-size'>	
     	<div class = 'scroll'>
