@@ -34,6 +34,8 @@
 
                         <input type='password' id='pwRetype' class='textbox' placeholder="retype password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" >
                         
+                        <p>Choose an avatar:</p>
+                        
                         <input type="radio" name="avi" value="f1" id="f1">
 						<label for="f1"><img src="img/friends/f1.png"></label>
 

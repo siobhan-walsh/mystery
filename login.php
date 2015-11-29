@@ -20,7 +20,7 @@
                     <p>Don't have an account yet? <a href = 'signup.php'>Sign up!</a></p><br>
                 </div>
                 <div class=' center'>
-					<button id="loginFB">Login with Facebook</button>
+					
                     <span id='warn' style='color:red'></span>
                     <input type='text' id='username' class='textbox' placeholder="username" required='true'>
                     <input type='password' id='password' class='textbox' placeholder="password" required='true'>
@@ -100,48 +100,6 @@
 		
 	};
 	
-	/*
-	
-	
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '989824554418300',
-      xfbml      : true,
-      version    : 'v2.5'
-    });
-      console.log(FB);
-      
-      var but = document.getElementById("fbbutton");
-      var userinfo = document.getElementById("userinfo");
-      but.onclick = function(){
-      FB.login(function(resp){
-        console.log(resp);
-          if(resp.status == "connected"){
-			  
-
-            alert("You Logged in");
-			
-			//window.location="/themes.php" ;
-			
-            /*var txt = "Welcome!";
-              document.write("<p>Link: " + txt.link("themes.php") + "</p>");
-			
-          }
-          if(resp.status == "unknown") {
-            alert("Login Failed");
-             
-          }
-      });
-  };};
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-  */
     </script>  
     </body>
 </html>
