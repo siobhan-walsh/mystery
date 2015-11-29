@@ -6,6 +6,7 @@
 
 
     <div class = 'content'>
+
            <h1> Click On Your Guess</h1>
             
             <div class = 'hspace guesscase'>
@@ -22,7 +23,6 @@
 
 <!--
 
-
                 <div class='buttonDiv'>
 
                     <a href='game.php' ><button id='backbtn' class="btn">Back</button> </a>
@@ -32,6 +32,7 @@
                 </div>
                 
         -->        
+
        <script src='js/backbtn.js'></script>
 
 
@@ -42,7 +43,7 @@
 	  
 	  var murdereris = '';
 	  var charinfo = [];
-	  
+
 	  
 	  $.ajax({
 			url:"server/guesswho-server.php",
@@ -57,6 +58,7 @@
 				
 				var guesswholength = objectSize(guesswhoresp);
                 
+
                 charinfo.push(guesswhoresp);
                 
 				var guesscase = document.querySelector('.guesscase');
@@ -113,6 +115,7 @@
 			
 		});	
 		
+
 		function subGuess(i){
 			return function(){
 				
@@ -153,6 +156,7 @@
 			};
 		};
 		
+
 		function objectSize(the_object) {
 		  /* function to validate the existence of each key in the object to get the number of valid keys. */
 		  var object_size = 0;
@@ -163,7 +167,7 @@
 		  }
 		  return object_size;
 		}
- 
+
     
 </script>
 
