@@ -174,7 +174,7 @@
 											
 											var span = document.createElement('span');
 											span.style.color = '#000000';
-											span.style.fontSize = '16pt';
+											span.style.fontSize = '120%';
 											span.innerHTML = "You are playing this character";
 											
 											var charcontent = document.createElement('div');
