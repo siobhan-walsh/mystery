@@ -17,10 +17,11 @@
 
                     <div class= 'hspace'>
                         <h2>Sign Up</h2><br>
-                        <p>Already have an account? <a href = 'login.php'>Log in!</a></p><br>
+                        <p id="already">Already have an account? <a href = 'login.php'>Log in!</a></p>
+                        <input type='button' id='fbSign' class='buttons' value="Sign up with facebook">
                     </div>
                     <div class='center'>
-						<input type='button' id='fbbutton' class='buttons' value="Sign up with facebook"> 
+						
                         
                         <input type='text' id='fname' class='nval textbox'  placeholder="first name" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
 
@@ -198,7 +199,7 @@
       var userinfo = document.getElementById("userinfo");
       but.onclick = function(){
 		  FB.getLoginStatus(function(fbresp){
-				
+				but.style.backgroundColor="#3b5998";
 				console.log("login status is", fbresp);	
 				
 				if(fbresp.status == "connected"){

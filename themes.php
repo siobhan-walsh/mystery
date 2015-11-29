@@ -13,7 +13,7 @@
             
             <div class = 'themecase'>
             
-            <a href='themeabout.php'><img src="img/themes/murder.png"></a>
+            <a href='themeabout.php'><img id='theme1' src="img/themes/murder.png"></a>
             <h2>Coming soon:</h2>
             
             </div>
@@ -55,6 +55,8 @@
                     //themecase.innerHTML = '<a href = "game.html"><img src ="' + themeImg[i] + '">';
                     
                     themecase.appendChild(imge);
+                    imge.style.transition="all 1s ease-out";
+
                     
                     
                     

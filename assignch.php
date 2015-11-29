@@ -493,17 +493,18 @@
 							var searchbtn = document.createElement('button');
 							var br = document.createElement('br');
 							var cprow = document.createElement('div');
+                     
+      
 							cprow.style.width = '100%';
 							
 							
 							searchbtn.id = 'searchbtn';
 							searchbtn.innerHTML = 'search';
 							searchbtn.className = 'whitebtn';
-							searchbtn.style.backgroundColor = '#e3e3e3';
+							searchbtn.style.backgroundColor = '#27A5A1';
+                            searchbtn.style.color= 'white';
 							searchbtn.style.marginRight = '10%';
-							
-							inp.placeholder = 'search by user email';
-							inp.id = 'searchinp';
+
 							
 							
 							
@@ -512,14 +513,14 @@
 							var cancel = document.createElement('button');
 							
 							cancel.innerHTML = 'cancel';
-							cancel.style.backgroundColor = '#e3e3e3';
-							
+							cancel.style.backgroundColor = '#27A5A1';
+							cancel.style.color = 'white';
 							cancel.className = 'whitebtn';
 							
 						
 							cprow.style.width = '90%';
 							cprow.style.margin = '4%';
-						
+
 							cprow.appendChild(searchbtn);
 							cprow.appendChild(cancel);
 							
@@ -582,10 +583,12 @@
 										var resultsuid = sresp.uid;
 										
 										addbtn.className = 'whitebtn';
-										
+                                        inp.placeholder = 'search by user email';
+							            inp.id = 'searchinp';
 										addbtn.innerHTML = "Invite to play";
-										
-										
+										addbtn.style.backgroundColor='#27A5A1';
+										addbtn.style.color='white';
+            
 										img.src = resultsavi;
 										p.innerHTML = resultsun;
 										

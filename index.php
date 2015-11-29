@@ -20,7 +20,7 @@
                 
                 <a href = 'login.php'><input type='button' class='buttons' id='loginbutton' value="Login"></a>
                 <a href = 'signup.php'><input type='button' id='signupbutton' class='buttons' value="Sign up"></a>
-                <input type='button' id='fbbutton' class='buttons' value="Log in with facebook"> 
+                <input type='button' id='fbbuttonIn' class='buttons' value="Log in with facebook"> 
                
             </div>
             
@@ -47,11 +47,11 @@
   
       
       
-      var but = document.getElementById("fbbutton");
+      var but = document.getElementById("fbbuttonIn");
       var userinfo = document.getElementById("userinfo");
       but.onclick = function(){
 		  FB.getLoginStatus(function(fbresp){
-				
+				but.style.backgroundColor="#3b5998";
 				console.log("login status is", fbresp);	
 				
 				if(fbresp.status == "connected"){
