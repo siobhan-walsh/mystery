@@ -4,17 +4,6 @@
 ?>
 <body> 
 
-<!--Adobe Edge Runtime-->
-    <script type="text/javascript" charset="utf-8" src="splash animation/splash animation_edgeActions.js"></script>
-    <script type="text/javascript" charset="utf-8" src="splash animation/splash animation_edgeActions.js"></script>
-          <style>
-
-        .edgeLoad-EdgeContent { visibility:hidden; }
-
-    </style>
-<!--Adobe Edge Runtime End-->
-
-<div id="Stage" class="EdgeContent"></div>
         
 	<div class = 'tablet-size'>	
     	<div class = 'scroll'>
@@ -31,7 +20,7 @@
                     <p>Don't have an account yet? <a href = 'signup.php'>Sign up!</a></p><br>
                 </div>
                 <div class=' center'>
-
+					<button id="loginFB">Login with Facebook</button>
                     <span id='warn' style='color:red'></span>
                     <input type='text' id='username' class='textbox' placeholder="username" required='true'>
                     <input type='password' id='password' class='textbox' placeholder="password" required='true'>
@@ -39,7 +28,7 @@
                    <!-- <p class='right-text '><small>Forgot your password?</small></p><br>
                     
                    
-                   <button id="loginFB">Login with Facebook</button>
+                   
                    <img src='img/enter-btn.png' id='enter'> 
                    
                    -->

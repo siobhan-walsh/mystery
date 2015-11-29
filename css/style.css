@@ -32,6 +32,7 @@ body {
 	display:none;	
 }
 
+
 #searchinp {
 	width:90%;
 	margin: 4%;
@@ -147,7 +148,11 @@ a:hover {
     clear:both;
 	float:left;
 	margin-bottom:4px;
-	background-color:rgba(66,192,192, 0.4);
+	
+	background: -moz-linear-gradient(top, rgba(47,149,122,1) 0%, rgba(47,149,122,1) 48%, rgba(47,149,122,0) 48%, rgba(47,149,122,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(47,149,122,1) 0%,rgba(47,149,122,1) 48%,rgba(47,149,122,0) 48%,rgba(47,149,122,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(47,149,122,1) 0%,rgba(47,149,122,1) 48%, rgba(47,149,122,0) 48%,rgba(47,149,122,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f957a', endColorstr='#002f957a',GradientType=0 ); /* IE6-9 */
 	
 }
 
@@ -156,6 +161,7 @@ a:hover {
 	width:30%;	
 	margin-left:35%;
 	float:left;
+
 	
 }
 
@@ -773,12 +779,12 @@ margin-left:20%;
 /* blue button */
 
 .btn.btn-blue {
-background-color: #27A5A1;
+	background-color: #27A5A1;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 100%;
 	float:right;
-padding: 10% 10%;
+	padding: 10% 10%;
   /*
   	padding: 3% 3%;
   	margin-right: 5%;
@@ -1047,7 +1053,7 @@ background-color: #27A5A1;
 	letter-spacing: 2px;
 	padding: 2%;
 	width: 15%;
-	margin:0 5%;
+	margin:0%;
 	font-size: 100%;
 	float:right;
   /*

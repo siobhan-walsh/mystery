@@ -15,14 +15,10 @@
                  
                 </div>
 
-                <div id='btndiv'>
+               
 
-                    <button id='backbtn' class="btn">Back</button> 
                    
-                    <a href='round2.php' class="btn btn-blue" > Next</a>
-                     
-                </div>
-
+            
 
             </div>
             
@@ -65,5 +61,9 @@
 	include("footer.php");
 	
 ?>
-<script src='js/btndiv.js'></script>
+<script>
+
+ document.getElementById('buttonDiv').innerHTML = "<button id='backbtn' class='btn'>Back</button><a href='round2.php' class='btn btn-blue' > Next</a>"
+
+</script>
 <script src='js/backbtn.js'></script>

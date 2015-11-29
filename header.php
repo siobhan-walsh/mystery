@@ -3,6 +3,8 @@
 	<div class = 'tablet-size'>	
     <div class = 'scroll'>
     <div class= 'header' id = 'header'>
+    
+
 
         	<div class = 'logospot'>
             	<img id='logo' src = 'img/logo.png'>
@@ -72,9 +74,9 @@
 				
 				logmenu.style.position = 'absolute';
 				logmenu.style.right ='0';
-				logmenu.style.top = height + "px";
+				logmenu.style.top = height + 2 + "px";
 				logmenu.style.width= '20%';
-				logmenu.style.backgroundColor = '#2CA5E4';
+				logmenu.style.backgroundColor = '#42C0C0';
 				logmenu.style.padding = '10px';
 				
 				console.log("logmenu", logmenu);
