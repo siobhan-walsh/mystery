@@ -8,13 +8,16 @@
         
         <div class = 'content'>
             <h4>Contact Us</h4>
-     <div id="form">    
-  <p>Fill out the form below.</p>
-  <form action="" method="post">
-  <label>First Name: <br />
-  <input id="fn" name="firstname" type="text" placeholder="- Enter First Name -" /><br /></label>
-  <label>Last Name: <br />
-  <input id="ln" name="lastname" type="text" placeholder="- Enter Last Name -" /><br /></label>
+<div id="form-main">
+  <div id="form-div">
+  <p>Fill out the form b  elow.</p>
+  <form action="" method="post" class="form" id="form1">
+      <p class="fn">
+        <input name="firstname" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="fn" />
+      </p>
+      <p class="ln">
+        <input name="lastname" type="text" class="validate[required,custom[email]] feedback-input" id="ln" placeholder="Last Name" />
+      </p>
   <label>1star: 
   <input name="1star" type="checkbox" value="1star" /><br /></label>
   <label>2stars: 
@@ -25,17 +28,23 @@
   <input name="4stars" type="checkbox" value="4stars" /><br /></label>
   <label>5stars: 
   <input name="5stars" type="checkbox" value="5stars" /><br /></label>
-    <label>Comments: <br />
-  <input id="msgFee" name="comments" type="text" /><br /></label>
-  <input id="feedback" name="submitted" type="submit" value="Submit" />
-  <input id="feedback" name="" type="reset" value="Reset Form" />
-  </form>
-
-           
+      <p class="msgFee">
+        <textarea name="comments" class="validate[required,length[6,300]] feedback-input" id="msgFee" placeholder="Comment"></textarea>
+      </p>
+     
+      <div class="feedback">
+        <input id="feedback" name="submitted" type="submit" value="Submit" />
+  <input id="feedback" name="reset" type="reset" value="Reset Form" />
+ 
+        <div class="ease"></div>
+      </div>
+        </form>
+    </div>
+  </div>    
                 
                
             
-            </div>
+
             
         </div>
      <script src='js/backbtn.js'></script>  
