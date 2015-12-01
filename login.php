@@ -12,9 +12,9 @@
                 <div class='blogo'><img src = 'img/logo.png'></div>
                 
             </div> 
-             
+
             <div class = 'content'>
-<div class="wrapper">
+
                 <div class= 'hspace message'>
                     <h2>Log in</h2><br>
                     <p>Don't have an account yet? <a href = 'signup.php'>Sign up!</a></p><br>
@@ -41,6 +41,8 @@
                     		</form>
                     			</div>
                 </div>
+                
+<div class="wrapper">
 	<ul class="bg-bubbles">
 		<li></li>
 		<li></li>
@@ -57,6 +59,7 @@
         	<div class ='underfooter'></div>
             <div class = 'footer'>
 </div>
+           
             </div>
         
   			

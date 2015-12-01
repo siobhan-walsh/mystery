@@ -250,32 +250,32 @@ text-align: left;
 }
 /* --------------- testing login page ----------------*/
 
-.wrapper {
+.container {
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
   font-weight: 300;
 }
-.wrapper ::-webkit-input-placeholder {
+.container ::-webkit-input-placeholder {
   /* WebKit browsers */
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
   font-weight: 300;
 }
-.wrapper :-moz-placeholder {
+.container :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
   opacity: 1;
   font-weight: 300;
 }
-.wrapper ::-moz-placeholder {
+.container ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
   opacity: 1;
   font-weight: 300;
 }
-.wrapper :-ms-input-placeholder {
+.container :-ms-input-placeholder {
   /* Internet Explorer 10+ */
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
@@ -291,7 +291,7 @@ text-align: left;
   margin-top: -200px;
   overflow: hidden;
 }
-.wrapper.form-success .container h1 {
+.container.form-success .container h1 {
   -webkit-transform: translateY(85px);
       -ms-transform: translateY(85px);
           transform: translateY(85px);
@@ -316,7 +316,7 @@ text-align: left;
   position: relative;
   z-index: 2;
 }
-.wrapper #password {
+.container #password {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -336,7 +336,7 @@ text-align: left;
           transition-duration: 1s;
   font-weight: 300;
 } 
-.wrapper #username {
+.container #username {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -356,26 +356,26 @@ text-align: left;
           transition-duration: 1s;
   font-weight: 100;
 }
-.wrapper #password:hover {
+.container #password:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
-.wrapper #username:hover {
+.container #username:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
-.wrapper #password:focus {
+.container #password:focus {
   background-color: white;
   width: 30vw;
    padding: 10px;
     margin-left: -2vw;
   color: #53e3a6;
 } 
-.wrapper #username:focus {
+.container #username:focus {
   background-color: white;
   width: 30vw;
      margin-left: -2vw;
   color: #53e3a6;
 }
-.wrapper #loginbtn {
+.container #loginbtn {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -392,11 +392,11 @@ text-align: left;
   -webkit-transition-duration: 0.25s;
           transition-duration: 0.25s;
 }
-.wrapper #loginbtn:hover {
+.container #loginbtn:hover {
   background-color: #f5f7f9;
 }
 
-.wrapper #loginbtn:active{
+.container #loginbtn:active{
     background-color: #f5f7f9;
 }
 
