@@ -42,6 +42,11 @@ include("connection.php");
 					
 					$fbegingame->execute();
 					
+					$round1 = $conn->prepare("UPDATE game SET round = 1 WHERE host_id = :host");
+					$round1->bindParam(":host",  $host_id);
+					
+					$round1->execute();
+					
 					
 					$data = array("status" => "success", 'msg' => "start");
 						

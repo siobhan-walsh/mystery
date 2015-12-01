@@ -3,8 +3,7 @@
 
 </div>
 
-<div class = 'footcase'>
-<div id='buttonDiv'></div>
+
 
         <div id = 'footer' class = 'footer'>
            <!--  <a href='themes.php'><img id= 'homey' src = 'img/homeicon.png' alt='home'></a> -->
@@ -15,7 +14,7 @@
         
 		</div>
         
-</div>
+
 </div>
 </div>
 </body>

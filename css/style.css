@@ -1353,17 +1353,6 @@ margin-left:20%;
 	 
     }
 	
-.buttonDiv{
-    
-
-	width:100%;
-	font-size: 100%;
-	padding:10%;
-	margin-bottom: 5%;
-	background-color:#ffffff;
-
-}
-
 .bluetheme {
 	background-color: #27A5A1;
 	text-transform: uppercase;
@@ -1672,22 +1661,6 @@ background-color: #27A5A1;
 	 -webkit-overflow-scrolling: touch
     }*/
 	
-.buttonDiv{
-    
-    position:absolute;
-	
-   bottom:17%;
-	width:100%;
-	
-	padding-bottom:1%;
- 	
-
-/*    margin: auto;
-+	display: block;
-+	text-align: center;
-+    display: inline-block; */
-
-}
 
 .bluetheme {
 	background-color: #27A5A1;

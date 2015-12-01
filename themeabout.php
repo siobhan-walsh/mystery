@@ -17,9 +17,14 @@
        </div>
              
        
-
-          
-   
+		<div class = 'buttonDiv'>
+        
+        	<a href="themes.php" class="themebtn">Back</button>
+        
+        	<a href="choosegame.php" class="bluetheme">Start Game</a>
+        
+        </div>
+       
             
            
      
@@ -63,6 +68,3 @@
     
 
 <?php include("footer.php"); ?>
-     
-    <script src='js/themeabout.js'></script>
-   <script src='js/backbtn.js'></script> 
