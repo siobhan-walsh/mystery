@@ -15,13 +15,22 @@
                     
                  
                 </div>
+                <div id= 'cpbtn'>
+               		<button id='gotoguess' class= 'btn' >Guess the murderer! </button>
+               </div>
 
             </div>
             
  		<script>
 		
 			var rinfo = document.getElementById('rinfo');
+			var gotoguess = document.getElementById('gotoguess');
 			
+			gotoguess.style.float = 'right';
+			
+			gotoguess.onclick = function(){
+				window.location = 'guess.php';	
+			};
 			
 			$.ajax({
 				 url:"server/roundinfo.php",

@@ -29,6 +29,12 @@
 			var rinfo = document.getElementById('rinfo');
 			var gotor2 = document.getElementById('gotor2');
 			
+			gotor2.style.float = 'right';
+			
+			gotor2.onclick = function(){
+				window.location = 'round2.php';	
+			};
+			
 			
 			$.ajax({
 				 url:"server/roundinfo.php",

@@ -15,12 +15,23 @@
                     
                  
                 </div>
-
+				
+                <div id= 'cpbtn'>
+               		<button id='gotor3' class= 'btn' >Next Round </button>
+               </div>
+               
             </div>
             
  		<script>
 		
 			var rinfo = document.getElementById('rinfo');
+			var gotor3 = document.getElementById('gotor3');
+			
+			gotor3.style.float = 'right';
+			
+			gotor3.onclick = function(){
+				window.location = 'round3.php';	
+			};
 			
 			
 			$.ajax({
@@ -57,9 +68,4 @@
 	include("footer.php");
 	
 ?>
-<script>
 
- document.getElementById('buttonDiv').innerHTML = "<button id='backbtn' class='btn'>Back</button><a href='round3.php' class='btn btn-blue'>Next</a>"
-
-</script>
-<script src='js/backbtn.js'></script>
