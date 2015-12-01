@@ -1,7 +1,7 @@
 <?php
 
 	include("head.php");
-	include("header.php");
+	include("header2.php");
 
 ?>
 
