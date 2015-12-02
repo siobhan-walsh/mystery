@@ -902,27 +902,52 @@ window.requestAnimationFrame = (function(){
 		
 				function bbtn(){	 
 					var bigbtn = document.createElement('button');
+					var deletebtn = document.createElement('button');
+					var bigbtndiv = document.createElement('div');
+					
+					
 					var clicked = false;
+					
+					bigbtndiv.id = 'bigbtndiv';
+					bigbtndiv.style.width = '100%';
+					bigbtndiv.style.float = 'left';
+					
+				
 					bigbtn.innerHTML = "Begin Game";
-					bigbtn.style.width = '80%';
-					bigbtn.style.height = '40px';
-					bigbtn.style.border = 'none';
-					bigbtn.style.borderRadius = '10px';
-					bigbtn.style.margin = '2% 10%';
-					bigbtn.style.fontSize = '14pt';
-					bigbtn.style.backgroundColor = '#298F73';
+					bigbtn.style.textTransform = 'uppercase';
+					bigbtn.style.borderColor = 'rgba(0,0,0,0.3)';
+					bigbtn.style.textShadow = '0 1px 0 rgba(0,0,0,0.5)';
+					bigbtn.style.width = '96%';
+					bigbtn.style.padding = '3% 0%';
+					bigbtn.style.color = '#FFF';
+					bigbtn.style.borderRadius = '5px';
+					bigbtn.style.margin = '4% 2% ';
+					bigbtn.style.fontSize = '100%';
+					bigbtn.style.backgroundColor = '#27A5A1';
 					bigbtn.style.textAlign = 'center';
 					
-					$(content).after( bigbtn );
+					bigbtndiv.appendChild(bigbtn);
+					
+					deletebtn.innerHTML = "End Game";
+					deletebtn.style.textTransform = 'uppercase';
+					deletebtn.style.borderColor = 'rgba(0,0,0,0.3)';
+					deletebtn.style.textShadow = '0 1px 0 rgba(0,0,0,0.5)';
+					deletebtn.style.width = '96%';
+					
+					deletebtn.style.padding = '3% 0%';
+					deletebtn.style.color = '#FFF';
+					deletebtn.style.borderRadius = '5px';
+					deletebtn.style.margin = '4% 2% ';
+					deletebtn.style.fontSize = '100%';
+					deletebtn.style.backgroundColor = '#c13232';
+					deletebtn.style.textAlign = 'center';
+					
+					bigbtndiv.appendChild(deletebtn);
+					
+					$(content).after( bigbtndiv );
 					//content.appendChild(bigbtn);
 					
-					
-					bigbtn.onmousedown = function(){
-						bigbtn.style.backgroundColor = '#35C4B6';
-					};
-					bigbtn.onmouseup= function(){
-						bigbtn.style.backgroundColor = '#298F73';
-					};
+				
 					bigbtn.onclick = function(){
 						
 						
@@ -969,6 +994,105 @@ window.requestAnimationFrame = (function(){
 							
 							
 					};
+					
+					
+					deletebtn.onclick = function(){
+						
+						
+							//are you sure?
+							
+							var surediv = document.createElement('div');
+							var surebtn = document.createElement('button');
+							var nobtn = document.createElement('button');
+							
+							frienddiv.style.display = 'block';
+							
+							
+							surediv.style.margin = '10%';
+							surediv.style.width = '80%';
+							surediv.innerHTML = 'Are you sure you would like to end this game?';
+							
+							surebtn.innerHTML = 'Yes end game';
+							surebtn.style.textTransform = 'uppercase';
+							surebtn.style.borderColor = 'rgba(0,0,0,0.3)';
+							surebtn.style.textShadow = '0 1px 0 rgba(0,0,0,0.5)';
+							surebtn.style.width = '96%';
+							surebtn.style.padding = '3% 0%';
+							surebtn.style.color = '#FFF';
+							surebtn.style.borderRadius = '5px';
+							surebtn.style.margin = '4% 2% ';
+							surebtn.style.fontSize = '100%';
+							surebtn.style.backgroundColor = '#c13232';
+							surebtn.style.textAlign = 'center';
+							
+							
+							nobtn.innerHTML = 'no back to game';
+						
+							nobtn.style.textTransform = 'uppercase';
+							nobtn.style.borderColor = 'rgba(0,0,0,0.3)';
+							nobtn.style.textShadow = '0 1px 0 rgba(0,0,0,0.5)';
+							nobtn.style.width = '96%';
+							
+							nobtn.style.padding = '3% 0%';
+							nobtn.style.color = '#FFF';
+							nobtn.style.borderRadius = '5px';
+							nobtn.style.margin = '4% 2% ';
+							nobtn.style.fontSize = '100%';
+							nobtn.style.backgroundColor = '#27A5A1';
+							nobtn.style.textAlign = 'center';
+							
+							
+							
+							
+							frienddiv.appendChild(surediv);
+							frienddiv.appendChild(nobtn);
+							frienddiv.appendChild(surebtn);
+							
+							
+							nobtn.onclick = function(){
+								
+								frienddiv.innerHTML = '';
+								frienddiv.style.display = 'none';
+								
+								
+								
+							};
+							
+							surebtn.onclick = function(){
+							
+							
+							
+						
+							
+								 $.ajax({
+									 url:"server/endgame.php",
+									 type:"POST",
+									 dataType:"JSON",
+									 
+									success:function(ended){
+										console.log('ended is', ended);
+										
+										window.location = 'direction.php';
+										
+									},
+									error: function(jqXHR, textStatus, errorThrown) {
+					
+										console.log(jqXHR.statusText, textStatus, errorThrown);
+										console.log('ended error');
+									  
+								
+							
+									}
+		
+							});
+							
+							
+						
+							
+							};
+							
+					};
+					
 					
 				};
 				
