@@ -13,16 +13,14 @@
                 <div class='blogo'><img src = 'img/logo.png'></div>
                 
             </div> 
-                <div id = 'content' class = 'content'>
+                <div class = 'content'>
 
                     <div class= 'hspace'>
-                        <h2>Sign Up</h2><br>
-                        <p id="already">Already have an account? <a href = 'login.php'>Log in!</a></p>
-                        <input type='button' id='fbSign' class='buttons' value="Sign up with facebook">
+                        <h2>change</h2><br>
+                        <p>Already have an account? <a href = 'login.php'>Log in!</a></p><br>
                     </div>
                     <div class='center'>
-						
-                        
+
                         <input type='text' id='fname' class='nval textbox'  placeholder="first name" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
 
                         <input type='text' id='lname' class='nval textbox' placeholder="last" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$'>
@@ -35,8 +33,6 @@
 
                         <input type='password' id='pwRetype' class='textbox' placeholder="retype password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" >
                         
-                        <p>Choose an avatar:</p>
-                        
                         <input type="radio" name="avi" value="f1" id="f1">
 						<label for="f1"><img src="img/friends/f1.png"></label>
 
@@ -48,7 +44,7 @@
                        
                         <br><br>
                         <input type='button' id='signup'  class='buttons' value="Sign up!">
-                       
+                       <input type='button' id='fbbutton' class='buttons' value="Sign up with facebook"> 
                     </div>
 
                 </div>
@@ -59,8 +55,6 @@
             </div>
 
     <script src="js/buttons.js"></script> 
-    <script src='js/validating.js'></script>
-
     
     <script>
         $(document).ready(function(){
@@ -183,32 +177,51 @@
               
         });
 			
-
-//signup with fb
-
+			
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '989824554418300',
       xfbml      : true,
       version    : 'v2.5'
     });
-  
+      console.log(FB);
       
       
       var but = document.getElementById("fbbutton");
       var userinfo = document.getElementById("userinfo");
       but.onclick = function(){
+          	  FB.login(function(resp){
+        console.log("resp is", resp);
+          if(resp.status == "connected"){
+			  
+			  console.log('connected!');
+	
+            alert("You Logged in");
+			
+
+			
+          
 		  FB.getLoginStatus(function(fbresp){
-				but.style.backgroundColor="#3b5998";
+				
 				console.log("login status is", fbresp);	
 				
 				if(fbresp.status == "connected"){
 						//document.body.removeChild(logBtn);
-						FB.api("/me",{fields: 'first_name,last_name,gender,email,picture'},function(fbresp1){
+						FB.api("/me",{fields: 'first_name,last_name,gender,email,picture'},
+                               
+                function(fbresp1){
 						
                             
 							
 							console.log("resp1 is", fbresp1);	
+ FB.login(function(response) {
+     if (response.authResponse) {
+               console.log('Welcome!  Fetching your information.... ');
+               FB.api('/me', function(response) {
+                   console.log('Good to see you, ' + response.email + '.');
+                   alert('Good to see you, ' + response.email + '.');
+               });
+            
 							var fname = fbresp1.first_name;
 							var lname = fbresp1.last_name;
 							var un = fname + lname;
@@ -218,84 +231,107 @@
 							
 							console.log("un is", un);
 							console.log("pw is", pw); 
-							console.log('avatar is', avatar);
-							
-							
-							$.ajax({
+							console.log(JSON.stringify(fbresp1));
+						$.ajax({
 								url:"server/signup-server.php",
 								type:"POST",
 								dataType:"JSON",
 								data:{
+
+									fname:fname,
+									lname:lname,
+                                    email:email,
 									
 									un:un,
 									pw:pw,
-									fname:fname,
-									lname:lname,
-									email:email,
-									avatar: avatar
+									               avatar:fbresp1.picture.data.url
 									
 									
-									},
-								success:function(signupresp){
+                                },
+								success:function(resp){
 									
-									console.log("yaya success resp is:", signupresp);	
-								
+									console.log("yaya success resp is:", resp);	
 									
+									console.log("resp.first_name");
+									
+												
+							
+							var tyDiv = document.createElement('div');
+							document.body.appendChild(tyDiv);
+							tyDiv.innerHTML = "<p>Hey " + resp.un + ", thank you for making an account! <button class='buttons' id='getstarted'>get started</button></p>";
+							tyDiv.style.position = 'fixed';
+							tyDiv.style.top = '200px';
+							tyDiv.style.backgroundColor = '#C4FFe6';
+							tyDiv.style.width = '80vw';
+							tyDiv.style.left = '10vw';
+							tyDiv.style.padding = '30px 10px ';
+							tyDiv.style.boxShadow = "4px 4px 4px #666666";
+							
+							
+									
+									var start = document.getElementById('getstarted');
+									
+									start.onclick = function(){
+										
+										
 										$.ajax({
 											url:"server/login-server.php",
 											type:"POST",
 											dataType:"JSON",
 											data:{
-											
-												un:signupresp.un,
-												pw:signupresp.pw
+												
+											mode:'login',
+												un:un,
+												pw:pw
 												
 												},
-											success:function(loginresp){
+											success:function(resp2){
 												
-												console.log("loginresp is:", loginresp);	
+												console.log("yaya success resp is:", resp2);	
 												
-												if(loginresp.status == 'success'){
+												if(resp2.status == "success"){
 													
-													window.location = "direction.php"
+
+												window.location="themes.php" ;				
 													
-													console.log("ya you're logged in ok");
 													
-												} else if(loginresp.status == 'fail'){
+												} else {
 													
-													document.getElementById('warn').innerHTML = "Sorry, that is not the correct username or password";
+			window.location="login.php" ;
 														
 												}
 												
 												
 												
 											},
-											 error: function(jqXHR, textStatus, errorThrown) {
-														//console.log(jqXHR.statusText, textStatus, errorThrown);
-														console.log(jqXHR.statusText, textStatus);
-												  
-											
-										
+											error:function(err){
+												console.log("sorry there was an error"); 	
 											}
 											
 										});	
-												  
-								
+										
+										
+									};
+										
+									
 								},
-								 error: function(jqXHR, textStatus, errorThrown) {
-									console.log(jqXHR.statusText, textStatus, errorThrown);
-									console.log(jqXHR.statusText, textStatus);
-									console.log("blah error signupu");
-					
-				
+								error:function(err){
+									console.log("sorry there was an error"); 	
 								}
+								
 							});	
+							  
+				} else {
+                console.log('User cancelled login or did not fully authorize.');
+            }
+        },
+   // handle the response
+  {scope: 'public_profile,email'});
 							
-							
-					
-
 						});
-
+                   
+					 	
+						
 				} else {
 					
 					console.log("it did not connect");
@@ -304,9 +340,16 @@
 				
 			});
 		  
-	
+          }
+          if(resp.status == "unknown") {
+            alert("Login Failed");
+             
+          }
+      }); 
+  
+	 
+	  
   };};
-
   (function(d, s, id){  
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
@@ -314,8 +357,4 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-
-
-
     </script>  
- 	  
