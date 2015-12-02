@@ -25,7 +25,7 @@ include("connection.php");
                 session_unset();
                 session_destroy();
 
-                $data = array("status" => "success", "msg" => "You were successfully logged out.");
+                $data = "You were successfully logged out.";
 
             } else {
                 $data = array("status" => "fail", "msg" => "No logout request made");
@@ -44,7 +44,7 @@ include("connection.php");
         $data = array("status" => "fail", "msg" => "Error: only POST allowed.");
     }
 
-    echo json_encode($data, JSON_FORCE_OBJECT);
+
 
 ?>
 

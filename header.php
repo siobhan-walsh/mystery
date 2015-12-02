@@ -102,18 +102,16 @@
 			type:"POST",
 			dataType:"JSON",
 			data:sendData,
-			success:function(){
+			success:function(data){
 				
-				console.log("logout ");
+				console.log("logout", data);
 				window.location = "index.php";
 				
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
                         //console.log(jqXHR.statusText, textStatus, errorThrown);
-                        console.log(jqXHR.statusText, textStatus);
-                  
-				console.log('lame errors');
-				//window.location = "/index.php";
+                        
+				window.location = "/index.php";
 			}
 			
 		});	
