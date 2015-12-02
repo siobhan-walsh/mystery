@@ -552,19 +552,32 @@ text-align: left;
     border:none;
     float:left;
     text-transform: uppercase;
-    width:105%;
+    width:122%;
     font-size:12pt;
     margin-bottom:20px;
-    padding:10px;
+    padding: 3% 3%;
     border-radius: 5%;
-	border-bottom-width: 5%;
-	-moz-border-radius: 5%;
-	-webkit-border-radius: 12%;
-	border-color: rgba(0,0,0,0.5);
-	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-	color: #FFF;
-    border-radius:4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-bottom-width: 5px;
+  color: #FFF;
+
 }
+
+
+.buttons:hover {
+    background-color: #4F87A2;
+    border-color: rgba(0,0,0,0.5);
+  }
+  
+.buttons:active {
+    background-color: #3C677B;
+    border-color: rgba(0,0,0,0.9);
+  }
+
+
+
 
 
 .buttons:hover {
@@ -576,6 +589,53 @@ text-align: left;
 		background-color: #3C677B;
 		border-color: rgba(0,0,0,0.9);
 	}
+
+
+
+  .buttons2 {
+    background-color:#27A5A1;
+    color:#ffffff;
+    border:none;
+    float:left;
+    text-transform: uppercase;
+    width:107%;
+    font-size:12pt;
+    margin-bottom:20px;
+    padding: 3% 3%;
+    border-radius: 5%;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-bottom-width: 5px;
+  color: #FFF;
+  
+
+}
+
+
+.buttons2:hover {
+    background-color: #4F87A2;
+    border-color: rgba(0,0,0,0.5);
+  }
+  
+.buttons2:active {
+    background-color: #3C677B;
+    border-color: rgba(0,0,0,0.9);
+  }
+
+
+
+
+
+.buttons2:hover {
+    background-color: #4F87A2;
+    border-color: rgba(0,0,0,0.5);
+  }
+  
+.buttons2:active {
+    background-color: #3C677B;
+    border-color: rgba(0,0,0,0.9);
+  }
 
 input[placeholder]{
     font-size:7pt;
@@ -606,7 +666,7 @@ input[placeholder]{
     border-width: 1px;
     clear:both;
     float:left;
-    width:100%;
+    width:115%;
     font-size:12pt;
     margin-bottom:20px;
     padding:10px;
@@ -1629,40 +1689,41 @@ background-color: #27A5A1;
 	}
 
 /* ============= Wrong Answer ============= */
-	.wrongbtn {
-		
-		position: absolute;
-    	top: 50%;
-		width: 50%;
-		margin-left: 25%;
-		margin-right: 45%;
-		padding: 5%;
-		font-size: 200%;
-		background-color: #27A5A1;
-		text-transform: uppercase;
-		letter-spacing: 2px;
-		font-size: 12px;
-		float: right;
-		border-radius: 5px;
-		border-bottom-width: 3px;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
-		border-color: rgba(0,0,0,0.3);
-		text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-		color: #FFF;
-		
-		}
-		
-		.sad{
-			
-		position: absolute;
-		margin-left: 40%;
-		margin-bottom: 3%;
-		margin-top: 10%;
-		margin-right: 55%;
-			
-			
-			}
+.wrongbtn {
+    
+    position: absolute;
+    top: 55%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 45%;
+    padding: 5%;
+    font-size: 200%;
+    background-color: #27A5A1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+
+    border-radius: 5px;
+    border-bottom-width: 3px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-color: rgba(0,0,0,0.3);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+    color: #FFF;
+    
+    }
+
+
+.sad {
+    
+   text-align: center;
+  margin-right: 50%;
+  margin-left: 39%;
+
+    
+    
+    
+}
 /* ============= THEME ABOUT PAGE ============= */
 #theme1{
     

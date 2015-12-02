@@ -1,28 +1,38 @@
 <?php
 
 	include("head.php");
-	include("header.php");
+	include("header2.php");
 
 ?>
 
 
             <!-- <div class='content'> !-->
-
                 <h1> YOU ARE WRONG!</h1>
-<br></br>
+
+
+             
 
                 <div class = 'p2'>
                 
                 GAME OVER.
                     Sorry, you guessed wrong.
+                    <br></br>
+                    <img class="sad" src="img/crying.gif" alt="This will display an animated GIF" />
           
-             
-                </div>
+              </div>
      
-            		<img class="sad" src="img/sadface.png"/><br></br>
+
+
+            	  
+                	
+            
+     
                     <button id="wrongb"class="wrongbtn" > End Game</button>
                           
-        
+
+
+
+
 
 
            

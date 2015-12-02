@@ -34,7 +34,7 @@
                    <img src='img/enter-btn.png' id='enter'> 
                    
                    -->
-                   <input type='button' id='loginbtn' class='buttons' value="Login">
+                   <input type='button' class='buttons2'  value="Login">
                   <!--  <input type='button' id='fbbutton' class='buttons' value="Login through facebook">
                    		
                     <button id='check'>check</button> -->
