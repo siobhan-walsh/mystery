@@ -10,19 +10,7 @@
             
            <h3 class='htitle'> Pick Your Character </h3>
                 
-                
-                 <!--
-                
-       
-             
-           <div class='buttonDiv'>
-                
-                 <button id='backbtn' class="btn1">Back</button> 
             
-                
-                <a href="game.php" class="btnchar-blue"> Start Game!</a>
-          </div>
-           -->
         
         </div>
 
@@ -493,29 +481,42 @@
 							var searchbtn = document.createElement('button');
 							var br = document.createElement('br');
 							var cprow = document.createElement('div');
+							var btnrow = document.createElement('div');
                             var canvas = document.createElement('canvas');
                             var context = canvas.getContext('2d');
+							var cancel = document.createElement('button');
+							
+							cprow.id = 'cprow';
                             document.body.appendChild(cprow);
+							
+							btnrow.appendChild(inp);
+							btnrow.appendChild(searchbtn);
+							btnrow.appendChild(cancel);
+							
+							cprow.appendChild(btnrow);
                             cprow.appendChild(canvas);
-                            cprow.appendChild(inp);
+							
+                            
                             console.log(canvas,cprow,inp);
-                            cprow.appendChild(searchbtn);
-                            var cancel = document.createElement('button');
-							cprow.appendChild(cancel);
+                            
+                            
+							
                      
                             cprow.style.margin='0';
                             cprow.style.padding='0';
-                            canvas.style.position='absolute';
+							cprow.style.width = '100%';
+							cprow.style.height = '100%';
+							
+                            //canvas.style.position='absolute';
                             canvas.style.padding='0';
                             canvas.style.width='100%';
                             canvas.style.height='100%';
-                            inp.style.position='absolute';
-                            inp.style.top='10%';
-                            inp.style.left='10%';
+							
+                           
                             inp.style.width='80%';
                             inp.style.height='5%';
-                            inp.style.margin='';
-                            inp.style.padding='';
+                            inp.style.margin='4% 10%';
+                            
                             inp.style.outline='none';
                             inp.style.backgroundColor='rgba(255,255,255,0.3)';
                             inp.style.border='2px solid #fff';
@@ -523,14 +524,16 @@
                             inp.style.fontWeight='300';
                             inp.style.fontSize='18pt';
                             inp.style.letterSpacing='2px';
-                            inp.style.zIndex='2px';
-                            searchbtn.style.zIndex='2px';
-                            cancel.style.zIndex='2px';
-                            searchbtn.style.position='absolute';
-                            searchbtn.style.left='60%';
-                            searchbtn.style.top='2%';
-                            cancel.style.left='30%';
-                            cancel.style.top='2%';
+                         
+							searchbtn.style.marginLeft = '10%';
+							cancel.style.float = 'right';
+							
+                            btnrow.style.position='absolute';
+							btnrow.style.width = '100%';
+							btnrow.style.zIndex = '1';
+                           // searchbtn.style.left='60%';
+                         
+							
                             var grd, 
                                 keys_down = [], 
                                 letters = [];
@@ -785,8 +788,9 @@ window.requestAnimationFrame = (function(){
 										var resultsun = sresp.username;
 										var resultsavi = sresp.avatar;
 										var resultsuid = sresp.uid;
-										addbtn.style.position='absolute';
+										//addbtn.style.position='absolute';
 										addbtn.className = 'whitebtn';
+										addbtn.style.margin = '0 30%';
                                         inp.placeholder = 'search by user email';
 							            inp.id = 'searchinp';
 										addbtn.innerHTML = "Invite to play";
@@ -794,27 +798,19 @@ window.requestAnimationFrame = (function(){
 										addbtn.style.color='white';
             
 										img.src = resultsavi;
+										img.style.width = '30%';
+										img.style.margin = '4% 35%';
 										p.innerHTML = resultsun;
-										frienddiv.appendChild(resultsdiv);
+										p.style.width = '100%';
+										p.style.textAlign = 'center';
+										
+										
 										resultsdiv.style.padding = '4%';
-										resultsdiv.appendChild(img);
-										resultsdiv.appendChild(p);
-										resultsdiv.appendChild(addbtn);
+										btnrow.appendChild(img);
+										btnrow.appendChild(p);
+										btnrow.appendChild(addbtn);
                                         resultsdiv.style.position='absolute';
-										img.style.position='absolute';
-                                        frienddiv.style.position='absolute';
-                                        p.style.position='absolute';
-                                        img.style.top='400%';
-                                        img.style.left='450%';
-                                        img.style.width='300%';
-                                        p.style.top='700%';
-                                        p.style.left='500%';
-                                        p.style.width='300%';
-                                        addbtn.style.top='800%';
-                                        addbtn.style.left='500%';
-                                        addbtn.style.width='300%';
-                                        console.log(addbtn,p,img,resultsdiv);
-										//frienddiv.appendChild(resultsdiv);
+										
 										
 										addbtn.onclick = function(){
 											
@@ -925,6 +921,7 @@ window.requestAnimationFrame = (function(){
 					bigbtn.style.fontSize = '100%';
 					bigbtn.style.backgroundColor = '#27A5A1';
 					bigbtn.style.textAlign = 'center';
+					bigbtn.style.letterSpacing = '2px';
 					
 					bigbtndiv.appendChild(bigbtn);
 					
@@ -941,6 +938,7 @@ window.requestAnimationFrame = (function(){
 					deletebtn.style.fontSize = '100%';
 					deletebtn.style.backgroundColor = '#c13232';
 					deletebtn.style.textAlign = 'center';
+					deletebtn.style.letterSpacing = '2px';
 					
 					bigbtndiv.appendChild(deletebtn);
 					
@@ -1054,15 +1052,10 @@ window.requestAnimationFrame = (function(){
 								frienddiv.innerHTML = '';
 								frienddiv.style.display = 'none';
 								
-								
-								
 							};
 							
 							surebtn.onclick = function(){
 							
-							
-							
-						
 							
 								 $.ajax({
 									 url:"server/endgame.php",
