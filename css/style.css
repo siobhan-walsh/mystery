@@ -1058,24 +1058,21 @@ margin-left:20%;
 	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
 	color: #FFF;*/
     color:#ffffff;
-<<<<<<< HEAD
-    font-family: 'Merriweather Sans', sans-serif;
     font-weight: 300;
 	line-height:1.2;
-=======
+    font-size:20pt;
     font-family: 'amble'
->>>>>>> master
+
 }
 
 #termOfUse {
     color:#ffffff;
-<<<<<<< HEAD
+    font-size:20pt;
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: 300;
 	line-height:1.2;
 =======
     font-family: 'amble'
->>>>>>> master
     /*
    background-color: #27A5A1;
 	text-transform: uppercase;
@@ -1095,12 +1092,10 @@ margin-left:20%;
 }
 
 #set {
-    
-	width:90%;
-	margin:4% 5%;
-	text-align:center
-   /* float:inherit;
-    margin-left:18%; */
+    margin-left:10%;
+	width:75%;
+	
+	
 }
 #set p{
     font-size: 10pt;
@@ -1114,6 +1109,10 @@ margin-left:20%;
 	line-height: 135%;
 	margin-left: 10px;
 	
+}
+#set p2{
+    float:center;
+    margin-left:20%;
 }
 #set input{
     font-family: 'Merriweather Sans', sans-serif;
