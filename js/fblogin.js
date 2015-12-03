@@ -67,7 +67,7 @@ window.fbAsyncInit = function() {
 														
 														if(loginresp.status == 'success'){
 															
-															//window.location = "direction.php"
+															window.location = "direction.php"
 															
 															console.log("ya you're logged in ok");
 															

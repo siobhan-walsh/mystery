@@ -6,7 +6,7 @@ $(document).ready(function(){
                 var fname = document.getElementById('fname');
                 var lname = document.getElementById('lname');
                 var email = document.getElementById('email');
-                var un = document.getElementById('username');
+                var un = document.getElementById('username2');
                 var pw = document.getElementById('pw');
                 var pwRetype = document.getElementById('pwRetype');
                 var validnames = false;
