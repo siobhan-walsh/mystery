@@ -29,7 +29,10 @@
         </div>
         
         </div>
-<script src="js/buttons.js"></script>        
+<script src="js/fblogin.js"></script>        
+
+
+<!--
     <script>
         window.onload = function(){
 
@@ -169,6 +172,7 @@
         };
          
   
-    </script>  
+    </script> 
+    --> 
     </body>
 </html>

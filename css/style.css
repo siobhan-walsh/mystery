@@ -109,7 +109,7 @@ a:hover {
 }
 
 .center {
-    width: 60%;
+    width: 90%;
     margin:auto;
 
 }
@@ -359,7 +359,7 @@ text-align: left;
   outline: 0;
   border: 3px solid rgba(255, 255, 255, 0.4);
   background-color: rgba(255, 255, 255, 0.2);
-  width: 90%;
+  width: 80%;
   height: 6vh;
   border-radius: 5px;
   padding: 10px 15px;
@@ -379,7 +379,7 @@ text-align: left;
   outline: 0;
   border: 3px solid rgba(255, 255, 255, 0.4);
   background-color: rgba(255, 255, 255, 0.2);
-  width: 90%;
+  width: 80%;
   height: 6vh;
   border-radius: 5px;
   padding: 10px 15px;
@@ -400,13 +400,13 @@ text-align: left;
 }
 .container #password:focus {
 background-color: white;
-  width: 100%;
+  width: 90%;
   margin: 4% 0;
   color: #27A5A1;
 } 
 .container #username:focus {
   background-color: white;
-  width: 100%;
+  width: 90%;
   margin: 4% 0;
   color: #27A5A1;
 }
