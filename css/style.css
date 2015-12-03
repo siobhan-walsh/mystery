@@ -1,18 +1,23 @@
 /* style for mystery --- view site in mobile view for best results*/
 
 body {
-    margin:0;
+    /*margin:0;
     padding:0;
     background-color: #D4D4D4;
     font-family: 'Merriweather Sans', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
 	line-height:1.2;
+    font-size: 20ft; 
+	letter-spacing: 1px;*/
+
 	
 	
     	
 }
 
-
+.content p2 {
+    margin-left:23%;
+}
 .whitebtn {
 	display: inline-block;
 	color: #666;
@@ -52,12 +57,7 @@ body {
 
 p {
 	
-	
-	font-size: 100%;
-	font-family: 'Merriweather Sans', sans-serif;
-    font-weight: 300;
-    text-align:left;  
-	letter-spacing: 5px;
+
 
     }
 	
@@ -228,8 +228,36 @@ text-align: left;
    
 }
 /* ============= MAIN CONTENT STYLES ============= */
+.content {
 
+    padding: 10%;
+}
 
+.content p{
+         font-size: 10pt;
+	font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:135%;
+    text-align:left;  
+	padding-left: 15px;
+	margin-bottom: 12%;
+	letter-spacing: 3px;
+
+	margin-left: 10px;
+}
+
+#rinfo{
+         font-size: 10pt;
+	font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+	line-height:135%;
+    text-align:left;  
+	padding-left: 15px;
+	margin-bottom: 12%;
+	letter-spacing: 3px;
+
+	margin-left: 10px;
+}
 .content h4 {
     text-align:center;   
 }
@@ -549,19 +577,17 @@ background-color: white;
 }
 .login-buttons {
     width: 60%;
-    margin-left:12%;
+    margin:auto;
     padding-top: 40px;
 }
 .buttons {
     background-color:#27A5A1;
     color:#ffffff;
     border:none;
-  
+    float:left;
     text-transform: uppercase;
     width:122%;
     font-size:12pt;
- 
-
     margin-bottom:20px;
     padding: 3% 3%;
     border-radius: 5%;
@@ -661,7 +687,7 @@ input[placeholder]{
 
 .blogo img {
 	
-	width:35;
+	width:30;
 	margin:0 38%;
 	
 }
@@ -673,7 +699,7 @@ input[placeholder]{
     border-color:#ffffff;
     border-width: 1px;
     clear:both;
-   margin:left;
+    float:left;
     width:115%;
     font-size:12pt;
     margin-bottom:20px;
@@ -926,10 +952,6 @@ margin-left:20%;
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
   border: 3px solid rgba(0,0,0,0);
-
-
-
-
 }
 
 .feedback-input:focus{
@@ -998,30 +1020,21 @@ margin-left:20%;
 }
 
 #feedback{
-
-	text-transform: uppercase;
-  float:left;
+	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+	float:left;
 	width: 100%;
 	border: #fbfbfb solid 4px;
 	cursor:pointer;
-	background-color: #27A5A1;
-	 color:#ffffff;
+	background-color: #3498db;
+	color:white;
 	font-size:24px;
 	padding-top:22px;
 	padding-bottom:22px;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
-    -moz-border-radius: 4px;
-  -webkit-border-radius: 5px;
-  border: 1px solid rgba(0,0,0,0.3);
-
   margin-top:-4px;
   font-weight:700;
-
-
-
-
 }
 
 #feedback:hover{
