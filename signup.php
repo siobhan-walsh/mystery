@@ -62,7 +62,12 @@
                     </div>
                 </div>
                 
-        		<div class="wrapper">
+        		
+
+        	</div>
+        </div>
+        
+        <div class="wrapper">
                     <ul class="bg-bubbles">
                         <li></li>
                         <li></li>
@@ -76,10 +81,6 @@
                         <li></li>
                     </ul>
                   </div>
-
-        	</div>
-        </div>
-        
         <div class='underfooter'></div>
         <div class = 'footer'>
 

@@ -5,10 +5,11 @@
     <body> 
  
         <div class = 'tablet-size'>
+        
         <div class = 'scroll'>   
         
         <div class = 'content'>
-            
+           
             
             <div><img class = 'biglogo' src = 'img/logo.png'></div>
           
@@ -22,6 +23,20 @@
             </div>
             
         </div>
+         <div class="wrapper">
+        <ul class="bg-bubbles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                  </div>
         
         <div class='underfooter'>
 

@@ -12,7 +12,7 @@
                 <div class='blogo'><img src = 'img/logo.png'></div>
                 
             </div> 
-            <div class="wrapper">
+           
 
             <div class = 'content'>
 
@@ -22,29 +22,20 @@
                 </div>
                 <div class=' center'>
                 	<div class="container">
-							<form class="form">
-                   <h1>Welcome</h1>
-                    <span id='warn' style='color:red'></span>
-                    <input type='text' id='username' class='textbox' placeholder="username" required='true'>
-                    <input type='password' id='password' class='textbox' placeholder="password" required='true'>
-                    
-                   <!-- <p class='right-text '><small>Forgot your password?</small></p><br>
-                    
-                   
-                   
-                   <img src='img/enter-btn.png' id='enter'> 
-                   
-                   -->
-                   <input type='button' class='buttons2' id='loginbtn' value="Login">
-                  <!--  <input type='button' id='fbbutton' class='buttons' value="Login through facebook">
-                   		
-                    <button id='check'>check</button> -->
-                    		</form>
-                    			</div>
+                        <form class="form">
+                            <h1>Welcome</h1>
+                            <span id='warn' style='color:red'></span>
+                            <input type='text' id='username' class='textbox' placeholder="username" required='true'>
+                            <input type='password' id='password' class='textbox' placeholder="password" required='true'>
+                            
+                           <input type='button' class='buttons2' id='loginbtn' value="Login">
+                          
+                    	</form>
+                    </div>
                 </div>
                 </div>
                 
-
+ <div class="wrapper">
 	<ul class="bg-bubbles">
 		<li></li>
 		<li></li>
