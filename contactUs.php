@@ -7,10 +7,10 @@
 
         
         <div class = 'content'>
-            <h4>Contact Us</h4>
+            <h1>Contact Us</h1>
 <div id="form-main">
   <div id="form-div">
-  <p>drop us a line, let us know what you think.</p>
+  <h2>Drop us a line, let us know what you think.</h2>
   <form action="" method="post" class="form" id="form1">
       <p class="fn">
         <input name="firstname" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="fn" />
@@ -18,23 +18,31 @@
       <p class="ln">
         <input name="lastname" type="text" class="validate[required,custom[email]] feedback-input" id="ln" placeholder="Last Name" />
       </p>
-  <label>1star: 
+  <div id="stars">
+  <label><img id="ratingstar" src="img/rating.png"/>
   <input name="1star" type="checkbox" value="1star" /><br /></label>
-  <label>2stars: 
+  <label><img id="ratingstar" src="img/rating.png"/><img id="ratingstar" src="img/rating.png"/>
   <input name="2stars" type="checkbox" value="2stars" /><br /></label>
-  <label>3stars: 
+  <label><img id="ratingstar" src="img/rating.png"/><img id="ratingstar" src="img/rating.png"/><img id="ratingstar" src="img/rating.png"/>
   <input name="3stars" type="checkbox" value="3stars" /><br /></label>
-  <label>4stars: 
+  <label><img id="ratingstar" src="img/rating.png"/>
+      <img id="ratingstar" src="img/rating.png"/>
+      <img id="ratingstar" src="img/rating.png"/>
+      <img id="ratingstar" src="img/rating.png"/>
   <input name="4stars" type="checkbox" value="4stars" /><br /></label>
-  <label>5stars: 
+  <label><img id="ratingstar" src="img/rating.png"/>
+      <img id="ratingstar" src="img/rating.png"/>
+      <img id="ratingstar" src="img/rating.png"/>
+      <img id="ratingstar" src="img/rating.png"/>
+      <img id="ratingstar" src="img/rating.png"/>
   <input name="5stars" type="checkbox" value="5stars" /><br /></label>
-  <br>
+    </div>  
       <p class="msgFee">
         <textarea name="comments" class="validate[required,length[6,300]] feedback-input" id="msgFee" placeholder="Comment"></textarea>
       </p>
      
       <div class="feedback">
-        <input id="feedback" name="submitted" type="submit" value="Submit" />
+        <input id="feedback"  name="submitted" type="submit" value="Submit" />
   <input id="feedback" name="reset" type="reset" value="Reset Form" />
  
         <div class="ease"></div>

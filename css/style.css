@@ -974,28 +974,27 @@ margin-left:20%;
 
 #form-main{
 	width:100%;
-	float:left;
+	float:center;
 	padding-top:0px;
 }
 
 #form-div {
 	background-color:rgba(72,72,72,0.4);
-	padding-left:35px;
-	padding-right:35px;
-	padding-top:35px;
-	padding-bottom:50px;
-	width: 450px;
-	float: left;
-	left: 50%;
-	position: absolute;
-  margin-top:30px;
-	margin-left: -260px;
+	padding-left:10%;
+	padding-right:10%;
+	padding-top:5%;
+	padding-bottom:10%;
+	width: 50%;
+	float: center;
+	height:50%;
+    margin-top:10%;
+	margin-left: 16%;
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
 }
 
 .feedback-input {
-	color:#006666;
+	color:#3c3c3c;
 	font-family: Helvetica, Arial, sans-serif;
   font-weight:500;
 	font-size: 18px;
@@ -1015,17 +1014,26 @@ margin-left:20%;
 .feedback-input:focus{
 	background: #fff;
 	box-shadow: 0;
-	border: 3px solid #3498db;
-	color: #3498db;
+	border: 3px solid #27A5A1;
+	color: #27A5A1;
 	outline: none;
   padding: 13px 13px 13px 54px;
 }
-
+/*
 .focused{
-	color:#30aed6;
+	color:#27A5A1;
+
 	border:#30aed6 solid 3px;
 }
-
+*/
+#stars {
+    margin-left:25%;
+   
+}
+#ratingstar {
+    width:8%;
+    height:8%;
+}
 /* Icons ---------------------------------- */
 #fn{
 	background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
@@ -1079,16 +1087,15 @@ margin-left:20%;
 
 #feedback{
 	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-	float:left;
-	width: 100%;
-	border: #C8C8C8 solid 4px;
+	margin-left:14%;
+	width: 80%;
+	border: #fbfbfb solid 1%;
 	cursor:pointer;
 	background-color: #27A5A1;
 	color:white;
 	font-size:24px;
 	padding-top:22px;
 	padding-bottom:22px;
-  text-transform: uppercase;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
@@ -1098,13 +1105,13 @@ margin-left:20%;
 
 #feedback:hover{
 	background-color: rgba(0,0,0,0);
-	color: #0493bd;
+	color: #27A5A1;
 }
 	
 .feedback:hover {
-	color: #3498db;
+	color: #27A5A1;
 }
-	
+	/*
 .ease {
 	width: 0px;
 	height: 74px;
@@ -1115,7 +1122,7 @@ margin-left:20%;
 	-ms-transition: .3s ease;
 	transition: .3s ease;
 }
-
+*/
 .feedback:hover .ease{
   width:100%;
   background-color:white;
