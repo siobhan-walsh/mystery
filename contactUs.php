@@ -21,17 +21,6 @@
                           </p>
                       <div id="stars">
                       
-                      <div id='starry'>
-                      	<p>rating</p>
-                        <span>&#9733;</span>
-                        <span>&#9733;</span>
-                        <span>&#9733;</span>
-                        <span>&#9733;</span>
-                        <span>&#9733;</span>
-                        
-                      
-                      </div>
-                      
                           <label>
                           	<img id="ratingstar" src="img/rating.png"/>
                           	<input name="1star" type="checkbox" value="1star" /><br />
@@ -71,6 +60,7 @@
                           	  <input name="5stars" type="checkbox" value="5stars" />
                               <br />
                          </label>
+               
                          
                       	</div>  
                         <p class="msgFee">
@@ -97,7 +87,7 @@
      
 <script>
  $(document).ready(function() {
-
+	 
     $("#feedback").click(function() {                
 
       $.ajax({    
