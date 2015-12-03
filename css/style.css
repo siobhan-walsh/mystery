@@ -549,17 +549,19 @@ background-color: white;
 }
 .login-buttons {
     width: 60%;
-    margin:auto;
+    margin-left:12%;
     padding-top: 40px;
 }
 .buttons {
     background-color:#27A5A1;
     color:#ffffff;
     border:none;
-    float:left;
+  
     text-transform: uppercase;
     width:122%;
     font-size:12pt;
+ 
+
     margin-bottom:20px;
     padding: 3% 3%;
     border-radius: 5%;
@@ -659,7 +661,7 @@ input[placeholder]{
 
 .blogo img {
 	
-	width:30;
+	width:35;
 	margin:0 38%;
 	
 }
@@ -671,7 +673,7 @@ input[placeholder]{
     border-color:#ffffff;
     border-width: 1px;
     clear:both;
-    float:left;
+   margin:left;
     width:115%;
     font-size:12pt;
     margin-bottom:20px;
@@ -924,6 +926,10 @@ margin-left:20%;
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
   border: 3px solid rgba(0,0,0,0);
+
+
+
+
 }
 
 .feedback-input:focus{
@@ -992,21 +998,30 @@ margin-left:20%;
 }
 
 #feedback{
-	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-	float:left;
+
+	text-transform: uppercase;
+  float:left;
 	width: 100%;
 	border: #fbfbfb solid 4px;
 	cursor:pointer;
-	background-color: #3498db;
-	color:white;
+	background-color: #27A5A1;
+	 color:#ffffff;
 	font-size:24px;
 	padding-top:22px;
 	padding-bottom:22px;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
+    -moz-border-radius: 4px;
+  -webkit-border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.3);
+
   margin-top:-4px;
   font-weight:700;
+
+
+
+
 }
 
 #feedback:hover{
