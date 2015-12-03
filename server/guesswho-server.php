@@ -1,18 +1,6 @@
 <?php
-    // http://php.net/manual/en/function.session-start.php
-    // http://stackoverflow.com/questions/11768816/php-session-variables-not-preserved-with-ajax
-    // http://stackoverflow.com/questions/9560240/how-session-start-function-works
-    // get the session
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-
-	$DBHost = 'localhost';
-	$dblogin = 'root';
-	$DBpassword = 'root';
-	$DBname = 'mystery';
-
-
+   
+   include("connection.php");
 
 
     $methodType = $_SERVER['REQUEST_METHOD'];

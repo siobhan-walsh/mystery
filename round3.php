@@ -70,7 +70,7 @@
 					chreminder.appendChild(img);
 					chreminder.appendChild(p);
 					
-					rinfo.style.width = '100%';
+					
 					rinfo.style.float = 'left';
 					rinfo.innerHTML = roundinfo['msg'];
 					

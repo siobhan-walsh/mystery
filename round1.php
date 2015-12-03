@@ -49,7 +49,6 @@
 					 round:'round1'
 					},
 				success:function(roundinfo){
-					console.log('roundinfo is', roundinfo);
 					
 					var img = document.createElement('img');
 					var p = document.createElement('p');
@@ -60,7 +59,7 @@
 					
 					p.style.margin = '0';
 					
-					stitle.style.fontSize = '350%';
+					stitle.style.fontSize = '300%';
 					
 					chreminder.style.width = '80%';
 					chreminder.style.margin = '0 10%';
@@ -70,7 +69,7 @@
 					chreminder.appendChild(img);
 					chreminder.appendChild(p);
 					
-					rinfo.style.width = '100%';
+				
 					rinfo.style.float = 'left';
 					rinfo.innerHTML = roundinfo['msg'];
 					

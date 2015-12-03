@@ -8,55 +8,92 @@
         
         <div class = 'content'>
             <h1>Contact Us</h1>
-<div id="form-main">
-  <div id="form-div">
-  <h2>Drop us a line, let us know what you think.</h2>
-  <form action="" method="post" class="form" id="form1">
-      <p class="fn">
-        <input name="firstname" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="fn" />
-      </p>
-      <p class="ln">
-        <input name="lastname" type="text" class="validate[required,custom[email]] feedback-input" id="ln" placeholder="Last Name" />
-      </p>
-  <div id="stars">
-  <label><img id="ratingstar" src="img/rating.png"/>
-  <input name="1star" type="checkbox" value="1star" /><br /></label>
-  <label><img id="ratingstar" src="img/rating.png"/><img id="ratingstar" src="img/rating.png"/>
-  <input name="2stars" type="checkbox" value="2stars" /><br /></label>
-  <label><img id="ratingstar" src="img/rating.png"/><img id="ratingstar" src="img/rating.png"/><img id="ratingstar" src="img/rating.png"/>
-  <input name="3stars" type="checkbox" value="3stars" /><br /></label>
-  <label><img id="ratingstar" src="img/rating.png"/>
-      <img id="ratingstar" src="img/rating.png"/>
-      <img id="ratingstar" src="img/rating.png"/>
-      <img id="ratingstar" src="img/rating.png"/>
-  <input name="4stars" type="checkbox" value="4stars" /><br /></label>
-  <label><img id="ratingstar" src="img/rating.png"/>
-      <img id="ratingstar" src="img/rating.png"/>
-      <img id="ratingstar" src="img/rating.png"/>
-      <img id="ratingstar" src="img/rating.png"/>
-      <img id="ratingstar" src="img/rating.png"/>
-  <input name="5stars" type="checkbox" value="5stars" /><br /></label>
-    </div>  
-      <p class="msgFee">
-        <textarea name="comments" class="validate[required,length[6,300]] feedback-input" id="msgFee" placeholder="Comment"></textarea>
-      </p>
-     
-      <div class="feedback">
-        <input id="feedback"  name="submitted" type="submit" value="Submit" />
-  <input id="feedback" name="reset" type="reset" value="Reset Form" />
- 
-        <div class="ease"></div>
-      </div>
-        </form>
-    </div>
-  </div>    
+            
+            <div id="form-main">
+              <div id="form-div">
+                  <h2>Drop us a line, let us know what you think.</h2>
+                  <form action="" method="post" class="form" id="form1">
+                          <p class="fn">
+                            <input name="firstname" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="fn" />
+                          </p>
+                          <p class="ln">
+                            <input name="lastname" type="text" class="validate[required,custom[email]] feedback-input" id="ln" placeholder="Last Name" />
+                          </p>
+                      <div id="stars">
+                      
+                      <div id='starry'>
+                      	<p>rating</p>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        
+                      
+                      </div>
+                      
+                          <label>
+                          	<img id="ratingstar" src="img/rating.png"/>
+                          	<input name="1star" type="checkbox" value="1star" /><br />
+                          </label>
+                          
+                          <label>
+                          	<img id="ratingstar" src="img/rating.png"/>
+                            <img id="ratingstar" src="img/rating.png"/>
+                          	<input name="2stars" type="checkbox" value="2stars" />
+                          	<br />
+                          </label>
+                          
+                          <label>
+                          	<img id="ratingstar" src="img/rating.png"/>
+                            <img id="ratingstar" src="img/rating.png"/>
+                            <img id="ratingstar" src="img/rating.png"/>
+                          	<input name="3stars" type="checkbox" value="3stars" />
+                            <br />
+                          </label>
+                          
+                          <label>
+                          	<img id="ratingstar" src="img/rating.png"/>
+                            <img id="ratingstar" src="img/rating.png"/>
+                            <img id="ratingstar" src="img/rating.png"/>
+                            <img id="ratingstar" src="img/rating.png"/>
+                          	<input name="4stars" type="checkbox" value="4stars" />
+                            <br />
+                          </label>
+                          
+                          
+                          <label>
+                          	  <img id="ratingstar" src="img/rating.png"/>
+                              <img id="ratingstar" src="img/rating.png"/>
+                              <img id="ratingstar" src="img/rating.png"/>
+                              <img id="ratingstar" src="img/rating.png"/>
+                              <img id="ratingstar" src="img/rating.png"/>
+                          	  <input name="5stars" type="checkbox" value="5stars" />
+                              <br />
+                         </label>
+                         
+                      	</div>  
+                        <p class="msgFee">
+                        	<textarea name="comments" class="validate[required,length[6,300]] feedback-input" id="msgFee" placeholder="Comment"></textarea>
+                        </p>
+                         
+                        <div class="feedback">
+                            <input id="feedback" class='buttons' name="submitted" type="submit" value="Submit" />
+                      		<input id="feedback" class='buttons' name="reset" type="reset" value="Reset Form" />
+                     
+                            <div class="ease"></div>
+                            
+                        </div>
+                   </form>
+                </div>
+              </div>    
                 
                
             
 
             
         </div>
-     <script src='js/backbtn.js'></script>  
+
      
 <script>
  $(document).ready(function() {
@@ -70,10 +107,11 @@
         success: function(response){                    
             $("#responsecontainer").html(response); 
             //alert(response);
-        }
-alert("Data: " + data + "\nStatus: " + status);
-    });
-});
+       
+			alert("Data: " + data + "\nStatus: " + status);
+		}
+    	});
+	});
    
 });
 </script> 

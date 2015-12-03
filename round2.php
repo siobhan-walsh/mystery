@@ -49,7 +49,7 @@
 					 round:'round2'
 					},
 				success:function(roundinfo){
-					console.log('roundinfo is', roundinfo);
+					
 					
 					var img = document.createElement('img');
 					var p = document.createElement('p');
@@ -70,7 +70,7 @@
 					chreminder.appendChild(img);
 					chreminder.appendChild(p);
 					
-					rinfo.style.width = '100%';
+					
 					rinfo.style.float = 'left';
 					rinfo.innerHTML = roundinfo['msg'];
 					
