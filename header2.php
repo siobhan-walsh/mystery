@@ -112,7 +112,7 @@
                         console.log(jqXHR.statusText, textStatus);
                   
 				console.log('lame errors');
-				//window.location = "/index.php";
+				window.location = "/index.php";
 			}
 			
 		});	

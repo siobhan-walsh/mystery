@@ -12,6 +12,7 @@
                 <div class='blogo'><img src = 'img/logo.png'></div>
                 
             </div> 
+            <div class="wrapper">
 
             <div class = 'content'>
 
@@ -41,8 +42,9 @@
                     		</form>
                     			</div>
                 </div>
+                </div>
                 
-<div class="wrapper">
+
 	<ul class="bg-bubbles">
 		<li></li>
 		<li></li>
@@ -60,11 +62,11 @@
             <div class = 'footer'>
 </div>
            
-            </div>
+            
         
   			
        </div> 
-    <script src="js/buttons.js"></script>    
+
 
     <script>
 	

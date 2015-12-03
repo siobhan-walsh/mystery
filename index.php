@@ -5,11 +5,7 @@
     <body> 
  
         <div class = 'tablet-size'>
-        <div class = 'header'>
-            
-        
-        </div>
-                  
+        <div class = 'scroll'>   
         
         <div class = 'content'>
             
@@ -29,6 +25,7 @@
 
         <div class = 'footer'>
         
+        </div>
         </div>
         
         </div>
