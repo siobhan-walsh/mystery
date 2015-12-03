@@ -8,9 +8,10 @@
         <div id = 'footer' class = 'footer'>
            <!--  <a href='themes.php'><img id= 'homey' src = 'img/homeicon.png' alt='home'></a> -->
             <a href = 'direction.php'><img src = 'img/gameicon.png' alt='game'></a>
-            
+            <img src = 'img/black.png'>
+            <img src = 'img/black.png'>
            
-            <a href= 'settings.php'><img src = 'img/settingsicon.png' alt='settings'></a>
+            <a href= 'contactus.php'><img src = 'img/contactus.png' alt='contact'></a>
         
 		</div>
         

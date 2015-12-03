@@ -10,7 +10,7 @@
             <h4>Contact Us</h4>
 <div id="form-main">
   <div id="form-div">
-  <p>Fill out the form b  elow.</p>
+  <p>drop us a line, let us know what you think.</p>
   <form action="" method="post" class="form" id="form1">
       <p class="fn">
         <input name="firstname" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="fn" />
@@ -28,6 +28,7 @@
   <input name="4stars" type="checkbox" value="4stars" /><br /></label>
   <label>5stars: 
   <input name="5stars" type="checkbox" value="5stars" /><br /></label>
+  <br>
       <p class="msgFee">
         <textarea name="comments" class="validate[required,length[6,300]] feedback-input" id="msgFee" placeholder="Comment"></textarea>
       </p>
