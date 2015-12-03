@@ -14,15 +14,10 @@
         
         </div>
 
-		<!--<script src='js/backbtn.js'></script>-->
-        
+		
         <script>
 			$(document).ready(function(){
-				
-
-				
-				//var add = document.querySelectorAll('.add');
-				
+			
 				var content = document.querySelector('.content');
 				
 				var character = 'b';
@@ -31,12 +26,7 @@
 				var pendingarr = [];
 				var acceptedarr = [];
 				
-				//global array for pending response characters
 				
-				//acceptedarr = [] global array for accepted response characters
-				
-				
-				//if characterid is not in accepter array, AND is not in pending
 				var frienddiv = document.createElement('div');
 				var theight = $('.header').height();
 				var bheight = $('.footer').height();
@@ -44,7 +34,6 @@
 				
 			
 				frienddiv.id = 'frienddiv';
-				//frienddiv.style.top = theight + 'px';
 				frienddiv.style.width = '100%';
 				frienddiv.style.height = '80vh';
 				frienddiv.style.bottom = '0px';
@@ -63,7 +52,6 @@
 				
 				
 				
-				//first get the character info and push to the global array
 				
 				function getcharacters(){
 				
@@ -74,7 +62,7 @@
 						success:function(characterresp){
 							
 							
-								//console.log('characterresp zero is', characterresp[0]);
+								
 								
 								characterrespSize = objectSize(characterresp);
 								
@@ -106,8 +94,7 @@
 				
 				};
 				
-				//then get the host's character info
-				
+		
 				function hostscharacter(){
 				
 				$.ajax({
@@ -188,7 +175,7 @@
 	
 							},
 							error: function(jqXHR, textStatus, errorThrown) {
-									//console.log(jqXHR.statusText, textStatus, errorThrown);
+								
 									console.log('gcheck fail', jqXHR.statusText, textStatus);
 							  
 							}
@@ -214,29 +201,18 @@
 								
 								},
 							success:function(accepchar){
-								
-								
-								
-								console.log("accepchar is returned: ", accepchar);
-								
+							
 								
 								accepcharinfo = accepchar.acceptinfo;
 								
 								accepcharSize = objectSize(accepcharinfo) 
 								
-								console.log('accepchar is', accepchar);
-								
 								for(var i = 0; i< accepcharSize; i++){
-									
-									console.log('this is an array right');
 									
 									pendingarr.push(accepcharinfo[i].accch);
 									
 									achnum = accepcharinfo[i].accch - 1;
 									usname = accepcharinfo[i].accinfo;
-									
-									
-									console.log('achnum is', achnum);
 									
 									
 									
@@ -282,8 +258,8 @@
 								
 							},
 							error: function(jqXHR, textStatus, errorThrown) {
-									//console.log(jqXHR.statusText, textStatus, errorThrown);
-									console.log('accepchar fail', jqXHR.statusText, textStatus);
+								
+									console.log('accepchar fail', jqXHR.statusText, textStatus, errorThrown);
 							  
 							}
 							
@@ -293,7 +269,7 @@
 						
 				};
 						
-					//then show the characters that have already been assigned to a user	
+		
 					
 				function otheruserscharacters(){
 				
@@ -310,27 +286,16 @@
 							success:function(gamecharcheck){
 								
 								
-								
-								console.log("gamecharcheck info returned: ", gamecharcheck);
-								
 								takenchinfo = gamecharcheck.takeninfo;
 								
 								takenchinfoSize = objectSize(takenchinfo) 
 								
-								console.log('takenchinfo is', takenchinfo);
-								
 								for(var i = 0; i< takenchinfoSize; i++){
-									
-									console.log('this is an array right');
 									
 									pendingarr.push(takenchinfo[i].takench);
 									
 									chnum = takenchinfo[i].takench - 1;
 									usname = takenchinfo[i].takeninfo;
-									
-									
-									console.log('chnum is', chnum);
-									
 									
 									
 									var charname = document.createElement('h3');
@@ -374,7 +339,7 @@
 							},
 							error: function(jqXHR, textStatus, errorThrown) {
 									//console.log(jqXHR.statusText, textStatus, errorThrown);
-									console.log('gcheck fail', jqXHR.statusText, textStatus);
+									console.log('gcheck fail', jqXHR.statusText, textStatus, errorThrown);
 							  
 							}
 							
@@ -385,7 +350,6 @@
 				};
 				
 				function unassignedCharacters(){
-						console.log('characterstuff is a thing', characterstuff);
 						
 						characterstuffSize = objectSize(characterstuff);
 						
@@ -394,14 +358,11 @@
 						
 						var takenresult = (jQuery.inArray('4', pendingarr));
 						
-						console.log('is 4 in the array', takenresult);
-						
 						for(var i = 0; i < characterstuffSize; i++){
 							
 							
 							if(jQuery.inArray(characterstuff[i]['character_id'], pendingarr) == -1){
 								
-								console.log('these characters are free', characterstuff[i]['character_id']);
 								
 								
 								
@@ -430,11 +391,7 @@
 											
 											var charcontent = document.createElement('div');
 											charcontent.className = 'charcontent';
-											charcontent.innerHTML = characterstuff[i]['character_description'];
-											
-											console.log('img src is', characterstuff[i]['character_img']);
-											
-											
+											charcontent.innerHTML = characterstuff[i]['character_description'];		
 											
 											add.appendChild(plusimg);
 											add.appendChild(span);
@@ -456,8 +413,6 @@
 								
 							} else if(jQuery.inArray(characterstuff[i]['character_id'], pendingarr) == 0){
 								
-								console.log('these characters are not free', characterstuff[i]['character_id']);
-								
 							}
 							
 							
@@ -468,15 +423,13 @@
 			function blindClick(i) {	
 				 return function(){
 				
-					console.log('assigning character to firend');
+					
 					content.style.filter = 'blur(1px)';
 					
 					//put assigning character functionality here
 					
 					var character_id = this.id;
 							
-							console.log('character_id is', character_id);
-			
 							var inp = document.createElement('input');
 							var searchbtn = document.createElement('button');
 							var br = document.createElement('br');
@@ -516,7 +469,7 @@
                             inp.style.width='80%';
                             inp.style.height='5%';
                             inp.style.margin='4% 10%';
-                            
+                            inp.placeholder = "Enter friend's email address"
                             inp.style.outline='none';
                             inp.style.backgroundColor='rgba(255,255,255,0.3)';
                             inp.style.border='2px solid #fff';
@@ -726,7 +679,7 @@ window.requestAnimationFrame = (function(){
 							
 							var resultsdiv = document.createElement('div');
 
-							console.log(resultsdiv,frienddiv);
+						
 							cancel.innerHTML = 'cancel';
 							cancel.style.backgroundColor = '#27A5A1';
 							cancel.style.color = 'white';
@@ -814,8 +767,7 @@ window.requestAnimationFrame = (function(){
 										
 										addbtn.onclick = function(){
 											
-											console.log('sending request');
-											console.log('this character is', character_id);
+											
 											addbtn.style.backgroundColor = '#e3e3e3';
 											
                                             
@@ -850,8 +802,7 @@ window.requestAnimationFrame = (function(){
 											 	error: function(jqXHR, textStatus, errorThrown) {
 								
 													console.log(jqXHR.statusText, textStatus, errorThrown);
-													console.log('search error');
-												  
+													
 											
 										
 												}
@@ -870,9 +821,7 @@ window.requestAnimationFrame = (function(){
 							error: function(jqXHR, textStatus, errorThrown) {
 								
 								console.log(jqXHR.statusText, textStatus, errorThrown);
-								console.log('search error');
-								  
-							
+								
 						
 								}
 							
@@ -960,19 +909,9 @@ window.requestAnimationFrame = (function(){
 									 startgame:'startgame'
 									},
 								success:function(begin){
-									console.log('begin is', begin);
 									
 									window.location = 'direction.php';
 									
-									//update all the players to stage 5
-							
-								//"UPDATE game SET stage = 5 WHERE host_id= host_id;
-								
-									//then update the host to stage 4
-											
-								//UPDATE game SET stage = 4 WHERE player_id = host_id;
-									
-									//on success redirect to rounds page
 									
 								},
 								error: function(jqXHR, textStatus, errorThrown) {

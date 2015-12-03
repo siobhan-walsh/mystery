@@ -124,7 +124,7 @@ if (isset($_REQUEST['submitted'])) {
   if (empty($errors)) { 
   $from = "From: Mystery";
   
-  $to = "doraemonjay@hotmail.com"; 
+  $to = "swalsh32@my.bcit.ca"; 
   $subject = "Admin - Mystery Site Comment from " . $name . "";
   
   $message = "Message from " . $firstname . " " . $lastname . " 

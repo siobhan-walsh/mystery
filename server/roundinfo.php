@@ -43,7 +43,7 @@ include("connection.php");
 						
 						if($round == 'round1'){	
 						
-							$round1stuff = $conn->prepare("SELECT round1 FROM characters WHERE character_id = :chid;");
+							$round1stuff = $conn->prepare("SELECT character_name, character_img, round1 FROM characters WHERE character_id = :chid;");
 							$round1stuff->bindParam(":chid",  $chid);
 							
 							$round1stuff->execute();
@@ -52,12 +52,12 @@ include("connection.php");
 					
 				
 						
-							$data = array("status" => "success", 'msg' => $round1rows[0]['round1']);
+							$data = array("status" => "success", 'chname' => $round1rows[0]['character_name'], 'chimg' => $round1rows[0]['character_img'], 'msg' => $round1rows[0]['round1']);
 							
 					
 						} else if($round == 'round2'){
 							
-							$round2stuff = $conn->prepare("SELECT round2 FROM characters WHERE character_id = :chid;");
+							$round2stuff = $conn->prepare("SELECT character_name, character_img, round2 FROM characters WHERE character_id = :chid;");
 							$round2stuff->bindParam(":chid",  $chid);
 							
 							$round2stuff->execute();
@@ -66,11 +66,11 @@ include("connection.php");
 					
 				
 						
-							$data = array("status" => "success", 'msg' => $round2rows[0]['round2']);
+							$data = array("status" => "success", 'chname' => $round2rows[0]['character_name'], 'chimg' => $round2rows[0]['character_img'], 'msg' => $round2rows[0]['round2']);
 					
 						} else if($round == 'round3'){
 							
-							$round3stuff = $conn->prepare("SELECT round3 FROM characters WHERE character_id = :chid;");
+							$round3stuff = $conn->prepare("SELECT character_name, character_img, round3 FROM characters WHERE character_id = :chid;");
 							$round3stuff->bindParam(":chid",  $chid);
 							
 							$round3stuff->execute();
@@ -79,7 +79,7 @@ include("connection.php");
 					
 				
 						
-							$data = array("status" => "success", 'msg' => $round3rows[0]['round3']);
+							$data = array("status" => "success", 'chname' => $round3rows[0]['character_name'], 'chimg' => $round3rows[0]['character_img'], 'msg' => $round3rows[0]['round3']);
 							
 						};
 		
