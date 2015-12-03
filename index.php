@@ -3,15 +3,16 @@
 ?>
 
     <body> 
-        
+ 
         <div class = 'tablet-size'>
         <div class = 'header'>
             
         
         </div>
-        
+                  
         
         <div class = 'content'>
+            
             
             <div><img class = 'biglogo' src = 'img/logo.png'></div>
           
@@ -25,8 +26,7 @@
             </div>
             
         </div>
-        
-        
+
         <div class = 'footer'>
         
         </div>

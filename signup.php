@@ -20,7 +20,9 @@
                         <p>Already have an account? <a href = 'login.php'>Log in!</a></p><br>
                     </div>
                     <div class='center'>
-
+                	<div class="container">
+							<form class="form">
+                   <h1>Welcome</h1>
                         <input type='text' id='fname' class='nval textbox'  placeholder="first name" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
 
                         <input type='text' id='lname' class='nval textbox' placeholder="last" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$'>
@@ -45,7 +47,24 @@
                         <br><br>
                         <input type='button' id='signup'  class='buttons' value="Sign up!">
                        <input type='button' id='fbbutton' class='buttons' value="Sign up with facebook"> 
-                    </div>
+                                       		</form>
+                    			</div>
+                </div>
+                
+<div class="wrapper">
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+          </div>
 
                 </div>
 			<div class='underfooter'></div>
