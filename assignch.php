@@ -438,10 +438,15 @@
                             var canvas = document.createElement('canvas');
                             var context = canvas.getContext('2d');
 							var cancel = document.createElement('button');
+							var fbinvitebtn = document.createElement('button');
+										
+							fbinvitebtn.id = 'fbinvitebtn';
+							fbinvitebtn.innerHTML = "Invite friend's through facebook";
 							
 							cprow.id = 'cprow';
                             document.body.appendChild(cprow);
 							
+							btnrow.appendChild(fbinvitebtn);
 							btnrow.appendChild(inp);
 							btnrow.appendChild(searchbtn);
 							btnrow.appendChild(cancel);
@@ -738,12 +743,16 @@ window.requestAnimationFrame = (function(){
 										var p = document.createElement('p');
 										var addbtn = document.createElement('button');
 										
+										
 										var resultsun = sresp.username;
 										var resultsavi = sresp.avatar;
 										var resultsuid = sresp.uid;
 										//addbtn.style.position='absolute';
 										addbtn.className = 'whitebtn';
 										addbtn.style.margin = '0 30%';
+										
+										
+										
                                         inp.placeholder = 'search by user email';
 							            inp.id = 'searchinp';
 										addbtn.innerHTML = "Invite to play";
@@ -1030,6 +1039,20 @@ window.requestAnimationFrame = (function(){
 				
 				
 			});
+			
+			var fbinvite = document.getElementById('fbinvitebtn');
+			
+			fbinvite.onclick = function(){
+				 FB.init({appId: '989824554418300', xfbml: true, cookie: true});
+	
+				  FB.ui({
+					  method: 'send',
+					  name: 'Mystery',
+					  link: 'http://www.mystery.siobhanwalsh.ca/',
+					  });
+			};
+			
+			
 		</script>
         
         <?php 
