@@ -19,28 +19,10 @@
         
         </div>
 
-                
-
-<!--
-
-                <div class='buttonDiv'>
-
-                    <a href='game.php' ><button id='backbtn' class="btn">Back</button> </a>
-                
-                 <a href='game.php' class="btn btn-blue" > Cancel</a>
-                     
-                </div>
-                
-        -->        
-
-       <script src='js/backbtn.js'></script>
-
-
+   
 <script>
     
     
-	  console.log('hi');
-	  
 	  var murdereris = '';
 	  var charinfo = [];
 
@@ -53,8 +35,6 @@
 				guesswho: 'showcharacters'
 				},
 			success:function(guesswhoresp){
-				
-				console.log("guesswhoresp is:", guesswhoresp);	
 				
 				var guesswholength = objectSize(guesswhoresp);
                 
@@ -119,26 +99,8 @@
 		function subGuess(i){
 			return function(){
 				
-				console.log('wow guessing');
 				var mid = this.id;
 			
-				
-				console.log('murderer is', murdereris);
-				
-				console.log('this id', mid);
-				
-				/*
-				var msgdiv = document.createElement('div');
-				
-				msgdiv.style.position = 'fixed';
-				msgdiv.style.top = '20vh';
-				msgdiv.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-				msgdiv.style.width = '80%';
-				msgdiv.style.margin = '10%';
-				msgdiv.innerHTML = 'Are you sure you want to select precious trump as your answer?';
-				
-				document.body.appendChild(msgdiv);
-				*/
 				
 				
 				if(mid == murdereris){

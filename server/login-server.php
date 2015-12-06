@@ -22,19 +22,19 @@
             && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
             // yes, is AJAX call
             // answer POST call and get the data that was sent
-            if(isset($_POST["un"]) && !empty($_POST["un"])
+            if(isset($_POST["email"]) && !empty($_POST["email"])
                 && isset($_POST["pw"]) && !empty($_POST["pw"])){
 
 
                 // get the data from the post and store in variables
-                $login = $_POST["un"];
+                $login = $_POST["email"];
                 $password = $_POST["pw"];
 	
                 try {
                     $conn = new PDO("mysql:host=$DBHost;dbname=$DBname", $dblogin, $DBpassword);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    $sql = "SELECT * FROM users WHERE user_name = :log AND password = :pwd;";
+                    $sql = "SELECT * FROM users WHERE email = :log AND password = :pwd;";
 					
 					//"SELECT * FROM users WHERE user_name = $login AND password = $password;";
 

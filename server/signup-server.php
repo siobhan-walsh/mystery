@@ -59,7 +59,7 @@ include("connection.php");
 						$statement->execute();
 						
 						
-					 $data = array("un" => $username, "pw" => $password);
+					 $data = array("un" => $username, "pw" => $password, 'email' => $email);
 					}
 
                 } catch(PDOException $e) {
@@ -68,7 +68,7 @@ include("connection.php");
 
 
             } else {
-                $data = array("status" => "fail", "msg" => "Either login or password were absent.");
+                $data = array("status" => "fail", "msg" => "missing");
             }
 
 

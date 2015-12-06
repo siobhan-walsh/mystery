@@ -31,17 +31,17 @@
                                 
                                 <h2>Or sign up below:</h2>
                                 
-                            	<input type='text' id='fname' class='nval textbox'  placeholder="first name" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
+                            	<input type='text' id='fname' required = 'true' class='nval textbox'  placeholder="first name" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
     
-                            	<input type='text' id='lname' class='nval textbox' placeholder="last" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$'>
+                            	<input type='text' id='lname' required = 'true' class='nval textbox' placeholder="last" pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$'>
     
-                            	<input type='email' id='email' class='nval textbox' placeholder="email@example.com" maxlength="70">
+                            	<input type='email' id='email' required = 'true' class='nval textbox' placeholder="email@example.com" maxlength="70">
     
-                            	<input type='text' id='username2' class='nval textbox' placeholder="username" required = 'true' pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
+                            	<input type='text' id='username2' required = 'true' class='nval textbox' placeholder="username" required = 'true' pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' max-length='20'>
     
-                            	<input type='password' id='pw' class='textbox' placeholder="password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" >
+                            	<input type='password' id='pw' required = 'true' class='textbox' placeholder="password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" >
     
-                            	<input type='password' id='pwRetype' class='textbox' placeholder="retype password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" >
+                            	<input type='password' id='pwRetype' required = 'true' class='textbox' placeholder="retype password" required = 'true' pattern = '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$' maxlength="20" >
                             
                            
                            		<br>
@@ -87,7 +87,6 @@
         </div>
 	
 </div>
-    <script src="js/validating.js"></script> 
     <script src="js/signup.js"></script> 
     <script src="js/fblogin.js"></script> 
 </body>

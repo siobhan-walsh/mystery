@@ -14,10 +14,10 @@
                   <h2>Drop us a line, let us know what you think.</h2>
                   <form action="" method="post" class="form" id="form1">
                           <p class="fn">
-                            <input name="firstname" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="fn" />
+                            <input name="firstname" type="text" required = 'true' pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' class="nval validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="fn" />
                           </p>
                           <p class="ln">
-                            <input name="lastname" type="text" class="validate[required,custom[email]] feedback-input" id="ln" placeholder="Last Name" />
+                            <input name="lastname" type="text" required = 'true' pattern = '^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' class="nval validate[required,custom[email]] feedback-input" id="ln" placeholder="Last Name" />
                           </p>
                       <div id="stars">
                       
@@ -64,7 +64,7 @@
                          
                       	</div>  
                         <p class="msgFee">
-                        	<textarea name="comments" class="validate[required,length[6,300]] feedback-input" id="msgFee" placeholder="Comment"></textarea>
+                        	<textarea name="comments" required = 'true' class="validate[required,length[6,300]] feedback-input" id="msgFee" placeholder="Comment"></textarea>
                         </p>
                          
                         <div class="feedback">
@@ -87,6 +87,45 @@
      
 <script>
  $(document).ready(function() {
+	 
+	 var nval = document.querySelectorAll('.nval');
+	 
+	 	for(var i = 0; i < nval.length; i++){    
+	
+			nval[i].addEventListener("input", 
+			
+
+				function checkname(){
+					if(this.validity.patternMismatch) {
+						
+						this.setCustomValidity("Please enter a name between 2-20 characters");
+						
+						
+						$("<p id ='s" + i + "'><small>Please enter a name between 2-20 characters</small></p>").insertAfter(this);
+						
+					  } 
+
+					   else if(this.validity.valueMissing) {
+							this.setCustomValidity("You must enter a name");
+						  
+							
+							$("<p id ='s" + i + "'><small>Please enter a name between 2-20 characters</small><p>").insertAfter(this);
+						   
+						
+					  } else {
+						  this.setCustomValidity("");
+						  
+						  $('#s' + i).remove();
+						  p.innerHTML = "";
+						  validnames = true;
+						  
+					  }
+				 
+				});
+		
+ 		};
+	 
+	 
 	 
     $("#feedback").click(function() {                
 
@@ -172,18 +211,16 @@ if (isset($_REQUEST['submitted'])) {
   if (isset($_REQUEST['submitted'])) {
  
   if (!empty($errors)) { 
-  echo '<hr /><h3>The following occurred:</h3><ul>'; 
+ 	echo "<script>window.location = 'contactus.php'"; 
    
-  foreach ($errors as $msg) { echo '<li>'. $msg . '</li>';}
-  echo '</ul><h3>Your mail could not be sent due to input errors.</h3><hr />';}
-   else{echo '<hr /><h3 align="center">Your mail was sent. Thank you!</h3><hr /><p>Below is the message that you sent.</p>'; 
-  echo "Message from " . $firstname . " " . $lastname . " <br />Comments: ".$comments." <br />";
-  echo "<br />1star: " . $check1 . "";
-  echo "<br />2stars: " . $check2 . "";
-  echo "<br />3stars: " . $check3 . "";
-  echo "<br />4stars: " . $check4 . "";
-  echo "<br />5stars: " . $check5 . "";
-  }
+  } else{echo "<script>window.location = 'thankyou.php'</script>"; 
+	  echo "Message from " . $firstname . " " . $lastname . " <br />Comments: ".$comments." <br />";
+	  echo "<br />1star: " . $check1 . "";
+	  echo "<br />2stars: " . $check2 . "";
+	  echo "<br />3stars: " . $check3 . "";
+	  echo "<br />4stars: " . $check4 . "";
+	  echo "<br />5stars: " . $check5 . "";
+	  }
   }
 
   ?>

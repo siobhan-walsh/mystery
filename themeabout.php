@@ -5,8 +5,6 @@
 
 ?>
 
-<!--div class = 'content'>!-->
-
        <div class = 'sin'>
        		<img src = 'img/welcome1.png'>
        </div>
@@ -41,11 +39,7 @@
 				},
 			success:function(themeresp){
 				
-				console.log("themeresp is:", themeresp);	
-				
 				var p2 = document.getElementById('p2');
-				
-				console.log('descriptionis', themeresp[0].description);
 				
 				p2.innerHTML = themeresp[0].description;
 				

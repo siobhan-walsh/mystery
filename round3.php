@@ -49,7 +49,6 @@
 					 round:'round3'
 					},
 				success:function(roundinfo){
-					console.log('roundinfo is', roundinfo);
 					
 					var img = document.createElement('img');
 					var p = document.createElement('p');

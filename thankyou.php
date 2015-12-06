@@ -8,12 +8,15 @@
         <div class='content'>
         
             
-           <h3 class='htitle'> Pick Your Character </h3>
+           <h3 class='htitle'>Thank you for your feedback </h3>
+               
+               <a href='direction.php' class='buttons'>Return to game</a>
                 
             
+        
         </div>
 
-        <script src = 'js/choosegame.js'></script>
+		
         
         <?php 
         	include("footer.php");

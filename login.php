@@ -25,7 +25,7 @@
                         <form class="form">
                             <h1>Welcome</h1>
                             <span id='warn' style='color:red'></span>
-                            <input type='text' id='username' class='textbox' placeholder="username" required='true'>
+                            <input type='email' id='email' class='textbox' placeholder="email" required='true'>
                             <input type='password' id='password' class='textbox' placeholder="password" required='true'>
                             
                            <input type='button' class='buttons2' id='loginbtn' value="Login">
@@ -35,23 +35,23 @@
                 </div>
                 </div>
                 
- <div class="wrapper">
-	<ul class="bg-bubbles">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
-          </div>
-        	<div class ='underfooter'></div>
-            <div class = 'footer'>
-</div>
+                 <div class="wrapper">
+                    <ul class="bg-bubbles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                  </div>
+                <div class ='underfooter'></div>
+                <div class = 'footer'>
+                </div>
            
             
         
@@ -59,58 +59,6 @@
        </div> 
 
 
-    <script>
-	
-	var un = document.getElementById('username');
-	var pw = document.getElementById('password');
-	var loginbtn = document.getElementById('loginbtn');
-	var check = document.getElementById('check');
-	
-	loginbtn.onclick = function(){
-		document.getElementById('warn').innerHTML = '';
-		$.ajax({
-			url:"server/login-server.php",
-			type:"POST",
-			dataType:"JSON",
-			data:{
-			
-				un:un.value,
-				pw:pw.value
-				
-				},
-			success:function(resp){
-				
-			
-				
-				if(resp.status == 'success'){
-					
-					window.location = "direction.php"
-					
-				} else if(resp.status == 'fail'){
-					
-					document.getElementById('warn').innerHTML = "Sorry, that is not the correct username or password";
-						
-				}
-				
-				
-				
-			},
-			 error: function(jqXHR, textStatus, errorThrown) {
-                        //console.log(jqXHR.statusText, textStatus, errorThrown);
-                        console.log(jqXHR.statusText, textStatus);
-                  
-			
-		
-			}
-			
-		});	
-					  
-              
-	
-		
-		
-	};
-	
-    </script>  
+    <script src = 'js/login.js'></script>  
     </body>
 </html>
