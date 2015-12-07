@@ -44,7 +44,7 @@ include("connection.php");
 					$count = count($rows);
 					
 					if($count > 0){
-						$data =  array("un" => $username, "pw" => $password, 'account' =>'hasaccount' ); 	
+						$data =  array("un" => $username, "pw" => $password, 'email' => $email, 'account' =>'hasaccount' ); 	
 					} else {
 
 						$statement = $conn->prepare("INSERT INTO users (user_name, first_name, last_name, password, email, avatar) VALUES (:un,  :fn, :ln,  :pw,  :email, :avatar);");
